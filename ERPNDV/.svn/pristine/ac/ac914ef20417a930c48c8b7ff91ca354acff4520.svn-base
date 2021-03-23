@@ -1,0 +1,23 @@
+=================================================================================================
+DateTime:16-Oct-2018 10:12:13
+UserID:01057-Trần Lý Anh
+PC:V00335-tmtam
+ClassOrForm:FrmStartup
+FunctionName:ApproveList
+Error:Conversion failed when converting the nvarchar value '000efc09-0eef-4815-b8cf-1529047663b7' to data type int.
+=================================================================================================
+DateTime:16-Oct-2018 11:28:34
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmExCustomsDeclarationUpdate
+FunctionName:SetFormEvents
+Error:The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+=================================================================================================
+DateTime:16-Oct-2018 11:28:50
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmExCustomsDeclarationUpdate
+FunctionName:SetFormEvents
+Error:The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.

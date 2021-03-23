@@ -1,0 +1,123 @@
+﻿
+Imports System.Windows.Forms
+Imports CommonDB
+Imports PublicUtility
+'Imports LibEntity
+Imports DataGridViewAutoFilter
+
+
+Public Class FrmThoiGianIQC : Inherits DevExpress.XtraEditors.XtraForm
+	Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+	Private Sub tlsMenu_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles tlsMenu.Paint
+		PublicFunction.FillControl(tlsMenu.Location.X, tlsMenu.Location.Y, tlsMenu.Width, tlsMenu.Height, e)
+	End Sub
+
+	Private Sub mnuMasterIQC_Click(sender As Object, e As EventArgs) Handles mnuMasterIQC.Click
+		Dim frm As New FrmMasterThoiGianIQC
+		frm.ShowDialog()
+		mnuShowAll.PerformClick()
+	End Sub
+
+	Private Sub mnuShowAll_Click(sender As Object, e As EventArgs) Handles mnuShowAll.Click
+		Dim para(1) As SqlClient.SqlParameter
+		para(0) = New SqlClient.SqlParameter("@Ngay", GetStartDate(dtpStart.Value.Date))
+		para(1) = New SqlClient.SqlParameter("@Type", "CH")
+		Dim bd As New BindingSource
+		Dim dtAll As DataTable = _db.ExecuteStoreProcedureTB("sp_EMM_ThoiGianIQC", para)
+		bd.DataSource = dtAll
+		gridCH.DataSource = bd
+
+		para(1) = New SqlClient.SqlParameter("@Type", "TC")
+		Dim bdTC As New BindingSource
+		Dim dtAllTC As DataTable = _db.ExecuteStoreProcedureTB("sp_EMM_ThoiGianIQC", para)
+		bdTC.DataSource = dtAllTC
+		gridTC.DataSource = bdTC
+
+		para(1) = New SqlClient.SqlParameter("@Type", "LOT")
+		Dim bdL As New BindingSource
+		Dim dtAllL As DataTable = _db.ExecuteStoreProcedureTB("sp_EMM_ThoiGianIQC", para)
+		bdL.DataSource = dtAllL
+		gridLot.DataSource = bdL
+	End Sub
+
+	Private Sub mnuExport_Click(sender As Object, e As EventArgs) Handles mnuExport.Click
+		ExportEXCEL(gridCH)
+	End Sub
+
+	Private Sub gridCH_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles gridCH.CellValueChanged
+		If e.RowIndex >= 0 And gridCH.Columns(e.ColumnIndex).ReadOnly = False Then
+			Dim obj As New EMM_ThoiGianIQC
+			obj.Ngay_K = dtpStart.Value.Date
+			obj.Loai_K = gridCH.CurrentRow.Cells(LoaiCH.Name).Value
+			obj.NhanVien_K = gridCH.CurrentRow.Cells(NhanVienCH.Name).Value
+			If gridCH.CurrentRow.Cells(TGKiemCH.Name).Value IsNot DBNull.Value Then
+				obj.TGKiem = gridCH.CurrentRow.Cells(TGKiemCH.Name).Value
+			Else
+				obj.TGKiem = 0
+			End If
+			If gridCH.CurrentRow.Cells(SoNguoiCH.Name).Value IsNot DBNull.Value Then
+				obj.SoNguoi = gridCH.CurrentRow.Cells(SoNguoiCH.Name).Value
+			Else
+				obj.SoNguoi = 0
+			End If
+			If _db.ExistObject(obj) Then
+				_db.Update(obj)
+			Else
+				_db.Insert(obj)
+			End If
+			gridCH.CurrentRow.Cells(TongTGCH.Name).Value = obj.TGKiem * obj.SoNguoi
+		End If
+	End Sub
+
+	Private Sub gridTC_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles gridTC.CellValueChanged
+		If e.RowIndex >= 0 And gridTC.Columns(e.ColumnIndex).ReadOnly = False Then
+			Dim obj As New EMM_ThoiGianIQC
+			obj.Ngay_K = dtpStart.Value.Date
+			obj.Loai_K = gridTC.CurrentRow.Cells(LoaiTC.Name).Value
+			obj.NhanVien_K = gridTC.CurrentRow.Cells(NhanVienTC.Name).Value
+			If gridTC.CurrentRow.Cells(TGKiemTC.Name).Value IsNot DBNull.Value Then
+				obj.TGKiem = gridTC.CurrentRow.Cells(TGKiemTC.Name).Value
+			Else
+				obj.TGKiem = 0
+			End If
+			If gridTC.CurrentRow.Cells(SoNguoiTC.Name).Value IsNot DBNull.Value Then
+				obj.SoNguoi = gridTC.CurrentRow.Cells(SoNguoiTC.Name).Value
+			Else
+				obj.SoNguoi = 0
+			End If
+			If _db.ExistObject(obj) Then
+				_db.Update(obj)
+			Else
+				_db.Insert(obj)
+			End If
+			gridTC.CurrentRow.Cells(TongTGTC.Name).Value = obj.TGKiem * obj.SoNguoi
+		End If
+	End Sub
+
+	Private Sub gridLot_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles gridLot.CellValueChanged
+		If e.RowIndex >= 0 And gridLot.Columns(e.ColumnIndex).ReadOnly = False Then
+			Dim obj As New EMM_TongSoLot
+			obj.Ngay_K = dtpStart.Value.Date
+			If gridLot.CurrentRow.Cells(SoLoXuat.Name).Value IsNot DBNull.Value Then
+				obj.SoLoXuat = gridLot.CurrentRow.Cells(SoLoXuat.Name).Value
+			Else
+				obj.SoLoXuat = 0
+			End If
+
+			If gridLot.CurrentRow.Cells(SoLoTonDaKiem.Name).Value IsNot DBNull.Value Then
+				obj.SoLoTonDaKiem = gridLot.CurrentRow.Cells(SoLoTonDaKiem.Name).Value
+			Else
+				obj.SoLoTonDaKiem = 0
+			End If
+
+			If _db.ExistObject(obj) Then
+				_db.Update(obj)
+			Else
+				_db.Insert(obj)
+			End If
+			mnuShowAll.PerformClick()
+		End If
+	End Sub
+
+End Class

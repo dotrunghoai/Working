@@ -1,0 +1,9 @@
+
+ Public Class UDM_ETA_Delivery
+     Public ID_K As  Integer 
+     Public DeliveryDate_K As DateTime 
+     Public DeliveryStatus As String 
+     Public Note As String 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

@@ -1,0 +1,9 @@
+
+ Public Class DOC_Schedule
+     Public DocNo_K As String 
+     Public DocRev_K As String 
+     Public Dept As String 
+     Public ScheduleDate_K As DateTime 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+ End  Class

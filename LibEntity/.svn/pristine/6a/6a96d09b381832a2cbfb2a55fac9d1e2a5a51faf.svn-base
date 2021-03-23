@@ -1,0 +1,10 @@
+
+ Public Class CL_MsPlanProcess
+     Public ID_K As String 
+     Public ProcessName As String 
+     Public ProcessCode As String 
+     Public PR As String 
+     Public STT As  Integer 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

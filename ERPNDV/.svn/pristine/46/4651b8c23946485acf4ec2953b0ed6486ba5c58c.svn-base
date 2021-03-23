@@ -1,0 +1,93 @@
+=================================================================================================
+DateTime:21-Mar-2018 10:23:51
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 10:23:59
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 10:46:05
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 10:46:16
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 10:46:57
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 10:47:49
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:Cannot insert the value NULL into column 'JCode', table 'NDVERP.dbo.RM_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 10:59:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:Cannot insert the value NULL into column 'JCode', table 'NDVERP.dbo.RM_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+=================================================================================================
+DateTime:21-Mar-2018 11:00:54
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Confirm
+Error:SqlConnection does not support parallel transactions.
+=================================================================================================
+DateTime:21-Mar-2018 11:00:55
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:21-Mar-2018 11:13:42
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Confirm
+Error:SqlConnection does not support parallel transactions.
+=================================================================================================
+DateTime:21-Mar-2018 11:13:44
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRequestMaterial
+FunctionName:Save
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:21-Mar-2018 14:02:33
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibRequestMaterial.FrmSummary' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

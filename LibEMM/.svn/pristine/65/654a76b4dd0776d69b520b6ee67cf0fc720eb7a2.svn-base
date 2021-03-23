@@ -1,0 +1,39 @@
+
+ Public Class EMM_U00Detail
+    Public Code_K As String
+    Public TestReport As String 
+     Public Design As String 
+     Public Surface As String 
+     Public Chamfer As String 
+     Public Flatness As String 
+     Public F03 As String 
+     Public F04 As String 
+     Public CrackSUS As String 
+     Public Tension As String 
+     Public FEvaluation As String 
+     Public AdhesiveStrength As String 
+     Public ThicknessResult As Decimal 
+     Public ThicknessEvaluation As String 
+     Public Deform As  Integer 
+     Public Obstruct As  Integer 
+     Public Scratch As  Integer 
+     Public Dirty As  Integer 
+     Public BaVo As  Integer 
+     Public CrackedAl As  Integer 
+     Public ConcreteSurface As  Integer 
+     Public SLDapBat As  Integer 
+     Public Orther As  Integer 
+     Public DeformPercent As Decimal 
+     Public ObstructPercent As Decimal 
+     Public ScratchPercent As Decimal 
+     Public DirtyPercent As Decimal 
+     Public BaVoPercent As Decimal 
+     Public CrackedAlPercent As Decimal 
+     Public ConcreteSurfacePercent As Decimal 
+     Public PTDapBat As Decimal 
+     Public OrtherPercent As Decimal 
+     Public GeneralEvaluation As String 
+     Public UpdateUser As String 
+     Public UpdateDate As DateTime 
+     Public Remark As String 
+ End  Class

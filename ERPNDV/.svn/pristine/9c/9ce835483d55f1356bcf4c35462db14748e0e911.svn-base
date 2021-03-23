@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:25-Mar-2019 09:04:06
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMsPlanProcess
+FunctionName:Save
+Error:Conversion from type 'DBNull' to type 'String' is not valid.
+=================================================================================================
+DateTime:25-Mar-2019 09:06:31
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMsPlanProcess
+FunctionName:Save
+Error:Conversion from type 'DBNull' to type 'String' is not valid.

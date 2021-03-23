@@ -1,0 +1,15 @@
+=================================================================================================
+DateTime:10-May-2018 14:02:17
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmGetMaterialPrice
+FunctionName:mnuUpdate_Click
+Error:ERROR [42S22] [IBM][System i Access ODBC Driver][DB2 for i5/OS]SQL0205 - COLUMN MGMKCD NOT IN TABLE MMGVNDP IN NDVDTA.
+=================================================================================================
+DateTime:10-May-2018 14:20:48
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmGetMaterialPrice
+FunctionName:mnuUpdate_Click
+Error:Violation of PRIMARY KEY constraint 'PK_FPICS_MaterialPriceAll'. Cannot insert duplicate key in object 'dbo.FPICS_MaterialPriceAll'. The duplicate key value is (J00054, K00002, 20070523).
+The statement has been terminated.

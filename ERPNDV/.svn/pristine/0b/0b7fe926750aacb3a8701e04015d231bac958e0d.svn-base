@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="RINGI" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RINGI">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RingiNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Section" type="xs:string" minOccurs="0" />
+              <xs:element name="Prepared" type="xs:string" minOccurs="0" />
+              <xs:element name="PreparedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PrepareComment" type="xs:string" minOccurs="0" />
+              <xs:element name="Submited" type="xs:string" minOccurs="0" />
+              <xs:element name="SubmitedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SubmitedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="Ringi1" type="xs:string" minOccurs="0" />
+              <xs:element name="RingiDate1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RingiComment1" type="xs:string" minOccurs="0" />
+              <xs:element name="Ringi2" type="xs:string" minOccurs="0" />
+              <xs:element name="RingiDate2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RingiComment2" type="xs:string" minOccurs="0" />
+              <xs:element name="Ringi3" type="xs:string" minOccurs="0" />
+              <xs:element name="RingiDate3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RingiComment3" type="xs:string" minOccurs="0" />
+              <xs:element name="Ringi4" type="xs:string" minOccurs="0" />
+              <xs:element name="RingiDate4" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RingiComment4" type="xs:string" minOccurs="0" />
+              <xs:element name="Ringi5" type="xs:string" minOccurs="0" />
+              <xs:element name="RingiDate5" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RingiComment5" type="xs:string" minOccurs="0" />
+              <xs:element name="Refer5" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferDate5" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferComment5" type="xs:string" minOccurs="0" />
+              <xs:element name="Refer4" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferDate4" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferComment4" type="xs:string" minOccurs="0" />
+              <xs:element name="Refer3" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferDate3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferComment3" type="xs:string" minOccurs="0" />
+              <xs:element name="Refer2" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferDate2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferComment2" type="xs:string" minOccurs="0" />
+              <xs:element name="Refer1" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferDate1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferComment1" type="xs:string" minOccurs="0" />
+              <xs:element name="Notify" type="xs:string" minOccurs="0" />
+              <xs:element name="NotifyDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NotifyComment" type="xs:string" minOccurs="0" />
+              <xs:element name="Approved" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApprovedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="Archive" type="xs:string" minOccurs="0" />
+              <xs:element name="Report" type="xs:string" minOccurs="0" />
+              <xs:element name="RingiType" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentUser" type="xs:string" minOccurs="0" />
+              <xs:element name="NoApproved" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RingiNo1" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="Purpose" type="xs:string" minOccurs="0" />
+              <xs:element name="ContentDo" type="xs:string" minOccurs="0" />
+              <xs:element name="ContentApproved" type="xs:string" minOccurs="0" />
+              <xs:element name="AttachFile1" type="xs:string" minOccurs="0" />
+              <xs:element name="AttachFile2" type="xs:string" minOccurs="0" />
+              <xs:element name="AttachFile3" type="xs:string" minOccurs="0" />
+              <xs:element name="AttachFile4" type="xs:string" minOccurs="0" />
+              <xs:element name="AttachFile5" type="xs:string" minOccurs="0" />
+              <xs:element name="AttachFile6" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

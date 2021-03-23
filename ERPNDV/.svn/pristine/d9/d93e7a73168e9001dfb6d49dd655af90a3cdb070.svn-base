@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ACReport" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ACReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YYMM" type="xs:string" minOccurs="0" />
+              <xs:element name="JCode" type="xs:string" minOccurs="0" />
+              <xs:element name="JEName" type="xs:string" minOccurs="0" />
+              <xs:element name="JVName" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitMH" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitHQ" type="xs:string" minOccurs="0" />
+              <xs:element name="StartQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InAS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InLO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InNEV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InDiff" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutACT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutLO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutNEV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutDiff" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutKK" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndNEV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NEVDiff" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndLO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndAS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ASDiff" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

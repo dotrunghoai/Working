@@ -1,0 +1,39 @@
+
+ Public Class ASP_RingiDetail
+     Public RingiNo_K As String 
+     Public ItemCode_K As String 
+     Public Title As String 
+     Public Purpose As String 
+     Public ContentDo As String 
+     Public ContentApproved As String 
+     Public AttachFile1 As String 
+     Public AttachFile2 As String 
+     Public AttachFile3 As String 
+     Public AttachFile4 As String 
+     Public AttachFile5 As String 
+     Public AttachFile6 As String 
+     Public AttachFile7 As String 
+     Public AttachFile8 As String 
+     Public AttachFile9 As String 
+     Public AttachFile10 As String 
+     Public AttachFile11 As String 
+     Public AttachFile12 As String 
+     Public AttachFile13 As String 
+     Public AttachFile14 As String 
+     Public AttachFile15 As String 
+     Public AttachFileName1 As String 
+     Public AttachFileName2 As String 
+     Public AttachFileName3 As String 
+     Public AttachFileName4 As String 
+     Public AttachFileName5 As String 
+     Public AttachFileName6 As String 
+     Public AttachFileName7 As String 
+     Public AttachFileName8 As String 
+     Public AttachFileName9 As String 
+     Public AttachFileName10 As String 
+     Public AttachFileName11 As String 
+     Public AttachFileName12 As String 
+     Public AttachFileName13 As String 
+     Public AttachFileName14 As String 
+     Public AttachFileName15 As String 
+ End  Class

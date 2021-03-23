@@ -1,0 +1,15 @@
+=================================================================================================
+DateTime:29-Sep-2018 08:17:26
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibFpicsDataView.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:29-Sep-2018 11:36:24
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmInputData
+FunctionName:Save
+Error:Violation of PRIMARY KEY constraint 'PK_TR_InputDataDetail'. Cannot insert duplicate key in object 'dbo.TR_InputDataDetail'. The duplicate key value is (J00193, 04E733, 2, Sep 29 2018 12:00AM).
+The statement has been terminated.

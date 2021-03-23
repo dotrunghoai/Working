@@ -1,0 +1,43 @@
+
+ Public Class AD_QA_KTFPC
+     Public ID_K As String 
+     Public NgayTao As DateTime 
+     Public ProductCode As String 
+     Public PartNo As String 
+     Public PathFileS As String 
+     Public PathFileF As String 
+     Public PathFileG As String 
+     Public CreateID As String 
+     Public CreateEmail As String 
+     Public CreateComment As String 
+     Public CreateDate As DateTime 
+     Public CheckEmailLL As String 
+     Public CheckCommentLL As String 
+     Public CheckDateLL As DateTime 
+     Public CheckID As String 
+     Public CheckEmail As String 
+     Public CheckComment As String 
+     Public CheckDate As DateTime 
+     Public ApprovedID As String 
+     Public ApprovedEmail As String 
+     Public ApprovedComment As String 
+     Public ApprovedDate As DateTime 
+     Public DMCheckID As String 
+     Public DMCheckEmail As String 
+     Public DMCheckComment As String 
+     Public DMCheckDate As DateTime 
+     Public CurrentID As String 
+     Public DocNo As String 
+     Public DocName As String 
+     Public DocRev As String 
+     Public GhiChu As String 
+     Public DocNoS As String 
+     Public DocNameS As String 
+     Public DocRevS As String 
+     Public GhiChuS As String 
+     Public DocNoF As String 
+     Public DocNameF As String 
+     Public DocRevF As String 
+     Public GhiChuF As String 
+     Public CCID As  Integer 
+ End  Class

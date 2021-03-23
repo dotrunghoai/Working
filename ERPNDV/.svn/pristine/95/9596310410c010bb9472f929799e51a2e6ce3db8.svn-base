@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:31-Jul-2019 08:00:48
+UserID:02759-Đinh Tân Sơn
+PC:V00365-tmtam
+ClassOrForm:FrmFollowDetail
+FunctionName:Confirm
+Error:Conversion from type 'DBNull' to type 'Integer' is not valid.
+=================================================================================================
+DateTime:31-Jul-2019 08:03:56
+UserID:02759-Đinh Tân Sơn
+PC:V00365-tmtam
+ClassOrForm:FrmFollowDetail
+FunctionName:Confirm
+Error:Incorrect syntax near ')'.

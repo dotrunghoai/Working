@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:27-Mar-2018 16:18:00
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLPreset
+Error:AutoFit method of Range class failed
+=================================================================================================
+DateTime:27-Mar-2018 16:18:57
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLPreset
+Error:AutoFit method of Range class failed
+=================================================================================================
+DateTime:27-Mar-2018 16:29:35
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLPreset
+Error:The process cannot access the file 'D:\ERPNDV\ERPNDV\bin\Debug\Template Excel\Template PP\Export\PRESET.xls' because it is being used by another process.

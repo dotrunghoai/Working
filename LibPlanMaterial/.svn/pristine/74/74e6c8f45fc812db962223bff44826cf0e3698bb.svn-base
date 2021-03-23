@@ -1,0 +1,102 @@
+﻿Imports CommonDB
+Imports PublicUtility
+Public Class FrmBomStock
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+    Private Sub FrmBomStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dteStartDate.EditValue = GetStartDayOfMonth(Date.Now)
+        dteEndDate.EditValue = GetEndDayOfMonth(Date.Now)
+    End Sub
+
+    Private Sub dteStartDate_EditValueChanged(sender As Object, e As EventArgs) Handles dteStartDate.EditValueChanged
+        If dteStartDate.EditValue > dteEndDate.EditValue Then
+            dteEndDate.EditValue = dteStartDate.EditValue
+        End If
+    End Sub
+
+    Private Sub dteEndDate_EditValueChanged(sender As Object, e As EventArgs) Handles dteEndDate.EditValueChanged
+        If dteEndDate.EditValue < dteStartDate.EditValue Then
+            dteStartDate.EditValue = dteEndDate.EditValue
+        End If
+    End Sub
+
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        GridView1.Columns.Clear()
+        Dim para(3) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@StartDate", dteStartDate.EditValue)
+        para(1) = New SqlClient.SqlParameter("@EndDate", dteEndDate.EditValue)
+        para(2) = New SqlClient.SqlParameter("@subCols", DBNull.Value)
+        para(3) = New SqlClient.SqlParameter("@colsMain", DBNull.Value)
+
+        Dim dtDay = _db.FillDataTable(" SELECT DISTINCT Tuan
+                                        FROM PLM_FC_Boo
+                                        WHERE Tuan BETWEEN DATEADD(wk, DATEDIFF(wk, 0, @StartDate), 0) AND @EndDate
+                                        ORDER BY Tuan", para)
+        Dim col As String = ""
+        For r = 0 To dtDay.Rows.Count - 1
+            Dim subCol As String = ""
+            For j = 0 To r
+                subCol += CType(dtDay.Rows(j)("Tuan"), Date).ToString("[dd-MMM]") + "+"
+            Next
+            subCol = subCol.Substring(0, subCol.Length - 1)
+            col += "(" + subCol + ")AS" + CType(dtDay.Rows(r)("Tuan"), Date).ToString("[dd-MMM]") + ","
+        Next
+        If col.Length > 0 Then
+            col = col.Substring(0, col.Length - 1)
+        End If
+        Dim a = col.Length
+        para(2) = New SqlClient.SqlParameter("@subCols", col)
+
+        Dim colsMain As String = ""
+        For Each r As DataRow In dtDay.Rows
+            Dim tuan As String = Date.Parse(r("Tuan")).ToString("[dd-MMM]")
+            colsMain += "((" + tuan + "-ISNULL(FG,0))/0.98-ISNULL(WIP,0))AS" + tuan + ","
+        Next
+        If colsMain.Length > 0 Then
+            colsMain = colsMain.Substring(0, colsMain.Length - 1)
+        End If
+        Dim b = colsMain.Length
+        para(3) = New SqlClient.SqlParameter("@colsMain", colsMain)
+
+        Dim count = 0
+        Try
+            Dim dt = _db.ExecuteStoreProcedureTB("sp_PLM_LoadBomStock", para)
+            If dt.Rows.Count > 0 Then
+                For Each r As DataRow In dt.Rows
+                    count += 1
+                    For Each c As DataColumn In dt.Columns
+                        If dt.Columns.IndexOf(c) > dt.Columns.IndexOf("TLSX") Then
+                            If IsNumeric(r(c)) Then
+                                If r(c) > 0 Then
+                                    Dim valSum = 0.0
+                                    For Each cSub As DataColumn In dt.Columns
+                                        If dt.Columns.IndexOf(cSub) > dt.Columns.IndexOf("TLSX") And
+                                            dt.Columns.IndexOf(cSub) < dt.Columns.IndexOf(c) Then
+                                            valSum += r(cSub)
+                                        End If
+                                    Next
+                                    r(c) = r(c) * IIf(IsDBNull(r("TLSX")), 1, r("TLSX")) - valSum
+                                    'r(c) = CType((r(c) * IIf(IsDBNull(r("TLSX")), 1, r("TLSX")) - valSum), Integer)
+                                Else
+                                    r(c) = 0
+                                End If
+                            End If
+                        End If
+                    Next
+                Next
+                GridControl1.DataSource = dt
+                GridControlSetFormat(GridView1, 5)
+                GridControlSetFormatPercentage(GridView1, "TLSX", 2)
+                GridControlSetFormatNumber(GridView1, "Std_StdQtyP", 8)
+                GridView1.BestFitColumns()
+                GridView1.OptionsView.ShowFooter = False
+            End If
+        Catch ex As Exception
+            ShowWarning(ex.Message + " - Row " + count.ToString)
+        End Try
+    End Sub
+
+    Private Sub btnExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExport.ItemClick
+        GridControlExportExcel(GridView1)
+    End Sub
+End Class

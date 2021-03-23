@@ -1,0 +1,1889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{C8D9B253-BB8A-4180-B3E6-CA2254AA764F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LibEntity</RootNamespace>
+    <AssemblyName>LibEntity</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LibEntity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\LibEntity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Itanium'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Debug\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LibEntity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Itanium'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\LibEntity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LibEntity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>LibEntity.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\LibEntity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Access\AccCosting_Costing_Temp.vb" />
+    <Compile Include="Entity\AC_ActualPrice.vb" />
+    <Compile Include="Entity\AC_ExchangeRateAC.vb" />
+    <Compile Include="Entity\AC_ForecastPrice.vb" />
+    <Compile Include="Entity\AC_Material.vb" />
+    <Compile Include="Entity\AC_MonthlyPrice.vb" />
+    <Compile Include="Entity\AD_EmailDuyetBaoChay.vb" />
+    <Compile Include="Entity\AD_EmailDuyetMoiNguy.vb" />
+    <Compile Include="Entity\AD_EmailKTFPC.vb" />
+    <Compile Include="Entity\AD_QA_CC.vb" />
+    <Compile Include="Entity\AD_QA_HDCV.vb" />
+    <Compile Include="Entity\AD_QA_KTFPC.vb" />
+    <Compile Include="Entity\AD_SE_HTBaoChay.vb" />
+    <Compile Include="Entity\AD_SE_NBMoiNguy.vb" />
+    <Compile Include="Entity\AD_SE_Section.vb" />
+    <Compile Include="Entity\ASP_AlarmExpiredItems.vb" />
+    <Compile Include="Entity\ASP_BGAnnualExpenseDetail.vb" />
+    <Compile Include="Entity\ASP_BGAnnualExpenseDetail_Compare.vb" />
+    <Compile Include="Entity\ASP_BGAnnualExpenseDetail_Import.vb" />
+    <Compile Include="Entity\ASP_BGAnnualHead.vb" />
+    <Compile Include="Entity\ASP_BGAnnualManpowerOvertimeDetail.vb" />
+    <Compile Include="Entity\ASP_BGAnnualManpowerOvertimeDetail_Compare.vb" />
+    <Compile Include="Entity\ASP_BGApprover.vb" />
+    <Compile Include="Entity\ASP_BGCommentHistory.vb" />
+    <Compile Include="Entity\ASP_BGExtraApprover.vb" />
+    <Compile Include="Entity\ASP_BGExtraExpenseDetail.vb" />
+    <Compile Include="Entity\ASP_BGExtraFile.vb" />
+    <Compile Include="Entity\ASP_BGExtraFileContent.vb" />
+    <Compile Include="Entity\ASP_BGExtraHead.vb" />
+    <Compile Include="Entity\ASP_BGManpowerOvertimeActual.vb" />
+    <Compile Include="Entity\ASP_BGMsPosition.vb" />
+    <Compile Include="Entity\ASP_BGRejectedTimes.vb" />
+    <Compile Include="Entity\ASP_BGSetPeriod.vb" />
+    <Compile Include="Entity\ASP_BGUsedBudgetDetail.vb" />
+    <Compile Include="Entity\ASP_BudgetCategoryV2.vb" />
+    <Compile Include="Entity\ASP_BudgetMaster.vb" />
+    <Compile Include="Entity\ASP_Category.vb" />
+    <Compile Include="Entity\ASP_CodeTemp.vb" />
+    <Compile Include="Entity\ASP_Currency.vb" />
+    <Compile Include="Entity\ASP_Department.vb" />
+    <Compile Include="Entity\ASP_DTP.vb" />
+    <Compile Include="Entity\ASP_EditItem.vb" />
+    <Compile Include="Entity\ASP_Email.vb" />
+    <Compile Include="Entity\ASP_ExportAccount.vb" />
+    <Compile Include="Entity\ASP_GSRDetail.vb" />
+    <Compile Include="Entity\ASP_GSRDetail_Bck.vb" />
+    <Compile Include="Entity\ASP_GSRFollowETA.vb" />
+    <Compile Include="Entity\ASP_GSRFollowETA_LO.vb" />
+    <Compile Include="Entity\ASP_GSRFollowETA_LOAriba.vb" />
+    <Compile Include="Entity\ASP_GSRFollowETA_LO_NG.vb" />
+    <Compile Include="Entity\ASP_GSRFollowMaterial.vb" />
+    <Compile Include="Entity\ASP_GSRHead.vb" />
+    <Compile Include="Entity\ASP_GSRUserVendorETA.vb" />
+    <Compile Include="Entity\ASP_History.vb" />
+    <Compile Include="Entity\ASP_ImportAccount.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_AC_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_ADJ_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_CS_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_DE_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_GA_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_HR_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_IT_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_LO_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_MC_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PC_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PE_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PP_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PR1_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PR2_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PR3_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_PU_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_QA_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_QC_.vb" />
+    <Compile Include="Entity\ASP_Import_Budget_TE_.vb" />
+    <Compile Include="Entity\ASP_Import_ItemCode_New_1.vb" />
+    <Compile Include="Entity\ASP_Import_ItemCode_New_1st_.vb" />
+    <Compile Include="Entity\ASP_Import_ItemCode_New_1_.vb" />
+    <Compile Include="Entity\ASP_ItemGroupMaster.vb" />
+    <Compile Include="Entity\ASP_ItemList.vb" />
+    <Compile Include="Entity\ASP_ItemList_8.vb" />
+    <Compile Include="Entity\ASP_PaymentTerm.vb" />
+    <Compile Include="Entity\ASP_POFollow.vb" />
+    <Compile Include="Entity\ASP_POFollowLO.vb" />
+    <Compile Include="Entity\ASP_POINVOICE.vb" />
+    <Compile Include="Entity\ASP_PurchasePlanDetail.vb" />
+    <Compile Include="Entity\ASP_PurchasePlanHead.vb" />
+    <Compile Include="Entity\ASP_PurchasePlanReference.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestApprover.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestComment.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestContentFile.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestDetail.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestFile.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestHead.vb" />
+    <Compile Include="Entity\ASP_QuotationRequestVendor.vb" />
+    <Compile Include="Entity\ASP_RequestCodeDetail.vb" />
+    <Compile Include="Entity\ASP_RequestCodeHead.vb" />
+    <Compile Include="Entity\ASP_RingiDetail.vb" />
+    <Compile Include="Entity\ASP_RingiHead.vb" />
+    <Compile Include="Entity\ASP_RingiMail.vb" />
+    <Compile Include="Entity\ASP_SectionMail.vb" />
+    <Compile Include="Entity\ASP_SetApproved.vb" />
+    <Compile Include="Entity\ASP_Supplier.vb" />
+    <Compile Include="Entity\ASP_SupplierEdited.vb" />
+    <Compile Include="Entity\ASP_SupplierRequest.vb" />
+    <Compile Include="Entity\ASP_UPT.vb" />
+    <Compile Include="Entity\BC_Lock.vb" />
+    <Compile Include="Entity\BOMAct_ItemLossDaily.vb" />
+    <Compile Include="Entity\BOMAct_MsCause.vb" />
+    <Compile Include="Entity\BOMAct_MsJCodeU00.vb" />
+    <Compile Include="Entity\BOMAct_MsMaterial.vb" />
+    <Compile Include="Entity\BOMAct_MsProcess.vb" />
+    <Compile Include="Entity\BOMAct_StdBOM.vb" />
+    <Compile Include="Entity\BOM_Approved.vb" />
+    <Compile Include="Entity\BOM_ChemicalMaterial.vb" />
+    <Compile Include="Entity\BOM_ChemicalMaterialUse.vb" />
+    <Compile Include="Entity\BOM_Lamination.vb" />
+    <Compile Include="Entity\BOM_Material.vb" />
+    <Compile Include="Entity\BOM_MaterialType.vb" />
+    <Compile Include="Entity\BOM_ProcessItemCode.vb" />
+    <Compile Include="Entity\BOM_ProcessResult.vb" />
+    <Compile Include="Entity\BOM_Product.vb" />
+    <Compile Include="Entity\BOM_SheetPress.vb" />
+    <Compile Include="Entity\BOM_SOpenPress.vb" />
+    <Compile Include="Entity\BOM_StdBOM.vb" />
+    <Compile Include="Entity\BOM_Temp.vb" />
+    <Compile Include="Entity\BOM_Temp2.vb" />
+    <Compile Include="Entity\BOM_Temp3.vb" />
+    <Compile Include="Entity\BOM_WasteMaterial.vb" />
+    <Compile Include="Entity\BOM_YYYY.vb" />
+    <Compile Include="Entity\BS_GiayPhepLaoDong.vb" />
+    <Compile Include="Entity\BS_Holiday.vb" />
+    <Compile Include="Entity\BS_KhachSan.vb" />
+    <Compile Include="Entity\BS_Master.vb" />
+    <Compile Include="Entity\BS_NhanVienDen.vb" />
+    <Compile Include="Entity\BS_NhanVienDi.vb" />
+    <Compile Include="Entity\BS_NhanVienNhat.vb" />
+    <Compile Include="Entity\BS_Passport.vb" />
+    <Compile Include="Entity\BS_Phong.vb" />
+    <Compile Include="Entity\BS_TaiXe.vb" />
+    <Compile Include="Entity\BS_TheTamTru.vb" />
+    <Compile Include="Entity\BS_Visa.vb" />
+    <Compile Include="Entity\BV_Group.vb" />
+    <Compile Include="Entity\BV_NoiDung.vb" />
+    <Compile Include="Entity\BV_SubGroup.vb" />
+    <Compile Include="Entity\CDINS_DataINS.vb" />
+    <Compile Include="Entity\CDINS_Lock.vb" />
+    <Compile Include="Entity\CDINS_Mode.vb" />
+    <Compile Include="Entity\CDINS_WarningCode.vb" />
+    <Compile Include="Entity\CDQA_BMTarget.vb" />
+    <Compile Include="Entity\CDQA_Code.vb" />
+    <Compile Include="Entity\CDQA_DefectCode.vb" />
+    <Compile Include="Entity\CDQA_DefectQA.vb" />
+    <Compile Include="Entity\CDQA_EmpNo.vb" />
+    <Compile Include="Entity\CDQA_Lock.vb" />
+    <Compile Include="Entity\CDQA_Progress.vb" />
+    <Compile Include="Entity\CF_CapacityFD.vb" />
+    <Compile Include="Entity\CF_ProcessName.vb" />
+    <Compile Include="Entity\CF_ProductCK.vb" />
+    <Compile Include="Entity\CF_ProductCK_T.vb" />
+    <Compile Include="Entity\CF_ProductFD.vb" />
+    <Compile Include="Entity\CF_ProductFD_T.vb" />
+    <Compile Include="Entity\CF_TGCapacity.vb" />
+    <Compile Include="Entity\CF_TGCapacityFD.vb" />
+    <Compile Include="Entity\CI_DeThiLTChuan.vb" />
+    <Compile Include="Entity\CI_DeThiLTKhaiQuat.vb" />
+    <Compile Include="Entity\CI_DeThiThucHanh.vb" />
+    <Compile Include="Entity\CI_Employee.vb" />
+    <Compile Include="Entity\CI_KQTH.vb" />
+    <Compile Include="Entity\CI_KQThiLTChuan.vb" />
+    <Compile Include="Entity\CI_KQThiLTKhaiQuat.vb" />
+    <Compile Include="Entity\CI_MasterEmp.vb" />
+    <Compile Include="Entity\CI_RoomMail.vb" />
+    <Compile Include="Entity\CI_ThietLapPhongThi.vb" />
+    <Compile Include="Entity\CL_ApLuc.vb" />
+    <Compile Include="Entity\CL_CheckMay.vb" />
+    <Compile Include="Entity\CL_ExplainRS.vb" />
+    <Compile Include="Entity\CL_GioChuKy.vb" />
+    <Compile Include="Entity\CL_LockData.vb" />
+    <Compile Include="Entity\CL_LotTime.vb" />
+    <Compile Include="Entity\CL_LyDoTong.vb" />
+    <Compile Include="Entity\CL_MsLeadtimeKT.vb" />
+    <Compile Include="Entity\CL_MsPlanProcess.vb" />
+    <Compile Include="Entity\CL_MsProcess.vb" />
+    <Compile Include="Entity\CL_MsProcessCode.vb" />
+    <Compile Include="Entity\CL_MsRestTime.vb" />
+    <Compile Include="Entity\CL_MsTBGKT.vb" />
+    <Compile Include="Entity\CL_NhietDo.vb" />
+    <Compile Include="Entity\CL_PlanCD.vb" />
+    <Compile Include="Entity\CL_PlanCD_LyDo.vb" />
+    <Compile Include="Entity\CL_PlanEtching.vb" />
+    <Compile Include="Entity\CL_PlanEtchingDetail.vb" />
+    <Compile Include="Entity\CL_PlanInputRS.vb" />
+    <Compile Include="Entity\CL_PlanKTPL.vb" />
+    <Compile Include="Entity\CL_PlanMaVang.vb" />
+    <Compile Include="Entity\CL_PlanMaVangDetail.vb" />
+    <Compile Include="Entity\CL_PlanRS.vb" />
+    <Compile Include="Entity\CL_PlanRSDetail.vb" />
+    <Compile Include="Entity\CL_PlanRS_FPI.vb" />
+    <Compile Include="Entity\CL_PlanRS_Input.vb" />
+    <Compile Include="Entity\CL_PlanRS_Note.vb" />
+    <Compile Include="Entity\CL_PlanRS_Section.vb" />
+    <Compile Include="Entity\CL_PlanRS_Store.vb" />
+    <Compile Include="Entity\CL_PlanTafue.vb" />
+    <Compile Include="Entity\CL_PlanTafueDetail.vb" />
+    <Compile Include="Entity\CL_PressureEtching.vb" />
+    <Compile Include="Entity\CL_ProcessResult.vb" />
+    <Compile Include="Entity\CL_ProductLeadTime.vb" />
+    <Compile Include="Entity\CL_ProductLeadTimeGroup.vb" />
+    <Compile Include="Entity\CL_PunchLine.vb" />
+    <Compile Include="Entity\CL_ReasonLate.vb" />
+    <Compile Include="Entity\CL_RectifyProductionGroup.vb" />
+    <Compile Include="Entity\CL_RectifyProductionProcessing.vb" />
+    <Compile Include="Entity\CL_Schedule.vb" />
+    <Compile Include="Entity\CL_ScheduleDate.vb" />
+    <Compile Include="Entity\CL_ScheduleExport.vb" />
+    <Compile Include="Entity\CL_ScheduleLastLot.vb" />
+    <Compile Include="Entity\CL_ScheduleLot.vb" />
+    <Compile Include="Entity\CL_SchedulePauseLot.vb" />
+    <Compile Include="Entity\CL_SchedulePauseLot_Stock.vb" />
+    <Compile Include="Entity\CL_SettingEtching.vb" />
+    <Compile Include="Entity\CL_SettingMaVang.vb" />
+    <Compile Include="Entity\CL_SettingRS.vb" />
+    <Compile Include="Entity\CL_SettingTafue.vb" />
+    <Compile Include="Entity\CL_TGGC.vb" />
+    <Compile Include="Entity\CL_TGGC_MaVang.vb" />
+    <Compile Include="Entity\CL_TGGC_PR2.vb" />
+    <Compile Include="Entity\CL_TGGC_RoiSang.vb" />
+    <Compile Include="Entity\CL_TGGC_Tafue.vb" />
+    <Compile Include="Entity\CL_TGGT.vb" />
+    <Compile Include="Entity\CL_TGGT_MaVang.vb" />
+    <Compile Include="Entity\CL_TGGT_RoiSang.vb" />
+    <Compile Include="Entity\CL_TGGT_RoiSang_FPI.vb" />
+    <Compile Include="Entity\CL_TGGT_RoiSang_VS.vb" />
+    <Compile Include="Entity\CL_TGGT_Tafue.vb" />
+    <Compile Include="Entity\CL_TGGT_Temp.vb" />
+    <Compile Include="Entity\CL_TonNVLPO.vb" />
+    <Compile Include="Entity\CM_Contract.vb" />
+    <Compile Include="Entity\CM_ContractType.vb" />
+    <Compile Include="Entity\CP_ImportPO.vb" />
+    <Compile Include="Entity\CP_ImportPO_Month.vb" />
+    <Compile Include="Entity\CP_Import_DL_4126.vb" />
+    <Compile Include="Entity\CP_Import_ET_3045.vb" />
+    <Compile Include="Entity\CP_Import_ET_9316.vb" />
+    <Compile Include="Entity\CP_Import_LM_6032.vb" />
+    <Compile Include="Entity\CP_Import_MV_9289.vb" />
+    <Compile Include="Entity\CP_Import_PS_6021.vb" />
+    <Compile Include="Entity\CP_Import_RS_2051.vb" />
+    <Compile Include="Entity\CP_Import_SA_9003.vb" />
+    <Compile Include="Entity\CP_Import_SE_5011.vb" />
+    <Compile Include="Entity\CP_Import_TF_9315.vb" />
+    <Compile Include="Entity\CP_Import_TM_8080.vb" />
+    <Compile Include="Entity\CP_Import_U0_9009.vb" />
+    <Compile Include="Entity\CP_Import_UV_9304.vb" />
+    <Compile Include="Entity\CP_LastLot.vb" />
+    <Compile Include="Entity\CP_ProcessCode.vb" />
+    <Compile Include="Entity\CP_ProductGlass.vb" />
+    <Compile Include="Entity\CP_ProductHole.vb" />
+    <Compile Include="Entity\CP_ProductS00.vb" />
+    <Compile Include="Entity\CP_ProductTemp.vb" />
+    <Compile Include="Entity\CP_StartWeek.vb" />
+    <Compile Include="Entity\CSI_Data.vb" />
+    <Compile Include="Entity\CSI_Employee.vb" />
+    <Compile Include="Entity\CSI_Lock.vb" />
+    <Compile Include="Entity\CSX_Data.vb" />
+    <Compile Include="Entity\CSX_DataExport.vb" />
+    <Compile Include="Entity\CT_B00C00.vb" />
+    <Compile Include="Entity\CT_ChildCC.vb" />
+    <Compile Include="Entity\CT_ComponentProcess.vb" />
+    <Compile Include="Entity\CT_CostingBOM.vb" />
+    <Compile Include="Entity\CT_CostingLog.vb" />
+    <Compile Include="Entity\CT_Costing_Temp.vb" />
+    <Compile Include="Entity\CT_Customer.vb" />
+    <Compile Include="Entity\CT_InspectionCosting.vb" />
+    <Compile Include="Entity\CT_ItemCode.vb" />
+    <Compile Include="Entity\CT_Lock.vb" />
+    <Compile Include="Entity\CT_LockLog.vb" />
+    <Compile Include="Entity\CT_Process.vb" />
+    <Compile Include="Entity\CT_ProcessResult.vb" />
+    <Compile Include="Entity\CT_ProcessResultFinal.vb" />
+    <Compile Include="Entity\CT_ProducttionCost.vb" />
+    <Compile Include="Entity\CT_ResultOfProduction.vb" />
+    <Compile Include="Entity\CT_StockSixMonth.vb" />
+    <Compile Include="Entity\CT_WIPAmount.vb" />
+    <Compile Include="Entity\CT_WIPAmount_Temp.vb" />
+    <Compile Include="Entity\CT_WIPCosting.vb" />
+    <Compile Include="Entity\CT_Yield.vb" />
+    <Compile Include="Entity\CW_DuToan_All.vb" />
+    <Compile Include="Entity\CW_DuToan_Good.vb" />
+    <Compile Include="Entity\CW_Outgoing.vb" />
+    <Compile Include="Entity\CW_Outgoing_Time.vb" />
+    <Compile Include="Entity\CW_StdTime_01.vb" />
+    <Compile Include="Entity\CW_StdTime_0101.vb" />
+    <Compile Include="Entity\CW_StdTime_12.vb" />
+    <Compile Include="Entity\CW_TBG.vb" />
+    <Compile Include="Entity\DCS_AlarmEmail.vb" />
+    <Compile Include="Entity\DCS_Constant.vb" />
+    <Compile Include="Entity\DCS_Data.vb" />
+    <Compile Include="Entity\DCS_Data_Original.vb" />
+    <Compile Include="Entity\DCS_Data_SPC.vb" />
+    <Compile Include="Entity\DCS_Define.vb" />
+    <Compile Include="Entity\DCS_Define_Original.vb" />
+    <Compile Include="Entity\DCS_Define_SPC.vb" />
+    <Compile Include="Entity\DCS_Import.vb" />
+    <Compile Include="Entity\DCS_KQ.vb" />
+    <Compile Include="Entity\DCS_KQ_Original.vb" />
+    <Compile Include="Entity\DCS_KQ_SPC.vb" />
+    <Compile Include="Entity\DCS_Product.vb" />
+    <Compile Include="Entity\DCS_SendMailLog.vb" />
+    <Compile Include="Entity\DCS_Setting.vb" />
+    <Compile Include="Entity\DCS_User.vb" />
+    <Compile Include="Entity\DEC_A3CODE.vb" />
+    <Compile Include="Entity\DEC_A4CODE.vb" />
+    <Compile Include="Entity\DEC_CADID.vb" />
+    <Compile Include="Entity\DEC_GUIDE.vb" />
+    <Compile Include="Entity\DEC_HardTool.vb" />
+    <Compile Include="Entity\DEC_LAZER.vb" />
+    <Compile Include="Entity\DEC_NC.vb" />
+    <Compile Include="Entity\DEC_SoftTool.vb" />
+    <Compile Include="Entity\DEC_StartCode.vb" />
+    <Compile Include="Entity\DF_DefectCdePR1.vb" />
+    <Compile Include="Entity\DF_DefectCdePR2.vb" />
+    <Compile Include="Entity\DF_RatePR1.vb" />
+    <Compile Include="Entity\DF_RatePR1Month.vb" />
+    <Compile Include="Entity\DF_RatePR2.vb" />
+    <Compile Include="Entity\DF_RatePR2Month.vb" />
+    <Compile Include="Entity\DF_TargetCodePR1.vb" />
+    <Compile Include="Entity\DF_TargetCodePR2.vb" />
+    <Compile Include="Entity\DF_TargetPR1.vb" />
+    <Compile Include="Entity\DF_TargetPR2.vb" />
+    <Compile Include="Entity\DOC_BaoAn.vb" />
+    <Compile Include="Entity\DOC_Dept.vb" />
+    <Compile Include="Entity\DOC_DeptDocument.vb" />
+    <Compile Include="Entity\DOC_DocRelate.vb" />
+    <Compile Include="Entity\DOC_Document.vb" />
+    <Compile Include="Entity\DOC_DocumentPreview.vb" />
+    <Compile Include="Entity\DOC_Email.vb" />
+    <Compile Include="Entity\DOC_Employee.vb" />
+    <Compile Include="Entity\DOC_EmpProcess.vb" />
+    <Compile Include="Entity\DOC_EmpRight.vb" />
+    <Compile Include="Entity\DOC_FileNghiepVu.vb" />
+    <Compile Include="Entity\DOC_Form.vb" />
+    <Compile Include="Entity\DOC_LogMail.vb" />
+    <Compile Include="Entity\DOC_MailDocPreview.vb" />
+    <Compile Include="Entity\DOC_NghiepVu.vb" />
+    <Compile Include="Entity\DOC_NghiepVuNhanVien.vb" />
+    <Compile Include="Entity\DOC_NghiepVuTaiLieu.vb" />
+    <Compile Include="Entity\DOC_NVCanDaoTao.vb" />
+    <Compile Include="Entity\DOC_Position.vb" />
+    <Compile Include="Entity\DOC_ProcessDocument.vb" />
+    <Compile Include="Entity\DOC_ProcessList.vb" />
+    <Compile Include="Entity\DOC_QuetThe.vb" />
+    <Compile Include="Entity\DOC_Schedule.vb" />
+    <Compile Include="Entity\Doc_Temp.vb" />
+    <Compile Include="Entity\DOC_Trainer.vb" />
+    <Compile Include="Entity\DOC_TrainingCourse.vb" />
+    <Compile Include="Entity\DS_Approver.vb" />
+    <Compile Include="Entity\DS_LuuMau.vb" />
+    <Compile Include="Entity\DS_LuuMauLai.vb" />
+    <Compile Include="Entity\DS_MuonMauDetail.vb" />
+    <Compile Include="Entity\DS_MuonMauHead.vb" />
+    <Compile Include="Entity\DS_Outgoing.vb" />
+    <Compile Include="Entity\DS_ThoiHanLuu.vb" />
+    <Compile Include="Entity\EMM_AlarmExpiryCode.vb" />
+    <Compile Include="Entity\EMM_B00Detail.vb" />
+    <Compile Include="Entity\EMM_BPCore.vb" />
+    <Compile Include="Entity\EMM_BPCore_DanhGia.vb" />
+    <Compile Include="Entity\EMM_BPCore_Supplier.vb" />
+    <Compile Include="Entity\EMM_CartonDetail.vb" />
+    <Compile Include="Entity\EMM_ChemicalDetail.vb" />
+    <Compile Include="Entity\EMM_DLVRList.vb" />
+    <Compile Include="Entity\EMM_K5K2NA590.vb" />
+    <Compile Include="Entity\EMM_MasterAQL.vb" />
+    <Compile Include="Entity\EMM_MasterCaIQC.vb" />
+    <Compile Include="Entity\EMM_MasterCarton.vb" />
+    <Compile Include="Entity\EMM_MasterJCode.vb" />
+    <Compile Include="Entity\EMM_MasterNangLucIQC.vb" />
+    <Compile Include="Entity\EMM_MasterNyLon.vb" />
+    <Compile Include="Entity\EMM_MasterPet.vb" />
+    <Compile Include="Entity\EMM_MasterSoLotU00.vb" />
+    <Compile Include="Entity\EMM_NangLucIQC.vb" />
+    <Compile Include="Entity\EMM_NylonDetail.vb" />
+    <Compile Include="Entity\EMM_ProductU00.vb" />
+    <Compile Include="Entity\EMM_ThoiGianIQC.vb" />
+    <Compile Include="Entity\EMM_TongSoLot.vb" />
+    <Compile Include="Entity\EMM_U00Detail.vb" />
+    <Compile Include="Entity\EMM_UnitAS.vb" />
+    <Compile Include="Entity\EMM_ViewStock.vb" />
+    <Compile Include="Entity\EMM_WhitePet.vb" />
+    <Compile Include="Entity\ES_Approve.vb" />
+    <Compile Include="Entity\ES_AttachFile.vb" />
+    <Compile Include="Entity\ES_AttachFileQA.vb" />
+    <Compile Include="Entity\ES_AttachFileTT.vb" />
+    <Compile Include="Entity\ES_Data.vb" />
+    <Compile Include="Entity\ES_EmailAproved.vb" />
+    <Compile Include="Entity\ES_FollowHistory.vb" />
+    <Compile Include="Entity\ES_FollowStategy.vb" />
+    <Compile Include="Entity\ES_HangMuc.vb" />
+    <Compile Include="Entity\ES_HangMucTest.vb" />
+    <Compile Include="Entity\ES_MauKiem.vb" />
+    <Compile Include="Entity\FA_GA.vb" />
+    <Compile Include="Entity\FA_Master.vb" />
+    <Compile Include="Entity\FA_TSCD.vb" />
+    <Compile Include="Entity\FIX_BBDiDoi.vb" />
+    <Compile Include="Entity\FIX_BBKiemKe.vb" />
+    <Compile Include="Entity\FIX_BBThanhLy.vb" />
+    <Compile Include="Entity\FIX_FixedAsset.vb" />
+    <Compile Include="Entity\FIX_FixedAssetConfirm.vb" />
+    <Compile Include="Entity\FIX_LoaiTaiSan.vb" />
+    <Compile Include="Entity\FIX_NhaCungCap.vb" />
+    <Compile Include="Entity\FIX_QDThanhLy.vb" />
+    <Compile Include="Entity\FIX_ThanhLy.vb" />
+    <Compile Include="Entity\FIX_TheTSCD.vb" />
+    <Compile Include="Entity\FIX_Tool.vb" />
+    <Compile Include="Entity\FPICS_Alarm.vb" />
+    <Compile Include="Entity\FPICS_Component.vb" />
+    <Compile Include="Entity\FPICS_Country.vb" />
+    <Compile Include="Entity\FPICS_DieFS.vb" />
+    <Compile Include="Entity\FPICS_GroupCode.vb" />
+    <Compile Include="Entity\FPICS_HolidayDate.vb" />
+    <Compile Include="Entity\FPICS_InspectionDaily.vb" />
+    <Compile Include="Entity\FPICS_ItemCode.vb" />
+    <Compile Include="Entity\FPICS_KQSX.vb" />
+    <Compile Include="Entity\FPICS_LeadTime.vb" />
+    <Compile Include="Entity\FPICS_LeadtimeCustomer.vb" />
+    <Compile Include="Entity\FPICS_LeadtimeDetailPP.vb" />
+    <Compile Include="Entity\FPICS_LeadTimePR.vb" />
+    <Compile Include="Entity\FPICS_LeadTimeProcess.vb" />
+    <Compile Include="Entity\FPICS_LeadTimeProcessPP.vb" />
+    <Compile Include="Entity\FPICS_LeadtimeProcessPR1.vb" />
+    <Compile Include="Entity\FPICS_LeadTimeSub.vb" />
+    <Compile Include="Entity\FPICS_LeadTimeSub1.vb" />
+    <Compile Include="Entity\FPICS_LeadTimeSubPR.vb" />
+    <Compile Include="Entity\FPICS_LeadTimeSubPR1.vb" />
+    <Compile Include="Entity\FPICS_LotNoU00.vb" />
+    <Compile Include="Entity\FPICS_LTCustomer.vb" />
+    <Compile Include="Entity\FPICS_LTSubDetail.vb" />
+    <Compile Include="Entity\FPICS_LTSubTarget.vb" />
+    <Compile Include="Entity\FPICS_LTSubTotal.vb" />
+    <Compile Include="Entity\FPICS_LyDoTonChuyen.vb" />
+    <Compile Include="Entity\FPICS_MasterFS.vb" />
+    <Compile Include="Entity\FPICS_MaterialPriceAll.vb" />
+    <Compile Include="Entity\FPICS_PONote.vb" />
+    <Compile Include="Entity\FPICS_PQT.vb" />
+    <Compile Include="Entity\FPICS_ProccessOrder.vb" />
+    <Compile Include="Entity\FPICS_ProcessResult.vb" />
+    <Compile Include="Entity\FPICS_ProcessResult2.vb" />
+    <Compile Include="Entity\FPICS_ProcessResultDVC.vb" />
+    <Compile Include="Entity\FPICS_ProductFilter.vb" />
+    <Compile Include="Entity\FPICS_ProgressSum.vb" />
+    <Compile Include="Entity\FPICS_ProgressSumLot.vb" />
+    <Compile Include="Entity\FPICS_StartLot.vb" />
+    <Compile Include="Entity\FPICS_Stock.vb" />
+    <Compile Include="Entity\FPICS_TV.vb" />
+    <Compile Include="Entity\FTIR_Data.vb" />
+    <Compile Include="Entity\FTIR_Image.vb" />
+    <Compile Include="Entity\GA_BC_Approver.vb" />
+    <Compile Include="Entity\GA_BC_BookCar.vb" />
+    <Compile Include="Entity\GA_BC_BookCarDetail.vb" />
+    <Compile Include="Entity\GA_BC_Driver.vb" />
+    <Compile Include="Entity\GSR_BWH.vb" />
+    <Compile Include="Entity\GSR_BWHDetail.vb" />
+    <Compile Include="Entity\GSR_GoodsDetail.vb" />
+    <Compile Include="Entity\GSR_GoodsOrderDetail.vb" />
+    <Compile Include="Entity\GSR_GoodsOrderHead.vb" />
+    <Compile Include="Entity\GSR_InvoiceFile.vb" />
+    <Compile Include="Entity\GSR_Leadtime.vb" />
+    <Compile Include="Entity\GSR_POFile.vb" />
+    <Compile Include="Entity\GSR_UserRight.vb" />
+    <Compile Include="Entity\HRA_Discipline.vb" />
+    <Compile Include="Entity\HRA_Email.vb" />
+    <Compile Include="Entity\HRA_Employee.vb" />
+    <Compile Include="Entity\HRA_EmployeeNot.vb" />
+    <Compile Include="Entity\HRA_Group.vb" />
+    <Compile Include="Entity\HRA_Head.vb" />
+    <Compile Include="Entity\HRA_Lock.vb" />
+    <Compile Include="Entity\HRA_MasterStd.vb" />
+    <Compile Include="Entity\HRA_MasterStd2.vb" />
+    <Compile Include="Entity\HRA_Password.vb" />
+    <Compile Include="Entity\HRA_Percent.vb" />
+    <Compile Include="Entity\HRA_Priority.vb" />
+    <Compile Include="Entity\HRA_SectionPoint.vb" />
+    <Compile Include="Entity\HRD_DocList.vb" />
+    <Compile Include="Entity\HRD_DocRight.vb" />
+    <Compile Include="Entity\HRD_DocType.vb" />
+    <Compile Include="Entity\HRD_Password.vb" />
+    <Compile Include="Entity\HRD_SubDocType.vb" />
+    <Compile Include="Entity\HRE_Discipline.vb" />
+    <Compile Include="Entity\HRE_Employee.vb" />
+    <Compile Include="Entity\HRE_EmployeeOff.vb" />
+    <Compile Include="Entity\HRE_Manager.vb" />
+    <Compile Include="Entity\HRE_Point.vb" />
+    <Compile Include="Entity\HRE_ViolateContent.vb" />
+    <Compile Include="Entity\HRE_Worktime.vb" />
+    <Compile Include="Entity\HRM_Emloyee.vb" />
+    <Compile Include="Entity\HRM_TinhThanh.vb" />
+    <Compile Include="Entity\HRR_AttachFile.vb" />
+    <Compile Include="Entity\HRR_DocRight.vb" />
+    <Compile Include="Entity\HRR_ReportList.vb" />
+    <Compile Include="Entity\HRR_ViewReport.vb" />
+    <Compile Include="Entity\HRT_Email.vb" />
+    <Compile Include="Entity\HRT_KeHoachDaoTao.vb" />
+    <Compile Include="Entity\HRT_KhoaDuLieu.vb" />
+    <Compile Include="Entity\HRT_KhoaHoc.vb" />
+    <Compile Include="Entity\HRT_KhoaHocChucVu.vb" />
+    <Compile Include="Entity\HRT_KhoaHocNhanVien.vb" />
+    <Compile Include="Entity\HRT_LinhVuc.vb" />
+    <Compile Include="Entity\HRT_Send20Monthly.vb" />
+    <Compile Include="Entity\HRT_Send25Monthly.vb" />
+    <Compile Include="Entity\HRT_SendDaily.vb" />
+    <Compile Include="Entity\HRT_SendMonthly.vb" />
+    <Compile Include="Entity\HRT_TaoKhoaHoc.vb" />
+    <Compile Include="Entity\ID_IncidentDevice.vb" />
+    <Compile Include="Entity\ID_LotNo.vb" />
+    <Compile Include="Entity\ID_MachineMaster.vb" />
+    <Compile Include="Entity\ID_MailList.vb" />
+    <Compile Include="Entity\ID_SendLog.vb" />
+    <Compile Include="Entity\ID_ThongTinSuCoPR.vb" />
+    <Compile Include="Entity\ILW_EOL.vb" />
+    <Compile Include="Entity\ILW_OutputPlan.vb" />
+    <Compile Include="Entity\ILW_OutputPlanTSB.vb" />
+    <Compile Include="Entity\ILW_OutputPlanTSBMonth.vb" />
+    <Compile Include="Entity\ILW_OutputPlan_Import.vb" />
+    <Compile Include="Entity\ILW_ProductMaster.vb" />
+    <Compile Include="Entity\ILW_StartLot.vb" />
+    <Compile Include="Entity\ILW_StartLotNew.vb" />
+    <Compile Include="Entity\ILW_Yield.vb" />
+    <Compile Include="Entity\INS_TLCP.vb" />
+    <Compile Include="Entity\INV_A1StdBomGr.vb" />
+    <Compile Include="Entity\INV_AccCostingTemp01.vb" />
+    <Compile Include="Entity\INV_AccCostingYield.vb" />
+    <Compile Include="Entity\INV_Group.vb" />
+    <Compile Include="Entity\INV_GroupMaster.vb" />
+    <Compile Include="Entity\INV_GroupNew.vb" />
+    <Compile Include="Entity\INV_GroupStatus.vb" />
+    <Compile Include="Entity\INV_IssueDailyGroupL.vb" />
+    <Compile Include="Entity\INV_LockData.vb" />
+    <Compile Include="Entity\INV_ProcessGroup.vb" />
+    <Compile Include="Entity\INV_ProcessGroupBefore.vb" />
+    <Compile Include="Entity\INV_ProcessGroupCustomer.vb" />
+    <Compile Include="Entity\INV_ProcessGroup_BCK.vb" />
+    <Compile Include="Entity\INV_ProcessMaster.vb" />
+    <Compile Include="Entity\INV_ProcessTemp.vb" />
+    <Compile Include="Entity\INV_ProductCodePP.vb" />
+    <Compile Include="Entity\INV_ProductTemp.vb" />
+    <Compile Include="Entity\INV_Progress.vb" />
+    <Compile Include="Entity\INV_StockGroupL.vb" />
+    <Compile Include="Entity\INV_UserGroup.vb" />
+    <Compile Include="Entity\INV_UserGroupNew.vb" />
+    <Compile Include="Entity\ITF_Email.vb" />
+    <Compile Include="Entity\ITF_Form001.vb" />
+    <Compile Include="Entity\ITF_Form001_Detail.vb" />
+    <Compile Include="Entity\ITF_Form004.vb" />
+    <Compile Include="Entity\ITF_Form004_Detail.vb" />
+    <Compile Include="Entity\ITF_Form007.vb" />
+    <Compile Include="Entity\ITF_Form010.vb" />
+    <Compile Include="Entity\ITF_Form014.vb" />
+    <Compile Include="Entity\ITF_Form014_Detail.vb" />
+    <Compile Include="Entity\KCB_AttachFile.vb" />
+    <Compile Include="Entity\KCB_CaLamViec.vb" />
+    <Compile Include="Entity\KCB_DonThuoc.vb" />
+    <Compile Include="Entity\KCB_Import_.vb" />
+    <Compile Include="Entity\KCB_Import_Tuthuoc_.vb" />
+    <Compile Include="Entity\KCB_MsBenh.vb" />
+    <Compile Include="Entity\KCB_MsDangMangThai.vb" />
+    <Compile Include="Entity\KCB_MsDungCu.vb" />
+    <Compile Include="Entity\KCB_MsNhomBenh.vb" />
+    <Compile Include="Entity\KCB_MsNhomDungCu.vb" />
+    <Compile Include="Entity\KCB_MsNhomThuoc.vb" />
+    <Compile Include="Entity\KCB_MsNuoiConDuoi1Tuoi.vb" />
+    <Compile Include="Entity\KCB_MsNVTangCa.vb" />
+    <Compile Include="Entity\KCB_MsNVXRay.vb" />
+    <Compile Include="Entity\KCB_MsSoCapCuu.vb" />
+    <Compile Include="Entity\KCB_MsThuoc.vb" />
+    <Compile Include="Entity\KCB_PDT.vb" />
+    <Compile Include="Entity\KCB_ReportRequestDetail.vb" />
+    <Compile Include="Entity\KCB_ReportRequestHead.vb" />
+    <Compile Include="Entity\KCB_ThongBaoHSD.vb" />
+    <Compile Include="Entity\KCB_ThuocDiUng.vb" />
+    <Compile Include="Entity\KCB_ThuocNhapKho.vb" />
+    <Compile Include="Entity\KQCV_PhuongPhap.vb" />
+    <Compile Include="Entity\KQQC_Code.vb" />
+    <Compile Include="Entity\KQQC_DetailNew.vb" />
+    <Compile Include="Entity\KQQC_KQCV.vb" />
+    <Compile Include="Entity\KQQC_KQCVNew.vb" />
+    <Compile Include="Entity\KQQC_KQCV_Detail.vb" />
+    <Compile Include="Entity\LABEL_Date.vb" />
+    <Compile Include="Entity\LABEL_Field.vb" />
+    <Compile Include="Entity\LABEL_Master.vb" />
+    <Compile Include="Entity\LABEL_Month.vb" />
+    <Compile Include="Entity\LABEL_PackingList.vb" />
+    <Compile Include="Entity\LABEL_ProductCustomer.vb" />
+    <Compile Include="Entity\LABEL_ProductInfo.vb" />
+    <Compile Include="Entity\LABEL_Type.vb" />
+    <Compile Include="Entity\LABEL_Year.vb" />
+    <Compile Include="Entity\LOA_BudgetCode.vb" />
+    <Compile Include="Entity\LOA_ExchangeRate.vb" />
+    <Compile Include="Entity\LOA_ExchangeRateNT.vb" />
+    <Compile Include="Entity\LOA_GeneralLedgerAccount.vb" />
+    <Compile Include="Entity\LOA_Inventory.vb" />
+    <Compile Include="Entity\LOA_StockIn.vb" />
+    <Compile Include="Entity\LOA_StockOut.vb" />
+    <Compile Include="Entity\LOA_TaxRate.vb" />
+    <Compile Include="Entity\LOA_UnitMaster.vb" />
+    <Compile Include="Entity\LOA_ViTriLuuKho.vb" />
+    <Compile Include="Entity\LOC_Export.vb" />
+    <Compile Include="Entity\LOC_ExportCD.vb" />
+    <Compile Include="Entity\LOC_ExportCD_Detail.vb" />
+    <Compile Include="Entity\LOC_Import.vb" />
+    <Compile Include="Entity\LOC_ItemCode.vb" />
+    <Compile Include="Entity\LOC_ItemCodeHinh.vb" />
+    <Compile Include="Entity\LOC_ItemCodeMinMax.vb" />
+    <Compile Include="Entity\LOC_PhongBanXuat.vb" />
+    <Compile Include="Entity\LOC_PhongBanXuatCD.vb" />
+    <Compile Include="Entity\LOC_Position.vb" />
+    <Compile Include="Entity\LOC_RequestTK.vb" />
+    <Compile Include="Entity\LOC_Stock.vb" />
+    <Compile Include="Entity\LOC_StockAll.vb" />
+    <Compile Include="Entity\LOC_StockDaily.vb" />
+    <Compile Include="Entity\LOC_StockLemon.vb" />
+    <Compile Include="Entity\LOC_StockMonthly.vb" />
+    <Compile Include="Entity\LOR_AdjustNEV.vb" />
+    <Compile Include="Entity\LOR_DailyStock.vb" />
+    <Compile Include="Entity\LOR_ExportNDV.vb" />
+    <Compile Include="Entity\LOR_ExportNEV.vb" />
+    <Compile Include="Entity\LOR_ImportAS.vb" />
+    <Compile Include="Entity\LOR_ImportNEV.vb" />
+    <Compile Include="Entity\LOR_ImportReturn.vb" />
+    <Compile Include="Entity\LOR_StockAC.vb" />
+    <Compile Include="Entity\LOR_StockNEV.vb" />
+    <Compile Include="Entity\LOS_ItemChemical.vb" />
+    <Compile Include="Entity\LOS_MasterU00.vb" />
+    <Compile Include="Entity\LOS_NhapXuatTon.vb" />
+    <Compile Include="Entity\LOS_Position.vb" />
+    <Compile Include="Entity\LOS_StockDaily.vb" />
+    <Compile Include="Entity\LOS_StockIn.vb" />
+    <Compile Include="Entity\LOS_StockOut.vb" />
+    <Compile Include="Entity\LOS_StockOut2.vb" />
+    <Compile Include="Entity\LO_AmountTaxQuater.vb" />
+    <Compile Include="Entity\LO_AmountTaxYear.vb" />
+    <Compile Include="Entity\LO_ASMaterial.vb" />
+    <Compile Include="Entity\LO_CostingWIP.vb" />
+    <Compile Include="Entity\LO_ExchangeRate.vb" />
+    <Compile Include="Entity\LO_ImportCD.vb" />
+    <Compile Include="Entity\LO_InventoryMaterial.vb" />
+    <Compile Include="Entity\LO_InventoryStock.vb" />
+    <Compile Include="Entity\LO_InventoryStockItem.vb" />
+    <Compile Include="Entity\LO_LockNormal.vb" />
+    <Compile Include="Entity\LO_LockQuater.vb" />
+    <Compile Include="Entity\LO_Material.vb" />
+    <Compile Include="Entity\LO_MaterialItem.vb" />
+    <Compile Include="Entity\LO_MaterialStockAS400.vb" />
+    <Compile Include="Entity\LO_MaterialStockSite.vb" />
+    <Compile Include="Entity\LO_MaterialStockWIP.vb" />
+    <Compile Include="Entity\LO_MaterialUse.vb" />
+    <Compile Include="Entity\LO_Normal.vb" />
+    <Compile Include="Entity\LO_Normal_Old.vb" />
+    <Compile Include="Entity\LO_Normal_Sale.vb" />
+    <Compile Include="Entity\LO_Product.vb" />
+    <Compile Include="Entity\LO_ProductLinked.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderDaily.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderDailyStock.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderDetail.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderDetailStock.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderDetail_Temp.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderFC.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderStock.vb" />
+    <Compile Include="Entity\LO_PurchaseOrderStore.vb" />
+    <Compile Include="Entity\LO_Quater.vb" />
+    <Compile Include="Entity\LO_ReportCustoms.vb" />
+    <Compile Include="Entity\LO_ReportCustoms_Temp.vb" />
+    <Compile Include="Entity\LO_RePurchaseOrderDaily.vb" />
+    <Compile Include="Entity\LO_RePurchaseOrderDetail.vb" />
+    <Compile Include="Entity\LO_ResultBalance.vb" />
+    <Compile Include="Entity\LO_SaleOrderDaily.vb" />
+    <Compile Include="Entity\LO_SaleOrderDetail.vb" />
+    <Compile Include="Entity\LO_SaleOrderFC.vb" />
+    <Compile Include="Entity\LO_StockMaterialComparison.vb" />
+    <Compile Include="Entity\LO_TaxMaster.vb" />
+    <Compile Include="Entity\LO_Temp.vb" />
+    <Compile Include="Entity\LO_TonVT.vb" />
+    <Compile Include="Entity\LTU_Demo.vb" />
+    <Compile Include="Entity\LT_LeadtimeTV.vb" />
+    <Compile Include="Entity\Main_AdminInfo.vb" />
+    <Compile Include="Entity\Main_Connection.vb" />
+    <Compile Include="Entity\Main_ControlRight.vb" />
+    <Compile Include="Entity\Main_Department.vb" />
+    <Compile Include="Entity\Main_FormRight.vb" />
+    <Compile Include="Entity\Main_GroupMail.vb" />
+    <Compile Include="Entity\Main_GroupRight.vb" />
+    <Compile Include="Entity\Main_GroupRightDetail.vb" />
+    <Compile Include="Entity\Main_Language.vb" />
+    <Compile Include="Entity\Main_MasterConfig.vb" />
+    <Compile Include="Entity\Main_MasterLanguage.vb" />
+    <Compile Include="Entity\Main_MemberList.vb" />
+    <Compile Include="Entity\Main_Message.vb" />
+    <Compile Include="Entity\Main_Module.vb" />
+    <Compile Include="Entity\Main_ModuleConnect.vb" />
+    <Compile Include="Entity\Main_ModuleDocument.vb" />
+    <Compile Include="Entity\Main_ModuleGroup.vb" />
+    <Compile Include="Entity\Main_NotifyMessageTime.vb" />
+    <Compile Include="Entity\Main_PathInfo.vb" />
+    <Compile Include="Entity\Main_RequestAprovedAll.vb" />
+    <Compile Include="Entity\Main_User.vb" />
+    <Compile Include="Entity\Main_UserGroup.vb" />
+    <Compile Include="Entity\Main_UserRight.vb" />
+    <Compile Include="Entity\Main_UserRightDetail.vb" />
+    <Compile Include="Entity\Main_WhoOnline.vb" />
+    <Compile Include="Entity\MC_Approver.vb" />
+    <Compile Include="Entity\MC_CustomerPcs.vb" />
+    <Compile Include="Entity\MC_Employee.vb" />
+    <Compile Include="Entity\MC_ListNormal.vb" />
+    <Compile Include="Entity\MC_ListRequest.vb" />
+    <Compile Include="Entity\MC_Machine.vb" />
+    <Compile Include="Entity\MC_Process.vb" />
+    <Compile Include="Entity\MC_ProductProcess.vb" />
+    <Compile Include="Entity\MC_RequestHead.vb" />
+    <Compile Include="Entity\MC_ResultNormal.vb" />
+    <Compile Include="Entity\MC_ResultRequest.vb" />
+    <Compile Include="Entity\MDQA_DefectCode.vb" />
+    <Compile Include="Entity\MDQA_Employee.vb" />
+    <Compile Include="Entity\MDQA_KT1.vb" />
+    <Compile Include="Entity\MDQA_KT1_Detail.vb" />
+    <Compile Include="Entity\MDQA_KTPL.vb" />
+    <Compile Include="Entity\MDQA_KTPL_Detail.vb" />
+    <Compile Include="Entity\MDQA_Lock.vb" />
+    <Compile Include="Entity\MDQA_SSI.vb" />
+    <Compile Include="Entity\MFPC_Alarm.vb" />
+    <Compile Include="Entity\MFPC_Data.vb" />
+    <Compile Include="Entity\MFPC_Email.vb" />
+    <Compile Include="Entity\MFPC_EmailLineGroupCC.vb" />
+    <Compile Include="Entity\MFPC_IssueList.vb" />
+    <Compile Include="Entity\MFPC_ProductPrice.vb" />
+    <Compile Include="Entity\MFPC_ReportFPC.vb" />
+    <Compile Include="Entity\MFPC_ReportMail.vb" />
+    <Compile Include="Entity\MT_EstimateMaterialFix.vb" />
+    <Compile Include="Entity\MT_MaterialMaster.vb" />
+    <Compile Include="Entity\MT_NDVStockReceived.vb" />
+    <Compile Include="Entity\MT_ProductMaster.vb" />
+    <Compile Include="Entity\MT_ShipPlanningAdjLot.vb" />
+    <Compile Include="Entity\MT_ShipPlanningEndLot.vb" />
+    <Compile Include="Entity\MT_ShipPlanningPcsNotStd.vb" />
+    <Compile Include="Entity\MT_ShipPlanningStdLot.vb" />
+    <Compile Include="Entity\MT_StandardMaterial.vb" />
+    <Compile Include="Entity\MT_StillOrderToBWH.vb" />
+    <Compile Include="Entity\MT_StillOrderToNDV.vb" />
+    <Compile Include="Entity\NT_Forecast.vb" />
+    <Compile Include="Entity\NT_MsCustomer.vb" />
+    <Compile Include="Entity\NT_MsItem.vb" />
+    <Compile Include="Entity\NT_MsPrice.vb" />
+    <Compile Include="Entity\NT_SaleOrder.vb" />
+    <Compile Include="Entity\OT_Employee.vb" />
+    <Compile Include="Entity\OT_EmployeeOff.vb" />
+    <Compile Include="Entity\OT_GroupMail.vb" />
+    <Compile Include="Entity\OT_HolidayDate.vb" />
+    <Compile Include="Entity\OT_HolidayStaff.vb" />
+    <Compile Include="Entity\OT_HROT.vb" />
+    <Compile Include="Entity\OT_Lock.vb" />
+    <Compile Include="Entity\OT_Mail.vb" />
+    <Compile Include="Entity\OT_Monthly.vb" />
+    <Compile Include="Entity\OT_Observation.vb" />
+    <Compile Include="Entity\OT_RegisterOT.vb" />
+    <Compile Include="Entity\OT_RegisterOTDetail.vb" />
+    <Compile Include="Entity\OT_SectionMail.vb" />
+    <Compile Include="Entity\OT_ThaiSan.vb" />
+    <Compile Include="Entity\OT_Weekly.vb" />
+    <Compile Include="Entity\OT_YearLy.vb" />
+    <Compile Include="Entity\PCM_ApprovedNoJCode.vb" />
+    <Compile Include="Entity\PCM_Dept.vb" />
+    <Compile Include="Entity\PCM_GetEndLot.vb" />
+    <Compile Include="Entity\PCM_ImportCodePP.vb" />
+    <Compile Include="Entity\PCM_LockDay.vb" />
+    <Compile Include="Entity\PCM_MterNotJCode.vb" />
+    <Compile Include="Entity\PCM_MterTrayU00.vb" />
+    <Compile Include="Entity\PCM_NotJCode.vb" />
+    <Compile Include="Entity\PCM_OutDirect.vb" />
+    <Compile Include="Entity\PCM_Stock.vb" />
+    <Compile Include="Entity\PCM_StockOld.vb" />
+    <Compile Include="Entity\PCM_SubMter.vb" />
+    <Compile Include="Entity\PCM_TrayU00.vb" />
+    <Compile Include="Entity\PCM_UnitRate.vb" />
+    <Compile Include="Entity\PCM_UserRight.vb" />
+    <Compile Include="Entity\PCM_WorkshopInsertStock.vb" />
+    <Compile Include="Entity\PCM_WorkshopOut.vb" />
+    <Compile Include="Entity\PCM_WorkshopStock.vb" />
+    <Compile Include="Entity\PD_CompleteProcess.vb" />
+    <Compile Include="Entity\PD_ConfigWT.vb" />
+    <Compile Include="Entity\PD_CustomerHour.vb" />
+    <Compile Include="Entity\PD_DailyOutputPlanning.vb" />
+    <Compile Include="Entity\PD_DailyOutputPlanning_1.vb" />
+    <Compile Include="Entity\PD_DoubleSideProduct.vb" />
+    <Compile Include="Entity\PD_FirstLotHS.vb" />
+    <Compile Include="Entity\PD_HSMachine.vb" />
+    <Compile Include="Entity\PD_LeadtimeLot.vb" />
+    <Compile Include="Entity\PD_LotProcessStatusDetail.vb" />
+    <Compile Include="Entity\PD_LotProcessStatusHead.vb" />
+    <Compile Include="Entity\PD_LotStatusDetail.vb" />
+    <Compile Include="Entity\PD_LotStatusDetail_1.vb" />
+    <Compile Include="Entity\PD_LotStatusHead.vb" />
+    <Compile Include="Entity\PD_LotStatusHead_1.vb" />
+    <Compile Include="Entity\PD_MsCustomer.vb" />
+    <Compile Include="Entity\PD_MsLeadTime.vb" />
+    <Compile Include="Entity\PD_MsPdFilm.vb" />
+    <Compile Include="Entity\PD_MsProductLeadTime.vb" />
+    <Compile Include="Entity\PD_MsReportGroup.vb" />
+    <Compile Include="Entity\PD_MsRestDate.vb" />
+    <Compile Include="Entity\PD_MsRestDate_1.vb" />
+    <Compile Include="Entity\PD_PlanHour.vb" />
+    <Compile Include="Entity\PD_ProcessHour.vb" />
+    <Compile Include="Entity\PD_ProcessHourNew.vb" />
+    <Compile Include="Entity\PD_ProcessLeadTime.vb" />
+    <Compile Include="Entity\PEM_MachineMaster.vb" />
+    <Compile Include="Entity\PEM_QLSC.vb" />
+    <Compile Include="Entity\PLM_BOM_Stk.vb" />
+    <Compile Include="Entity\PLM_BWH_Stock.vb" />
+    <Compile Include="Entity\PLM_Chuan_HaoPhi.vb" />
+    <Compile Include="Entity\PLM_EOL.vb" />
+    <Compile Include="Entity\PLM_FC_BOO.vb" />
+    <Compile Include="Entity\PLM_FC_BWH.vb" />
+    <Compile Include="Entity\PLM_FC_MAT.vb" />
+    <Compile Include="Entity\PLM_FGGood.vb" />
+    <Compile Include="Entity\PLM_ItemMaster.vb" />
+    <Compile Include="Entity\PLM_LOStock.vb" />
+    <Compile Include="Entity\PLM_PO.vb" />
+    <Compile Include="Entity\PLM_SiteStock.vb" />
+    <Compile Include="Entity\PLM_TLHaoPhi.vb" />
+    <Compile Include="Entity\PLM_WIP.vb" />
+    <Compile Include="Entity\PLO_DonHang.vb" />
+    <Compile Include="Entity\PLO_GioCong.vb" />
+    <Compile Include="Entity\PLO_LyDo.vb" />
+    <Compile Include="Entity\PLO_MaxLot.vb" />
+    <Compile Include="Entity\PLO_NguyenLieu.vb" />
+    <Compile Include="Entity\PLO_Phong.vb" />
+    <Compile Include="Entity\PLO_PlanOutput.vb" />
+    <Compile Include="Entity\PLO_TBG.vb" />
+    <Compile Include="Entity\PL_CollectionPackinglist.vb" />
+    <Compile Include="Entity\PL_DataConfirm.vb" />
+    <Compile Include="Entity\PL_GeneralPackinglist.vb" />
+    <Compile Include="Entity\PL_MasterLayer.vb" />
+    <Compile Include="Entity\PL_MasterShipto.vb" />
+    <Compile Include="Entity\PL_PackinglistDetail.vb" />
+    <Compile Include="Entity\PL_PackinglistDetail_2.vb" />
+    <Compile Include="Entity\PL_PackingMaterial.vb" />
+    <Compile Include="Entity\PL_Pallet.vb" />
+    <Compile Include="Entity\PL_PalletMaster.vb" />
+    <Compile Include="Entity\PL_Shipping.vb" />
+    <Compile Include="Entity\PM_AGL.vb" />
+    <Compile Include="Entity\PM_Employee.vb" />
+    <Compile Include="Entity\PM_Inspection.vb" />
+    <Compile Include="Entity\PM_Locked.vb" />
+    <Compile Include="Entity\PM_Pacemarker.vb" />
+    <Compile Include="Entity\PM_Position.vb" />
+    <Compile Include="Entity\PM_Shift.vb" />
+    <Compile Include="Entity\PM_SuspendTime.vb" />
+    <Compile Include="Entity\PM_Table.vb" />
+    <Compile Include="Entity\PO_ConfirmMaterial.vb" />
+    <Compile Include="Entity\PO_GCCPR.vb" />
+    <Compile Include="Entity\PO_Inspection.vb" />
+    <Compile Include="Entity\PO_KHXH.vb" />
+    <Compile Include="Entity\PO_MsWeekPlan.vb" />
+    <Compile Include="Entity\PO_NLBG.vb" />
+    <Compile Include="Entity\PO_NLPK.vb" />
+    <Compile Include="Entity\PO_PatternCapacity.vb" />
+    <Compile Include="Entity\PO_ProcessingTime.vb" />
+    <Compile Include="Entity\PO_ProductFilm.vb" />
+    <Compile Include="Entity\PO_Requirement.vb" />
+    <Compile Include="Entity\PO_StartLot.vb" />
+    <Compile Include="Entity\PO_TBGKPL.vb" />
+    <Compile Include="Entity\PR2_TQ_Target.vb" />
+    <Compile Include="Entity\PS_Actual.vb" />
+    <Compile Include="Entity\PS_BaoCaoGioCongTT.vb" />
+    <Compile Include="Entity\PS_BaoCaoTuanPR.vb" />
+    <Compile Include="Entity\PS_CommentNS.vb" />
+    <Compile Include="Entity\PS_ConfirmAC.vb" />
+    <Compile Include="Entity\PS_FCBudgetAC.vb" />
+    <Compile Include="Entity\PS_HieuSuatMay.vb" />
+    <Compile Include="Entity\PS_HieuSuatSealing.vb" />
+    <Compile Include="Entity\PS_ItemCodeUse.vb" />
+    <Compile Include="Entity\PS_KetQua01.vb" />
+    <Compile Include="Entity\PS_KimNgach.vb" />
+    <Compile Include="Entity\PS_KQTonKho.vb" />
+    <Compile Include="Entity\PS_LockKimNgach.vb" />
+    <Compile Include="Entity\PS_PlanPcsAC.vb" />
+    <Compile Include="Entity\PS_PlanPcsACXH.vb" />
+    <Compile Include="Entity\PS_PlanWeek.vb" />
+    <Compile Include="Entity\PS_ProductCodeLS.vb" />
+    <Compile Include="Entity\PS_ProductCodeRS.vb" />
+    <Compile Include="Entity\PS_Productivity.vb" />
+    <Compile Include="Entity\PS_ProductivityLS.vb" />
+    <Compile Include="Entity\PS_ProductivityMonth.vb" />
+    <Compile Include="Entity\PS_ProductivityRS.vb" />
+    <Compile Include="Entity\PS_RollcallHR.vb" />
+    <Compile Include="Entity\PS_StockBegin.vb" />
+    <Compile Include="Entity\PS_Target.vb" />
+    <Compile Include="Entity\PS_TargetGr.vb" />
+    <Compile Include="Entity\PS_TargetPlan.vb" />
+    <Compile Include="Entity\PS_TargetRS.vb" />
+    <Compile Include="Entity\PS_TargetShift3.vb" />
+    <Compile Include="Entity\PS_TargetTonKho.vb" />
+    <Compile Include="Entity\PS_Yield.vb" />
+    <Compile Include="Entity\PS_YieldMonth.vb" />
+    <Compile Include="Entity\QAE_Abnormal.vb" />
+    <Compile Include="Entity\QAE_Approver.vb" />
+    <Compile Include="Entity\QAE_Calibration.vb" />
+    <Compile Include="Entity\QAE_Cancel.vb" />
+    <Compile Include="Entity\QAE_EquidList.vb" />
+    <Compile Include="Entity\QAE_Register.vb" />
+    <Compile Include="Entity\QAE_Verify.vb" />
+    <Compile Include="Entity\QA_AccessRight.vb" />
+    <Compile Include="Entity\QA_ApprovedShipping.vb" />
+    <Compile Include="Entity\QA_AQL.vb" />
+    <Compile Include="Entity\QA_ConfirmExport.vb" />
+    <Compile Include="Entity\QA_ECode.vb" />
+    <Compile Include="Entity\QA_Log.vb" />
+    <Compile Include="Entity\QA_MauDoDacTinh.vb" />
+    <Compile Include="Entity\QA_Password.vb" />
+    <Compile Include="Entity\QA_Product.vb" />
+    <Compile Include="Entity\QA_ProductAE.vb" />
+    <Compile Include="Entity\QA_RandomSample.vb" />
+    <Compile Include="Entity\QA_ShipTo.vb" />
+    <Compile Include="Entity\QCE_Approver.vb" />
+    <Compile Include="Entity\QCE_DanhSachLoi.vb" />
+    <Compile Include="Entity\QCE_ListRequest.vb" />
+    <Compile Include="Entity\QCE_RequestHead.vb" />
+    <Compile Include="Entity\QCI_Approver.vb" />
+    <Compile Include="Entity\QCI_InspectorList.vb" />
+    <Compile Include="Entity\QCI_KetQuaThi.vb" />
+    <Compile Include="Entity\QCI_RequestXN.vb" />
+    <Compile Include="Entity\QCI_RequestYC.vb" />
+    <Compile Include="Entity\QCI_XNKPV.vb" />
+    <Compile Include="Entity\QCS_DataDetail.vb" />
+    <Compile Include="Entity\QCS_DataHead.vb" />
+    <Compile Include="Entity\QCS_Define.vb" />
+    <Compile Include="Entity\QIDR_ChangingRequest.vb" />
+    <Compile Include="Entity\QIDR_ChangingRequestFile.vb" />
+    <Compile Include="Entity\QIDR_ComplaintReport.vb" />
+    <Compile Include="Entity\QIDR_ComplaintReportFile.vb" />
+    <Compile Include="Entity\QIDR_Customer.vb" />
+    <Compile Include="Entity\QIDR_Defect.vb" />
+    <Compile Include="Entity\QIDR_DR.vb" />
+    <Compile Include="Entity\QIDR_DRFile.vb" />
+    <Compile Include="Entity\QIDR_GeneralType.vb" />
+    <Compile Include="Entity\QIDR_QualityIssue.vb" />
+    <Compile Include="Entity\QIDR_QualityIssueDefect.vb" />
+    <Compile Include="Entity\QIDR_QualityIssueFile.vb" />
+    <Compile Include="Entity\QIDR_QualityIssueStatus.vb" />
+    <Compile Include="Entity\QIDR_Specification.vb" />
+    <Compile Include="Entity\QIDR_SpecificationDefect.vb" />
+    <Compile Include="Entity\QIDR_SpecificationFile.vb" />
+    <Compile Include="Entity\QIDR_SpecificationInfor.vb" />
+    <Compile Include="Entity\QIDR_SpecificationInforFile.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD2_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD2_2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD2_3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD3_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD3_2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD3_3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD4.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD4_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD4_2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD4_3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD4_4.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD5.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD5_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD5_2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD5_3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD6.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD6_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD7.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD7_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD7_2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD7_3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD8.vb" />
+    <Compile Include="Entity\QI_ClaimIssueD8_1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueDetail.vb" />
+    <Compile Include="Entity\QI_ClaimIssueHead.vb" />
+    <Compile Include="Entity\QI_ClaimIssueHead_CustomerReport.vb" />
+    <Compile Include="Entity\QI_ClaimIssueHead_Files1.vb" />
+    <Compile Include="Entity\QI_ClaimIssueHead_Files2.vb" />
+    <Compile Include="Entity\QI_ClaimIssueHead_Files3.vb" />
+    <Compile Include="Entity\QI_ClaimIssueHead_Files4.vb" />
+    <Compile Include="Entity\QI_Defect.vb" />
+    <Compile Include="Entity\QI_ProductList.vb" />
+    <Compile Include="Entity\QI_SelectionData.vb" />
+    <Compile Include="Entity\QI_TempplateFile.vb" />
+    <Compile Include="Entity\QP_CostingBOM.vb" />
+    <Compile Include="Entity\QP_CostingTE.vb" />
+    <Compile Include="Entity\QP_Customer.vb" />
+    <Compile Include="Entity\QP_EstimateData.vb" />
+    <Compile Include="Entity\QP_ExchangeRate.vb" />
+    <Compile Include="Entity\QP_HourPc.vb" />
+    <Compile Include="Entity\QP_INS.vb" />
+    <Compile Include="Entity\QP_MaterialPrice.vb" />
+    <Compile Include="Entity\QP_MsPeriod.vb" />
+    <Compile Include="Entity\QP_PeriodCostingBOM.vb" />
+    <Compile Include="Entity\QP_Selling.vb" />
+    <Compile Include="Entity\QP_SellingPeriod.vb" />
+    <Compile Include="Entity\RI_DefectCode_Day.vb" />
+    <Compile Include="Entity\RI_DefectCode_Pd.vb" />
+    <Compile Include="Entity\RI_KQH_Day.vb" />
+    <Compile Include="Entity\RI_KQH_Pd.vb" />
+    <Compile Include="Entity\RM_Detail.vb" />
+    <Compile Include="Entity\RM_Head.vb" />
+    <Compile Include="Entity\RM_ThamKien.vb" />
+    <Compile Include="Entity\RN_Detail.vb" />
+    <Compile Include="Entity\RN_Head.vb" />
+    <Compile Include="Entity\RP_ClosedRequest.vb" />
+    <Compile Include="Entity\RP_Program.vb" />
+    <Compile Include="Entity\RP_RequestConfirm.vb" />
+    <Compile Include="Entity\RP_RequestHead.vb" />
+    <Compile Include="Entity\RRP_CreateUser.vb" />
+    <Compile Include="Entity\RRP_ReportRiceDaily.vb" />
+    <Compile Include="Entity\RR_Rollcall.vb" />
+    <Compile Include="Entity\RW_Employee.vb" />
+    <Compile Include="Entity\RW_ItemList.vb" />
+    <Compile Include="Entity\RW_Winner.vb" />
+    <Compile Include="Entity\SE_DocList.vb" />
+    <Compile Include="Entity\SE_DocType.vb" />
+    <Compile Include="Entity\SE_Document.vb" />
+    <Compile Include="Entity\SE_Email.vb" />
+    <Compile Include="Entity\SE_EmpDocument.vb" />
+    <Compile Include="Entity\SE_EmpMaster.vb" />
+    <Compile Include="Entity\SE_Nhom.vb" />
+    <Compile Include="Entity\SE_ResultTraining.vb" />
+    <Compile Include="Entity\SE_ResultTraining2.vb" />
+    <Compile Include="Entity\SE_Type.vb" />
+    <Compile Include="Entity\SM_DailyDeliverySchedule.vb" />
+    <Compile Include="Entity\SM_HolidayCustomer.vb" />
+    <Compile Include="Entity\SM_LotLe.vb" />
+    <Compile Include="Entity\SM_Master.vb" />
+    <Compile Include="Entity\SM_PlanExport.vb" />
+    <Compile Include="Entity\SM_PlanOut.vb" />
+    <Compile Include="Entity\SM_Stock.vb" />
+    <Compile Include="Entity\SM_TLCP.vb" />
+    <Compile Include="Entity\SM_WeeklyDeliverySchedule.vb" />
+    <Compile Include="Entity\SSI_Employee.vb" />
+    <Compile Include="Entity\SSI_Result.vb" />
+    <Compile Include="Entity\Sst_ASMonthlySalesSummary.vb" />
+    <Compile Include="Entity\Sst_ASMonthlyWarehouseStock.vb" />
+    <Compile Include="Entity\Sst_AVGPrice.vb" />
+    <Compile Include="Entity\Sst_ChildJCode.vb" />
+    <Compile Include="Entity\Sst_DetailWH.vb" />
+    <Compile Include="Entity\Sst_Group.vb" />
+    <Compile Include="Entity\Sst_GroupOfUser.vb" />
+    <Compile Include="Entity\Sst_ImportDateTime.vb" />
+    <Compile Include="Entity\Sst_Inspection.vb" />
+    <Compile Include="Entity\Sst_Inspection_Temp.vb" />
+    <Compile Include="Entity\Sst_LockAll.vb" />
+    <Compile Include="Entity\Sst_LockGroup.vb" />
+    <Compile Include="Entity\Sst_M2.vb" />
+    <Compile Include="Entity\Sst_MasterWh.vb" />
+    <Compile Include="Entity\Sst_MaterialIn.vb" />
+    <Compile Include="Entity\Sst_MaterialInBom.vb" />
+    <Compile Include="Entity\Sst_MaterialUse.vb" />
+    <Compile Include="Entity\Sst_NewestPrice.vb" />
+    <Compile Include="Entity\Sst_ParentJCode.vb" />
+    <Compile Include="Entity\Sst_ProductPrice.vb" />
+    <Compile Include="Entity\Sst_Quotation.vb" />
+    <Compile Include="Entity\Sst_StandardWidth.vb" />
+    <Compile Include="Entity\Sst_Stock.vb" />
+    <Compile Include="Entity\Sst_Tools.vb" />
+    <Compile Include="Entity\Sst_WarehouseOfUser.vb" />
+    <Compile Include="Entity\STM_Approve24.vb" />
+    <Compile Include="Entity\STM_Approve36M.vb" />
+    <Compile Include="Entity\STM_ApproveStock.vb" />
+    <Compile Include="Entity\STM_Inventory.vb" />
+    <Compile Include="Entity\STM_InventoryAll.vb" />
+    <Compile Include="Entity\STM_InventoryAll_MONTH.vb" />
+    <Compile Include="Entity\STM_InventoryAll_MONTH_Note.vb" />
+    <Compile Include="Entity\STM_InventoryReason.vb" />
+    <Compile Include="Entity\STM_InventoryReasonNDV.vb" />
+    <Compile Include="Entity\STM_ItemHoaChat.vb" />
+    <Compile Include="Entity\STM_MasterLuuKho.vb" />
+    <Compile Include="Entity\STM_PricePdCode.vb" />
+    <Compile Include="Entity\STM_ProductStockNote.vb" />
+    <Compile Include="Entity\STM_StockIn.vb" />
+    <Compile Include="Entity\STM_WIP_Note.vb" />
+    <Compile Include="Entity\ST_BudgetMonth.vb" />
+    <Compile Include="Entity\ST_BugetTemp.vb" />
+    <Compile Include="Entity\ST_InStock.vb" />
+    <Compile Include="Entity\ST_ItemSupplier.vb" />
+    <Compile Include="Entity\ST_LockData.vb" />
+    <Compile Include="Entity\ST_MsDefaultApprover.vb" />
+    <Compile Include="Entity\ST_MsEmail.vb" />
+    <Compile Include="Entity\ST_MsItemCode.vb" />
+    <Compile Include="Entity\ST_MsSection.vb" />
+    <Compile Include="Entity\ST_StationeryIssue.vb" />
+    <Compile Include="Entity\ST_StationeryReceive.vb" />
+    <Compile Include="Entity\ST_StationeryRequestDetail.vb" />
+    <Compile Include="Entity\ST_StationeryRequestDetail_NoneItem.vb" />
+    <Compile Include="Entity\ST_StationeryRequestHead.vb" />
+    <Compile Include="Entity\SWTFC_CalcStd.vb" />
+    <Compile Include="Entity\SWTFC_CalcStd_ACT.vb" />
+    <Compile Include="Entity\SWTFC_CalcStd_TE.vb" />
+    <Compile Include="Entity\SWTFC_CompareKQACT.vb" />
+    <Compile Include="Entity\SWTFC_CompareKQDVC.vb" />
+    <Compile Include="Entity\SWTFC_CompareKQDVC_BK.vb" />
+    <Compile Include="Entity\SWTFC_CompareKQTE.vb" />
+    <Compile Include="Entity\SWTFC_CompareLockACT.vb" />
+    <Compile Include="Entity\SWTFC_CompareLockDVC.vb" />
+    <Compile Include="Entity\SWTFC_CompareLockTE.vb" />
+    <Compile Include="Entity\SWTFC_DetailFC.vb" />
+    <Compile Include="Entity\SWTFC_DetailFC101.vb" />
+    <Compile Include="Entity\SWTFC_DetailKQ.vb" />
+    <Compile Include="Entity\SWTFC_DetailKQ101.vb" />
+    <Compile Include="Entity\SWTFC_DetailSumKQ.vb" />
+    <Compile Include="Entity\SWTFC_ForecastHTH.vb" />
+    <Compile Include="Entity\SWTFC_ForecastPerson.vb" />
+    <Compile Include="Entity\SWTFC_ForecastPersonDetail.vb" />
+    <Compile Include="Entity\SWTFC_ForecastPersonDetail_ACT.vb" />
+    <Compile Include="Entity\SWTFC_ForecastPersonDetail_TE.vb" />
+    <Compile Include="Entity\SWTFC_ForecastPerson_ACT.vb" />
+    <Compile Include="Entity\SWTFC_ForecastPerson_TE.vb" />
+    <Compile Include="Entity\SWTFC_ForecastTinhLai.vb" />
+    <Compile Include="Entity\SWTFC_ProcessType.vb" />
+    <Compile Include="Entity\SWTFC_Productivity.vb" />
+    <Compile Include="Entity\SWTFC_ProductivityPR.vb" />
+    <Compile Include="Entity\SWTFC_Quarter.vb" />
+    <Compile Include="Entity\SWTFC_QuaterRate.vb" />
+    <Compile Include="Entity\SWTFC_QuotationConfirm.vb" />
+    <Compile Include="Entity\SWTFC_QuotationDate.vb" />
+    <Compile Include="Entity\SWTFC_QuotationFinal.vb" />
+    <Compile Include="Entity\SWTFC_QuotationGT.vb" />
+    <Compile Include="Entity\SWTFC_QuotationTT.vb" />
+    <Compile Include="Entity\SWTFC_SQM.vb" />
+    <Compile Include="Entity\SWTFC_StandardWasteTimeCutomer.vb" />
+    <Compile Include="Entity\SWTFC_StandardWasteTimeGroup.vb" />
+    <Compile Include="Entity\SWTFC_StandardWasteTimePR.vb" />
+    <Compile Include="Entity\SWTFC_SummaryCompare.vb" />
+    <Compile Include="Entity\SWTFC_SummaryCompareACT.vb" />
+    <Compile Include="Entity\SWTFC_SummaryCompareTE.vb" />
+    <Compile Include="Entity\SWTFC_SummaryKQCVStandard.vb" />
+    <Compile Include="Entity\SWTFC_SummaryKQCVStandard_ACT.vb" />
+    <Compile Include="Entity\SWTFC_SummaryKQCVStandard_TE.vb" />
+    <Compile Include="Entity\SWTFC_SummaryTBG.vb" />
+    <Compile Include="Entity\SWTFC_SummaryTBGSub.vb" />
+    <Compile Include="Entity\SWTFC_TBG1.vb" />
+    <Compile Include="Entity\SWTFC_TBG1Sub.vb" />
+    <Compile Include="Entity\SWTFC_TempKQ.vb" />
+    <Compile Include="Entity\SWTFC_TempSKQ.vb" />
+    <Compile Include="Entity\SWTFC_TLCP.vb" />
+    <Compile Include="Entity\SWTFC_WorkDay.vb" />
+    <Compile Include="Entity\SWTFC_WorkDay_ACT.vb" />
+    <Compile Include="Entity\SWTFC_WorkDay_TE.vb" />
+    <Compile Include="Entity\SWTFC_WorkingResult.vb" />
+    <Compile Include="Entity\SWTFC_WorkingResult07.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimePerson.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimePerson_ACT.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimePerson_TE.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimeStd.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimeStdAct.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimeStdAct_ACT.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimeStdAct_TE.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimeStd_ACT.vb" />
+    <Compile Include="Entity\SWTFC_WorkTimeStd_TE.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailFCPdCode_Temp101.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailFCPdCode_Temp101_ACT.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailFCPdCode_Temp101_TE.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailPdCode_Temp.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailPdCode_Temp101.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailPdCode_Temp101_ACT.vb" />
+    <Compile Include="Entity\SWTFC_WTDetailPdCode_Temp101_TE.vb" />
+    <Compile Include="Entity\sysdiagrams.vb" />
+    <Compile Include="Entity\T2.vb" />
+    <Compile Include="Entity\TPR_DocConfirm.vb" />
+    <Compile Include="Entity\TPR_Document.vb" />
+    <Compile Include="Entity\TPR_Edu.vb" />
+    <Compile Include="Entity\TPR_EduEmp.vb" />
+    <Compile Include="Entity\TPR_Employee.vb" />
+    <Compile Include="Entity\TPR_Group.vb" />
+    <Compile Include="Entity\TPR_Line.vb" />
+    <Compile Include="Entity\TPR_NangLuc_Detail.vb" />
+    <Compile Include="Entity\TPR_NangLuc_Head.vb" />
+    <Compile Include="Entity\TPR_ProcessName.vb" />
+    <Compile Include="Entity\TPR_Process_Doc.vb" />
+    <Compile Include="Entity\TPR_Training.vb" />
+    <Compile Include="Entity\TPR_Type.vb" />
+    <Compile Include="Entity\TR_InputData.vb" />
+    <Compile Include="Entity\TR_InputDataDetail.vb" />
+    <Compile Include="Entity\TR_Standard.vb" />
+    <Compile Include="Entity\TV_Setting.vb" />
+    <Compile Include="Entity\UDM_CDDHistory.vb" />
+    <Compile Include="Entity\UDM_ETA_Delivery.vb" />
+    <Compile Include="Entity\UDM_ETA_Shipment.vb" />
+    <Compile Include="Entity\UDM_ExConfigBooking.vb" />
+    <Compile Include="Entity\UDM_ExConfigBooking2.vb" />
+    <Compile Include="Entity\UDM_ExCustomsDeclaration.vb" />
+    <Compile Include="Entity\UDM_ExCustomsDeclarationDetail.vb" />
+    <Compile Include="Entity\UDM_ExDestinationAllocation.vb" />
+    <Compile Include="Entity\UDM_ExMsFromTo.vb" />
+    <Compile Include="Entity\UDM_ExMsImporter.vb" />
+    <Compile Include="Entity\UDM_ExMsItemcode.vb" />
+    <Compile Include="Entity\UDM_ExMsShipTo.vb" />
+    <Compile Include="Entity\UDM_ExMsShipTo2.vb" />
+    <Compile Include="Entity\UDM_ExPackingDivMaster.vb" />
+    <Compile Include="Entity\UDM_ExPackingListIssueHistory.vb" />
+    <Compile Include="Entity\UDM_ExPackingListIssueHistory2.vb" />
+    <Compile Include="Entity\UDM_ExPackingListIssueHistory3.vb" />
+    <Compile Include="Entity\UDM_ExParameters.vb" />
+    <Compile Include="Entity\UDM_ExportInvoice.vb" />
+    <Compile Include="Entity\UDM_Export_XTNOld.vb" />
+    <Compile Include="Entity\UDM_ExXuatBanRac.vb" />
+    <Compile Include="Entity\UDM_GeneralPackinglist.vb" />
+    <Compile Include="Entity\UDM_Import.vb" />
+    <Compile Include="Entity\UDM_ImportDetail.vb" />
+    <Compile Include="Entity\UDM_ImportHistory.vb" />
+    <Compile Include="Entity\UDM_ImportItemCode.vb" />
+    <Compile Include="Entity\UDM_ImportPODelivery.vb" />
+    <Compile Include="Entity\UDM_Import_NTXOld.vb" />
+    <Compile Include="Entity\UDM_InfoPalet.vb" />
+    <Compile Include="Entity\UDM_LogisticsMsFeeType.vb" />
+    <Compile Include="Entity\UDM_LogisticsOther.vb" />
+    <Compile Include="Entity\UDM_LogisticsPaymentDocs.vb" />
+    <Compile Include="Entity\UDM_LogisticsPaymentDocs_Bck.vb" />
+    <Compile Include="Entity\UDM_LogisticsPaymentFile.vb" />
+    <Compile Include="Entity\UDM_LogisticsPaymentHistory.vb" />
+    <Compile Include="Entity\UDM_LogisticsQuotation.vb" />
+    <Compile Include="Entity\UDM_LogisticsQuotationDetail.vb" />
+    <Compile Include="Entity\UDM_LogisticsQuotationFile.vb" />
+    <Compile Include="Entity\UDM_LogisticsQuotation_2.vb" />
+    <Compile Include="Entity\UDM_MFGAllocation.vb" />
+    <Compile Include="Entity\UDM_MFGAllocationPrice.vb" />
+    <Compile Include="Entity\UDM_MFGCostOfProduction.vb" />
+    <Compile Include="Entity\UDM_MFGCostReport.vb" />
+    <Compile Include="Entity\UDM_MFGInvoiceAmount.vb" />
+    <Compile Include="Entity\UDM_MFGLCM.vb" />
+    <Compile Include="Entity\UDM_MFGLockData.vb" />
+    <Compile Include="Entity\UDM_MFGMaterialReportDetail.vb" />
+    <Compile Include="Entity\UDM_MFGMaterialReportSum.vb" />
+    <Compile Include="Entity\UDM_MFGPurchaseMaterial.vb" />
+    <Compile Include="Entity\UDM_MFGStockMaterial.vb" />
+    <Compile Include="Entity\UDM_MFGTaiXuatTieuHuy.vb" />
+    <Compile Include="Entity\UDM_MsBeforeChemical.vb" />
+    <Compile Include="Entity\UDM_MsChemicalLicence.vb" />
+    <Compile Include="Entity\UDM_MsCommodityCode.vb" />
+    <Compile Include="Entity\UDM_MsCountry.vb" />
+    <Compile Include="Entity\UDM_MsCurrency.vb" />
+    <Compile Include="Entity\UDM_MsCustomsBroker.vb" />
+    <Compile Include="Entity\UDM_MsDeliveryTerms.vb" />
+    <Compile Include="Entity\UDM_MsExporter.vb" />
+    <Compile Include="Entity\UDM_MsFlightTime.vb" />
+    <Compile Include="Entity\UDM_MsInvoiceCode.vb" />
+    <Compile Include="Entity\UDM_MsItemCode.vb" />
+    <Compile Include="Entity\UDM_MsJCode.vb" />
+    <Compile Include="Entity\UDM_MsLoadingPort.vb" />
+    <Compile Include="Entity\UDM_MsMode.vb" />
+    <Compile Include="Entity\UDM_MsPriceInvoiceCode.vb" />
+    <Compile Include="Entity\UDM_MsTranCode.vb" />
+    <Compile Include="Entity\UDM_MsUnit.vb" />
+    <Compile Include="Entity\UDM_MsUnloadingPort.vb" />
+    <Compile Include="Entity\UDM_MsWarehouseCode.vb" />
+    <Compile Include="Entity\UDM_PackinglistDetail_2.vb" />
+    <Compile Include="Entity\UDM_Pallet.vb" />
+    <Compile Include="Entity\UDM_ReportChemical.vb" />
+    <Compile Include="Entity\UDM_ReportDate.vb" />
+    <Compile Include="Entity\UDM_ReportExIm.vb" />
+    <Compile Include="Entity\UDM_ReportFixedAsset.vb" />
+    <Compile Include="Entity\UDM_ReportFixedAssetDestroy.vb" />
+    <Compile Include="Entity\UDM_ReportImEx.vb" />
+    <Compile Include="Entity\UDM_ReportInvestmentZone.vb" />
+    <Compile Include="Entity\UDM_ReportInvestmentZoneDestroyed.vb" />
+    <Compile Include="Entity\UDM_ReportInvestmentZoneDestroyedDetail.vb" />
+    <Compile Include="Entity\UDM_ReportInvestmentZoneReExport.vb" />
+    <Compile Include="Entity\UDM_ReportInvestmentZoneStock.vb" />
+    <Compile Include="Entity\UDM_TaxRate.vb" />
+    <Compile Include="Entity\UDM_TLDetail.vb" />
+    <Compile Include="Entity\UDM_TLHead.vb" />
+    <Compile Include="Entity\UNI_DanhMuc.vb" />
+    <Compile Include="Entity\UNI_DoiDongPhuc.vb" />
+    <Compile Include="Entity\UNI_DongPhuc.vb" />
+    <Compile Include="Entity\UNI_EmloyeeMaster.vb" />
+    <Compile Include="Entity\UNI_EmployeeStd.vb" />
+    <Compile Include="Entity\UNI_EmployeeStd_Temp.vb" />
+    <Compile Include="Entity\UNI_EmployeeUniform.vb" />
+    <Compile Include="Entity\UNI_GACode.vb" />
+    <Compile Include="Entity\UNI_GroupStd.vb" />
+    <Compile Include="Entity\Uni_HistoryImportStock.vb" />
+    <Compile Include="Entity\UNI_Kho.vb" />
+    <Compile Include="Entity\UNI_Lock.vb" />
+    <Compile Include="Entity\UNI_Mail.vb" />
+    <Compile Include="Entity\UNI_MasterDanhmuc.vb" />
+    <Compile Include="Entity\UNI_MSCode.vb" />
+    <Compile Include="Entity\Uni_Nhap.vb" />
+    <Compile Include="Entity\UNI_Note.vb" />
+    <Compile Include="Entity\UNI_Order.vb" />
+    <Compile Include="Entity\UNI_PhanNan.vb" />
+    <Compile Include="Entity\UNI_RequestDetail.vb" />
+    <Compile Include="Entity\UNI_RequestUniform.vb" />
+    <Compile Include="Entity\UNI_SectionUniform.vb" />
+    <Compile Include="Entity\UNI_Stock.vb" />
+    <Compile Include="Entity\UNI_Temp.vb" />
+    <Compile Include="Entity\Uni_Tra.vb" />
+    <Compile Include="Entity\Uni_Xuat.vb" />
+    <Compile Include="Entity\WC_ExportNDV.vb" />
+    <Compile Include="Entity\WC_ExportNP.vb" />
+    <Compile Include="Entity\WC_ImportNDV.vb" />
+    <Compile Include="Entity\WC_ImportNDV_Adjust.vb" />
+    <Compile Include="Entity\WC_ImportNP.vb" />
+    <Compile Include="Entity\WC_InvoiceNo.vb" />
+    <Compile Include="Entity\WC_MasterPallet.vb" />
+    <Compile Include="Entity\WC_TruckingNDV.vb" />
+    <Compile Include="Entity\WC_TruckingNP.vb" />
+    <Compile Include="Entity\WC_UnitPrice.vb" />
+    <Compile Include="Entity\WC_WarehouseCostNDV.vb" />
+    <Compile Include="Entity\WC_WarehouseCostNP.vb" />
+    <Compile Include="Entity\WS_ProcessMaster.vb" />
+    <Compile Include="Entity\WS_Reason.vb" />
+    <Compile Include="Entity\WS_ViewbyProcess.vb" />
+    <Compile Include="Entity\WTFC_ApproveTBG.vb" />
+    <Compile Include="Entity\WTFC_Backup.vb" />
+    <Compile Include="Entity\WTFC_CustomerProduct.vb" />
+    <Compile Include="Entity\WTFC_Forecast.vb" />
+    <Compile Include="Entity\WTFC_ForecastListByProcess.vb" />
+    <Compile Include="Entity\WTFC_ForecastListByProcess_ACT.vb" />
+    <Compile Include="Entity\WTFC_ForecastListByProcess_BK.vb" />
+    <Compile Include="Entity\WTFC_ForecastListByProcess_SX.vb" />
+    <Compile Include="Entity\WTFC_ForecastListByProcess_TE.vb" />
+    <Compile Include="Entity\WTFC_ForecastLog.vb" />
+    <Compile Include="Entity\WTFC_ForecastStd.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroup.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroupSub.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroupSub_ACT.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroupSub_SX.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroupSub_TE.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroup_ACT.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroup_SX.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTByGroup_TE.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTReport.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTReport_ACT.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTReport_SX.vb" />
+    <Compile Include="Entity\WTFC_ForecastWTReport_TE.vb" />
+    <Compile Include="Entity\WTFC_ImportDate.vb" />
+    <Compile Include="Entity\WTFC_LockForecast.vb" />
+    <Compile Include="Entity\WTFC_Process.vb" />
+    <Compile Include="Entity\WTFC_ProcessType.vb" />
+    <Compile Include="Entity\WTFC_ProductHistory.vb" />
+    <Compile Include="Entity\WTFC_ProductLength.vb" />
+    <Compile Include="Entity\WTFC_QuaterForecast.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_ACT.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_ACT_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_New.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_New_ACT.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_New_SX.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_New_TE.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_SX.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_SX_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_TE.vb" />
+    <Compile Include="Entity\WTFC_StandardUnitSub_TE_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_ACT.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_ACT_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_New.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_New_ACT.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_New_SX.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_New_TE.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_SX.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_SX_BK.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_TE.vb" />
+    <Compile Include="Entity\WTFC_StandardUnit_TE_BK.vb" />
+    <Compile Include="Entity\WTFC_SubProcess.vb" />
+    <Compile Include="Entity\WTFC_SubProcessType.vb" />
+    <Compile Include="Entity\WTFC_SubType.vb" />
+    <Compile Include="Entity\WTFC_TotalByGroup.vb" />
+    <Compile Include="Entity\WTFC_TotalByGroup_ACT.vb" />
+    <Compile Include="Entity\WTFC_TotalByGroup_SX.vb" />
+    <Compile Include="Entity\WTFC_TotalByGroup_TE.vb" />
+    <Compile Include="Entity\WTFC_Type.vb" />
+    <Compile Include="Entity\WTFC_U00.vb" />
+    <Compile Include="Entity\WTFC_WorkTime.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_ACT.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_BK.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_Sub.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_Sub_ACT.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_Sub_SX.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_Sub_TBG.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_Sub_TE.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_SX.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_TBG.vb" />
+    <Compile Include="Entity\WTFC_WorkTime_TE.vb" />
+    <Compile Include="Entity\WT_ActualM2PcsPR.vb" />
+    <Compile Include="Entity\WT_ActualM2PcsPR2.vb" />
+    <Compile Include="Entity\WT_ActualPcsCustomer.vb" />
+    <Compile Include="Entity\WT_AGLHistory.vb" />
+    <Compile Include="Entity\WT_AGLHistory_BK.vb" />
+    <Compile Include="Entity\WT_BorrowLend.vb" />
+    <Compile Include="Entity\WT_BorrowLend_History.vb" />
+    <Compile Include="Entity\WT_CauHinh.vb" />
+    <Compile Include="Entity\WT_ConfirmRCHR.vb" />
+    <Compile Include="Entity\WT_Customer.vb" />
+    <Compile Include="Entity\WT_CustomerPercentRate.vb" />
+    <Compile Include="Entity\WT_EatRelax.vb" />
+    <Compile Include="Entity\WT_Employee.vb" />
+    <Compile Include="Entity\WT_ExplainBC.vb" />
+    <Compile Include="Entity\WT_ExportCD.vb" />
+    <Compile Include="Entity\WT_Factory.vb" />
+    <Compile Include="Entity\WT_FeeTime.vb" />
+    <Compile Include="Entity\WT_FeeTime_History.vb" />
+    <Compile Include="Entity\WT_GiaiThichHieuSuat.vb" />
+    <Compile Include="Entity\WT_Group.vb" />
+    <Compile Include="Entity\WT_Group2.vb" />
+    <Compile Include="Entity\WT_Group2_Time.vb" />
+    <Compile Include="Entity\WT_GroupOfUser.vb" />
+    <Compile Include="Entity\WT_HieuSuatMay.vb" />
+    <Compile Include="Entity\WT_LockGroup.vb" />
+    <Compile Include="Entity\WT_LockNangSuat.vb" />
+    <Compile Include="Entity\WT_LockTT.vb" />
+    <Compile Include="Entity\WT_LogDate.vb" />
+    <Compile Include="Entity\WT_NewEmployee.vb" />
+    <Compile Include="Entity\WT_NoteDiemDanh.vb" />
+    <Compile Include="Entity\WT_PlanPcs.vb" />
+    <Compile Include="Entity\WT_PlanPcsM2.vb" />
+    <Compile Include="Entity\WT_PlanPcsWeek.vb" />
+    <Compile Include="Entity\WT_PlanPcsWeekXH.vb" />
+    <Compile Include="Entity\WT_PlanPcsXH.vb" />
+    <Compile Include="Entity\WT_Product.vb" />
+    <Compile Include="Entity\WT_ProductPrice.vb" />
+    <Compile Include="Entity\WT_Rollcall.vb" />
+    <Compile Include="Entity\WT_RollcallGR.vb" />
+    <Compile Include="Entity\WT_RollcallHR.vb" />
+    <Compile Include="Entity\WT_RollcallHR_2014.vb" />
+    <Compile Include="Entity\WT_RollcallHR_Temp.vb" />
+    <Compile Include="Entity\WT_RollcallPR.vb" />
+    <Compile Include="Entity\WT_Rollcall_2014.vb" />
+    <Compile Include="Entity\WT_Rollcall_History.vb" />
+    <Compile Include="Entity\WT_ScanTime.vb" />
+    <Compile Include="Entity\WT_ScanTime_2014.vb" />
+    <Compile Include="Entity\WT_SubGroup.vb" />
+    <Compile Include="Entity\WT_SummaryFT.vb" />
+    <Compile Include="Entity\WT_SummaryFTOP.vb" />
+    <Compile Include="Entity\WT_SummaryRC.vb" />
+    <Compile Include="Entity\WT_SummaryWorktime.vb" />
+    <Compile Include="Entity\WT_SummaryWorktimeNG.vb" />
+    <Compile Include="Entity\WT_SummaryWorktimeOK.vb" />
+    <Compile Include="Entity\WT_SummaryWorktimeTBG.vb" />
+    <Compile Include="Entity\WT_TBGChuan.vb" />
+    <Compile Include="Entity\WT_TBGChuan_INS1.vb" />
+    <Compile Include="Entity\WT_TBGChuan_SG.vb" />
+    <Compile Include="Entity\WT_TBGNguyenNhan.vb" />
+    <Compile Include="Entity\WT_Time.vb" />
+    <Compile Include="Entity\WT_TimeGroup.vb" />
+    <Compile Include="Entity\WT_TotalDayHour.vb" />
+    <Compile Include="Entity\WT_Unit.vb" />
+    <Compile Include="Entity\WT_UnNormalData.vb" />
+    <Compile Include="Entity\WT_WorkingResultDetail.vb" />
+    <Compile Include="Entity\WT_WorkingResultDetail_2014.vb" />
+    <Compile Include="Entity\WT_WorkingResultHead.vb" />
+    <Compile Include="Entity\WT_WorkingResultHead_2014.vb" />
+    <Compile Include="Fpics\dtproperties.vb" />
+    <Compile Include="Fpics\em_Box.vb" />
+    <Compile Include="Fpics\em_ProductPacking.vb" />
+    <Compile Include="Fpics\em_ProductShippingInformation.vb" />
+    <Compile Include="Fpics\em_Rank.vb" />
+    <Compile Include="Fpics\et_CaseMark.vb" />
+    <Compile Include="Fpics\et_PackingInstruction.vb" />
+    <Compile Include="Fpics\et_PackingInstruction2.vb" />
+    <Compile Include="Fpics\et_PackingInstruction3.vb" />
+    <Compile Include="Fpics\et_PackingInstructionHeadingBag.vb" />
+    <Compile Include="Fpics\et_PackingInstructionHeadingBox.vb" />
+    <Compile Include="Fpics\et_PackingListAddressHistory.vb" />
+    <Compile Include="Fpics\et_PackingListIssueHistory.vb" />
+    <Compile Include="Fpics\et_PackingListIssueHistory2.vb" />
+    <Compile Include="Fpics\et_PackingListIssueHistory3.vb" />
+    <Compile Include="Fpics\et_ProductExpireDate.vb" />
+    <Compile Include="Fpics\mm_ImportExportCommodity.vb" />
+    <Compile Include="Fpics\mm_KeepMethod.vb" />
+    <Compile Include="Fpics\mm_MaterialManagement.vb" />
+    <Compile Include="Fpics\mm_MaterialManagement_00.vb" />
+    <Compile Include="Fpics\mm_MaterialRevision.vb" />
+    <Compile Include="Fpics\mm_MaterialRevision_00.vb" />
+    <Compile Include="Fpics\mm_MaterialUnitPrice.vb" />
+    <Compile Include="Fpics\mm_Message.vb" />
+    <Compile Include="Fpics\mm_Resource.vb" />
+    <Compile Include="Fpics\mm_Warehouse.vb" />
+    <Compile Include="Fpics\MSpub_identity_range.vb" />
+    <Compile Include="Fpics\MSreplication_subscriptions.vb" />
+    <Compile Include="Fpics\MSsubscription_agents.vb" />
+    <Compile Include="Fpics\MSsubscription_properties.vb" />
+    <Compile Include="Fpics\mt_MaterialInOutHistory.vb" />
+    <Compile Include="Fpics\mt_MaterialSerialCounter.vb" />
+    <Compile Include="Fpics\mt_MaterialSerialNumber.vb" />
+    <Compile Include="Fpics\mt_MaterialSerialNumber_03.vb" />
+    <Compile Include="Fpics\mt_MaterialSerialNumber_99.vb" />
+    <Compile Include="Fpics\mt_MaterialStock.vb" />
+    <Compile Include="Fpics\mt_MaterialStock_99.vb" />
+    <Compile Include="Fpics\m_Agency.vb" />
+    <Compile Include="Fpics\m_Checker.vb" />
+    <Compile Include="Fpics\m_CheckerDrawing.vb" />
+    <Compile Include="Fpics\m_CheckerKeeping.vb" />
+    <Compile Include="Fpics\m_Component.vb" />
+    <Compile Include="Fpics\m_ComponentAssembly.vb" />
+    <Compile Include="Fpics\m_ComponentName.vb" />
+    <Compile Include="Fpics\m_ComponentProcess.vb" />
+    <Compile Include="Fpics\m_ComponentProcessFactory.vb" />
+    <Compile Include="Fpics\m_ComponentProcessFactoryHistory.vb" />
+    <Compile Include="Fpics\m_CurrencyRate.vb" />
+    <Compile Include="Fpics\m_CurrencyUnit.vb" />
+    <Compile Include="Fpics\m_Customer.vb" />
+    <Compile Include="Fpics\m_Defect.vb" />
+    <Compile Include="Fpics\m_DefectClass.vb" />
+    <Compile Include="Fpics\m_DeleteCause.vb" />
+    <Compile Include="Fpics\m_Die.vb" />
+    <Compile Include="Fpics\m_DieDrawing.vb" />
+    <Compile Include="Fpics\m_DieKeeping.vb" />
+    <Compile Include="Fpics\m_Equipment.vb" />
+    <Compile Include="Fpics\m_EquipmentGroup.vb" />
+    <Compile Include="Fpics\m_Factory.vb" />
+    <Compile Include="Fpics\m_HoldCause.vb" />
+    <Compile Include="Fpics\m_Material.vb" />
+    <Compile Include="Fpics\m_Material2.vb" />
+    <Compile Include="Fpics\m_MaterialClass.vb" />
+    <Compile Include="Fpics\m_MaterialPurpose.vb" />
+    <Compile Include="Fpics\m_MaterialUnitPrice.vb" />
+    <Compile Include="Fpics\m_MenuButton.vb" />
+    <Compile Include="Fpics\m_MenuTab.vb" />
+    <Compile Include="Fpics\m_OperationInstruction.vb" />
+    <Compile Include="Fpics\m_Operator.vb" />
+    <Compile Include="Fpics\m_Packing.vb" />
+    <Compile Include="Fpics\m_PdiSecurityInformation.vb" />
+    <Compile Include="Fpics\m_Place.vb" />
+    <Compile Include="Fpics\m_Process.vb" />
+    <Compile Include="Fpics\m_Process2.vb" />
+    <Compile Include="Fpics\m_ProcessEquipment.vb" />
+    <Compile Include="Fpics\m_ProcessMethod.vb" />
+    <Compile Include="Fpics\m_ProcessUnitPrice.vb" />
+    <Compile Include="Fpics\m_Product.vb" />
+    <Compile Include="Fpics\m_ProductUnitPrice.vb" />
+    <Compile Include="Fpics\m_Purpose1.vb" />
+    <Compile Include="Fpics\m_Purpose2.vb" />
+    <Compile Include="Fpics\m_RequiredChecker.vb" />
+    <Compile Include="Fpics\m_RequiredDie.vb" />
+    <Compile Include="Fpics\m_RequiredMaterial.vb" />
+    <Compile Include="Fpics\m_RequiredSubcontractor.vb" />
+    <Compile Include="Fpics\m_ReservedPlace.vb" />
+    <Compile Include="Fpics\m_Resource.vb" />
+    <Compile Include="Fpics\m_Sales.vb" />
+    <Compile Include="Fpics\m_ScrapCause.vb" />
+    <Compile Include="Fpics\m_StopCause.vb" />
+    <Compile Include="Fpics\m_StopInstruction.vb" />
+    <Compile Include="Fpics\m_StructureInstruction.vb" />
+    <Compile Include="Fpics\m_Subcontractor.vb" />
+    <Compile Include="Fpics\m_SubcontractorUnitPrice.vb" />
+    <Compile Include="Fpics\m_Supplier.vb" />
+    <Compile Include="Fpics\m_Unit.vb" />
+    <Compile Include="Fpics\pm_CountProcess.vb" />
+    <Compile Include="Fpics\pm_DisplayTerminal.vb" />
+    <Compile Include="Fpics\pm_Holiday.vb" />
+    <Compile Include="Fpics\pm_ProcessGroup.vb" />
+    <Compile Include="Fpics\pm_ProductDeliveryRevision.vb" />
+    <Compile Include="Fpics\pm_ShiftTime.vb" />
+    <Compile Include="Fpics\pt_ASOrderTemporary.vb" />
+    <Compile Include="Fpics\pt_DailyDeliverySchedule.vb" />
+    <Compile Include="Fpics\pt_GroupWorkPlan.vb" />
+    <Compile Include="Fpics\pt_GroupWorkResult.vb" />
+    <Compile Include="Fpics\pt_GroupWorkResultHistory.vb" />
+    <Compile Include="Fpics\pt_GroupWorkResultTemporary.vb" />
+    <Compile Include="Fpics\pt_OrderReserveLot.vb" />
+    <Compile Include="Fpics\pt_Schedule.vb" />
+    <Compile Include="Fpics\pt_ScheduleInformation.vb" />
+    <Compile Include="Fpics\pt_UpdateInstruction.vb" />
+    <Compile Include="Fpics\pt_WeeklyDeliverySchedule.vb" />
+    <Compile Include="Fpics\sysarticles.vb" />
+    <Compile Include="Fpics\sysarticleupdates.vb" />
+    <Compile Include="Fpics\syspublications.vb" />
+    <Compile Include="Fpics\sysschemaarticles.vb" />
+    <Compile Include="Fpics\syssubscriptions.vb" />
+    <Compile Include="Fpics\systranschemas.vb" />
+    <Compile Include="Fpics\t_AbsoluteProcessFinishHistory.vb" />
+    <Compile Include="Fpics\t_ASMaterialInOutHistory.vb" />
+    <Compile Include="Fpics\t_ASMaterialItem.vb" />
+    <Compile Include="Fpics\t_ASMaterialItemVendor.vb" />
+    <Compile Include="Fpics\t_ASMaterialPrice.vb" />
+    <Compile Include="Fpics\t_ASMaterialStock.vb" />
+    <Compile Include="Fpics\t_ASMaterialStockAssessment.vb" />
+    <Compile Include="Fpics\t_ASMaterialVendor.vb" />
+    <Compile Include="Fpics\t_ASMonthSales.vb" />
+    <Compile Include="Fpics\t_ASOrderTemporary.vb" />
+    <Compile Include="Fpics\t_ASProductAddress.vb" />
+    <Compile Include="Fpics\t_ASProductItem.vb" />
+    <Compile Include="Fpics\t_ASProductPrice.vb" />
+    <Compile Include="Fpics\t_ASProductStock.vb" />
+    <Compile Include="Fpics\t_ASPurchaseOrderDelivery.vb" />
+    <Compile Include="Fpics\t_ASPurchaseOrderDeliveryHistory.vb" />
+    <Compile Include="Fpics\t_ASPurchaseOrderHead.vb" />
+    <Compile Include="Fpics\t_ASPurchaseOrderHeadHistory.vb" />
+    <Compile Include="Fpics\t_ASPurchaseOrderLine.vb" />
+    <Compile Include="Fpics\t_ASPurchaseOrderLineHistory.vb" />
+    <Compile Include="Fpics\t_ASSalesOrderDelivery.vb" />
+    <Compile Include="Fpics\t_ASSalesOrderHead.vb" />
+    <Compile Include="Fpics\t_ASSalesOrderLine.vb" />
+    <Compile Include="Fpics\t_ASWarehouseStock.vb" />
+    <Compile Include="Fpics\t_CompleteSheetIssueHistory.vb" />
+    <Compile Include="Fpics\t_CompleteSheetIssueHistory2.vb" />
+    <Compile Include="Fpics\t_CompleteSheetIssueHistory2_99.vb" />
+    <Compile Include="Fpics\t_CompleteSheetIssueHistory3.vb" />
+    <Compile Include="Fpics\t_CompleteSheetIssueHistory3_99.vb" />
+    <Compile Include="Fpics\t_CompleteSheetIssueHistory_99.vb" />
+    <Compile Include="Fpics\t_CompleteSheetLinkInformation.vb" />
+    <Compile Include="Fpics\t_ComponentDeleteHistory.vb" />
+    <Compile Include="Fpics\t_ComponentDeleteHistory2.vb" />
+    <Compile Include="Fpics\t_ComponentDeleteHistory_99.vb" />
+    <Compile Include="Fpics\t_ComponentQuantityChangeHistory.vb" />
+    <Compile Include="Fpics\t_ComponentUse.vb" />
+    <Compile Include="Fpics\t_Counter.vb" />
+    <Compile Include="Fpics\t_DaySchedule.vb" />
+    <Compile Include="Fpics\t_DisposalEnd.vb" />
+    <Compile Include="Fpics\t_DisposalInstruction1.vb" />
+    <Compile Include="Fpics\t_DisposalLot.vb" />
+    <Compile Include="Fpics\t_FactoryInHistory.vb" />
+    <Compile Include="Fpics\t_FactoryOutHistory.vb" />
+    <Compile Include="Fpics\t_HoldLot.vb" />
+    <Compile Include="Fpics\t_InspectionResult.vb" />
+    <Compile Include="Fpics\t_InspectionResult2.vb" />
+    <Compile Include="Fpics\t_InspectionResult2_99.vb" />
+    <Compile Include="Fpics\t_InspectionResult2_99_bak.vb" />
+    <Compile Include="Fpics\t_InspectionResult2_bak.vb" />
+    <Compile Include="Fpics\t_InspectionResult3.vb" />
+    <Compile Include="Fpics\t_InspectionResult3_99.vb" />
+    <Compile Include="Fpics\t_InspectionResult3_99_bak.vb" />
+    <Compile Include="Fpics\t_InspectionResult3_bak.vb" />
+    <Compile Include="Fpics\t_InspectionResult_99.vb" />
+    <Compile Include="Fpics\t_InspectionResult_99_bak.vb" />
+    <Compile Include="Fpics\t_InspectionResult_bak.vb" />
+    <Compile Include="Fpics\t_LotEndHistory.vb" />
+    <Compile Include="Fpics\t_LotEndHistory_99.vb" />
+    <Compile Include="Fpics\t_ManufactureLot.vb" />
+    <Compile Include="Fpics\t_ManufactureLotTemp.vb" />
+    <Compile Include="Fpics\t_ManufactureLotTempHistory.vb" />
+    <Compile Include="Fpics\t_MaterialLabel.vb" />
+    <Compile Include="Fpics\t_MenuButtonState.vb" />
+    <Compile Include="Fpics\t_MenuState.vb" />
+    <Compile Include="Fpics\t_MenuTabState.vb" />
+    <Compile Include="Fpics\t_OperationTerminal.vb" />
+    <Compile Include="Fpics\t_Order.vb" />
+    <Compile Include="Fpics\t_Order2.vb" />
+    <Compile Include="Fpics\t_OrderAdjust.vb" />
+    <Compile Include="Fpics\t_OrderCheck.vb" />
+    <Compile Include="Fpics\t_OrderTemporary.vb" />
+    <Compile Include="Fpics\t_PassRatioResult.vb" />
+    <Compile Include="Fpics\t_PDSheetPrintHistory.vb" />
+    <Compile Include="Fpics\t_PDSheetPrintHistory_99.vb" />
+    <Compile Include="Fpics\t_PorterageResult.vb" />
+    <Compile Include="Fpics\t_ProcessResult.vb" />
+    <Compile Include="Fpics\t_ProcessResult2.vb" />
+    <Compile Include="Fpics\t_ProcessResult_99.vb" />
+    <Compile Include="Fpics\t_ProcessResult_99_bak.vb" />
+    <Compile Include="Fpics\t_ProcessResult_bak.vb" />
+    <Compile Include="Fpics\t_ProductInHistory.vb" />
+    <Compile Include="Fpics\t_ProductInHistory2.vb" />
+    <Compile Include="Fpics\t_ProductInOutHistory.vb" />
+    <Compile Include="Fpics\t_ProductInRemain.vb" />
+    <Compile Include="Fpics\t_ProductInRemain2.vb" />
+    <Compile Include="Fpics\t_ProductOutHistory.vb" />
+    <Compile Include="Fpics\t_ProductOutHistory2.vb" />
+    <Compile Include="Fpics\t_ProductStock.vb" />
+    <Compile Include="Fpics\t_ProductStock_99.vb" />
+    <Compile Include="Fpics\t_Progress.vb" />
+    <Compile Include="Fpics\t_Progress_99.vb" />
+    <Compile Include="Fpics\t_RestartLot.vb" />
+    <Compile Include="Fpics\t_SubcontractorDeliveryHistory.vb" />
+    <Compile Include="Fpics\t_SubcontractorDeliveryRemain.vb" />
+    <Compile Include="Fpics\t_SubcontractorInHistory.vb" />
+    <Compile Include="Fpics\t_SubcontractorOrderHistory.vb" />
+    <Compile Include="Fpics\t_SubcontractorOutHistory.vb" />
+    <Compile Include="Fpics\t_SubcontractorRemain.vb" />
+    <Compile Include="Fpics\t_TableChangeHistory.vb" />
+    <Compile Include="Fpics\t_TableSyncHistory.vb" />
+    <Compile Include="Fpics\t_WorkResult.vb" />
+    <Compile Include="Fpics\t_WorkResult_bak.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Table\PublicSP.vb" />
+    <Compile Include="Table\PublicTable.vb" />
+    <Compile Include="Table\PublicTable_FPICS.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

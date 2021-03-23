@@ -1,0 +1,899 @@
+﻿Imports CommonDB
+Imports DevExpress.XtraEditors.Repository
+Imports PublicUtility
+Imports System.Windows.Forms
+Public Class FrmEndMonthRequest
+    Public _myID As String = ""
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Private Sub FrmEndMonthRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim dt As DataTable = _db.FillDataTable("select distinct GroupName from QAE_EquidList order by GroupName")
+        For r = 0 To dt.Rows.Count - 1
+            cbbCongDoan.Properties.Items.Add(dt.Rows(r).Item("GroupName"))
+        Next
+        If _myID = "" Then
+            _myID = Me.AccessibleName
+        End If
+        LoadEmail()
+        LoadHead()
+        linkHuongDan.Text = "Hướng dẫn kiểm tra thiết bị cuối tháng trên ERP"
+        'linkHuongDan.Tag = "\\10.153.1.7\Temp\QAE\Hướng dẫn kiểm tra thiết bị cuối tháng trên ERP-1.pptx"
+        linkHuongDan.Tag = CurrentUser.TempFolder & "QAE\Hướng dẫn kiểm tra thiết bị cuối tháng trên ERP-1.pptx"
+    End Sub
+
+    Private Sub btnThemThietBi_Click(sender As Object, e As EventArgs) Handles btnThemThietBi.Click
+        'GridControlReadOnly(GridView1, False)
+        GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+        'GridView1.Columns("Code").OptionsColumn.ReadOnly = True
+        GridControlSetColorEdit(GridView1)
+    End Sub
+    Sub LoadEmail()
+        txtMailPre.Text = CurrentUser.Mail
+        Dim sql As String = String.Format("select m.EmpID, m.Mail from OT_Mail as m " +
+                                          "inner join OT_Employee as e " +
+                                          "on m.EmpID = e.EmpID " +
+                                          "where e.SectionSort = '{0}' and m.Mail <> '' " +
+                                          "order by m.Mail", CurrentUser.SortSection)
+        Dim dt As DataTable = _db.FillDataTable(sql)
+        For r = 0 To dt.Rows.Count - 1
+            cbbMailChecked.Properties.Items.Add(dt.Rows(r).Item("Mail"))
+            cbbMailApproved.Properties.Items.Add(dt.Rows(r).Item("Mail"))
+        Next
+        'LookUpEdit1.Properties.DataSource = dt
+        'LookUpEdit1.Properties.ValueMember = "EmpID"
+        'LookUpEdit1.Properties.DisplayMember = "Mail"
+
+        Dim obj As New QAE_Approver
+        obj.ID_K = 1
+        _db.GetObject(obj)
+        txtMailPic.Text = obj.PIC
+        txtMailCheckedQA.Text = obj.Checked
+
+        'Test Mail
+        'txtMailPre.Text = CurrentUser.Mail
+        'cbbMailChecked.Text = CurrentUser.Mail
+        'cbbMailApproved.Text = CurrentUser.Mail
+        'txtMailPic.Text = "hoai.dotrung@nitto.com"
+        'txtMailCheckedQA.Text = CurrentUser.Mail
+    End Sub
+    Sub ResetControl()
+        cbbMailChecked.ReadOnly = True
+        cbbMailApproved.ReadOnly = True
+
+        btnSubmit.Visible = False
+        btnSave.Visible = False
+        btnChecked.Visible = False
+        btnCheckedReject.Visible = False
+        btnApproved.Visible = False
+        btnApprovedReject.Visible = False
+        btnPic.Visible = False
+        btnPicReject.Visible = False
+        btnCheckedQA.Visible = False
+        btnCheckedRejectQA.Visible = False
+
+        mmeCommentPre.ReadOnly = True
+        mmeCommentChecked.ReadOnly = True
+        mmeCommentApproved.ReadOnly = True
+        mmeCommentPic.ReadOnly = True
+        mmeCommentCheckedQA.ReadOnly = True
+
+        lblPreDate.Text = ""
+        lblCheckedDate.Text = ""
+        lblApprovedDate.Text = ""
+        lblPicDate.Text = ""
+        lblCheckedQADate.Text = ""
+
+        mmeNguyenNhanTreHan.Text = ""
+        mmeNguyenNhanTreHan.ReadOnly = True
+        mmeDoiSach.Text = ""
+        mmeDoiSach.ReadOnly = True
+
+        btnThemThietBi.Visible = False
+        btnXoaThietBi.Visible = False
+        cbbCongDoan.ReadOnly = True
+
+        GridControl1.DataSource = _db.FillDataTable("select * from QAE_EndMonthDetail where ID = '0'")
+        'GridControlSetFormat(GridView1)
+        'GridControlReadOnly(GridView1, False)
+        'GridView1.Columns("EquipNameV").OptionsColumn.ReadOnly = True
+        'GridView1.Columns("EquipNameE").OptionsColumn.ReadOnly = True
+        'GridView1.Columns("SeriNo").OptionsColumn.ReadOnly = True
+        'GridView1.Columns("Manufacture").OptionsColumn.ReadOnly = True
+        GridControlSetColorEdit(GridView1)
+
+        'cbb OK/NG
+        Dim cbb As New RepositoryItemComboBox()
+        cbb.Items.AddRange(New String() {"OK", "NG", "-"})
+        GridControl1.RepositoryItems.Add(cbb)
+        GridView1.Columns("DanhGia").ColumnEdit = cbb
+    End Sub
+    Sub EnableSection()
+        cbbMailChecked.ReadOnly = False
+        cbbMailApproved.ReadOnly = False
+        'btnThemThietBi.Visible = True
+        cbbCongDoan.ReadOnly = False
+        mmeNguyenNhanTreHan.ReadOnly = False
+        mmeDoiSach.ReadOnly = False
+    End Sub
+    Sub EnableQA()
+        cbbMailChecked.ReadOnly = True
+        cbbMailApproved.ReadOnly = True
+        btnThemThietBi.Visible = True
+        btnXoaThietBi.Visible = True
+        cbbCongDoan.ReadOnly = False
+        mmeNguyenNhanTreHan.ReadOnly = False
+        mmeDoiSach.ReadOnly = False
+    End Sub
+    Sub LoadHead()
+        ResetControl()
+        If _myID = "" Then
+            btnSave.Visible = True
+            dteNgayKiemTra.DateTime = Date.Now
+            txtSection.Text = CurrentUser.SortSection
+            mmeCommentPre.ReadOnly = False
+            EnableSection()
+            Return
+        End If
+        Dim obj As New QAE_EndMonth
+        obj.ID_K = _myID
+        _db.GetObject(obj)
+
+        txtMailPre.Text = obj.MailPre
+        cbbMailChecked.Text = obj.MailChecked
+        cbbMailApproved.Text = obj.MailApproved
+        txtMailPic.Text = obj.MailPic
+        txtMailCheckedQA.Text = obj.MailCheckedQA
+
+        mmeCommentPre.Text = obj.CommentPre
+        mmeCommentChecked.Text = obj.CommentChecked
+        mmeCommentApproved.Text = obj.CommentApproved
+        mmeCommentPic.Text = obj.CommentPic
+        mmeCommentCheckedQA.Text = obj.CommentCheckedQA
+
+        txtID.Text = obj.ID_K
+        txtSection.Text = obj.Section
+        dteNgayKiemTra.EditValue = obj.NgayKiemTra
+        cbbCongDoan.Text = obj.CongDoan
+        txtSoLuongThietBi.Text = obj.SoLuongThietBi
+        mmeNguyenNhanTreHan.Text = obj.NguyenNhanTreHan
+        mmeDoiSach.Text = obj.DoiSach
+
+        GridControl1.DataSource = _db.FillDataTable(String.Format("select h.ID, h.EquipCode, d.EquipNameV, 
+                                                                   d.EquipNameE, d.SerialNo as SeriNo, d.Manufacture, h.NgayHieuChuan,
+                                                                   h.NgayHetHan, h.NgoaiQuan, h.ChucNangHoatDong,
+                                                                   h.DanhGia, h.GhiChu from QAE_EndMonthDetail as h 
+                                                                   left join QAE_EquidList as d on h.EquipCode = d.EquipCode where h.ID = '{0}'", _myID))
+        'cbb OK/NG
+        Dim cbb As New RepositoryItemComboBox()
+        cbb.Items.AddRange(New String() {"OK", "NG", "-"})
+        GridControl1.RepositoryItems.Add(cbb)
+        GridView1.Columns("DanhGia").ColumnEdit = cbb
+
+        If obj.DateCheckedQA = Nothing Then
+            GridControlSetColorEdit(GridView1)
+        Else
+            GridControlSetFormat(GridView1)
+            GridControlSetColorReadonly(GridView1)
+        End If
+
+        If obj.DateSave > DateTime.MinValue Then
+            If CurrentUser.Mail = obj.CurrentID And obj.CurrentID = obj.MailPre Then
+                btnSave.Visible = False
+                lblPreDate.Visible = False
+                btnSubmit.Visible = True
+                btnThemThietBi.Visible = True
+                btnXoaThietBi.Visible = True
+            Else
+                btnSave.Visible = False
+                lblPreDate.Visible = False
+                btnSubmit.Visible = False
+                btnThemThietBi.Visible = False
+                btnXoaThietBi.Visible = False
+            End If
+        Else
+            btnSave.Visible = True
+            lblPreDate.Visible = False
+            btnSubmit.Visible = False
+            btnThemThietBi.Visible = True
+            btnXoaThietBi.Visible = True
+            mmeCommentPre.ReadOnly = False
+            EnableSection()
+            Return
+        End If
+
+        If obj.DatePre > DateTime.MinValue Then
+            If obj.SoLuongThietBi = 0 Then
+                If obj.FlagSave <> "1" Then
+                    lblPreDate.Visible = False
+                    btnSubmit.Visible = True
+                    btnThemThietBi.Visible = True
+                    btnXoaThietBi.Visible = True
+                    mmeCommentPre.ReadOnly = False
+                    EnableSection()
+                    Return
+                Else
+                    lblPreDate.Text = obj.DatePre.ToString("dd-MM-yyyy HH:mm")
+                    lblPreDate.Visible = True
+                    btnSubmit.Visible = False
+                End If
+            Else
+                If obj.Flag = "1" Then
+                    lblPreDate.Visible = False
+                    btnSubmit.Visible = True
+                    btnThemThietBi.Visible = True
+                    btnXoaThietBi.Visible = True
+                    mmeCommentPre.ReadOnly = False
+                    EnableSection()
+                    Return
+                Else
+                    lblPreDate.Text = obj.DatePre.ToString("dd-MM-yyyy HH:mm")
+                    lblPreDate.Visible = True
+                    btnSubmit.Visible = False
+                End If
+            End If
+        Else
+            If CurrentUser.Mail = obj.CurrentID And obj.CurrentID = obj.MailPre Then
+                lblPreDate.Visible = False
+                'btnSubmit.Visible = True
+                'btnSave.Visible = True
+                mmeCommentPre.ReadOnly = False
+                EnableSection()
+                Return
+            End If
+        End If
+
+        If obj.DateChecked > DateTime.MinValue Then
+            lblCheckedDate.Text = obj.DateChecked.ToString("dd-MM-yyyy HH:mm")
+            lblCheckedDate.Visible = True
+        Else
+            If CurrentUser.Mail = obj.CurrentID And obj.MailChecked = obj.CurrentID Then
+                lblCheckedDate.Visible = False
+                btnChecked.Visible = True
+                btnCheckedReject.Visible = True
+                btnThemThietBi.Visible = True
+                btnXoaThietBi.Visible = True
+                mmeCommentChecked.ReadOnly = False
+                EnableSection()
+                Return
+            End If
+        End If
+
+        If obj.DateApproved > DateTime.MinValue Then
+            lblApprovedDate.Text = obj.DateApproved.ToString("dd-MM-yyyy HH:mm")
+            lblApprovedDate.Visible = True
+        Else
+            If obj.CurrentID = CurrentUser.Mail And obj.CurrentID = obj.MailApproved Then
+                lblApprovedDate.Visible = False
+                btnApproved.Visible = True
+                btnApprovedReject.Visible = True
+                btnThemThietBi.Visible = True
+                btnXoaThietBi.Visible = True
+                mmeCommentApproved.ReadOnly = False
+                EnableSection()
+                Return
+            End If
+        End If
+
+        If obj.DatePic > DateTime.MinValue Then
+            lblPicDate.Text = obj.DatePic.ToString("dd-MM-yyyy HH:mm")
+            lblPicDate.Visible = True
+        Else
+            If obj.CurrentID = CurrentUser.Mail And obj.CurrentID = obj.MailPic Then
+                lblPicDate.Visible = False
+                btnPic.Visible = True
+                btnPicReject.Visible = True
+                btnThemThietBi.Visible = True
+                btnXoaThietBi.Visible = True
+                mmeCommentPic.ReadOnly = False
+                EnableQA()
+                Return
+            End If
+        End If
+
+        If obj.DateCheckedQA > DateTime.MinValue Then
+            lblCheckedQADate.Text = obj.DateCheckedQA.ToString("dd-MM-yyyy HH:mm")
+            lblCheckedQADate.Visible = True
+        Else
+            If obj.CurrentID = CurrentUser.Mail And obj.CurrentID = obj.MailCheckedQA Then
+                lblCheckedQADate.Visible = False
+                btnCheckedQA.Visible = True
+                btnCheckedRejectQA.Visible = True
+                btnThemThietBi.Visible = True
+                btnXoaThietBi.Visible = True
+                mmeCommentCheckedQA.ReadOnly = False
+                EnableQA()
+                Return
+            End If
+        End If
+
+    End Sub
+    Sub ConfirmUpdateOutlook(sumit As Submit, confirm As ConfirmOT, comment As String, cc As List(Of String), obj As QAE_EndMonth)
+        Try
+            _db.BeginTransaction()
+            Dim lstTo As New List(Of String)
+            Dim lstCC As New List(Of String)
+            Dim lstBCC As New List(Of String)
+
+            Dim arrCc() As String = Nothing
+            Dim title = "(" & obj.Section & ")" & " BÁO CÁO DỤNG CỤ ĐO CUỐI THÁNG " & obj.NgayKiemTra.ToString("dd-MM-yyyy")
+
+            If sumit = Submit.Reject Then
+                obj.DatePre = Nothing
+                obj.DateChecked = Nothing
+                obj.DateApproved = Nothing
+                obj.DatePic = Nothing
+                obj.DateCheckedQA = Nothing
+                obj.CurrentID = obj.MailPre
+                obj.Flag = "1"
+                obj.FlagSave = "1"
+
+                lstTo.Add(obj.MailPre)
+                SendMailOutlook(title, Nothing, sumit, lstTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+            Else
+                Select Case confirm
+                    Case clsApplication.ConfirmQAE.PIC
+                        lstTo.Add(obj.MailChecked)
+                        SendMailOutlook(title, Nothing, sumit, lstTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+                        obj.CurrentID = obj.MailChecked
+                        GoTo EndConfirm
+                    Case clsApplication.ConfirmQAE.Check
+                        If obj.MailApproved <> "" Then
+                            lstTo.Add(obj.MailApproved)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = obj.MailApproved
+                            GoTo EndConfirm
+                        End If
+                    Case clsApplication.ConfirmQAE.Approved
+                        If obj.MailPic <> "" Then
+                            lstTo.Add(obj.MailPic)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = obj.MailPic
+                            GoTo EndConfirm
+                        End If
+                    Case clsApplication.ConfirmQAE.QAPIC
+                        If obj.MailCheckedQA <> "" Then
+                            lstTo.Add(obj.MailCheckedQA)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = obj.MailCheckedQA
+                            GoTo EndConfirm
+                        End If
+                    Case clsApplication.ConfirmQAE.QAChecked
+                        If obj.MailPre <> "" Then
+                            lstTo.Add(obj.MailPre)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = ""
+                            GoTo EndConfirm
+                        End If
+                End Select
+            End If
+EndConfirm:
+            _db.Update(obj)
+            _db.Commit()
+            NextRequest()
+        Catch ex As Exception
+            _db.RollBack()
+            ShowError(ex, "Confirm", Me.Name)
+        End Try
+    End Sub
+    Sub NextRequest()
+        Dim obj As Object = _db.ExecuteScalar(String.Format(" select ID from QAE_EndMonth " +
+                                                            " where CurrentID='{0}' order by ID ",
+                                                    CurrentUser.Mail))
+        If obj IsNot Nothing Then
+            _myID = obj
+        End If
+        LoadHead()
+    End Sub
+    Function CheckedConditionSection() As Boolean
+        If txtMailPre.Text = "" Or
+                cbbMailChecked.Text = "" Or
+                cbbMailApproved.Text = "" Or
+            txtMailPic.Text = "" Or
+            txtMailCheckedQA.Text = "" Then
+            ShowWarning("Địa chỉ mail không được để trống !")
+            cbbMailChecked.Select()
+            Return False
+        End If
+        If mmeNguyenNhanTreHan.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập nguyên nhân trễ hạn !")
+            mmeNguyenNhanTreHan.Select()
+            Return False
+        End If
+        If mmeDoiSach.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập đối sách !")
+            mmeDoiSach.Select()
+            Return False
+        End If
+        If cbbCongDoan.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập công đoạn !")
+            cbbCongDoan.Select()
+            Return False
+        End If
+        If txtID.Text <> "" Then
+            Dim obj As New QAE_EndMonth
+            obj.ID_K = txtID.Text
+            _db.GetObject(obj)
+            If obj.SoLuongThietBi = 0 Then
+                If obj.Flag = "1" Then
+                    Return True
+                Else
+                    ShowWarning("Bạn phải thêm thiết bị !")
+                    Return False
+                End If
+            End If
+        End If
+        Return True
+    End Function
+    Function GetID() As String
+        Dim myID As String = ""
+        Dim myDate As String = "EM" & Date.Today.ToString("yyMM") & "-"
+        Dim STT As Object = _db.ExecuteScalar(String.Format(" select isnull(max(right(ID,2)),0)+1 as STT " +
+                                                            " from QAE_EndMonth " +
+                                                            " where ID like '{0}%'", myDate))
+        If IsNumeric(STT) Then
+            myID = myDate & STT.ToString().PadLeft(2, "0")
+        Else
+            myID = myDate & "01"
+        End If
+        Return myID
+    End Function
+
+    Sub SaveData()
+        Dim obj As New QAE_EndMonth
+        If _myID <> "" Then
+            obj.ID_K = _myID
+            _db.GetObjectNotReset(obj)
+        Else
+            _myID = GetID()
+            obj.ID_K = _myID
+            txtID.Text = _myID
+            obj.CurrentID = CurrentUser.Mail
+        End If
+
+        obj.Section = txtSection.Text
+        obj.NgayKiemTra = dteNgayKiemTra.DateTime
+
+        obj.MailPre = txtMailPre.Text
+        obj.MailChecked = cbbMailChecked.Text
+        obj.MailApproved = cbbMailApproved.Text
+        obj.MailPic = txtMailPic.Text
+        obj.MailCheckedQA = txtMailCheckedQA.Text
+
+        obj.NguyenNhanTreHan = mmeNguyenNhanTreHan.Text
+        obj.DoiSach = mmeDoiSach.Text
+        obj.CongDoan = cbbCongDoan.Text
+
+        If _db.ExistObject(obj) Then
+            _db.Update(obj)
+        Else
+            obj.CreateDate = DateTime.Now
+            obj.CreateUser = CurrentUser.UserID
+            _db.Insert(obj)
+        End If
+    End Sub
+
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Dim objEnd As New QAE_EndMonth
+        objEnd.ID_K = txtID.Text
+        _db.GetObject(objEnd)
+        objEnd.Flag = "0"
+        _db.Update(objEnd)
+        If CheckedConditionSection() Then
+            If CheckedDataDetail() Then
+                SaveData()
+                Dim obj As New QAE_EndMonth
+                obj.ID_K = _myID
+                _db.GetObject(obj)
+                obj.CommentPre = mmeCommentPre.Text
+                obj.DatePre = DateTime.Now
+                obj.SoLuongThietBi = GridView1.RowCount
+                obj.Flag = "0"
+                obj.CurrentID = ""
+
+                ConfirmUpdateOutlook(Submit.Confirm, clsApplication.ConfirmQAE.PIC, obj.CommentPre, Nothing, obj)
+
+                lblPreDate.Visible = True
+            End If
+        End If
+    End Sub
+
+    Private Sub btnChecked_Click(sender As Object, e As EventArgs) Handles btnChecked.Click
+        If CheckedConditionSection() Then
+            If CheckedDataDetail() Then
+                SaveData()
+                Dim obj As New QAE_EndMonth
+                obj.ID_K = _myID
+                _db.GetObject(obj)
+                obj.CommentChecked = mmeCommentChecked.Text
+                obj.DateChecked = DateTime.Now
+                obj.SoLuongThietBi = GridView1.RowCount
+                obj.CurrentID = ""
+
+                ConfirmUpdateOutlook(Submit.Confirm, clsApplication.ConfirmQAE.Check, obj.CommentChecked, Nothing, obj)
+            End If
+        End If
+    End Sub
+
+    Private Sub btnApproved_Click(sender As Object, e As EventArgs) Handles btnApproved.Click
+        If CheckedConditionSection() Then
+            If CheckedDataDetail() Then
+                SaveData()
+                Dim obj As New QAE_EndMonth
+                obj.ID_K = _myID
+                _db.GetObject(obj)
+                obj.CommentApproved = mmeCommentApproved.Text
+                obj.DateApproved = DateTime.Now
+                obj.SoLuongThietBi = GridView1.RowCount
+                obj.CurrentID = ""
+
+                ConfirmUpdateOutlook(Submit.Confirm, clsApplication.ConfirmQAE.Approved, obj.CommentApproved, Nothing, obj)
+            End If
+        End If
+    End Sub
+
+    Private Sub btnPic_Click(sender As Object, e As EventArgs) Handles btnPic.Click
+        If CheckedConditionSection() Then
+            If CheckedDataDetail() Then
+                SaveData()
+                Dim obj As New QAE_EndMonth
+                obj.ID_K = _myID
+                _db.GetObject(obj)
+                obj.CommentPic = mmeCommentPic.Text
+                obj.DatePic = DateTime.Now
+                obj.SoLuongThietBi = GridView1.RowCount
+                obj.CurrentID = ""
+
+                ConfirmUpdateOutlook(Submit.Confirm, clsApplication.ConfirmQAE.QAPIC, obj.CommentPic, Nothing, obj)
+            End If
+        End If
+    End Sub
+
+    Private Sub btnCheckedQA_Click(sender As Object, e As EventArgs) Handles btnCheckedQA.Click
+        If CheckedConditionSection() Then
+            If CheckedDataDetail() Then
+                SaveData()
+                Dim obj As New QAE_EndMonth
+                obj.ID_K = _myID
+                _db.GetObject(obj)
+                obj.CommentCheckedQA = mmeCommentCheckedQA.Text
+                obj.DateCheckedQA = DateTime.Now
+                obj.SoLuongThietBi = GridView1.RowCount
+                obj.CurrentID = ""
+
+                ConfirmUpdateOutlook(Submit.Confirm, clsApplication.ConfirmQAE.QAChecked, obj.CommentCheckedQA, Nothing, obj)
+            End If
+        End If
+    End Sub
+
+    Private Sub btnCheckedReject_Click(sender As Object, e As EventArgs) Handles btnCheckedReject.Click
+        If mmeCommentChecked.Text.Trim() <> "" Then
+            Dim obj As New QAE_EndMonth
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.CommentChecked = String.Format("({0}) {1}", DateTime.Now().ToString("dd/MM/yyyy HH:mm"), mmeCommentChecked.Text)
+
+            obj.CurrentID = ""
+            ConfirmUpdateOutlook(Submit.Reject, clsApplication.ConfirmQAE.Check, obj.CommentChecked, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải ghi chú lý do từ chối yêu cầu." + vbCrLf + "Please comment detail.")
+            mmeCommentChecked.Focus()
+        End If
+    End Sub
+
+    Private Sub btnApprovedReject_Click(sender As Object, e As EventArgs) Handles btnApprovedReject.Click
+        If mmeCommentApproved.Text.Trim() <> "" Then
+            Dim obj As New QAE_EndMonth
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.CommentApproved = String.Format("({0}) {1}", DateTime.Now().ToString("dd/MM/yyyy HH:mm"), mmeCommentApproved.Text)
+
+            obj.CurrentID = ""
+            ConfirmUpdateOutlook(Submit.Reject, clsApplication.ConfirmQAE.Approved, obj.CommentApproved, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải ghi chú lý do từ chối yêu cầu." + vbCrLf + "Please comment detail.")
+            mmeCommentApproved.Focus()
+        End If
+    End Sub
+
+    Private Sub btnPicReject_Click(sender As Object, e As EventArgs) Handles btnPicReject.Click
+        If mmeCommentPic.Text.Trim() <> "" Then
+            Dim obj As New QAE_EndMonth
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.CommentPic = String.Format("({0}) {1}", DateTime.Now().ToString("dd/MM/yyyy HH:mm"), mmeCommentPic.Text)
+
+            obj.CurrentID = ""
+            ConfirmUpdateOutlook(Submit.Reject, clsApplication.ConfirmQAE.QAPIC, obj.CommentPic, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải ghi chú lý do từ chối yêu cầu." + vbCrLf + "Please comment detail.")
+            mmeCommentPic.Focus()
+        End If
+    End Sub
+
+    Private Sub btnCheckedRejectQA_Click(sender As Object, e As EventArgs) Handles btnCheckedRejectQA.Click
+        If mmeCommentCheckedQA.Text.Trim() <> "" Then
+            Dim obj As New QAE_EndMonth
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.CommentCheckedQA = String.Format("({0}) {1}", DateTime.Now().ToString("dd/MM/yyyy HH:mm"), mmeCommentCheckedQA.Text)
+
+            obj.CurrentID = ""
+            ConfirmUpdateOutlook(Submit.Reject, clsApplication.ConfirmQAE.QAChecked, obj.CommentCheckedQA, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải ghi chú lý do từ chối yêu cầu." + vbCrLf + "Please comment detail.")
+            mmeCommentCheckedQA.Focus()
+        End If
+    End Sub
+    Sub SaveDateDetail()
+
+        Dim obj As New QAE_EndMonthDetail
+        obj.ID_K = txtID.Text
+        obj.EquipCode_K = GridView1.GetFocusedRowCellValue("EquipCode").ToString.ToUpper
+        If IsDBNull(GridView1.GetFocusedRowCellValue("NgayHieuChuan")) Then
+            obj.NgayHieuChuan = Nothing
+        Else
+            obj.NgayHieuChuan = GridView1.GetFocusedRowCellValue("NgayHieuChuan")
+        End If
+        If IsDBNull(GridView1.GetFocusedRowCellValue("NgayHetHan")) Then
+            obj.NgayHetHan = Nothing
+        Else
+            obj.NgayHetHan = GridView1.GetFocusedRowCellValue("NgayHetHan")
+        End If
+        If IsDBNull(GridView1.GetFocusedRowCellValue("NgoaiQuan")) Then
+            obj.NgoaiQuan = Nothing
+        Else
+            obj.NgoaiQuan = GridView1.GetFocusedRowCellValue("NgoaiQuan")
+        End If
+        If IsDBNull(GridView1.GetFocusedRowCellValue("ChucNangHoatDong")) Then
+            obj.ChucNangHoatDong = Nothing
+        Else
+            obj.ChucNangHoatDong = GridView1.GetFocusedRowCellValue("ChucNangHoatDong")
+        End If
+        If IsDBNull(GridView1.GetFocusedRowCellValue("DanhGia")) Then
+            obj.DanhGia = Nothing
+        Else
+            obj.DanhGia = GridView1.GetFocusedRowCellValue("DanhGia")
+        End If
+        If IsDBNull(GridView1.GetFocusedRowCellValue("GhiChu")) Then
+            obj.GhiChu = Nothing
+        Else
+            obj.GhiChu = GridView1.GetFocusedRowCellValue("GhiChu")
+        End If
+        If _db.ExistObject(obj) Then
+            _db.Update(obj)
+        Else
+            _db.Insert(obj)
+        End If
+    End Sub
+    Function CheckedEquipCode(EquipCode As String) As Boolean
+        Dim dtGrid As DataTable = GridControl1.DataSource
+        Dim sameRow As Integer = 0
+        If GridView1.RowCount > 0 Then
+            For r = 0 To GridView1.RowCount - 1
+                'Dim str As String = dtGrid(r)(1).ToString.ToUpper
+                If EquipCode.ToUpper = dtGrid(r)(1).ToString.ToUpper Then
+                    ShowWarning("Mã thiết bị đã bị trùng !")
+                    'LoadHead()
+                    LoadDetail()
+                    SaveSoLuongThietBi()
+                    txtSoLuongThietBi.Text = GridView1.RowCount
+                    Return False
+                End If
+            Next
+        End If
+
+        Dim sameCode As Integer = 0
+        Dim dt As DataTable = _db.FillDataTable("select distinct EquipCode from QAE_EquidList")
+        For r = 0 To dt.Rows.Count - 1
+            If dt.Rows(r)(0) = EquipCode.ToUpper Then
+                sameCode += 1
+            End If
+        Next
+        If sameCode = 0 Then
+            ShowWarning("Mã thiết bị không hợp lệ !")
+            'LoadHead()
+            LoadDetail()
+            SaveSoLuongThietBi()
+            txtSoLuongThietBi.Text = GridView1.RowCount
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+    Function CheckedEquipCodeHead(EquipCode As String, EquipCodeOld As String, r As Integer, dtNew As DataTable) As Boolean
+        Dim dtOld As DataTable = dtNew
+        dtOld.Rows(r)(1) = EquipCodeOld
+        Dim sameRow As Integer = 0
+        If GridView1.RowCount > 0 Then
+            For r = 0 To GridView1.RowCount - 1
+                If EquipCode.ToUpper = dtOld(r)(1).ToString.ToUpper Then
+                    ShowWarning("Mã thiết bị đã bị trùng !")
+                    'LoadHead()
+                    LoadDetail()
+                    SaveSoLuongThietBi()
+                    txtSoLuongThietBi.Text = GridView1.RowCount
+                    Return False
+                End If
+            Next
+        End If
+
+        Dim sameCode As Integer = 0
+        Dim dt As DataTable = _db.FillDataTable("select distinct EquipCode from QAE_EquidList")
+        For r = 0 To dt.Rows.Count - 1
+            If dt.Rows(r)(0) = EquipCode.ToUpper Then
+                sameCode += 1
+            End If
+        Next
+        If sameCode = 0 Then
+            ShowWarning("Mã thiết bị không hợp lệ !")
+            'LoadHead()
+            LoadDetail()
+            SaveSoLuongThietBi()
+            txtSoLuongThietBi.Text = GridView1.RowCount
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Sub LoadDetail()
+        '    Dim dtEquipCode As DataTable = _db.FillDataTable("select EquipCode, EquipNameV * from EquidList")
+        '    GridView1.Columns("EquipCode").ColumnEdit = GridControlLoadLookUpEdit(dtEquipCode, "EquipCode", "EquipCode")
+        'GridView1.Columns.Clear()
+        GridControl1.DataSource = _db.FillDataTable(String.Format("select h.ID, h.EquipCode, d.EquipNameV, 
+                                                                   d.EquipNameE, d.SerialNo as SeriNo, d.Manufacture, h.NgayHieuChuan,
+                                                                   h.NgayHetHan, h.NgoaiQuan, h.ChucNangHoatDong,
+                                                                   h.DanhGia, h.GhiChu from QAE_EndMonthDetail as h 
+                                                                   left join QAE_EquidList as d on h.EquipCode = d.EquipCode where h.ID = '{0}'", _myID))
+        'cbb OK/NG
+        Dim cbb As New RepositoryItemComboBox()
+        cbb.Items.AddRange(New String() {"OK", "NG", "-"})
+        GridControl1.RepositoryItems.Add(cbb)
+        GridView1.Columns("DanhGia").ColumnEdit = cbb
+    End Sub
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If GridView1.Editable = True And e.Column.ReadOnly = False Then
+            If e.RowHandle < 0 Then
+                If IsDBNull(GridView1.GetFocusedRowCellValue("EquipCode")) = False Then
+                    If CheckedEquipCode(GridView1.GetFocusedRowCellValue("EquipCode")) Then
+                        SaveDateDetail()
+                        'LoadHead()
+                        LoadDetail()
+                        SaveSoLuongThietBi()
+                        txtSoLuongThietBi.Text = GridView1.RowCount
+                    End If
+                Else
+                    ShowWarning("Bạn phải nhập mã thiết bị trước !")
+                    LoadDetail()
+                End If
+            Else
+                If e.Column.FieldName = "EquipCode" Then
+                    Dim dtNew As DataTable = GridControl1.DataSource
+                    Dim oldValue As String = GridView1.GetFocusedRowCellValue("EquipCode")
+                    If CheckedEquipCodeHead(GridView1.GetFocusedRowCellValue("EquipCode"), GridView1.ActiveEditor.OldEditValue, e.RowHandle, dtNew) Then
+                        _db.ExecuteNonQuery(String.Format("update QAE_EndMonthDetail set EquipCode = '{0}' where ID = '{1}' and EquipCode = '{2}'", oldValue, txtID.Text, GridView1.ActiveEditor.OldEditValue))
+                        'LoadHead()
+                        LoadDetail()
+                    End If
+                Else
+                    SaveDateDetail()
+                    'LoadHead()
+                    LoadDetail()
+                    SaveSoLuongThietBi()
+                    txtSoLuongThietBi.Text = GridView1.RowCount
+                End If
+            End If
+        End If
+    End Sub
+    Function CheckedDataDetail() As Boolean
+        For r As Integer = 0 To GridView1.RowCount - 1
+            For c As Integer = 5 To GridView1.Columns.Count - 1
+                'Dim str As String = GridView1.GetRowCellValue(r, GridView1.Columns(c).FieldName)
+                If GridView1.GetRowCellValue(r, GridView1.Columns(c).FieldName) Is DBNull.Value Then
+                    Dim field As String = GridView1.Columns(c).FieldName
+                    'If GridView1.Columns(c).FieldName = "NgayHieuChuan" Then
+                    '    ShowWarning(GridView1.GetRowCellValue(r, "EquipCode") + " - Ngày hiệu chuẩn không được bỏ trống !")
+                    '    Return False
+                    'End If
+                    'If GridView1.Columns(c).FieldName = "NgayHetHan" Then
+                    '    ShowWarning(GridView1.GetRowCellValue(r, "EquipCode") + " - Ngày hết hạn không được bỏ trống !")
+                    '    Return False
+                    'End If
+                    If GridView1.Columns(c).FieldName = "NgoaiQuan" Then
+                        ShowWarning(GridView1.GetRowCellValue(r, "EquipCode") + " - Đánh giá ngoại quan không được bỏ trống !")
+                        Return False
+                    End If
+                    If GridView1.Columns(c).FieldName = "ChucNangHoatDong" Then
+                        ShowWarning(GridView1.GetRowCellValue(r, "EquipCode") + " - Đánh giá chức năng hoạt động không được bỏ trống !")
+                        Return False
+                    End If
+                    If GridView1.Columns(c).FieldName = "DanhGia" Then
+                        ShowWarning(GridView1.GetRowCellValue(r, "EquipCode") + " - Đánh giá không được bỏ trống !")
+                        Return False
+                    End If
+                    'If GridView1.Columns(c).FieldName = "GhiChu" Then
+                    '    ShowWarning("Ghi chú không được bỏ trống !")
+                    '    Return False
+                    'End If
+                End If
+            Next
+        Next
+
+        Return True
+    End Function
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If CheckedID() Then
+            Dim objEnd As New QAE_EndMonth
+            objEnd.ID_K = txtID.Text
+            _db.GetObject(objEnd)
+            objEnd.FlagSave = "0"
+            _db.Update(objEnd)
+            If CheckedConditionSection() Then
+                SaveData()
+                Dim obj As New QAE_EndMonth
+                obj.ID_K = _myID
+                _db.GetObject(obj)
+                obj.CommentPre = mmeCommentPre.Text
+                'obj.DatePre = DateTime.Now
+                obj.DateSave = DateTime.Now
+                obj.CurrentID = CurrentUser.Mail
+                _db.Update(obj)
+
+                LoadHead()
+
+                txtID.Text = obj.ID_K
+                btnSubmit.Visible = True
+                btnSave.Visible = False
+                btnThemThietBi.Visible = True
+                btnXoaThietBi.Visible = True
+                lblPreDate.Visible = False
+            End If
+        End If
+    End Sub
+    Sub SaveSoLuongThietBi()
+        Dim objEnd As New QAE_EndMonth
+        objEnd.ID_K = txtID.Text
+        _db.GetObject(objEnd)
+        objEnd.SoLuongThietBi = GridView1.RowCount
+        _db.Update(objEnd)
+    End Sub
+
+    Private Sub btnXoaThietBi_Click(sender As Object, e As EventArgs) Handles btnXoaThietBi.Click
+        _db.ExecuteNonQuery(String.Format("delete QAE_EndMonthDetail where ID = '{0}' and EquipCode = '{1}'", txtID.Text, GridView1.GetFocusedRowCellValue("EquipCode")))
+        GridView1.DeleteSelectedRows()
+        'LoadHead()
+        SaveSoLuongThietBi()
+        txtSoLuongThietBi.Text = GridView1.RowCount
+
+        Dim obj As New QAE_EndMonth
+        obj.ID_K = txtID.Text
+        _db.GetObject(obj)
+        If obj.SoLuongThietBi = 0 Then
+            obj.FlagSave = "1"
+            _db.Update(obj)
+        Else
+            obj.FlagSave = "0"
+        End If
+    End Sub
+
+    Private Sub linkHuongDan_Click(sender As Object, e As EventArgs) Handles linkHuongDan.Click
+        Process.Start(OpenfileTemp(linkHuongDan.Tag))
+    End Sub
+
+    Function CheckedID() As Boolean
+        Dim dt As DataTable = _db.FillDataTable("SELECT DISTINCT CongDoan 
+                                                FROM QAE_EndMonth 
+                                                WHERE DateSave BETWEEN DATEADD(DAY, 1, EOMONTH(GETDATE(), -1)) AND  EOMONTH(GETDATE())")
+        Dim same As Integer = 0
+        For Each r As DataRow In dt.Rows
+            If cbbCongDoan.Text = r("CongDoan") Then
+                same += 1
+            End If
+        Next
+        If same <> 0 Then
+            ShowWarning("Bạn không thể tạo mới của công đoạn " + cbbCongDoan.Text + " trong tháng này." + Environment.NewLine + "Vui lòng hoàn thành mục kiểm tra thiết bị đo của công đoạn " + cbbCongDoan.Text + " đã tạo trong tháng này trước đó !")
+            Return False
+        End If
+        Return True
+    End Function
+End Class

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="XrTableCell26.Text" xml:space="preserve">
+    <value>1. Bán thành phẩm được tạo ra từ nguyên liệu nhập khẩu chưa được thể hiện chi tiết tại biểu mẫu này, tổ chức, cá nhân theo dõi, lưu giữ và giải trình khi cơ quan hải quan kiểm tra tình hình sử dụng, báo cáo quyết toán hoặc khi tính thuế, tiêu thụ nội địa.
+2. Các ghi chú khác (nếu có)</value>
+  </data>
+  <data name="XrTableCell59.Text" xml:space="preserve">
+    <value>1. Thông tin nhập – xuất – tồn kho nguyên liệu, vật tư được lập trên cơ sở quản lý theo dõi nguyên liệu, vật tư nhập khẩu để sản xuất hàng hóa xuất khẩu trên hệ thống sổ sách kế toán theo các quy định về chế độ kế toán của Bộ Tài chính và theo nguồn nhập kho.</value>
+  </data>
+  <data name="XrTableCell61.Text" xml:space="preserve">
+    <value>Cột (2): Là mã của nguyên liệu, vật tư do doanh nghiệp tự xây dựng để quản lý nhập - xuất - tồn kho, quản lý sản xuất. Lưu ý, sử dụng mã theo quản trị của doanh nghiệp khi khai báo trên tờ khai hải quan. Trường hợp tổ chức, cá nhân có sử dụng mã nguyên liệu, vật tư, mã sản phẩm khác với mã đã khai báo trên tờ khai hải quan khi nhập khẩu nguyên liệu, vật tư, xuất khẩu sản phẩm thì phải xây dựng, lưu giữ bảng quy đổi tương đương giữa các mã.</value>
+  </data>
+  <data name="XrTableCell64.Text" xml:space="preserve">
+    <value>Cột (6): Gồm lượng nguyên liệu, vật tư nhập khẩu (bao gồm bán thành phẩm, thành phẩm để gắn với sản phẩm xuất khẩu thành sản phẩm đồng bộ) để gia công, sản xuất hàng hóa xuất khẩu nhập kho trong kỳ báo cáo;  lượng nguyên liệu, vật tư nhận từ hợp đồng gia công khác chuyển sang; hàng nhập khẩu đã hoàn thành thủ tục hải quan, đang đi trên đường chưa nhập kho tại cuối kỳ báo cáo; nhập lại kho khi dư thừa trên dây chuyền sản xuất; nhập kho sau khi thuê gia công lại; lượng nguyên liệu, vật tư của DNCX không làm thủ tục hải quan. </value>
+  </data>
+  <data name="XrTableCell65.Text" xml:space="preserve">
+    <value>Cột (7): Là lượng nguyên liệu, vật tư nhập khẩu để gia công, sản xuất hàng hóa xuất khẩu nhưng phải xuất trả đối tác ở nước ngoài, xuất sang nước thứ 3 hoặc xuất vào khu phi thuế quan, DNCX hoặc chuyển nguyên liệu, vật tư từ hợp đồng gia công này sang hợp đồng gia công cùng hoặc khác đối tác nhận gia công.</value>
+  </data>
+  <data name="XrTableCell66.Text" xml:space="preserve">
+    <value>Cột (8): Là lượng nguyên liệu, vật tư nhập khẩu để gia công, sản xuất hàng hóa xuất khẩu nhưng không được sử dụng vào sản xuất hàng xuất khẩu mà được chuyển mục đích sử dụng, tiêu thụ nội địa, tiêu hủy (trường hợp tiêu hủy giải thích rõ tại cột số 12 và cung cấp hồ sơ kèm theo nếu có).</value>
+  </data>
+  <data name="XrTableCell68.Text" xml:space="preserve">
+    <value>Cột (10): Là lượng nguyên liệu, vật tư thực tế cấp bù do phần nguyên liệu, vật tư tiêu hao, hao hụt tự nhiên, hao hụt do tạo thành phế liệu, phế phẩm trong quá trình sản xuất; xuất chuyển tiếp từ hợp đồng gia công này sang hợp đồng gia công khác hoặc lượng nguyên liệu, vật tư xuất kho mà chưa được chi tiết tại các cột (7), (8), (9) bao gồm nguyên liệu, vật tư thiếu hụt, hư hỏng mất mát do thiên tai, hỏa hoạn, ....</value>
+  </data>
+  <metadata name="SqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="SqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iU3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlllYXJseVN0YXRtZW50TWF0ZXJpYWwiPjxGaWVsZCBOYW1lPSJDdXN0b21zTWF0ZXJpYWxDb2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFDQ0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXRlbUNvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXRlbU5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXRlbU51bWJlciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTaXplU3BlYyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEaW1lbnNpb25NMiIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJDb2xvciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVbml0Q29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaGljayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaGlja1VuaXQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iV2lkdGgiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iV2lkdGhVbml0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikxlbmd0aCIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJMZW5ndGhVbml0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlR5cGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iT3BlbmluZ1N0b2NrIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IklucHV0IiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9Ik91dHB1dCIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJCYWxhbmNlIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IlNob3dNMiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTaG93SnVtYm8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTm90ZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJWaWV0TmFtZXNlTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+</root>

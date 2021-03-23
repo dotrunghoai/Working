@@ -1,0 +1,8 @@
+=================================================================================================
+DateTime:12-Dec-2017 08:30:03
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmTLRequest
+FunctionName:Confirm
+Error:Value of '0' is not valid for 'RowCount'. 'RowCount' must be greater than or equal to 1.
+Parameter name: RowCount

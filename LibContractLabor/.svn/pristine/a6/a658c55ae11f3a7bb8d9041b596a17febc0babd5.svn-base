@@ -1,0 +1,48 @@
+﻿Imports CommonDB
+
+Public Class FrmEmployeeMaster
+    Dim _db As New DBSql(PublicUtility.PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+    Private Sub mnuShowAll_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuShowAll.ItemClick
+        GridControl1.DataSource = _db.ExecuteStoreProcedureTB("sp_GA_CT_Employee")
+        GridControlSetFormat(GridView1, 1)
+        GridView1.Columns("EmpName").Width = 120
+    End Sub
+
+    Private Sub mnuExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuExport.ItemClick
+        GridControlExportExcel(GridView1)
+    End Sub
+
+    Private Sub mnuEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuEdit.ItemClick
+        GridControlReadOnly(GridView1, True)
+        GridView1.Columns("LoaiHD").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(GridView1)
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If e.Column.ReadOnly = False And GridView1.Editable Then
+            Dim obj As New GA_CT_Employee
+            obj.EmpID_K = GridView1.GetFocusedRowCellValue("EmpID")
+            _db.GetObject(obj)
+            obj.LoaiHD = GridView1.GetFocusedRowCellValue("LoaiHD")
+            _db.Update(obj)
+        End If
+    End Sub
+
+    Private Sub FrmEmployeeMaster_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        dteMonth.EditValue = DateTime.Now
+        mnuShowAll.PerformClick()
+        btnShowInMonth.PerformClick()
+    End Sub
+
+    Private Sub btnShowInMonth_Click(sender As Object, e As EventArgs) Handles btnShowInMonth.Click
+        Dim para(2) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@StartDate", GetStartDayOfMonth(dteMonth.DateTime))
+        para(1) = New SqlClient.SqlParameter("@EndDate", GetEndDayOfMonth(dteMonth.DateTime))
+        para(2) = New SqlClient.SqlParameter("@Action", "GetEmployeeInMonth")
+        GridControl2.DataSource = _db.ExecuteStoreProcedureTB("sp_GA_CT_ReviewContract", para)
+        GridControlSetFormat(GridView2, 1)
+        GridView2.Columns("EmpName").Width = 120
+        GridView2.OptionsView.ShowFooter = False
+    End Sub
+End Class

@@ -1,0 +1,10 @@
+﻿Public Class PP_StandardKQCV_Master
+    Public ID_K As String
+    Public TenCongDoan As String
+    Public PICUser As String
+    Public MailTo As String
+    Public AttachFileNameNewest As String
+    Public AttachFileServerNewest As String
+    Public ContentReportNewest As String
+    Public CreateDateNewest As DateTime
+End Class

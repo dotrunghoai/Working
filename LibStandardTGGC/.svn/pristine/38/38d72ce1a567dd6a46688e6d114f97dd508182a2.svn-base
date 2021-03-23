@@ -1,0 +1,484 @@
+﻿Imports System.IO
+Imports System.Windows.Forms
+Imports CommonDB
+Imports PublicUtility
+Public Class FrmStandardKQCV
+    Public _id As String = ""
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Dim _path As String = CurrentUser.TempFolder & "PP_StandardKQCV\"
+
+    Private Sub FrmStandardKQCV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If _id = "" Then
+            _id = Me.AccessibleName
+        End If
+        dteDate.DateTime = DateTime.Now
+        LoadMail()
+        LoadTenCongDoan()
+        LoadHead()
+    End Sub
+    Sub LoadMail()
+        txtMailPIC.Text = CurrentUser.Mail
+        Dim dt As DataTable = _db.FillDataTable("SELECT h.EmpID, d.SectionSort, d.Observation, Mail
+                                                 FROM OT_Mail AS h
+                                                 LEFT JOIN OT_Employee AS d
+                                                 ON h.EmpID = d.EmpID
+                                                 ORDER BY Mail ")
+        cbbMailChecked.Properties.DataSource = dt
+        cbbMailChecked.Properties.DisplayMember = "Mail"
+        cbbMailChecked.Properties.ValueMember = "Mail"
+        cbbMailChecked.Properties.NullText = Nothing
+        cbbMailChecked.Properties.PopulateViewColumns()
+        cbbMailChecked.Properties.View.Columns("Mail").Width = 200
+
+        'cbbMailApproved.Properties.DataSource = dt
+        'cbbMailApproved.Properties.DisplayMember = "Mail"
+        'cbbMailApproved.Properties.ValueMember = "Mail"
+        'cbbMailApproved.Properties.NullText = Nothing
+        'cbbMailApproved.Properties.PopulateViewColumns()
+        'cbbMailApproved.Properties.View.Columns("Mail").Width = 200
+        'Thêm Approved là Manager
+        Dim mailApp As Object = _db.ExecuteScalar(String.Format("SELECT Manager
+                                                                 FROM OT_SectionMail AS h
+                                                                 LEFT JOIN OT_Employee AS d
+                                                                 ON h.Section = d.Section
+                                                                 WHERE EmpID = '{0}'", CurrentUser.UserID))
+        txtMailApproved.Text = mailApp
+        'txtMailApproved.Text = CurrentUser.Mail
+    End Sub
+    Sub LoadTenCongDoan()
+        Dim dt As DataTable = _db.FillDataTable(String.Format("SELECT TenCongDoan
+                                                               FROM PP_StandardKQCV_Master
+                                                               WHERE PICUser = '{0}'
+                                                               ORDER BY TenCongDoan", CurrentUser.Mail))
+        For Each r As DataRow In dt.Rows
+            cbbTenCongDoan.Properties.Items.Add(r("TenCongDoan"))
+        Next
+    End Sub
+    Sub ResetControl()
+        cbbMailChecked.ReadOnly = True
+
+        btnSave.Visible = False
+        btnSubmit.Visible = False
+        btnCheck.Visible = False
+        btnRejectChecked.Visible = False
+        btnApproved.Visible = False
+        btnRejectApproved.Visible = False
+
+        lblDatePic.Visible = False
+        lblDateChecked.Visible = False
+        lblDateApproved.Visible = False
+
+        cbbTenCongDoan.ReadOnly = True
+
+        mmePic.ReadOnly = True
+        mmeChecked.ReadOnly = True
+        mmeApproved.ReadOnly = True
+
+        btnAddFile.Visible = False
+        btnDeleteFile.Visible = False
+        mmeContentReport.ReadOnly = True
+    End Sub
+    Sub LoadHead()
+        ResetControl()
+        If _id = "" Then
+            cbbMailChecked.ReadOnly = False
+            btnSave.Visible = True
+            btnSubmit.Visible = True
+            mmePic.ReadOnly = False
+            cbbTenCongDoan.ReadOnly = False
+            btnAddFile.Visible = True
+            btnDeleteFile.Visible = True
+            mmeContentReport.ReadOnly = False
+            dteDate.DateTime = DateTime.Now
+            Return
+        End If
+
+        Dim obj As New PP_StandardKQCV
+        obj.ID_K = _id
+        _db.GetObject(obj)
+        txtID.Text = obj.ID_K
+        dteDate.EditValue = obj.ReportDate
+        txtMailPIC.Text = obj.PreMail
+        cbbMailChecked.Text = obj.CheckedMail
+        txtMailApproved.Text = obj.ApprovedMail
+        mmePic.Text = obj.PreComment
+        mmeChecked.Text = obj.CheckedComment
+        mmeApproved.Text = obj.ApprovedComment
+        cbbTenCongDoan.Text = obj.TenCongDoan
+        txtMailTo.Text = obj.ListMailTo
+
+        linkAttach.Text = obj.AttachFileName
+        linkAttach.Tag = obj.AttachFileServer
+        mmeContentReport.Text = obj.ContentReport
+
+        GridControl2.DataSource = _db.FillDataTable(String.Format("SELECT AttachFileNameOld, AttachFileServerOld, ContentReportOld, CreateDate
+                                                                   FROM PP_StandardKQCV_Master_Detail AS d
+                                                                   LEFT JOIN PP_StandardKQCV_Master AS h
+                                                                   ON h.ID = d.ID
+                                                                   WHERE h.TenCongDoan = N'{0}'
+                                                                   AND AttachFileServerOld <> N'{1}'
+                                                                   ORDER BY CreateDate DESC",
+                                                                   obj.TenCongDoan,
+                                                                   linkAttach.Tag))
+        GridControlSetFormat(GridView2)
+        GridView2.Columns("AttachFileServerOld").Visible = False
+        GridView2.Columns("AttachFileNameOld").ColumnEdit = GridControlLinkEdit()
+
+        If obj.PreDate > DateTime.MinValue Then
+            lblDatePic.Text = obj.PreDate.ToString("dd-MMM-yyyy HH:mm")
+            lblDatePic.Visible = True
+        Else
+            If CurrentUser.Mail = obj.CurrentMail And obj.CurrentMail = obj.PreMail Then
+                cbbMailChecked.ReadOnly = False
+                btnSave.Visible = True
+                btnSubmit.Visible = True
+                mmePic.ReadOnly = False
+                cbbTenCongDoan.ReadOnly = False
+                btnAddFile.Visible = True
+                btnDeleteFile.Visible = True
+                mmeContentReport.ReadOnly = False
+                dteDate.DateTime = DateTime.Now
+                Return
+            End If
+        End If
+
+        If obj.CheckedDate > DateTime.MinValue Then
+            lblDateChecked.Text = obj.CheckedDate.ToString("dd-MMM-yyyy HH:mm")
+            lblDateChecked.Visible = True
+        Else
+            If CurrentUser.Mail = obj.CurrentMail And obj.CurrentMail = obj.CheckedMail Then
+                mmeChecked.ReadOnly = False
+                btnCheck.Visible = True
+                btnRejectChecked.Visible = True
+                Return
+            End If
+        End If
+
+        If obj.ApprovedDate > DateTime.MinValue Then
+            lblDateApproved.Text = obj.ApprovedDate.ToString("dd-MMM-yyyy HH:mm")
+            lblDateApproved.Visible = True
+        Else
+            If CurrentUser.Mail = obj.CurrentMail And obj.CurrentMail = obj.ApprovedMail Then
+                mmeApproved.ReadOnly = False
+                btnApproved.Visible = True
+                btnRejectApproved.Visible = True
+                Return
+            End If
+        End If
+    End Sub
+
+    Private Sub cbbTenCongDoan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbTenCongDoan.SelectedIndexChanged
+        Dim mailTo As Object = _db.ExecuteScalar(String.Format("SELECT MailTo
+                                                                FROM PP_StandardKQCV_Master
+                                                                WHERE TenCongDoan = N'{0}'",
+                                                                cbbTenCongDoan.Text))
+        txtMailTo.Text = IIf(IsDBNull(mailTo), "", mailTo)
+
+        GridControl2.DataSource = _db.FillDataTable(String.Format("SELECT AttachFileNameOld, AttachFileServerOld, ContentReportOld, CreateDate
+                                                                   FROM PP_StandardKQCV_Master_Detail AS d
+                                                                   LEFT JOIN PP_StandardKQCV_Master AS h
+                                                                   ON h.ID = d.ID
+                                                                   WHERE h.TenCongDoan = N'{0}'
+                                                                   AND AttachFileServerOld <> N'{1}'
+                                                                   ORDER BY CreateDate DESC",
+                                                                   cbbTenCongDoan.Text,
+                                                                   linkAttach.Tag))
+        GridControlSetFormat(GridView2)
+        GridView2.Columns("AttachFileNameOld").ColumnEdit = GridControlLinkEdit()
+    End Sub
+    Function GetID() As String
+        Dim val As Object = _db.ExecuteScalar(String.Format("SELECT Right(MAX(ID), 2)
+                                                             FROM PP_StandardKQCV
+                                                             WHERE ID LIKE '%{0}%'",
+                                                             Date.Now.ToString("yyyyMM")))
+        If Not IsDBNull(val) Then
+            val = (Integer.Parse(val) + 1).ToString.PadLeft(2, "0")
+            Return "SRPP" + Date.Now.ToString("yyyyMM") + "-" + val
+        Else
+            Return "SRPP" + Date.Now.ToString("yyyyMM") + "-01"
+        End If
+    End Function
+
+    Private Sub btnAddFile_Click(sender As Object, e As EventArgs) Handles btnAddFile.Click
+        If cbbTenCongDoan.Text = "" Then
+            ShowWarning("Bạn phải chọn tên công đoạn trước !")
+        Else
+            Dim frmOpen As New OpenFileDialog
+            frmOpen.ShowDialog()
+            If frmOpen.FileName <> "" Then
+                linkAttach.Text = frmOpen.SafeFileName
+                Dim obj As New PP_StandardKQCV
+                If _id <> "" Then
+                    linkAttach.Tag = _path + DateTime.Now.ToString("yyyyMMMdd-HH-mm-ss.fff") + "_" +
+                                     CurrentUser.UserID + "_" + _id + "_" + "SK" + "_" + frmOpen.SafeFileName
+                    obj.ID_K = _id
+                    _db.GetObject(obj)
+                    obj.AttachFileName = linkAttach.Text
+                    obj.AttachFileServer = linkAttach.Tag
+                    _db.Update(obj)
+                Else
+                    _id = GetID()
+                    txtID.Text = _id
+                    linkAttach.Tag = _path + DateTime.Now.ToString("yyyyMMMdd-HH-mm-ss.fff") + "_" +
+                                     CurrentUser.UserID + "_" + _id + "_" + "SK" + "_" + frmOpen.SafeFileName
+                    obj.ID_K = _id
+                    obj.AttachFileName = linkAttach.Text
+                    obj.AttachFileServer = linkAttach.Tag
+                    obj.CurrentMail = CurrentUser.Mail
+                    obj.PreMail = txtMailPIC.Text
+                    obj.CheckedMail = cbbMailChecked.Text
+                    obj.ApprovedMail = txtMailApproved.Text
+                    obj.PreComment = mmePic.Text
+                    obj.ListMailTo = txtMailTo.Text
+                    obj.TenCongDoan = cbbTenCongDoan.Text
+                    obj.ContentReport = mmeContentReport.Text
+                    obj.ReportDate = dteDate.DateTime
+                    _db.Insert(obj)
+                End If
+                File.Copy(frmOpen.FileName, linkAttach.Tag, True)
+            End If
+        End If
+    End Sub
+    Private Sub btnDeleteFile_Click(sender As Object, e As EventArgs) Handles btnDeleteFile.Click
+        If File.Exists(linkAttach.Tag) Then
+            File.Delete(linkAttach.Tag)
+        End If
+        Dim obj As New PP_StandardKQCV
+        obj.ID_K = _id
+        _db.GetObject(obj)
+        obj.AttachFileName = ""
+        obj.AttachFileServer = ""
+        _db.Update(obj)
+        linkAttach.Text = ""
+        linkAttach.Tag = ""
+    End Sub
+
+    Private Sub linkAttach_Click(sender As Object, e As EventArgs) Handles linkAttach.Click
+        If File.Exists(linkAttach.Tag) Then
+            Process.Start(OpenfileTemp(linkAttach.Tag))
+        End If
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If CheckData() Then
+            SaveData()
+            LoadHead()
+            ShowSuccess()
+        End If
+    End Sub
+    Function CheckData() As Boolean
+        If txtMailPIC.Text = "" Or cbbMailChecked.Text = "" Or txtMailApproved.Text = "" Then
+            ShowWarning("Địa chỉ Mail không được để trống !")
+            cbbMailChecked.Select()
+            Return False
+        ElseIf cbbTenCongDoan.Text = "" Then
+            ShowWarning("Bạn chưa nhập tên công đoạn !")
+            cbbTenCongDoan.Select()
+            Return False
+        ElseIf linkAttach.Text = "" Then
+            ShowWarning("Bạn chưa Attach File !")
+            btnAddFile.Select()
+            Return False
+        ElseIf mmeContentReport.Text = "" Then
+            ShowWarning("Bạn chưa nhập nội dung Report !")
+            mmeContentReport.Select()
+            Return False
+        End If
+        Return True
+    End Function
+    Sub SaveData()
+        Dim obj As New PP_StandardKQCV
+        If _id <> "" Then
+            obj.ID_K = _id
+            _db.GetObject(obj)
+        Else
+            _id = GetID()
+            txtID.Text = _id
+            obj.ID_K = _id
+            obj.CurrentMail = CurrentUser.Mail
+        End If
+
+        obj.ReportDate = dteDate.DateTime
+        obj.PreMail = txtMailPIC.Text
+        obj.CheckedMail = cbbMailChecked.Text
+        obj.ApprovedMail = txtMailApproved.Text
+        obj.PreComment = mmePic.Text
+        obj.CheckedComment = mmeChecked.Text
+        obj.ApprovedComment = mmeApproved.Text
+        obj.TenCongDoan = cbbTenCongDoan.Text
+        obj.ListMailTo = txtMailTo.Text
+        obj.ContentReport = mmeContentReport.Text
+        If _db.ExistObject(obj) Then
+            _db.Update(obj)
+        Else
+            _db.Insert(obj)
+        End If
+    End Sub
+
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        If CheckData() Then
+            SaveData()
+            Dim obj As New PP_StandardKQCV
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.PreDate = DateTime.Now
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.Pic, obj.PreComment, Nothing, obj)
+        End If
+    End Sub
+    Public Enum Confirm
+        Pic
+        Checked
+        Approved
+    End Enum
+
+    Sub ConfirmUpdateOutlook(sumit As Submit, confirm As Confirm, comment As String, cc As List(Of String), obj As PP_StandardKQCV)
+        Try
+            _db.BeginTransaction()
+            Dim lstTo As New List(Of String)
+            Dim lstCC As New List(Of String)
+            Dim lstBCC As New List(Of String)
+            Dim arrCc() As String = Nothing
+            Dim title = "(Reject) Standard TGGC - " + cbbTenCongDoan.Text + " - " & obj.ReportDate.ToString("dd-MMM-yyyy")
+
+            If sumit = Submit.Reject Then
+                obj.PreDate = Nothing
+                obj.CheckedDate = Nothing
+                obj.ApprovedDate = Nothing
+                obj.CurrentMail = obj.PreMail
+                lstTo.Add(obj.PreMail)
+                SendMailOutlook(title, Nothing, Submit.Reject, lstTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+            Else
+                title = "Standard TGGC - " + cbbTenCongDoan.Text + " - " & obj.ReportDate.ToString("dd-MMM-yyyy")
+                Select Case confirm
+                    Case Confirm.Pic
+                        If obj.CheckedMail <> "" Then
+                            lstTo.Add(obj.CheckedMail)
+                            SendMailOutlook(title, Nothing, Submit.Confirm, lstTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.CheckedMail
+                            GoTo EndConfirm
+                        End If
+                        GoTo Checked
+                    Case Confirm.Checked
+Checked:
+                        If obj.ApprovedMail <> "" Then
+                            lstTo.Add(obj.ApprovedMail)
+                            SendMailOutlook(title, Nothing, Submit.Confirm, lstTo, lstCC, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.ApprovedMail
+                            GoTo EndConfirm
+                        End If
+                        GoTo Approved
+                    Case Confirm.Approved
+Approved:
+                        If obj.ListMailTo <> "" Then
+                            lstTo.Add(obj.ListMailTo)
+                            lstCC.Add(obj.PreMail)
+                            SendMailOutlook(title, Nothing, Submit.Info, lstTo, lstCC, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = ""
+                            GoTo EndConfirm
+                        End If
+                End Select
+            End If
+EndConfirm:
+            _db.Update(obj)
+            _db.Commit()
+            NextRequest()
+        Catch ex As Exception
+            _db.RollBack()
+            ShowError(ex, "Confirm", Me.Name)
+        End Try
+    End Sub
+    Sub NextRequest()
+        Dim idNext As Object = _db.ExecuteScalar(String.Format("SELECT ID FROM PP_StandardKQCV 
+                                                                WHERE CurrentMail = '{0}' ORDER BY ID",
+                                                                CurrentUser.Mail))
+        If idNext IsNot Nothing Then
+            _id = idNext
+        End If
+        LoadHead()
+    End Sub
+
+    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+        If CheckData() Then
+            SaveData()
+            Dim obj As New PP_StandardKQCV
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.CheckedDate = DateTime.Now
+            obj.CurrentMail = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.Checked, obj.CheckedComment, Nothing, obj)
+        End If
+    End Sub
+
+    Private Sub btnRejectChecked_Click(sender As Object, e As EventArgs) Handles btnRejectChecked.Click
+        If mmeChecked.Text.Trim() <> "" Then
+            Dim obj As New PP_StandardKQCV
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.CheckedComment = String.Format("({0}) {1}", DateTime.Now().ToString("dd-MMM-yyyy HH:mm"), mmeChecked.Text)
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Reject, Confirm.Checked, obj.CheckedComment, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải ghi chú lý do từ chối yêu cầu !" + vbCrLf + "Please comment detail.")
+            mmeChecked.Select()
+        End If
+    End Sub
+
+    Private Sub btnApproved_Click(sender As Object, e As EventArgs) Handles btnApproved.Click
+        If CheckData() Then
+            SaveData()
+            Dim obj As New PP_StandardKQCV
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.ApprovedDate = DateTime.Now
+            obj.CurrentMail = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.Approved, obj.ApprovedComment, Nothing, obj)
+
+            Dim idMaster As Object = _db.ExecuteScalar(String.Format("SELECT ID
+                                                                      FROM PP_StandardKQCV_Master
+                                                                      WHERE TenCongDoan = N'{0}'",
+                                                                      cbbTenCongDoan.Text))
+            Dim dateN = DateTime.Now
+            Dim objM As New PP_StandardKQCV_Master
+            objM.ID_K = idMaster
+            _db.GetObject(objM)
+            objM.AttachFileNameNewest = linkAttach.Text
+            objM.AttachFileServerNewest = linkAttach.Tag
+            objM.ContentReportNewest = mmeContentReport.Text
+            objM.CreateDateNewest = dateN
+            _db.Update(objM)
+
+            Dim objD As New PP_StandardKQCV_Master_Detail
+            objD.ID_K = idMaster
+            objD.AttachFileNameOld_K = linkAttach.Text
+            objD.AttachFileServerOld = linkAttach.Tag
+            objD.ContentReportOld = mmeContentReport.Text
+            objD.CreateDate_K = dateN
+            _db.Insert(objD)
+        End If
+    End Sub
+
+    Private Sub btnRejectApproved_Click(sender As Object, e As EventArgs) Handles btnRejectApproved.Click
+        If mmeApproved.Text.Trim() <> "" Then
+            Dim obj As New PP_StandardKQCV
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.ApprovedComment = String.Format("({0}) {1}", DateTime.Now().ToString("dd-MMM-yyyy HH:mm"), mmeApproved.Text)
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Reject, Confirm.Approved, obj.ApprovedComment, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải ghi chú lý do từ chối yêu cầu !" + vbCrLf + "Please comment detail.")
+            mmeApproved.Select()
+        End If
+    End Sub
+
+    Private Sub GridView2_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView2.RowClick
+        If GridView2.FocusedColumn.FieldName = "AttachFileNameOld" Then
+            If File.Exists(GridView2.GetFocusedRowCellValue("AttachFileServerOld")) Then
+                Process.Start(OpenfileTemp(GridView2.GetFocusedRowCellValue("AttachFileServerOld")))
+            End If
+        End If
+    End Sub
+End Class

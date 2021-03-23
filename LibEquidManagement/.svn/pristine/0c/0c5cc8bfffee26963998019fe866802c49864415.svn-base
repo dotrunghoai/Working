@@ -1,0 +1,540 @@
+﻿Imports System.IO
+Imports CommonDB
+Imports LibEntity
+Imports PublicUtility
+
+Public Class FrmCalibrationRequest
+    Public _myID As String = ""
+    Dim myPath As String = CurrentUser.TempFolder & "QAE\"
+    Dim _db As New DBSql(PublicUtility.PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+    Private Sub FrmCalibrationRequest_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        LoadEmail()
+        dtpRequestDate.EditValue = Date.Now
+        If _myID = "" Then
+            _myID = Me.AccessibleName
+        End If
+        LoadHead()
+    End Sub
+
+
+    Sub LoadEmail()
+        Dim sql As String = String.Format(" select m.EmpID,m.Mail from OT_Mail m " +
+                                          " inner join OT_Employee e " +
+                                          " on m.EmpID=e.EmpID" +
+                                          " where e.SectionSort='{0}' and m.Mail<>'' " +
+                                          " order by m.Mail ",
+                                          CurrentUser.SortSection)
+
+        Dim tb As DataTable = _db.FillDataTable(sql)
+        'cboChecked.DataSource = _db.FillDataTable(sql)
+        'cboChecked.ValueMember = "EmpID"
+        'cboChecked.DisplayMember = "Mail"
+        'cboChecked.SelectedIndex = -1
+
+        'cboApproved.DataSource = tb.Copy
+        'cboApproved.ValueMember = "EmpID"
+        'cboApproved.DisplayMember = "Mail"
+        'cboApproved.SelectedIndex = -1
+
+        Dim obj As New QAE_Approver
+        obj.ID_K = 1
+        _db.GetObject(obj)
+
+        txtMailIQAPIC.Text = CurrentUser.Mail
+        txtMailQACheck.Text = obj.Checked
+        txtMailQAAP.Text = obj.Approved
+
+        'Mail Test
+        'txtMailIQAPIC.Text = CurrentUser.Mail
+        'txtMailQACheck.Text = CurrentUser.Mail
+        'txtMailQAAP.Text = CurrentUser.Mail
+
+    End Sub
+
+    Sub ResetControl()
+        bttSave.Visible = False
+
+        bttPICQA.Visible = False
+        bttCheckedQA.Visible = False
+        bttApprovedQA.Visible = False
+
+        bttRejectCheckedQA.Visible = False
+        bttRejectApprovedQA.Visible = False
+
+        txtCmtPICQA.ReadOnly = True
+        txtCmtCheckedQA.ReadOnly = True
+        txtCmtApprovedQA.ReadOnly = True
+
+        lblDatePICQA.Text = ""
+        lblDateCheckedQA.Text = ""
+        lblDateApprovedQA.Text = ""
+
+        ''Section 
+        bttAddThietBi.Visible = False
+        txtSoChungNhan.ReadOnly = True
+        dtpNgayHieuChuan.ReadOnly = True
+        dtpNgayHetHan.ReadOnly = True
+        txtLoaiHieuChuan.ReadOnly = True
+        txtQuyCachHieuChuan.ReadOnly = True
+        ''QA
+        cboNgoaiQuan.ReadOnly = True
+        txtDungSaiChoPhep.ReadOnly = True
+        txtKetQua.ReadOnly = True
+        cboDanhGia.ReadOnly = True
+
+        bttAddFile.Visible = False
+        bttDeleteFile.Visible = False
+    End Sub
+
+
+    Sub EnabelQA()
+        ''Section 
+        bttAddThietBi.Visible = True
+        txtSoChungNhan.ReadOnly = False
+        dtpNgayHieuChuan.ReadOnly = False
+        dtpNgayHetHan.ReadOnly = False
+        txtLoaiHieuChuan.ReadOnly = False
+        txtQuyCachHieuChuan.ReadOnly = False
+        ''QA
+        cboNgoaiQuan.ReadOnly = False
+        txtDungSaiChoPhep.ReadOnly = False
+        txtKetQua.ReadOnly = False
+        cboDanhGia.ReadOnly = False
+        bttAddFile.Visible = True
+        bttDeleteFile.Visible = True
+    End Sub
+
+    Sub LoadHead()
+        ResetControl()
+        If _myID = "" Then
+            bttSave.Visible = True
+            bttPICQA.Visible = True
+            txtSection.Text = CurrentUser.SortSection
+            dtpRequestDate.DateTime = Date.Now
+
+            EnabelQA()
+            Return
+        End If
+        Dim obj As New QAE_Calibration
+        obj.ID_K = _myID
+        _db.GetObject(obj)
+
+        txtID.Text = _myID
+        txtSection.Text = obj.Section
+        dtpRequestDate.EditValue = obj.RequestDate
+
+        txtMailIQAPIC.Text = obj.QAPIC
+        txtMailQACheck.Text = obj.QAChecked
+        txtMailQAAP.Text = obj.QAApproved
+
+        txtCmtPICQA.Text = obj.QAPICComment
+        txtCmtCheckedQA.Text = obj.QACheckedComment
+        txtCmtApprovedQA.Text = obj.QAApprovedComment
+
+        'Load Data Section
+        txtMaThietBi.Text = obj.MaThietBi
+        txtTenThietBi.Text = obj.TenThietBi
+        txtSoChungNhan.Text = obj.SoChungNhan
+        dtpNgayHieuChuan.Text = obj.NgayHieuChuan
+        dtpNgayHetHan.Text = obj.NgayHetHan
+        txtLoaiHieuChuan.Text = obj.LoaiHieuChuan
+        txtQuyCachHieuChuan.Text = obj.QuyCachHieuChuan
+        cboNgoaiQuan.Text = obj.NgoaiQuan
+        txtDungSaiChoPhep.Text = obj.DungSaiChoPhep
+
+        txtKetQua.Text = obj.KetQua
+        cboDanhGia.Text = obj.DanhGia
+
+        linkAttachFile.Tag = obj.AttachedFileServer
+        linkAttachFile.Text = obj.AttachedFile
+
+        If obj.QAPICDate > DateTime.MinValue Then
+            lblDatePICQA.Visible = True
+            lblDatePICQA.Text = obj.QAPICDate.ToString("dd-MM-yyyy HH:mm")
+        Else
+            If obj.CurrentID = CurrentUser.Mail And obj.CurrentID = obj.QAPIC Then
+                lblDatePICQA.Visible = False
+                bttPICQA.Visible = True
+                bttSave.Visible = True
+                txtCmtPICQA.ReadOnly = False
+
+                EnabelQA()
+                GoTo GotoDetail
+            End If
+        End If
+
+        If obj.QACheckedDate > DateTime.MinValue Then
+            lblDateCheckedQA.Visible = True
+            lblDateCheckedQA.Text = obj.QACheckedDate.ToString("dd-MM-yyyy HH:mm")
+        Else
+            If CurrentUser.Mail = obj.CurrentID And obj.CurrentID = obj.QAChecked Then
+                lblDateCheckedQA.Visible = False
+                bttCheckedQA.Visible = True
+                bttRejectCheckedQA.Visible = True
+                txtCmtCheckedQA.ReadOnly = False
+
+                EnabelQA()
+                GoTo GotoDetail
+            End If
+        End If
+
+        If obj.QAApprovedDate > DateTime.MinValue Then
+            lblDateApprovedQA.Visible = True
+            lblDateApprovedQA.Text = obj.QAApprovedDate.ToString("dd-MM-yyyy HH:mm")
+        Else
+            If CurrentUser.Mail = obj.CurrentID And obj.CurrentID = obj.QAApproved Then
+                lblDateApprovedQA.Visible = False
+                bttApprovedQA.Visible = True
+                bttRejectApprovedQA.Visible = True
+                txtCmtApprovedQA.ReadOnly = False
+
+                EnabelQA()
+                GoTo GotoDetail
+            End If
+        End If
+
+GotoDetail:
+    End Sub
+
+
+    Sub ConfirmUpdateOutlook(sumit As Submit, confirm As ConfirmOT, comment As String, cc As List(Of String), obj As QAE_Calibration)
+        Try
+            _db.BeginTransaction()
+            Dim lstTo As New List(Of String)
+            Dim lstCC As New List(Of String)
+            Dim lstBCC As New List(Of String)
+
+            Dim arrCc() As String = Nothing
+            Dim title = "(" & obj.Section & ")" & " YÊU CẦU XÁC NHẬN KẾT QUẢ HIỆU CHUẨN THIẾT BỊ ĐO " & obj.RequestDate.ToString("dd-MM-yyyy")
+            If sumit = Submit.Reject Then
+                obj.QAPICDate = Nothing
+                obj.QACheckedDate = Nothing
+                obj.QAApprovedDate = Nothing
+                obj.CurrentID = obj.QAPIC
+
+                lstTo.Add(obj.QAPIC)
+                SendMailOutlook(title, Nothing, sumit, lstTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+
+            Else
+                Select Case confirm
+                    Case ConfirmQAE.QAPIC
+                        If obj.QAChecked <> "" Then
+                            lstTo.Add(obj.QAChecked)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = obj.QAChecked
+                            GoTo EndConfirm
+                        End If
+                    Case ConfirmQAE.QACheck
+                        If obj.QAApproved <> "" Then
+                            lstTo.Add(obj.QAApproved)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = obj.QAApproved
+                            GoTo EndConfirm
+                        End If
+                    Case ConfirmQAE.QAApproved
+                        If obj.QAPIC <> "" Then
+                            lstTo.Add(obj.QAPIC)
+                            SendMailOutlook(title, Nothing, sumit, lstTo, cc, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentID = ""
+                            GoTo EndConfirm
+                        End If
+                End Select
+            End If
+EndConfirm:
+            _db.Update(obj)
+            _db.Commit()
+            NextRequest()
+        Catch ex As Exception
+            _db.RollBack()
+            ShowError(ex, "Confirm", Me.Name)
+        End Try
+    End Sub
+
+    Private Sub NextRequest()
+        Dim obj As Object = _db.ExecuteScalar(String.Format(" select ID from {0} " +
+                                                            " where CurrentID='{1}' order by ID ",
+                                                    PublicTable.Table_QAE_Calibration,
+                                                    CurrentUser.Mail))
+        If obj IsNot Nothing Then
+            _myID = obj
+        End If
+        LoadHead()
+    End Sub
+
+    Function CheckedConditionSection() As Boolean
+        If txtMailIQAPIC.Text = "" Or
+            txtMailQACheck.Text = "" Or
+            txtMailQAAP.Text = "" Then
+            ShowWarning("Địa chỉ mail không được để trống !")
+            Return False
+        End If
+
+        If txtSoChungNhan.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập số chứng nhận !")
+            Return False
+        End If
+        If dtpNgayHieuChuan.DateTime = Date.MinValue Then
+            ShowWarning("Bạn chưa nhập ngày hiệu chuẩn!")
+            Return False
+        End If
+        If dtpNgayHetHan.DateTime = Date.MinValue Then
+            ShowWarning("Bạn chưa nhập ngày hết hạn !")
+            Return False
+        End If
+        If txtLoaiHieuChuan.Text.Trim = "" Then
+            ShowWarning("Bạn nhập loại hiệu chuẩn !")
+            Return False
+        End If
+        If txtQuyCachHieuChuan.Text.Trim = "" Then
+            ShowWarning("Bạn nhập quy cách hiệu chuẩn !")
+            Return False
+        End If
+        If cboNgoaiQuan.Text.Trim = "" Then
+            ShowWarning("Bạn nhập đánh giá ngoại quan !")
+            Return False
+        End If
+        If txtDungSaiChoPhep.Text.Trim = "" Then
+            ShowWarning("Bạn nhập dung sai cho phép !")
+            Return False
+        End If
+        If txtKetQua.Text.Trim = "" Then
+            ShowWarning("Bạn nhập kết quả !")
+            Return False
+        End If
+        If cboDanhGia.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập đánh giá !")
+            Return False
+        End If
+        If txtMaThietBi.Text.Trim = "" Then
+            ShowWarning("Bạn nhập mã thiết bị !")
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Sub bttSave_Click(sender As Object, e As EventArgs) Handles bttSave.Click
+
+        If CheckedConditionSection() Then
+            SaveData()
+            LoadHead()
+            ShowSuccess()
+        End If
+
+    End Sub
+
+    Function GetID() As String
+        Dim myDate As String = "H" & Date.Today.ToString("yyMMdd") & "-"
+        Dim STT As Object = _db.ExecuteScalar(String.Format(" select isnull(max(right(ID,2)),0)+1 as STT " +
+                                                            " from QAE_Calibration " +
+                                                            " where ID like '{0}%'", myDate))
+        Dim myID As String
+
+        If IsNumeric(STT) Then
+            myID = myDate & STT.ToString().PadLeft(2, "0")
+        Else
+            myID = myDate & "01"
+        End If
+        Return myID
+    End Function
+
+    Function SaveData() As Boolean
+
+        Dim obj As New QAE_Calibration
+        If _myID <> "" Then
+            obj.ID_K = _myID
+            _db.GetObjectNotReset(obj)
+        Else
+            _myID = GetID()
+            obj.ID_K = _myID
+            txtID.Text = _myID
+            obj.CurrentID = CurrentUser.Mail
+        End If
+
+        obj.Section = txtSection.Text
+        obj.RequestDate = dtpRequestDate.DateTime.Date
+
+        obj.QAPIC = txtMailIQAPIC.Text
+        obj.QAChecked = txtMailQACheck.Text
+        obj.QAApproved = txtMailQAAP.Text
+
+        'save Data Section 
+        obj.MaThietBi = txtMaThietBi.Text
+        obj.TenThietBi = txtTenThietBi.Text
+        obj.SoChungNhan = txtSoChungNhan.Text
+        obj.NgayHieuChuan = dtpNgayHieuChuan.DateTime.Date
+        obj.NgayHetHan = dtpNgayHetHan.DateTime.Date
+        obj.LoaiHieuChuan = txtLoaiHieuChuan.Text
+        obj.QuyCachHieuChuan = txtQuyCachHieuChuan.Text
+        obj.NgoaiQuan = cboNgoaiQuan.Text
+        obj.DungSaiChoPhep = txtDungSaiChoPhep.Text
+        obj.KetQua = txtKetQua.Text
+        obj.DanhGia = cboDanhGia.Text
+
+        If linkAttachFile.Tag = "" Then
+            obj.AttachedFile = ""
+            obj.AttachedFileServer = ""
+        Else
+            If Not linkAttachFile.Tag.ToString.Contains(myPath) Then
+                obj.AttachedFile = linkAttachFile.Text
+                obj.AttachedFileServer = myPath & obj.ID_K & "_" & linkAttachFile.Text
+                File.Copy(linkAttachFile.Tag, obj.AttachedFileServer, True)
+            End If
+        End If
+
+        If _db.ExistObject(obj) Then
+            _db.Update(obj)
+        Else
+            obj.CreatedDate = DateTime.Now
+            obj.CreatedUser = CurrentUser.UserID
+            _db.Insert(obj)
+        End If
+
+        Return True
+
+    End Function
+
+    Private Sub bttPICQA_Click(sender As Object, e As EventArgs) Handles bttPICQA.Click
+        If CheckedConditionQA() Then
+            SaveData()
+            Dim obj As New QAE_Calibration
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.QAPICComment = txtCmtPICQA.Text
+            obj.QAPICDate = DateTime.Now
+            obj.CurrentID = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, ConfirmQAE.QAPIC, obj.QAPICComment, Nothing, obj)
+        End If
+    End Sub
+
+    Private Sub bttCheckedQA_Click(sender As Object, e As EventArgs) Handles bttCheckedQA.Click
+        If CheckedConditionQA() Then
+            SaveData()
+            Dim obj As New QAE_Calibration
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.QACheckedComment = txtCmtCheckedQA.Text
+            obj.QACheckedDate = DateTime.Now
+            obj.CurrentID = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, ConfirmQAE.QACheck, obj.QACheckedComment, Nothing, obj)
+        End If
+    End Sub
+
+    Private Sub bttApprovedQA_Click(sender As Object, e As EventArgs) Handles bttApprovedQA.Click
+        If CheckedConditionQA() Then
+            SaveData()
+            Dim obj As New QAE_Calibration
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.QAApprovedComment = txtCmtApprovedQA.Text
+            obj.QAApprovedDate = DateTime.Now
+            obj.CurrentID = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, ConfirmQAE.QAApproved, obj.QAApprovedComment, Nothing, obj)
+        End If
+
+        'Load Ngày hiệu chuẩn và Ngày hết hạn vào QAE_EquipList
+        Dim objEquipList As New QAE_EquidList
+        objEquipList.EquipCode_K = txtMaThietBi.Text.Trim
+        _db.GetObject(objEquipList)
+        objEquipList.CurrentCalibDate = dtpNgayHieuChuan.DateTime
+        objEquipList.NextCalibDate = dtpNgayHetHan.DateTime
+        objEquipList.Status = "Đang sử dụng"
+        _db.Update(objEquipList)
+    End Sub
+
+
+
+    Private Sub bttRejectCheckedQA_Click(sender As Object, e As EventArgs) Handles bttRejectCheckedQA.Click
+        If txtCmtCheckedQA.Text.Trim() <> "" Then
+            Dim obj As New QAE_Calibration
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.QACheckedComment = String.Format("({0}) {1}", DateTime.Now().ToString("dd/MM/yyyy HH:mm"), txtCmtCheckedQA.Text)
+
+            obj.CurrentID = ""
+            ConfirmUpdateOutlook(Submit.Reject, ConfirmQAE.QACheck, obj.QACheckedComment, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải nghi chú lý do từ chối yêu cầu." + vbCrLf + "Please comment detail.")
+            txtCmtCheckedQA.Focus()
+        End If
+    End Sub
+
+    Private Sub bttRejectApprovedQA_Click(sender As Object, e As EventArgs) Handles bttRejectApprovedQA.Click
+        If txtCmtApprovedQA.Text.Trim() <> "" Then
+            Dim obj As New QAE_Calibration
+            obj.ID_K = _myID
+            _db.GetObject(obj)
+            obj.QAApprovedComment = String.Format("({0}) {1}", DateTime.Now().ToString("dd/MM/yyyy HH:mm"), txtCmtApprovedQA.Text)
+
+            obj.CurrentID = ""
+            ConfirmUpdateOutlook(Submit.Reject, ConfirmQAE.QAApproved, obj.QAApprovedComment, Nothing, obj)
+        Else
+            ShowWarning("Bạn phải nghi chú lý do từ chối yêu cầu." + vbCrLf + "Please comment detail.")
+            txtCmtApprovedQA.Focus()
+        End If
+    End Sub
+
+
+    Function CheckedConditionQA() As Boolean
+        If cboNgoaiQuan.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập đánh giá ngoại quan !")
+            Return False
+        End If
+        If txtDungSaiChoPhep.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập kết quả dung sai cho phép !")
+            Return False
+        End If
+        If txtKetQua.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập kết quả hiệu chuẩn !")
+            Return False
+        End If
+        If cboDanhGia.Text.Trim = "" Then
+            ShowWarning("Bạn chưa nhập đánh giá hiệu chuẩn !")
+            Return False
+        End If
+
+        Return True
+    End Function
+
+
+    Private Sub bttAddThietBi_Click(sender As Object, e As EventArgs) Handles bttAddThietBi.Click
+        Dim frm As New FrmEquipList
+        frm._isOption = True
+        frm.ShowDialog()
+        If frm._isID <> "" Then
+            txtMaThietBi.Text = frm._isID
+            Dim obj As New QAE_EquidList
+            obj.EquipCode_K = frm._isID
+            _db.GetObject(obj)
+
+            txtTenThietBi.Text = obj.EquipNameV
+        End If
+    End Sub
+
+    Private Sub bttAddFile_Click(sender As Object, e As EventArgs) Handles bttAddFile.Click
+        Dim frm As New OpenFileDialog
+        frm.ShowDialog()
+        If frm.FileName <> "" Then
+            linkAttachFile.Tag = frm.FileName
+            linkAttachFile.Text = frm.SafeFileName
+        End If
+    End Sub
+
+    Private Sub bttDeleteFile_Click(sender As Object, e As EventArgs) Handles bttDeleteFile.Click
+        linkAttachFile.Tag = ""
+        linkAttachFile.Text = ""
+    End Sub
+
+    Private Sub linkAttachFile_Click(sender As Object, e As EventArgs) Handles linkAttachFile.Click
+        If File.Exists(linkAttachFile.Tag) Then
+            If txtKetQua.ReadOnly = False Then
+                Process.Start(linkAttachFile.Tag)
+            Else
+                Process.Start(OpenfileTemp(linkAttachFile.Tag))
+            End If
+        End If
+    End Sub
+End Class

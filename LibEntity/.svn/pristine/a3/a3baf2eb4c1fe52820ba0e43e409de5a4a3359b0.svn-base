@@ -1,0 +1,41 @@
+
+ Public Class ASP_RequestCodeHead
+     Public GSRNo_K As String 
+     Public RequestSection As String 
+     Public RequestDate As DateTime 
+     Public Prepared As String 
+     Public PreparedComment As String 
+     Public PreparedStatus As Boolean 
+     Public PreparedDate As DateTime 
+     Public Approved As String 
+     Public ApprovedComment As String 
+     Public ApprovedStatus As Boolean 
+     Public ApprovedDate As DateTime 
+     Public ACChecked As String 
+     Public ACCheckedComment As String 
+     Public ACCheckedStatus As Boolean 
+     Public ACCheckedDate As DateTime 
+     Public ACApproved As String 
+     Public ACApprovedComment As String 
+     Public ACApprovedStatus As Boolean 
+     Public ACApprovedDate As DateTime 
+     Public LOChecked As String 
+     Public LOCheckedComment As String 
+     Public LOCheckedStatus As Boolean 
+     Public LOCheckedDate As DateTime 
+     Public LOApproved As String 
+     Public LOApprovedComment As String 
+     Public LOApprovedStatus As Boolean 
+     Public LOApprovedDate As DateTime 
+     Public PUChecked As String 
+     Public PUCheckedComment As String 
+     Public PUCheckedStatus As Boolean 
+     Public PUCheckedDate As DateTime 
+     Public PUApproved As String 
+     Public PUApprovedComment As String 
+     Public PUApprovedStatus As Boolean 
+     Public PUApprovedDate As DateTime 
+     Public Finished As Boolean 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+ End  Class

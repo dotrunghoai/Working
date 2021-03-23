@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ExportKQ" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ExportKQ">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ngay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="LotNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Phong" type="xs:string" minOccurs="0" />
+              <xs:element name="PR3ID" type="xs:string" minOccurs="0" />
+              <xs:element name="PR3Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PR3Comment" type="xs:string" minOccurs="0" />
+              <xs:element name="RMID" type="xs:string" minOccurs="0" />
+              <xs:element name="RMDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RMComment" type="xs:string" minOccurs="0" />
+              <xs:element name="DDTID" type="xs:string" minOccurs="0" />
+              <xs:element name="DDTDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DDTComment" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayTao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LoaiHang" type="xs:string" minOccurs="0" />
+              <xs:element name="QuaHan" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ShipTo" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayKiem" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IsEntek" type="xs:boolean" minOccurs="0" />
+              <xs:element name="EntekTafueDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Machine" type="xs:string" minOccurs="0" />
+              <xs:element name="ChinhPham" type="xs:int" minOccurs="0" />
+              <xs:element name="PhePham" type="xs:int" minOccurs="0" />
+              <xs:element name="AQL" type="xs:int" minOccurs="0" />
+              <xs:element name="DanhGia" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayKiemMau" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NhanVien" type="xs:string" minOccurs="0" />
+              <xs:element name="NiAu" type="xs:string" minOccurs="0" />
+              <xs:element name="ThietHan" type="xs:string" minOccurs="0" />
+              <xs:element name="Entek" type="xs:string" minOccurs="0" />
+              <xs:element name="TafueSU" type="xs:string" minOccurs="0" />
+              <xs:element name="MienDem" type="xs:string" minOccurs="0" />
+              <xs:element name="KeoDan" type="xs:string" minOccurs="0" />
+              <xs:element name="FPC" type="xs:string" minOccurs="0" />
+              <xs:element name="DoDayChanCam" type="xs:string" minOccurs="0" />
+              <xs:element name="ALFPC" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLo" type="xs:string" minOccurs="0" />
+              <xs:element name="KyTu" type="xs:string" minOccurs="0" />
+              <xs:element name="NepGap" type="xs:string" minOccurs="0" />
+              <xs:element name="TrangThaiSuCo" type="xs:string" minOccurs="0" />
+              <xs:element name="DuongCatVPhu" type="xs:string" minOccurs="0" />
+              <xs:element name="TestReportPath" type="xs:string" minOccurs="0" />
+              <xs:element name="KetLuan" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

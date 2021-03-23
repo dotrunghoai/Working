@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:11-Sep-2017 08:44:18
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmDelivery
+FunctionName:Show All
+Error:Could not find stored procedure 'sp_GSR_UpdateShippingTerm'.

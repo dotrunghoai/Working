@@ -1,0 +1,140 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FrmShowAuthorizedUser
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmShowAuthorizedUser))
+        Me.DockManager1 = New DevExpress.XtraBars.Docking.DockManager(Me.components)
+        Me.DockPanel1 = New DevExpress.XtraBars.Docking.DockPanel()
+        Me.DockPanel1_Container = New DevExpress.XtraBars.Docking.ControlContainer()
+        Me.TreeList1 = New DevExpress.XtraTreeList.TreeList()
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
+        Me.btnShow = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtUser = New DevExpress.XtraEditors.TextEdit()
+        Me.btnSetting = New DevExpress.XtraEditors.SimpleButton()
+        CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DockPanel1.SuspendLayout()
+        Me.DockPanel1_Container.SuspendLayout()
+        CType(Me.TreeList1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtUser.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'DockManager1
+        '
+        Me.DockManager1.Form = Me
+        Me.DockManager1.RootPanels.AddRange(New DevExpress.XtraBars.Docking.DockPanel() {Me.DockPanel1})
+        Me.DockManager1.TopZIndexControls.AddRange(New String() {"DevExpress.XtraBars.BarDockControl", "DevExpress.XtraBars.StandaloneBarDockControl", "System.Windows.Forms.MenuStrip", "System.Windows.Forms.StatusStrip", "System.Windows.Forms.StatusBar", "DevExpress.XtraBars.Ribbon.RibbonStatusBar", "DevExpress.XtraBars.Ribbon.RibbonControl", "DevExpress.XtraBars.Navigation.OfficeNavigationBar", "DevExpress.XtraBars.Navigation.TileNavPane", "DevExpress.XtraBars.TabFormControl", "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl", "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"})
+        '
+        'DockPanel1
+        '
+        Me.DockPanel1.Controls.Add(Me.DockPanel1_Container)
+        Me.DockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left
+        Me.DockPanel1.ID = New System.Guid("6d1e4075-005d-449b-b2fd-8d7f78531a62")
+        Me.DockPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.DockPanel1.Name = "DockPanel1"
+        Me.DockPanel1.OriginalSize = New System.Drawing.Size(381, 200)
+        Me.DockPanel1.Size = New System.Drawing.Size(381, 389)
+        Me.DockPanel1.Text = "MAIN MENU"
+        '
+        'DockPanel1_Container
+        '
+        Me.DockPanel1_Container.Controls.Add(Me.TreeList1)
+        Me.DockPanel1_Container.Location = New System.Drawing.Point(3, 26)
+        Me.DockPanel1_Container.Name = "DockPanel1_Container"
+        Me.DockPanel1_Container.Size = New System.Drawing.Size(374, 360)
+        Me.DockPanel1_Container.TabIndex = 0
+        '
+        'TreeList1
+        '
+        Me.TreeList1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TreeList1.Location = New System.Drawing.Point(0, 0)
+        Me.TreeList1.Name = "TreeList1"
+        Me.TreeList1.OptionsBehavior.Editable = False
+        Me.TreeList1.OptionsFind.AlwaysVisible = True
+        Me.TreeList1.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.[True]
+        Me.TreeList1.OptionsView.ShowColumns = False
+        Me.TreeList1.OptionsView.ShowHorzLines = False
+        Me.TreeList1.OptionsView.ShowIndicator = False
+        Me.TreeList1.OptionsView.ShowVertLines = False
+        Me.TreeList1.Size = New System.Drawing.Size(374, 360)
+        Me.TreeList1.TabIndex = 0
+        '
+        'ImageCollection1
+        '
+        Me.ImageCollection1.ImageStream = CType(resources.GetObject("ImageCollection1.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
+        Me.ImageCollection1.Images.SetKeyName(0, "home_16x16.png")
+        Me.ImageCollection1.Images.SetKeyName(1, "open_16x16.png")
+        Me.ImageCollection1.Images.SetKeyName(2, "window_16x16.png")
+        '
+        'btnShow
+        '
+        Me.btnShow.Location = New System.Drawing.Point(460, 121)
+        Me.btnShow.Name = "btnShow"
+        Me.btnShow.Size = New System.Drawing.Size(75, 23)
+        Me.btnShow.TabIndex = 4
+        Me.btnShow.Text = "Show"
+        '
+        'txtUser
+        '
+        Me.txtUser.Location = New System.Drawing.Point(447, 95)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.Size = New System.Drawing.Size(100, 20)
+        Me.txtUser.TabIndex = 5
+        '
+        'btnSetting
+        '
+        Me.btnSetting.Location = New System.Drawing.Point(460, 220)
+        Me.btnSetting.Name = "btnSetting"
+        Me.btnSetting.Size = New System.Drawing.Size(75, 23)
+        Me.btnSetting.TabIndex = 7
+        Me.btnSetting.Text = "Setting"
+        '
+        'FrmShowAuthorizedUser
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(596, 389)
+        Me.Controls.Add(Me.btnSetting)
+        Me.Controls.Add(Me.txtUser)
+        Me.Controls.Add(Me.btnShow)
+        Me.Controls.Add(Me.DockPanel1)
+        Me.Name = "FrmShowAuthorizedUser"
+        Me.Tag = "0258TL01"
+        Me.Text = "Authorized User"
+        CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DockPanel1.ResumeLayout(False)
+        Me.DockPanel1_Container.ResumeLayout(False)
+        CType(Me.TreeList1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtUser.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Friend WithEvents DockManager1 As DevExpress.XtraBars.Docking.DockManager
+    Friend WithEvents DockPanel1 As DevExpress.XtraBars.Docking.DockPanel
+    Friend WithEvents DockPanel1_Container As DevExpress.XtraBars.Docking.ControlContainer
+    Friend WithEvents TreeList1 As DevExpress.XtraTreeList.TreeList
+    Friend WithEvents ImageCollection1 As DevExpress.Utils.ImageCollection
+    Friend WithEvents btnShow As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtUser As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents btnSetting As DevExpress.XtraEditors.SimpleButton
+End Class

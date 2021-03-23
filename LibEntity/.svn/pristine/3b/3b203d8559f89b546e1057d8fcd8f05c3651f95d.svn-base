@@ -1,0 +1,47 @@
+
+ Public Class CL_PlanRS
+     Public ID_K As String 
+     Public Ngay_K As DateTime 
+     Public May_K As String 
+     Public BeRong As String 
+     Public ProductCode_K As String 
+     Public PersonPerLine As Decimal 
+     Public Customer As String 
+     Public Method As String 
+     Public TGGC As Decimal 
+     Public SLThietBi As  Integer 
+     Public Leadtime As Decimal 
+     Public StartLot_K As String 
+     Public EndLot As String 
+     Public TC As Decimal 
+     Public EndLotPO As  Integer 
+     Public EndLotNVL As  Integer 
+     Public ChuKy As  Integer 
+     Public TenNguyenLieu As String 
+     Public SoM2Dong As Decimal 
+     Public LoaiKiem_K As String 
+     Public StartTime As DateTime 
+     Public EndTime As DateTime 
+     Public Lotsize As  Integer 
+     Public TongGioCan As Decimal 
+     Public TongOutputPcs As  Integer 
+     Public TongOutputCM As Decimal 
+     Public TongOutputM2 As Decimal 
+     Public ProcessNumber As  Integer 
+     Public ProcessCode As String 
+     Public ProcessName As String 
+     Public EndDate As DateTime 
+     Public CheckHour As String 
+     Public CheckDate As String 
+     Public Status As String 
+     Public UuTien As  Integer 
+     Public Ca As String 
+     Public AnCom As String 
+     Public GiaiLao As String 
+     Public LenKhuon As String 
+     Public Note As String 
+     Public NoteInput As String 
+     Public NhietDo As  Integer 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+ End  Class

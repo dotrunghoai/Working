@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:27-May-2020 11:46:59
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmUserGroup
+FunctionName:gridUserGroup_CellClick
+Error:Public member 'Value' on type 'String' not found.
+=================================================================================================
+DateTime:27-May-2020 11:47:02
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmUserGroup
+FunctionName:gridUserGroup_CellClick
+Error:Public member 'Value' on type 'String' not found.

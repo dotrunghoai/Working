@@ -1,0 +1,21 @@
+﻿Imports CommonDB
+Imports PublicUtility
+Public Class FrmAuthorizationControl
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Private Sub FrmAuthorizationControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnShow.PerformClick()
+    End Sub
+
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        GridControl1.DataSource = _db.FillDataTable("
+            SELECT h.UserID, h.FormID, d.TextVietNam, h.IsEdit, h.IsAdmin, h.CreateUser, 
+                h.CreateDate, h.CreateMachine
+            FROM Main_UserRight AS h
+            LEFT JOIN Main_FormRight AS d
+            ON h.FormID = d.FormID
+            ORDER BY h.CreateDate DESC")
+        GridControlSetFormat(GridView1, 2)
+        GridView1.Columns("TextVietNam").Width = 200
+        GridView1.Columns("CreateDate").Width = 120
+    End Sub
+End Class

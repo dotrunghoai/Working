@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFE54EBF-D8C1-4F4C-B455-3756CE47FBBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LibEquipManagement</RootNamespace>
+    <AssemblyName>LibEquipManagement</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibEquipManagement.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LibEquipManagement.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>LibEquipManagement.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>LibEquipManagement.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="LibWorkingTime">
+      <HintPath>..\LibWorkingTime\obj\Debug\LibWorkingTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="UtilityControl, Version=1.0.7459.17275, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ERPNDV\bin\Debug\UtilityControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity_Equipment_Manager\Main_UserRight.vb" />
+    <Compile Include="FrmEndMonthList.Designer.vb">
+      <DependentUpon>FrmEndMonthList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEndMonthList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entity_Equipment_Manager\QAE_Abnormal.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_Approver.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_Calibration.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_Cancel.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_EndMonth.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_EndMonthDetail.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_EquidList.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_Register.vb" />
+    <Compile Include="Entity_Equipment_Manager\QAE_Verify.vb" />
+    <Compile Include="FrmAbnormalList.Designer.vb">
+      <DependentUpon>FrmAbnormalList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbnormalList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbnormalRequest.Designer.vb">
+      <DependentUpon>FrmAbnormalRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbnormalRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmApprover.Designer.vb">
+      <DependentUpon>FrmApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCalibrationList.Designer.vb">
+      <DependentUpon>FrmCalibrationList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCalibrationList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCalibrationRequest.Designer.vb">
+      <DependentUpon>FrmCalibrationRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCalibrationRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCancelList.Designer.vb">
+      <DependentUpon>FrmCancelList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCancelList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCancelRequest.Designer.vb">
+      <DependentUpon>FrmCancelRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCancelRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEndMonthRequest.Designer.vb">
+      <DependentUpon>FrmEndMonthRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEndMonthRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEquipList.Designer.vb">
+      <DependentUpon>FrmEquipList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEquipList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegisterList.Designer.vb">
+      <DependentUpon>FrmRegisterList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegisterList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegisterRequest.Designer.vb">
+      <DependentUpon>FrmRegisterRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegisterRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerifyList.Designer.vb">
+      <DependentUpon>FrmVerifyList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerifyList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerifyRequest.Designer.vb">
+      <DependentUpon>FrmVerifyRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerifyRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\clsApplication.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Table_Equipment_Manager\PublicSP.vb" />
+    <Compile Include="Table_Equipment_Manager\PublicTable.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmEndMonthList.resx">
+      <DependentUpon>FrmEndMonthList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbnormalList.resx">
+      <DependentUpon>FrmAbnormalList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbnormalRequest.resx">
+      <DependentUpon>FrmAbnormalRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmApprover.resx">
+      <DependentUpon>FrmApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCalibrationList.resx">
+      <DependentUpon>FrmCalibrationList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCalibrationRequest.resx">
+      <DependentUpon>FrmCalibrationRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCancelList.resx">
+      <DependentUpon>FrmCancelList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCancelRequest.resx">
+      <DependentUpon>FrmCancelRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEndMonthRequest.resx">
+      <DependentUpon>FrmEndMonthRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEquipList.resx">
+      <DependentUpon>FrmEquipList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegisterList.resx">
+      <DependentUpon>FrmRegisterList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegisterRequest.resx">
+      <DependentUpon>FrmRegisterRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerifyList.resx">
+      <DependentUpon>FrmVerifyList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerifyRequest.resx">
+      <DependentUpon>FrmVerifyRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonDB.vbproj">
+      <Project>{db7e75fd-887e-4c54-a3c4-a42cfaeac6f7}</Project>
+      <Name>CommonDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibEntity\LibEntity.vbproj">
+      <Project>{c8d9b253-bb8a-4180-b3e6-ca2254aa764f}</Project>
+      <Name>LibEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicUtility\PublicUtility.vbproj">
+      <Project>{e0cd795e-43bf-4ff5-9605-563eb53e9bbf}</Project>
+      <Name>PublicUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

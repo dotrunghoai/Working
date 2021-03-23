@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{29839992-6631-4437-A565-4B05126F1121}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LibKQCVQC</RootNamespace>
+    <AssemblyName>LibKQCVQC</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibKQCVQC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LibKQCVQC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibKQCVQC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>LibKQCVQC.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity_KQCVQC\KQQC_LaserPlasmaBH.vb" />
+    <Compile Include="Entity_KQCVQC\KQQC_NgoaiQuan.vb" />
+    <Compile Include="Entity_KQCVQC\KQQC_PTH.vb" />
+    <Compile Include="Entity_KQCVQC\Main_UserRight.vb" />
+    <Compile Include="Entity_KQCVQC\WT_Product.vb" />
+    <Compile Include="FrmEmpCode.Designer.vb">
+      <DependentUpon>FrmEmpCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmpCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLaserPlasmaBH.Designer.vb">
+      <DependentUpon>FrmLaserPlasmaBH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLaserPlasmaBH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLaserPlasmaBH_2.Designer.vb">
+      <DependentUpon>FrmLaserPlasmaBH_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLaserPlasmaBH_2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNgoaiQuan.Designer.vb">
+      <DependentUpon>FrmNgoaiQuan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNgoaiQuan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPTH.Designer.vb">
+      <DependentUpon>FrmPTH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPTH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSummaryNew2.Designer.vb">
+      <DependentUpon>FrmSummaryNew2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSummaryNew2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXemKQCVNew.Designer.vb">
+      <DependentUpon>FrmXemKQCVNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXemKQCVNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKQCVNEW.Designer.vb">
+      <DependentUpon>FrmKQCVNEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKQCVNEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPhuongPhap.Designer.vb">
+      <DependentUpon>FrmPhuongPhap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPhuongPhap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSummaryNew.Designer.vb">
+      <DependentUpon>FrmSummaryNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSummaryNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Table_KQCVQC\PublicSP.vb" />
+    <Compile Include="Table_KQCVQC\PublicTable.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmEmpCode.resx">
+      <DependentUpon>FrmEmpCode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLaserPlasmaBH.resx">
+      <DependentUpon>FrmLaserPlasmaBH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLaserPlasmaBH_2.resx">
+      <DependentUpon>FrmLaserPlasmaBH_2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNgoaiQuan.resx">
+      <DependentUpon>FrmNgoaiQuan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPTH.resx">
+      <DependentUpon>FrmPTH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSummaryNew2.resx">
+      <DependentUpon>FrmSummaryNew2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXemKQCVNew.resx">
+      <DependentUpon>FrmXemKQCVNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKQCVNEW.resx">
+      <DependentUpon>FrmKQCVNEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhuongPhap.resx">
+      <DependentUpon>FrmPhuongPhap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSummaryNew.resx">
+      <DependentUpon>FrmSummaryNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonDB.vbproj">
+      <Project>{db7e75fd-887e-4c54-a3c4-a42cfaeac6f7}</Project>
+      <Name>CommonDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibEntity\LibEntity.vbproj">
+      <Project>{c8d9b253-bb8a-4180-b3e6-ca2254aa764f}</Project>
+      <Name>LibEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicUtility\PublicUtility.vbproj">
+      <Project>{E0CD795E-43BF-4FF5-9605-563EB53E9BBF}</Project>
+      <Name>PublicUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityControl\UtilityControl.vbproj">
+      <Project>{71BF981E-C557-4A74-8450-390C431F0223}</Project>
+      <Name>UtilityControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

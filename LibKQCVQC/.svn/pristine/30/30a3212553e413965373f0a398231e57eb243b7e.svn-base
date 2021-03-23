@@ -1,0 +1,509 @@
+﻿Imports System.Drawing
+Imports System.Windows.Forms
+Imports CommonDB
+Imports DevExpress.XtraEditors.Repository
+Imports DevExpress.XtraGrid.Columns
+Imports DevExpress.XtraGrid.Views.Grid
+Imports PublicUtility
+Public Class FrmPTH
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Function CreateID() As String
+        Dim ID As String = ""
+        Dim stt As String = ""
+        Dim o As Object = Nothing
+
+        'chuỗi yyMMdd gán bằng ngày/tháng/năm hiện tại
+        Dim yyMMdd As String = DateEdit1.DateTime.ToString("yyMMdd")
+
+        'chuỗi sql để lấy chuỗi 4 giá trị cuối của ID có cấu trúc: 'yyMMdd****' mà '****' có giá trị lớn nhất
+        Dim sql As String = String.Format(" select right(Max(ID), 4) FROM {0} " +
+                                          " where ID like '{1}%' ", PublicTable.Table_KQQC_PTH, yyMMdd)
+        '---Chú ý: kiểu dữ liệu của MaNV phải có giới hạn đúng với lệnh select right(MaNV) - 4 kí tự -> phải chuẩn 10 ký tự
+        'ExecuteScalar để trả về 1 giá trị là cột đầu tiên của hàng đầu tiên
+        o = _db.ExecuteScalar(sql)
+
+        If o IsNot DBNull.Value And o IsNot Nothing Then
+            o = Convert.ToInt32(o) + 1
+            stt = o.ToString.PadLeft(4, "0")
+            ID = yyMMdd + stt
+        Else
+            ID = yyMMdd + "0001"
+        End If
+        Return ID
+    End Function
+    Private Sub blbiNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiNew.ItemClick
+        GridView1.Columns.Clear()
+        GridView1.SelectAll()
+        GridView1.DeleteSelectedRows()
+        EditData()
+        teID.Text = " "
+        teMSSP.Text = ""
+        teLot.Text = ""
+        teCongDoan.Text = "PTH"
+        teSoLuongKiem.Text = 0
+        teThoiGianKiem.Text = 0
+        teNhanVienKiem.Text = ""
+        meGhiChu.Text = ""
+        teKQCross.Text = "OK"
+    End Sub
+    Private Sub meGhiChu_Leave(sender As Object, e As EventArgs) Handles meGhiChu.Leave
+        GridView1.Columns.Clear()
+        If teSoLuongKiem.Text = "" Or teSoLuongKiem.Text Is Nothing Or IsNumeric(teSoLuongKiem.Text) = False Or teSoLuongKiem.Text > 50 Or teSoLuongKiem.Text < 1 Then
+            ShowWarning("Không xác định được số lượng kiểm")
+            Return
+        Else
+            Dim soLuongKiem As Integer = teSoLuongKiem.Text
+            Dim dtSoLuongKiem As New DataTable
+            dtSoLuongKiem.Columns.Add("Cav", GetType(String))
+            dtSoLuongKiem.Columns.Add("Mã lỗi", GetType(String))
+            dtSoLuongKiem.Columns.Add("Số lượng", GetType(String))
+            For i = 0 To soLuongKiem - 1
+                dtSoLuongKiem.Rows.Add()
+                dtSoLuongKiem.Rows(i)("Cav") = "Cav" + CStr(i + 1)
+                dtSoLuongKiem.Rows(i)("Mã lỗi") = "OK"
+                dtSoLuongKiem.Rows(i)("Số lượng") = ""
+            Next
+            GridControl1.DataSource = dtSoLuongKiem
+            GridControlSetWidth(GridView1, 100)
+            GridControlReadOnly(GridView1, False)
+            GridView1.Columns("Cav").OptionsColumn.ReadOnly = True
+            GridControlSetColorEdit(GridView1)
+
+            'Tạo combobox
+            GridControl1.ForceInitialize()
+            Dim riEditor As New RepositoryItemComboBox()
+            riEditor.Items.AddRange(New String() {"OK", "A", "B1", "B2", "B3", "B4", "B5", "C", "D1", "D2", "E", "F1", "F2", "F3", "G1", "G2", "H", "I1", "I2"})
+            riEditor.DropDownRows = 20
+            GridControl1.RepositoryItems.Add(riEditor)
+            GridView1.Columns(1).ColumnEdit = riEditor
+
+            blbiSave.PerformClick()
+
+        End If
+    End Sub
+    Private Sub blbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiSave.ItemClick
+        If IsNumeric(teSoLuongKiem.Text) = False Or teSoLuongKiem.Text > 50 Or teSoLuongKiem.Text < 1 Then
+            Return
+        End If
+        If teID.Text = " " Then
+            Dim objPTH As New KQQC_PTH
+            objPTH.ID_K = CreateID()
+            teID.Text = objPTH.ID_K
+            objPTH.Ngay = DateEdit1.EditValue
+            objPTH.MSSP = teMSSP.Text
+
+            Dim objWT As New WT_Product
+            objWT.ProductCode_K = teMSSP.Text.PadLeft(5, "0")
+            _db.GetObject(objWT)
+            If _db.ExistObject(objWT) Then
+                objPTH.KhachHang = objWT.CustomerName
+                objPTH.Method = objWT.Method
+            Else
+                objPTH.KhachHang = ""
+                objPTH.Method = ""
+            End If
+
+            objPTH.Lot = teLot.Text
+            objPTH.CongDoan = teCongDoan.EditValue
+            objPTH.TanSo = cbbTanSo.EditValue
+            objPTH.SoChuyenGC = cbbSoChuyenGC.EditValue
+
+            If teSoLuongKiem.Text = "" Or teSoLuongKiem.Text Is Nothing Or IsNumeric(teSoLuongKiem.Text) = False Then
+                objPTH.SoLuongKiem = 0
+            Else
+                objPTH.SoLuongKiem = Integer.Parse(teSoLuongKiem.Text)
+            End If
+
+            objPTH.ThoiGianKiem = Integer.Parse(teThoiGianKiem.Text)
+            objPTH.NhanVienKiem = teNhanVienKiem.Text
+            objPTH.GhiChu = meGhiChu.Text
+            objPTH.CreateUser = CurrentUser.UserID
+            objPTH.CreateDate = DateTime.Now
+            objPTH.DanhGia = lcDanhGia.Text
+            objPTH.KQCross = teKQCross.Text
+            objPTH.DanhGiaLoHang = lcDanhGiaLoHang.Text
+
+            _db.Insert(objPTH)
+
+            UpdateCav()
+            DanhGia()
+        Else
+            Dim objPTH As New KQQC_PTH
+            objPTH.ID_K = teID.Text
+            _db.GetObject(objPTH)
+            'teID.Text = objPTH.ID_K
+            objPTH.Ngay = DateEdit1.DateTime
+            objPTH.MSSP = teMSSP.Text
+
+            Dim objWT As New WT_Product
+            objWT.ProductCode_K = teMSSP.Text.PadLeft(5, "0")
+            _db.GetObject(objWT)
+            If _db.ExistObject(objWT) Then
+                objPTH.KhachHang = objWT.CustomerName
+                objPTH.Method = objWT.Method
+            Else
+                objPTH.KhachHang = ""
+                objPTH.Method = ""
+            End If
+
+            objPTH.Lot = teLot.Text
+            objPTH.CongDoan = teCongDoan.EditValue
+            objPTH.TanSo = cbbTanSo.EditValue
+            objPTH.SoChuyenGC = cbbSoChuyenGC.EditValue
+
+            If teSoLuongKiem.Text = "" Or teSoLuongKiem.Text Is Nothing Or IsNumeric(teSoLuongKiem.Text) = False Then
+                objPTH.SoLuongKiem = 0
+            Else
+                objPTH.SoLuongKiem = Integer.Parse(teSoLuongKiem.Text)
+            End If
+
+            objPTH.ThoiGianKiem = Integer.Parse(teThoiGianKiem.Text)
+            objPTH.NhanVienKiem = teNhanVienKiem.Text
+            objPTH.GhiChu = meGhiChu.Text
+            objPTH.CreateUser = CurrentUser.UserID
+            objPTH.CreateDate = DateTime.Now
+            objPTH.DanhGia = lcDanhGia.Text
+            objPTH.KQCross = teKQCross.Text
+            objPTH.DanhGiaLoHang = lcDanhGiaLoHang.Text
+
+            _db.Update(objPTH)
+
+            UpdateCav()
+            DanhGia()
+        End If
+    End Sub
+
+    Private Sub FrmPTH_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        teID.Text = " "
+        DateEdit1.DateTime = DateTime.Now
+
+        teCongDoan.Text = "PTH"
+
+        cbbTanSo.Properties.Items.Add("FPI")
+        cbbTanSo.Properties.Items.Add("MPI")
+        cbbTanSo.Properties.Items.Add("LPI")
+        cbbTanSo.EditValue = "FPI"
+
+        cbbSoChuyenGC.Properties.Items.Add("01")
+        cbbSoChuyenGC.Properties.Items.Add("02")
+        cbbSoChuyenGC.EditValue = "01"
+    End Sub
+
+
+
+    Private Sub FrmPTH_KeyDown(sender As Object, e As Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control And e.KeyCode = Keys.N Then
+            blbiNew.PerformClick()
+        ElseIf e.Control And e.KeyCode = Keys.S Then
+            blbiSave.PerformClick()
+        ElseIf e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Right Then
+            SendKeys.Send("{Tab}")
+        ElseIf e.KeyCode = Keys.Left Then
+            SendKeys.Send("+{Tab}")
+        ElseIf e.KeyCode = Keys.F5 Then
+            blbiShow.PerformClick()
+        End If
+    End Sub
+    Private Sub UpdateCav()
+        Dim dtCav As DataTable = ResultCav()
+        For i = 0 To dtCav.Rows.Count - 1
+            If dtCav.Rows(i).Item(1).ToString.ToUpper = "OK" Then
+                Dim stri As String = dtCav.Rows(i).Item(1)
+                _db.ExecuteNonQuery(String.Format("update KQQC_PTH set MaLoiCav{0} = '{1}' where ID = '{2}'", (i + 1), "OK", teID.Text))
+            Else
+                _db.ExecuteNonQuery(String.Format("Update KQQC_PTH set MaLoiCav{0} = '{1}' where ID = '{2}'", (i + 1), dtCav.Rows(i).Item(1), teID.Text))
+            End If
+        Next
+        For i = 0 To dtCav.Rows.Count - 1
+            _db.ExecuteNonQuery(String.Format("Update KQQC_PTH set SoLuongLoiCav{0} = '{1}' where ID = '{2}'", (i + 1), dtCav.Rows(i).Item(2), teID.Text))
+        Next
+
+        blbiShow.PerformClick()
+    End Sub
+    Private Function ResultCav() As DataTable
+        Dim dt As New DataTable()
+        For Each column As GridColumn In GridView1.VisibleColumns
+            dt.Columns.Add(column.FieldName, column.ColumnType)
+        Next column
+        For i As Integer = 0 To GridView1.DataRowCount - 1
+            Dim row As DataRow = dt.NewRow()
+            For Each column As GridColumn In GridView1.VisibleColumns
+                row(column.FieldName) = GridView1.GetRowCellValue(i, column)
+            Next column
+            dt.Rows.Add(row)
+        Next i
+        Return dt
+    End Function
+    Public Sub DanhGia()
+        Dim dt As DataTable = ResultCav()
+        Dim soDem As Integer = 0
+        For i = 0 To dt.Rows.Count - 1
+            If dt.Rows(i)(1).ToString.ToUpper = "OK" Then
+                soDem += 1
+            End If
+        Next
+        Dim obj As New KQQC_PTH
+        obj.ID_K = teID.Text
+        _db.GetObject(obj)
+        If soDem = dt.Rows.Count Then
+            lcDanhGia.BackColor = System.Drawing.Color.LawnGreen
+            lcDanhGia.Text = "OK"
+            obj.DanhGia = "OK"
+        Else
+            lcDanhGia.BackColor = System.Drawing.Color.Red
+            lcDanhGia.Text = "NG"
+            obj.DanhGia = "NG"
+        End If
+        _db.Update(obj)
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        UpdateCav()
+        DanhGia()
+        DanhGiaTong()
+        blbiShow.PerformClick()
+    End Sub
+
+    Private Sub blbiDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiDelete.ItemClick
+        If ShowQuestion("Bạn có muốn xóa ID: " + GridView2.GetFocusedRowCellValue("ID") + " không ?") = DialogResult.Yes Then
+            If GridView2.GetFocusedRowCellValue("ID") Is Nothing Or GridView2.GetFocusedRowCellValue("ID") = "" Then
+                Exit Sub
+            End If
+            Dim objDelete As String = String.Format("Delete KQQC_PTH where ID = '{0}'", GridView2.GetFocusedRowCellValue("ID"))
+            _db.ExecuteNonQuery(objDelete)
+            GridView2.DeleteSelectedRows()
+            GridView1.Columns.Clear()
+            GridView1.SelectAll()
+            GridView1.DeleteSelectedRows()
+            teID.Text = " "
+        End If
+    End Sub
+
+    Private Sub blbiShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiShow.ItemClick
+        Dim para(2) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@StartDate", GetStartDate(DateEdit1.DateTime))
+        para(1) = New SqlClient.SqlParameter("@EndDate", GetEndDate(DateEdit1.DateTime))
+        para(2) = New SqlClient.SqlParameter("@PTH", "PTH")
+        Dim dtPTH As DataTable = _db.ExecuteStoreProcedureTB("sp_KQQC_LoadLaserPlasmaBH", para)
+        GridControl2.DataSource = dtPTH
+        GridControlSetFormat(GridView2)
+    End Sub
+
+    Private Sub GridView2_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView2.RowClick
+        GridView1.Columns.Clear()
+        teID.Text = GridView2.GetFocusedRowCellValue("ID")
+        Dim obj As New KQQC_PTH
+        obj.ID_K = GridView2.GetFocusedRowCellValue("ID")
+        _db.GetObject(obj)
+        DateEdit1.EditValue = obj.Ngay
+        teMSSP.Text = obj.MSSP
+        teLot.Text = obj.Lot
+        teCongDoan.EditValue = obj.CongDoan
+        cbbTanSo.EditValue = obj.TanSo
+        cbbSoChuyenGC.EditValue = obj.SoChuyenGC
+        teSoLuongKiem.Text = obj.SoLuongKiem
+        teThoiGianKiem.Text = obj.ThoiGianKiem
+        teNhanVienKiem.Text = obj.NhanVienKiem
+        meGhiChu.Text = obj.GhiChu
+        lcDanhGia.Text = obj.DanhGia
+        teKQCross.Text = obj.KQCross
+        lcDanhGiaLoHang.Text = obj.DanhGiaLoHang
+
+        Dim soLuongKiem As Integer = teSoLuongKiem.Text
+        Dim dtSoLuongKiem As New DataTable
+        dtSoLuongKiem.Columns.Add("Cav", GetType(String))
+        dtSoLuongKiem.Columns.Add("Mã lỗi", GetType(String))
+        dtSoLuongKiem.Columns.Add("Số lượng", GetType(Integer))
+        For i = 0 To soLuongKiem - 1
+            dtSoLuongKiem.Rows.Add()
+            dtSoLuongKiem.Rows(i)("Cav") = "Cav" + CStr(i + 1)
+            dtSoLuongKiem.Rows(i)("Mã lỗi") = GridView2.GetFocusedRowCellValue("MaLoiCav" + CStr(i + 1))
+            dtSoLuongKiem.Rows(i)("Số lượng") = GridView2.GetFocusedRowCellValue("SoLuongLoiCav" + CStr(i + 1))
+        Next
+        GridControl1.DataSource = dtSoLuongKiem
+        GridControlSetWidth(GridView1, 100)
+
+        'Tạo combobox
+        GridControl1.ForceInitialize()
+        Dim riEditor As New RepositoryItemComboBox()
+        riEditor.Items.AddRange(New String() {"OK", "A", "B1", "B2", "B3", "B4", "B5", "C", "D1", "D2", "E", "F1", "F2", "F3", "G1", "G2", "H", "I1", "I2"})
+        riEditor.DropDownRows = 20
+        GridControl1.RepositoryItems.Add(riEditor)
+        GridView1.Columns(1).ColumnEdit = riEditor
+
+        DanhGia()
+        ReadOnlyData()
+    End Sub
+
+    Private Sub blbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiExport.ItemClick
+        If GridView2.RowCount > 0 Then
+            GridControlExportExcel(GridView2)
+        End If
+    End Sub
+
+    Private Sub lcDanhGia_TextChanged(sender As Object, e As EventArgs) Handles lcDanhGia.TextChanged
+        Dim obj As New KQQC_PTH
+        obj.ID_K = teID.Text
+        _db.GetObject(obj)
+
+        If lcDanhGia.Text.ToUpper = "OK" Then
+            obj.DanhGia = "OK"
+        Else
+            obj.DanhGia = "NG"
+        End If
+
+        If (lcDanhGia.Text.ToUpper = "OK") And (teKQCross.Text.ToUpper = "OK" Or teKQCross.Text = "-") Then
+            lcDanhGiaLoHang.Text = "OK"
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.LawnGreen
+            obj.DanhGiaLoHang = "OK"
+        Else
+            lcDanhGiaLoHang.Text = "NG"
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.Red
+            obj.DanhGiaLoHang = "NG"
+        End If
+        _db.Update(obj)
+    End Sub
+
+    Private Sub teKQCross_EditValueChanged(sender As Object, e As EventArgs) Handles teKQCross.EditValueChanged
+        Dim obj As New KQQC_PTH
+        obj.ID_K = teID.Text
+        _db.GetObject(obj)
+        If teKQCross.Text.ToUpper = "OK" Then
+            teKQCross.BackColor = System.Drawing.Color.LawnGreen
+            obj.KQCross = "OK"
+        ElseIf teKQCross.Text = "-" Then
+            teKQCross.BackColor = System.Drawing.Color.White
+            obj.KQCross = "-"
+        Else
+            teKQCross.BackColor = System.Drawing.Color.Red
+            obj.KQCross = "NG"
+        End If
+
+        If (lcDanhGia.Text.ToUpper = "OK") And (teKQCross.Text.ToUpper = "OK" Or teKQCross.Text = "-") Then
+            lcDanhGiaLoHang.Text = "OK"
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.LawnGreen
+            obj.DanhGiaLoHang = "OK"
+        Else
+            lcDanhGiaLoHang.Text = "NG"
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.Red
+            obj.DanhGiaLoHang = "NG"
+        End If
+        _db.Update(obj)
+    End Sub
+
+    Private Sub teKQCross_Leave(sender As Object, e As EventArgs) Handles teKQCross.Leave
+        blbiSave.PerformClick()
+    End Sub
+
+    Public Sub ViewAccess()
+        blbiNew.Enabled = False
+        blbiSave.Enabled = False
+        blbiDelete.Enabled = False
+        btnEdit.Enabled = False
+    End Sub
+
+    Private Sub FrmPTH_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Dim obj As New Main_UserRight
+        obj.FormID_K = Tag
+        obj.UserID_K = CurrentUser.UserID
+        _db.GetObject(obj)
+        If obj.IsEdit = False Then
+            ViewAccess()
+        End If
+    End Sub
+    Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        EditData()
+    End Sub
+    Sub ReadOnlyData()
+        DateEdit1.ReadOnly = True
+        teMSSP.ReadOnly = True
+        teLot.ReadOnly = True
+        cbbTanSo.ReadOnly = True
+        cbbSoChuyenGC.ReadOnly = True
+        teSoLuongKiem.ReadOnly = True
+        teThoiGianKiem.ReadOnly = True
+        teNhanVienKiem.ReadOnly = True
+        meGhiChu.ReadOnly = True
+        teKQCross.ReadOnly = True
+        GridControlSetFormat(GridView1)
+        GridView1.OptionsView.ShowFooter = False
+    End Sub
+    Sub EditData()
+        DateEdit1.ReadOnly = False
+        teMSSP.ReadOnly = False
+        teLot.ReadOnly = False
+        cbbTanSo.ReadOnly = False
+        cbbSoChuyenGC.ReadOnly = False
+        teSoLuongKiem.ReadOnly = False
+        teThoiGianKiem.ReadOnly = False
+        teNhanVienKiem.ReadOnly = False
+        meGhiChu.ReadOnly = False
+        teKQCross.ReadOnly = False
+        If GridView1.RowCount > 0 Then
+            GridControlReadOnly(GridView1, False)
+            GridView1.Columns("Cav").OptionsColumn.ReadOnly = True
+            GridControlSetColorEdit(GridView1)
+            GridView1.OptionsView.ShowFooter = False
+        End If
+    End Sub
+
+    Private Sub GridView2_RowStyle(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs) Handles GridView2.RowStyle
+        Dim views As GridView = TryCast(sender, GridView)
+        If e.RowHandle >= 0 Then
+            If views.GetRowCellDisplayText(e.RowHandle, views.Columns("DanhGiaLoHang")) = "NG" Then
+                e.Appearance.BackColor = Color.Red
+                e.Appearance.ForeColor = Color.White
+            End If
+        End If
+    End Sub
+
+    Private Sub lcDanhGiaLoHang_TextChanged(sender As Object, e As EventArgs) Handles lcDanhGiaLoHang.TextChanged
+        Dim obj As New KQQC_PTH
+        obj.ID_K = teID.Text
+        _db.GetObject(obj)
+        If (lcDanhGiaLoHang.Text.ToUpper = "OK") Then
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.LawnGreen
+            obj.DanhGiaLoHang = "OK"
+        Else
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.Red
+            obj.DanhGiaLoHang = "NG"
+        End If
+        _db.Update(obj)
+    End Sub
+    Sub DanhGiaTong()
+        Dim obj As New KQQC_PTH
+        obj.ID_K = teID.Text
+        _db.GetObject(obj)
+        If lcDanhGia.Text.ToUpper = "OK" Then
+            obj.DanhGia = "OK"
+        Else
+            obj.DanhGia = "NG"
+        End If
+
+        If teKQCross.Text.ToUpper = "OK" Then
+            teKQCross.BackColor = System.Drawing.Color.LawnGreen
+            obj.KQCross = "OK"
+        ElseIf teKQCross.Text = "-" Then
+            teKQCross.BackColor = System.Drawing.Color.White
+            obj.KQCross = "-"
+        Else
+            teKQCross.BackColor = System.Drawing.Color.Red
+            obj.KQCross = "NG"
+        End If
+
+        If (lcDanhGia.Text.ToUpper = "OK") And (teKQCross.Text.ToUpper = "OK" Or teKQCross.Text = "-") Then
+            lcDanhGiaLoHang.Text = "OK"
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.LawnGreen
+            obj.DanhGiaLoHang = "OK"
+        Else
+            lcDanhGiaLoHang.Text = "NG"
+            lcDanhGiaLoHang.BackColor = System.Drawing.Color.Red
+            obj.DanhGiaLoHang = "NG"
+        End If
+        _db.Update(obj)
+    End Sub
+
+    Private Sub teMSSP_Leave(sender As Object, e As EventArgs) Handles teMSSP.Leave
+        teMSSP.Text = teMSSP.Text.PadLeft(5, "0")
+    End Sub
+End Class

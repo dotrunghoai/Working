@@ -1,0 +1,46 @@
+
+ Public Class t_ASProductStock
+     Public ItemCode_K As String 
+     Public WarehouseType_K As String 
+     Public WarehouseCode_K As String 
+     Public StoreNumber_K As String 
+     Public LotNumber_K As String 
+     Public PurchaseOrderNumber As String 
+     Public SalesOrderNumber As String 
+     Public SalesOrderLineNumber As  Integer 
+     Public ReferenceNumber As String 
+     Public WarehouseClass As String 
+     Public VendorCode As String 
+     Public PurchaseDate As DateTime 
+     Public InDate As DateTime 
+     Public PurchaseUnitPrice As double
+     Public CartonQuantity As double
+     Public QuantityParCarton As double
+     Public MainCategoryCode As String 
+     Public SubCategoryCode As String 
+     Public BeginingStockQuantity As double
+     Public BeginingStockAmount As double
+     Public StockQuantity As double
+     Public StockAmount As double
+     Public ReservedQuantity As double
+     Public InstructedQuantity As double
+     Public MonthStoreInQuantity As double
+     Public MonthStoreInAmount As double
+     Public MonthReceptQuantity As double
+     Public MonthReceptAmount As double
+     Public MonthStoreOutQuantity As double
+     Public MonthStoreOutAmount As double
+     Public MonthSendQuantity As double
+     Public MonthSendAmount As double
+     Public MonthAdjustQuantity As double
+     Public MonthAdjustAmount As double
+     Public CreatedUserCode As String 
+     Public CreatedTransactionNumber As String 
+     Public CreatedDate As DateTime 
+     Public ChangedUserCode As String 
+     Public ChangedTransactionNumber As String 
+     Public ChangedDate As DateTime 
+     Public DeletedUserCode As String 
+     Public DeletedTransactionNumber As String 
+     Public DeletedDate As DateTime 
+ End  Class

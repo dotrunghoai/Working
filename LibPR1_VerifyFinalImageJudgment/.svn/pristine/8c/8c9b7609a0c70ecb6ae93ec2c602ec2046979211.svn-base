@@ -1,0 +1,675 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmVerifyFinalImageJudgment
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVerifyFinalImageJudgment))
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.Bar1 = New DevExpress.XtraBars.Bar()
+        Me.btnShow = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnEdit = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnGetData = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.BandedGridView1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridView()
+        Me.ProductCode = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.LotNumber = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.ChangeDate = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Method = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.CustomerName = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.ProductName = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.TotalBarcodeKiemThucTe = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.TongKetLoiDenBarcode = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn2 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn3 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn4 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn5 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn6 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn7 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn8 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn9 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn10 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn11 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Total_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn13 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn14 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn15 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn16 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn17 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn18 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn19 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn20 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.TongHinhAnhLoiMayAOIBat_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn12 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn21 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn22 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn23 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn24 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn25 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn26 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn27 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn28 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn29 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn30 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Total_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn31 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.BandedGridColumn32 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand6 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand2 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand5 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BandedGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'BarManager1
+        '
+        Me.BarManager1.AllowShowToolbarsPopup = False
+        Me.BarManager1.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.Bar1})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
+        Me.BarManager1.Form = Me
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.btnShow, Me.btnEdit, Me.btnGetData})
+        Me.BarManager1.MaxItemId = 3
+        '
+        'Bar1
+        '
+        Me.Bar1.BarName = "Tools"
+        Me.Bar1.DockCol = 0
+        Me.Bar1.DockRow = 0
+        Me.Bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Bar1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnShow), New DevExpress.XtraBars.LinkPersistInfo(Me.btnEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.btnGetData)})
+        Me.Bar1.OptionsBar.DrawBorder = False
+        Me.Bar1.OptionsBar.DrawDragBorder = False
+        Me.Bar1.Text = "Tools"
+        '
+        'btnShow
+        '
+        Me.btnShow.Caption = "Show"
+        Me.btnShow.Id = 0
+        Me.btnShow.ImageOptions.Image = CType(resources.GetObject("btnShow.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnShow.ImageOptions.LargeImage = CType(resources.GetObject("btnShow.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnShow.Name = "btnShow"
+        Me.btnShow.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Caption = "Edit"
+        Me.btnEdit.Id = 1
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("btnEdit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("btnEdit.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnGetData
+        '
+        Me.btnGetData.Caption = "Get Data"
+        Me.btnGetData.Id = 2
+        Me.btnGetData.ImageOptions.Image = CType(resources.GetObject("btnGetData.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnGetData.ImageOptions.LargeImage = CType(resources.GetObject("btnGetData.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnGetData.Name = "btnGetData"
+        Me.btnGetData.Size = New System.Drawing.Size(60, 60)
+        '
+        'barDockControlTop
+        '
+        Me.barDockControlTop.CausesValidation = False
+        Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlTop.Manager = Me.BarManager1
+        Me.barDockControlTop.Size = New System.Drawing.Size(684, 60)
+        '
+        'barDockControlBottom
+        '
+        Me.barDockControlBottom.CausesValidation = False
+        Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 430)
+        Me.barDockControlBottom.Manager = Me.BarManager1
+        Me.barDockControlBottom.Size = New System.Drawing.Size(684, 0)
+        '
+        'barDockControlLeft
+        '
+        Me.barDockControlLeft.CausesValidation = False
+        Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 60)
+        Me.barDockControlLeft.Manager = Me.BarManager1
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 370)
+        '
+        'barDockControlRight
+        '
+        Me.barDockControlRight.CausesValidation = False
+        Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me.barDockControlRight.Location = New System.Drawing.Point(684, 60)
+        Me.barDockControlRight.Manager = Me.BarManager1
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 370)
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(0, 60)
+        Me.GridControl1.MainView = Me.BandedGridView1
+        Me.GridControl1.MenuManager = Me.BarManager1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(684, 370)
+        Me.GridControl1.TabIndex = 4
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.BandedGridView1})
+        '
+        'BandedGridView1
+        '
+        Me.BandedGridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.gridBand6, Me.gridBand2, Me.gridBand3, Me.gridBand4, Me.gridBand5})
+        Me.BandedGridView1.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.ProductCode, Me.LotNumber, Me.ChangeDate, Me.Method, Me.CustomerName, Me.ProductName, Me.TotalBarcodeKiemThucTe, Me.TongKetLoiDenBarcode, Me.BandedGridColumn1, Me.BandedGridColumn2, Me.BandedGridColumn3, Me.BandedGridColumn4, Me.BandedGridColumn5, Me.BandedGridColumn6, Me.BandedGridColumn7, Me.BandedGridColumn8, Me.BandedGridColumn9, Me.BandedGridColumn10, Me.BandedGridColumn11, Me.Total_Ship, Me.BandedGridColumn13, Me.BandedGridColumn14, Me.BandedGridColumn15, Me.BandedGridColumn16, Me.BandedGridColumn17, Me.BandedGridColumn18, Me.BandedGridColumn19, Me.BandedGridColumn20, Me.TongHinhAnhLoiMayAOIBat_Image, Me.BandedGridColumn12, Me.BandedGridColumn21, Me.BandedGridColumn22, Me.BandedGridColumn23, Me.BandedGridColumn24, Me.BandedGridColumn25, Me.BandedGridColumn26, Me.BandedGridColumn27, Me.BandedGridColumn28, Me.BandedGridColumn29, Me.BandedGridColumn30, Me.Total_Actual, Me.BandedGridColumn31, Me.BandedGridColumn32})
+        Me.BandedGridView1.GridControl = Me.GridControl1
+        Me.BandedGridView1.Name = "BandedGridView1"
+        Me.BandedGridView1.OptionsFind.AlwaysVisible = True
+        Me.BandedGridView1.OptionsView.ShowGroupPanel = False
+        '
+        'ProductCode
+        '
+        Me.ProductCode.Caption = "Product Code"
+        Me.ProductCode.FieldName = "ProductCode"
+        Me.ProductCode.Name = "ProductCode"
+        Me.ProductCode.Visible = True
+        '
+        'LotNumber
+        '
+        Me.LotNumber.Caption = "Lot Number"
+        Me.LotNumber.FieldName = "LotNumber"
+        Me.LotNumber.Name = "LotNumber"
+        Me.LotNumber.Visible = True
+        '
+        'ChangeDate
+        '
+        Me.ChangeDate.Caption = "Change Date"
+        Me.ChangeDate.FieldName = "ChangeDate"
+        Me.ChangeDate.Name = "ChangeDate"
+        Me.ChangeDate.Visible = True
+        '
+        'Method
+        '
+        Me.Method.Caption = "Method"
+        Me.Method.FieldName = "Method"
+        Me.Method.Name = "Method"
+        Me.Method.Visible = True
+        Me.Method.Width = 72
+        '
+        'CustomerName
+        '
+        Me.CustomerName.Caption = "Customer Name"
+        Me.CustomerName.FieldName = "CustomerName"
+        Me.CustomerName.Name = "CustomerName"
+        Me.CustomerName.Visible = True
+        Me.CustomerName.Width = 72
+        '
+        'ProductName
+        '
+        Me.ProductName.Caption = "Product Name"
+        Me.ProductName.FieldName = "ProductName"
+        Me.ProductName.Name = "ProductName"
+        Me.ProductName.Visible = True
+        Me.ProductName.Width = 112
+        '
+        'TotalBarcodeKiemThucTe
+        '
+        Me.TotalBarcodeKiemThucTe.Caption = "Total Barcode Kiem Thuc Te"
+        Me.TotalBarcodeKiemThucTe.FieldName = "TotalBarcodeKiemThucTe"
+        Me.TotalBarcodeKiemThucTe.Name = "TotalBarcodeKiemThucTe"
+        Me.TotalBarcodeKiemThucTe.Visible = True
+        Me.TotalBarcodeKiemThucTe.Width = 125
+        '
+        'TongKetLoiDenBarcode
+        '
+        Me.TongKetLoiDenBarcode.Caption = "Tong Ket Loi Den Barcode"
+        Me.TongKetLoiDenBarcode.FieldName = "TongKetLoiDenBarcode"
+        Me.TongKetLoiDenBarcode.Name = "TongKetLoiDenBarcode"
+        Me.TongKetLoiDenBarcode.Visible = True
+        Me.TongKetLoiDenBarcode.Width = 120
+        '
+        'BandedGridColumn1
+        '
+        Me.BandedGridColumn1.Caption = "001_Ship"
+        Me.BandedGridColumn1.FieldName = "001_Ship"
+        Me.BandedGridColumn1.Name = "BandedGridColumn1"
+        Me.BandedGridColumn1.Visible = True
+        '
+        'BandedGridColumn2
+        '
+        Me.BandedGridColumn2.Caption = "002_Ship"
+        Me.BandedGridColumn2.FieldName = "002_Ship"
+        Me.BandedGridColumn2.Name = "BandedGridColumn2"
+        Me.BandedGridColumn2.Visible = True
+        '
+        'BandedGridColumn3
+        '
+        Me.BandedGridColumn3.Caption = "003_Ship"
+        Me.BandedGridColumn3.FieldName = "003_Ship"
+        Me.BandedGridColumn3.Name = "BandedGridColumn3"
+        Me.BandedGridColumn3.Visible = True
+        '
+        'BandedGridColumn4
+        '
+        Me.BandedGridColumn4.Caption = "004_Ship"
+        Me.BandedGridColumn4.FieldName = "004_Ship"
+        Me.BandedGridColumn4.Name = "BandedGridColumn4"
+        Me.BandedGridColumn4.Visible = True
+        '
+        'BandedGridColumn5
+        '
+        Me.BandedGridColumn5.Caption = "005_Ship"
+        Me.BandedGridColumn5.FieldName = "005_Ship"
+        Me.BandedGridColumn5.Name = "BandedGridColumn5"
+        Me.BandedGridColumn5.Visible = True
+        '
+        'BandedGridColumn6
+        '
+        Me.BandedGridColumn6.Caption = "006_Ship"
+        Me.BandedGridColumn6.FieldName = "006_Ship"
+        Me.BandedGridColumn6.Name = "BandedGridColumn6"
+        Me.BandedGridColumn6.Visible = True
+        '
+        'BandedGridColumn7
+        '
+        Me.BandedGridColumn7.Caption = "007_Ship"
+        Me.BandedGridColumn7.FieldName = "007_Ship"
+        Me.BandedGridColumn7.Name = "BandedGridColumn7"
+        Me.BandedGridColumn7.Visible = True
+        '
+        'BandedGridColumn8
+        '
+        Me.BandedGridColumn8.Caption = "009_Ship"
+        Me.BandedGridColumn8.FieldName = "009_Ship"
+        Me.BandedGridColumn8.Name = "BandedGridColumn8"
+        Me.BandedGridColumn8.Visible = True
+        '
+        'BandedGridColumn9
+        '
+        Me.BandedGridColumn9.Caption = "627_Ship"
+        Me.BandedGridColumn9.FieldName = "627_Ship"
+        Me.BandedGridColumn9.Name = "BandedGridColumn9"
+        Me.BandedGridColumn9.Visible = True
+        '
+        'BandedGridColumn10
+        '
+        Me.BandedGridColumn10.Caption = "639_Ship"
+        Me.BandedGridColumn10.FieldName = "639_Ship"
+        Me.BandedGridColumn10.Name = "BandedGridColumn10"
+        Me.BandedGridColumn10.Visible = True
+        '
+        'BandedGridColumn11
+        '
+        Me.BandedGridColumn11.Caption = "Other_Ship"
+        Me.BandedGridColumn11.FieldName = "Other_Ship"
+        Me.BandedGridColumn11.Name = "BandedGridColumn11"
+        Me.BandedGridColumn11.Visible = True
+        '
+        'Total_Ship
+        '
+        Me.Total_Ship.Caption = "Total_Ship"
+        Me.Total_Ship.FieldName = "Total_Ship"
+        Me.Total_Ship.Name = "Total_Ship"
+        Me.Total_Ship.Visible = True
+        '
+        'BandedGridColumn13
+        '
+        Me.BandedGridColumn13.Caption = "005_Image"
+        Me.BandedGridColumn13.FieldName = "005_Image"
+        Me.BandedGridColumn13.Name = "BandedGridColumn13"
+        Me.BandedGridColumn13.Visible = True
+        '
+        'BandedGridColumn14
+        '
+        Me.BandedGridColumn14.Caption = "001_Image"
+        Me.BandedGridColumn14.FieldName = "001_Image"
+        Me.BandedGridColumn14.Name = "BandedGridColumn14"
+        Me.BandedGridColumn14.Visible = True
+        '
+        'BandedGridColumn15
+        '
+        Me.BandedGridColumn15.Caption = "002_004_009_Image"
+        Me.BandedGridColumn15.FieldName = "002_004_009_Image"
+        Me.BandedGridColumn15.Name = "BandedGridColumn15"
+        Me.BandedGridColumn15.Visible = True
+        '
+        'BandedGridColumn16
+        '
+        Me.BandedGridColumn16.Caption = "007_Image"
+        Me.BandedGridColumn16.FieldName = "007_Image"
+        Me.BandedGridColumn16.Name = "BandedGridColumn16"
+        Me.BandedGridColumn16.Visible = True
+        '
+        'BandedGridColumn17
+        '
+        Me.BandedGridColumn17.Caption = "003_Image"
+        Me.BandedGridColumn17.FieldName = "003_Image"
+        Me.BandedGridColumn17.Name = "BandedGridColumn17"
+        Me.BandedGridColumn17.Visible = True
+        '
+        'BandedGridColumn18
+        '
+        Me.BandedGridColumn18.Caption = "006_Image"
+        Me.BandedGridColumn18.FieldName = "006_Image"
+        Me.BandedGridColumn18.Name = "BandedGridColumn18"
+        Me.BandedGridColumn18.Visible = True
+        '
+        'BandedGridColumn19
+        '
+        Me.BandedGridColumn19.Caption = "639_Image"
+        Me.BandedGridColumn19.FieldName = "639_Image"
+        Me.BandedGridColumn19.Name = "BandedGridColumn19"
+        Me.BandedGridColumn19.Visible = True
+        '
+        'BandedGridColumn20
+        '
+        Me.BandedGridColumn20.Caption = "627_Image"
+        Me.BandedGridColumn20.FieldName = "627_Image"
+        Me.BandedGridColumn20.Name = "BandedGridColumn20"
+        Me.BandedGridColumn20.Visible = True
+        '
+        'TongHinhAnhLoiMayAOIBat_Image
+        '
+        Me.TongHinhAnhLoiMayAOIBat_Image.Caption = "Tong Hinh Anh Loi May AOI Bat_Image"
+        Me.TongHinhAnhLoiMayAOIBat_Image.FieldName = "TongHinhAnhLoiMayAOIBat_Image"
+        Me.TongHinhAnhLoiMayAOIBat_Image.Name = "TongHinhAnhLoiMayAOIBat_Image"
+        Me.TongHinhAnhLoiMayAOIBat_Image.Visible = True
+        Me.TongHinhAnhLoiMayAOIBat_Image.Width = 125
+        '
+        'BandedGridColumn12
+        '
+        Me.BandedGridColumn12.Caption = "001_Actual"
+        Me.BandedGridColumn12.FieldName = "001_Actual"
+        Me.BandedGridColumn12.Name = "BandedGridColumn12"
+        Me.BandedGridColumn12.Visible = True
+        '
+        'BandedGridColumn21
+        '
+        Me.BandedGridColumn21.Caption = "002_Actual"
+        Me.BandedGridColumn21.FieldName = "002_Actual"
+        Me.BandedGridColumn21.Name = "BandedGridColumn21"
+        Me.BandedGridColumn21.Visible = True
+        '
+        'BandedGridColumn22
+        '
+        Me.BandedGridColumn22.Caption = "003_Actual"
+        Me.BandedGridColumn22.FieldName = "003_Actual"
+        Me.BandedGridColumn22.Name = "BandedGridColumn22"
+        Me.BandedGridColumn22.Visible = True
+        '
+        'BandedGridColumn23
+        '
+        Me.BandedGridColumn23.Caption = "004_Actual"
+        Me.BandedGridColumn23.FieldName = "004_Actual"
+        Me.BandedGridColumn23.Name = "BandedGridColumn23"
+        Me.BandedGridColumn23.Visible = True
+        '
+        'BandedGridColumn24
+        '
+        Me.BandedGridColumn24.Caption = "005_Actual"
+        Me.BandedGridColumn24.FieldName = "005_Actual"
+        Me.BandedGridColumn24.Name = "BandedGridColumn24"
+        Me.BandedGridColumn24.Visible = True
+        '
+        'BandedGridColumn25
+        '
+        Me.BandedGridColumn25.Caption = "006_Actual"
+        Me.BandedGridColumn25.FieldName = "006_Actual"
+        Me.BandedGridColumn25.Name = "BandedGridColumn25"
+        Me.BandedGridColumn25.Visible = True
+        '
+        'BandedGridColumn26
+        '
+        Me.BandedGridColumn26.Caption = "007_Actual"
+        Me.BandedGridColumn26.FieldName = "007_Actual"
+        Me.BandedGridColumn26.Name = "BandedGridColumn26"
+        Me.BandedGridColumn26.Visible = True
+        '
+        'BandedGridColumn27
+        '
+        Me.BandedGridColumn27.Caption = "009_Actual"
+        Me.BandedGridColumn27.FieldName = "009_Actual"
+        Me.BandedGridColumn27.Name = "BandedGridColumn27"
+        Me.BandedGridColumn27.Visible = True
+        '
+        'BandedGridColumn28
+        '
+        Me.BandedGridColumn28.Caption = "627_Actual"
+        Me.BandedGridColumn28.FieldName = "627_Actual"
+        Me.BandedGridColumn28.Name = "BandedGridColumn28"
+        Me.BandedGridColumn28.Visible = True
+        '
+        'BandedGridColumn29
+        '
+        Me.BandedGridColumn29.Caption = "639_Actual"
+        Me.BandedGridColumn29.FieldName = "639_Actual"
+        Me.BandedGridColumn29.Name = "BandedGridColumn29"
+        Me.BandedGridColumn29.Visible = True
+        '
+        'BandedGridColumn30
+        '
+        Me.BandedGridColumn30.Caption = "Other_Actual"
+        Me.BandedGridColumn30.FieldName = "Other_Actual"
+        Me.BandedGridColumn30.Name = "BandedGridColumn30"
+        Me.BandedGridColumn30.Visible = True
+        '
+        'Total_Actual
+        '
+        Me.Total_Actual.Caption = "Total_Actual"
+        Me.Total_Actual.FieldName = "Total_Actual"
+        Me.Total_Actual.Name = "Total_Actual"
+        Me.Total_Actual.Visible = True
+        '
+        'BandedGridColumn31
+        '
+        Me.BandedGridColumn31.Caption = "MSNV Tong Ket"
+        Me.BandedGridColumn31.FieldName = "MSNVTongKet"
+        Me.BandedGridColumn31.Name = "BandedGridColumn31"
+        Me.BandedGridColumn31.Visible = True
+        '
+        'BandedGridColumn32
+        '
+        Me.BandedGridColumn32.Caption = "Ghi Chu"
+        Me.BandedGridColumn32.FieldName = "GhiChu"
+        Me.BandedGridColumn32.Name = "BandedGridColumn32"
+        Me.BandedGridColumn32.Visible = True
+        Me.BandedGridColumn32.Width = 201
+        '
+        'GridBand1
+        '
+        Me.GridBand1.Columns.Add(Me.ProductCode)
+        Me.GridBand1.Columns.Add(Me.LotNumber)
+        Me.GridBand1.Columns.Add(Me.ChangeDate)
+        Me.GridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Me.GridBand1.Name = "GridBand1"
+        Me.GridBand1.VisibleIndex = 0
+        Me.GridBand1.Width = 225
+        '
+        'gridBand6
+        '
+        Me.gridBand6.Columns.Add(Me.Method)
+        Me.gridBand6.Columns.Add(Me.CustomerName)
+        Me.gridBand6.Columns.Add(Me.ProductName)
+        Me.gridBand6.Columns.Add(Me.TotalBarcodeKiemThucTe)
+        Me.gridBand6.Columns.Add(Me.TongKetLoiDenBarcode)
+        Me.gridBand6.Name = "gridBand6"
+        Me.gridBand6.VisibleIndex = 1
+        Me.gridBand6.Width = 501
+        '
+        'gridBand2
+        '
+        Me.gridBand2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridBand2.AppearanceHeader.Options.UseBackColor = True
+        Me.gridBand2.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand2.Caption = "Tổng kết mode lỗi cho hàng đi/lot (pcs)"
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn1)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn2)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn3)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn4)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn5)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn6)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn7)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn8)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn9)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn10)
+        Me.gridBand2.Columns.Add(Me.BandedGridColumn11)
+        Me.gridBand2.Columns.Add(Me.Total_Ship)
+        Me.gridBand2.Name = "gridBand2"
+        Me.gridBand2.VisibleIndex = 2
+        Me.gridBand2.Width = 900
+        '
+        'gridBand3
+        '
+        Me.gridBand3.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridBand3.AppearanceHeader.Options.UseBackColor = True
+        Me.gridBand3.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand3.Caption = "Hình ảnh lỗi Máy AOI bắt "
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn13)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn14)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn15)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn16)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn17)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn18)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn19)
+        Me.gridBand3.Columns.Add(Me.BandedGridColumn20)
+        Me.gridBand3.Columns.Add(Me.TongHinhAnhLoiMayAOIBat_Image)
+        Me.gridBand3.Name = "gridBand3"
+        Me.gridBand3.VisibleIndex = 3
+        Me.gridBand3.Width = 725
+        '
+        'gridBand4
+        '
+        Me.gridBand4.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.gridBand4.AppearanceHeader.Options.UseBackColor = True
+        Me.gridBand4.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand4.Caption = "Tổng mode lỗi thực tế lot hàng/cuộn (pcs)"
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn12)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn21)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn22)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn23)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn24)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn25)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn26)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn27)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn28)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn29)
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn30)
+        Me.gridBand4.Columns.Add(Me.Total_Actual)
+        Me.gridBand4.Name = "gridBand4"
+        Me.gridBand4.VisibleIndex = 4
+        Me.gridBand4.Width = 900
+        '
+        'gridBand5
+        '
+        Me.gridBand5.Columns.Add(Me.BandedGridColumn31)
+        Me.gridBand5.Columns.Add(Me.BandedGridColumn32)
+        Me.gridBand5.Name = "gridBand5"
+        Me.gridBand5.VisibleIndex = 5
+        Me.gridBand5.Width = 276
+        '
+        'FrmVerifyFinalImageJudgment
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(684, 430)
+        Me.Controls.Add(Me.GridControl1)
+        Me.Controls.Add(Me.barDockControlLeft)
+        Me.Controls.Add(Me.barDockControlRight)
+        Me.Controls.Add(Me.barDockControlBottom)
+        Me.Controls.Add(Me.barDockControlTop)
+        Me.Name = "FrmVerifyFinalImageJudgment"
+        Me.Tag = "0267VFIJ01"
+        Me.Text = "Verify Final Image Judgment"
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BandedGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+
+    Friend WithEvents BarManager1 As DevExpress.XtraBars.BarManager
+    Friend WithEvents Bar1 As DevExpress.XtraBars.Bar
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents btnShow As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents btnEdit As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents BandedGridView1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
+    Friend WithEvents ProductCode As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents LotNumber As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents ChangeDate As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TotalBarcodeKiemThucTe As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TongKetLoiDenBarcode As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn2 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn3 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn4 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn5 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn6 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn7 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn8 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn9 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn10 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn11 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Total_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn13 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn14 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn15 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn16 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn17 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn18 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn19 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn20 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TongHinhAnhLoiMayAOIBat_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn12 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn21 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn22 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn23 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn24 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn25 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn26 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn27 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn28 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn29 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn30 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Total_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn31 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn32 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Method As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents CustomerName As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents ProductName As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents btnGetData As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents GridBand1 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand6 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand2 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand3 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand5 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+End Class

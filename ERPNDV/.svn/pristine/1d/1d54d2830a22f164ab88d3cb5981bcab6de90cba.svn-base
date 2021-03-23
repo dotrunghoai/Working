@@ -1,0 +1,28 @@
+=================================================================================================
+DateTime:30-Jul-2020 08:47:57
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmStartup
+FunctionName:ApproveList
+Error:Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+=================================================================================================
+DateTime:30-Jul-2020 08:48:07
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmStartup
+FunctionName:ApproveList
+Error:Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+=================================================================================================
+DateTime:30-Jul-2020 11:53:21
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibProductionStatus2.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:30-Jul-2020 11:56:36
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Exception has been thrown by the target of an invocation.

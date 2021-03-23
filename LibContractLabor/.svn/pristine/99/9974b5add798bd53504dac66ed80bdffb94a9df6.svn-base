@@ -1,0 +1,29 @@
+
+ Public Class GA_CT_ReviewContract
+    Public ID_K As String
+    Public Section As String
+    Public PIC As String
+    Public PICCmt As String
+    Public PICDate As DateTime
+    Public LL As String
+    Public LLCmt As String
+    Public LLDate As DateTime
+    Public GL As String
+    Public GLCmt As String
+    Public GLDate As DateTime
+    Public MG As String
+    Public MGCmt As String
+    Public MGDate As DateTime
+    Public DM As String
+    Public DMCmt As String
+    Public DMDate As DateTime
+    Public GAMG As String
+    Public GAMGCmt As String
+    Public GAMGDate As DateTime
+    Public GADM As String
+    Public GADMCmt As String
+    Public GADMDate As DateTime
+    Public CurrentMail As String
+    Public CreatedDate As DateTime
+    Public CreatedUser As String
+End  Class

@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:08-Dec-2017 13:28:36
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Exception has been thrown by the target of an invocation.
+=================================================================================================
+DateTime:08-Dec-2017 14:42:16
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibUDM.FrmTLRequest' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:08-Dec-2017 14:42:18
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibUDM.FrmTLlist' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

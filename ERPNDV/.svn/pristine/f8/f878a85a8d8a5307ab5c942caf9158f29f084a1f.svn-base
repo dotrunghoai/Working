@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LibUDM
+</name>
+</assembly>
+<members>
+<member name="T:LibUDM.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:LibUDM.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:LibUDM.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:LibUDM.clsMakeOfPLXOutOrTrial.ExportPLDetail(System.String)">
+ <summary>
+ Export PackingList Detail
+ </summary>
+ <param name="sPackingListNumber"></param>
+ <remarks></remarks>
+</member>
+<member name="M:LibUDM.clsMakeOfPLXOutOrTrial.ExportPL(System.Windows.Forms.DataGridViewRow,System.String,CarlosAg.ExcelXmlWriter.Workbook@,CarlosAg.ExcelXmlWriter.Worksheet@,System.Boolean@)">
+ <summary>
+ Export PackingList Trial Or X-Out
+ </summary>
+ <param name="sPackingListNumber"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

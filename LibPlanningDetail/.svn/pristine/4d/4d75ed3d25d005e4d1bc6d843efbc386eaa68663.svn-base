@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4172BEF-01B6-414E-9DED-A946989F03D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>LibPlanDetail</RootNamespace>
+    <AssemblyName>LibPlanDetail</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibPlanDetail.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LibPlanDetail.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\ERPNDV\bin\Debug\</OutputPath>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter">
+      <HintPath>..\..\DLL\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsDatatable.vb" />
+    <Compile Include="clsUtil.vb" />
+    <Compile Include="FrmProcessHour.Designer.vb">
+      <DependentUpon>FrmProcessHour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcessHour.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanHourNew.Designer.vb">
+      <DependentUpon>FrmPlanHourNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanHourNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSProduct.Designer.vb">
+      <DependentUpon>FrmDSProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFirstLotHS.Designer.vb">
+      <DependentUpon>FrmFirstLotHS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFirstLotHS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanHour.Designer.vb">
+      <DependentUpon>FrmPlanHour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanHour.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcessHourNew.Designer.vb">
+      <DependentUpon>FrmProcessHourNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcessHourNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLeadtimeLot.Designer.vb">
+      <DependentUpon>FrmLeadtimeLot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLeadtimeLot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompleteProcess.Designer.vb">
+      <DependentUpon>FrmCompleteProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompleteProcess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdjustWT.Designer.vb">
+      <DependentUpon>FrmAdjustWT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdjustWT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLotStatus_1.Designer.vb">
+      <DependentUpon>FrmLotStatus_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLotStatus_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDailyOutputPlanningCopy.Designer.vb">
+      <DependentUpon>FrmDailyOutputPlanningCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDailyOutputPlanningCopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLotProcessStatus.Designer.vb">
+      <DependentUpon>FrmLotProcessStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLotProcessStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLotStatus.Designer.vb">
+      <DependentUpon>FrmLotStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLotStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPDMasterList.Designer.vb">
+      <DependentUpon>FrmPDMasterList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPDMasterList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPDMasterConfig.Designer.vb">
+      <DependentUpon>FrmPDMasterConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPDMasterConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPDMasterLanguage.Designer.vb">
+      <DependentUpon>FrmPDMasterLanguage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPDMasterLanguage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcessLeadTime.Designer.vb">
+      <DependentUpon>FrmProcessLeadTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcessLeadTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDailyOutputPlanning.Designer.vb">
+      <DependentUpon>FrmDailyOutputPlanning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDailyOutputPlanning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmProcessHour.resx">
+      <DependentUpon>FrmProcessHour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanHourNew.resx">
+      <DependentUpon>FrmPlanHourNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSProduct.resx">
+      <DependentUpon>FrmDSProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFirstLotHS.resx">
+      <DependentUpon>FrmFirstLotHS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanHour.resx">
+      <DependentUpon>FrmPlanHour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcessHourNew.resx">
+      <DependentUpon>FrmProcessHourNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLeadtimeLot.resx">
+      <DependentUpon>FrmLeadtimeLot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompleteProcess.resx">
+      <DependentUpon>FrmCompleteProcess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdjustWT.resx">
+      <DependentUpon>FrmAdjustWT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLotStatus_1.resx">
+      <DependentUpon>FrmLotStatus_1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDailyOutputPlanningCopy.resx">
+      <DependentUpon>FrmDailyOutputPlanningCopy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLotProcessStatus.resx">
+      <DependentUpon>FrmLotProcessStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLotStatus.resx">
+      <DependentUpon>FrmLotStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPDMasterList.resx">
+      <DependentUpon>FrmPDMasterList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPDMasterConfig.resx">
+      <DependentUpon>FrmPDMasterConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPDMasterLanguage.resx">
+      <DependentUpon>FrmPDMasterLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcessLeadTime.resx">
+      <DependentUpon>FrmProcessLeadTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDailyOutputPlanning.resx">
+      <DependentUpon>FrmDailyOutputPlanning.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonDB.vbproj">
+      <Project>{DB7E75FD-887E-4C54-A3C4-A42CFAEAC6F7}</Project>
+      <Name>CommonDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LibEntity\LibEntity.vbproj">
+      <Project>{c8d9b253-bb8a-4180-b3e6-ca2254aa764f}</Project>
+      <Name>LibEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LibFpicsDataView\LibFpicsDataView.vbproj">
+      <Project>{096804c7-910b-460c-9e0d-424b0782886c}</Project>
+      <Name>LibFpicsDataView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicUtility\PublicUtility.vbproj">
+      <Project>{E0CD795E-43BF-4FF5-9605-563EB53E9BBF}</Project>
+      <Name>PublicUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UtilityControl\UtilityControl.vbproj">
+      <Project>{71BF981E-C557-4A74-8450-390C431F0223}</Project>
+      <Name>UtilityControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibMaster\LibMaster.vbproj">
+      <Project>{63E81DDE-E04D-4BC5-85FF-94986A71F588}</Project>
+      <Name>LibMaster</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

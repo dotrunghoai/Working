@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:19-Feb-2019 15:39:35
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmInputDataPlanRS
+FunctionName:Save
+Error:Must declare the scalar variable "@Ngay".

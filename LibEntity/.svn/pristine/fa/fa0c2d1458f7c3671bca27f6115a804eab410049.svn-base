@@ -1,0 +1,8 @@
+
+ Public Class CL_LockData
+     Public ID_K As String 
+     Public Ngay_K As DateTime 
+     Public IsLock As Boolean 
+     Public LockDate As DateTime 
+     Public LockUser As String 
+ End  Class

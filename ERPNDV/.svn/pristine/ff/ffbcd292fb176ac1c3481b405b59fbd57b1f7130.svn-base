@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="InputPlan" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InputPlan">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STT" type="xs:int" minOccurs="0" />
+              <xs:element name="May" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Method" type="xs:string" minOccurs="0" />
+              <xs:element name="Mat" type="xs:string" minOccurs="0" />
+              <xs:element name="StartLot" type="xs:string" minOccurs="0" />
+              <xs:element name="EndLot" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalLot" type="xs:decimal" minOccurs="0" />
+              <xs:element name="M2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Leadtime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TongGioCan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TGGC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hole" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SoNguoi" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonPerLine" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SoM2Dong" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SoMa" type="xs:int" minOccurs="0" />
+              <xs:element name="TC" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

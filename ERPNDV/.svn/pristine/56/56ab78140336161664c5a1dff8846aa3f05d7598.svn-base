@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="WipAmount" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="WipAmount">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YM" type="xs:string" minOccurs="0" />
+              <xs:element name="GroupCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="RevisionCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ComponentCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Lot" type="xs:string" minOccurs="0" />
+              <xs:element name="ProcessNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="ActQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MaterialPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MaterialAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProcessPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProcessAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OverheadPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OverheadAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MaterialLCM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MaterialLCMAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProcessLCM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProcessLCMAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OverheadLCM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OverheadLCMAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Note" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

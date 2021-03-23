@@ -1,0 +1,8 @@
+
+ Public Class UNI_EmloyeeMaster
+     Public EmpID_K As String 
+     Public EmpIDLine As String 
+     Public Section As String 
+     Public GroupName As String 
+     Public Shift As String 
+ End  Class

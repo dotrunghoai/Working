@@ -1,0 +1,204 @@
+﻿Imports CommonDB
+Imports PublicUtility
+Imports LibEntity
+Imports System.Windows.Forms
+
+Public Class FrmCreateDepartment : Inherits DevExpress.XtraEditors.XtraForm
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Dim _dbFpics As New DBSql(PublicConst.EnumServers.NDV_SQL_Fpics)
+    Dim param(1) As SqlClient.SqlParameter
+    Dim _cellClick As Integer = 0
+
+
+    Private Sub FrmCreateDepartment_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Windows.Forms.Keys.Enter Then
+            SendKeys.Send("{Tab}")
+        End If
+
+        If e.KeyCode = Keys.S And e.Control And mnuSave.Enabled Then
+            mnuSave.PerformClick()
+        End If
+    End Sub
+
+    Private Sub FrmCreateDepartment_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+
+
+        Dim Sql = String.Format(" select (LTrim(RTrim(ProcessNameE)) + '_' + LTrim(RTrim(ProcessCode))) as SubPrc " +
+                            " from m_Process")
+        Dim dt As DataTable = _dbFpics.FillDataTable(Sql)
+        Dim row As DataRow = dt.NewRow()
+        dt.Rows.InsertAt(row, 0)
+        cboSubPrcName.DataSource = dt
+        cboSubPrcName.DisplayMember = "SubPrc"
+        cboSubPrcName.ValueMember = "SubPrc"
+        cboSubPrcName.SelectedValue = DBNull.Value
+
+        mnuShowAll.PerformClick()
+    End Sub
+
+    Private Sub mnuShowAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuShowAll.Click
+		Dim sql As String = String.Format(" select DeptCode, DeptName, PrcName, SubPrcName, ECode, EName, Note" +
+										  " from {0} " +
+										  " where Old = 'False' order by ECode, SubPrcName",
+										  PublicTable.Table_PCM_Dept)
+		Dim bd As New BindingSource
+        bd.DataSource = _db.FillDataTable(sql)
+        GridControl1.DataSource = bd
+        GridControlSetFormat(GridView1, 3)
+    End Sub
+
+    Private Sub mnuSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuSave.Click
+        Try
+            _db.BeginTransaction()
+            Dim obj As New PCM_Dept()
+            If Trim(txtDeptCode.Text) = "" Then
+                MessageBox.Show("Input DeptCode!", "DeptCode", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                obj.DeptCode = Trim(txtDeptCode.Text)
+            End If
+
+            If Trim(txtDeptName.Text) = "" Then
+                MessageBox.Show("Input DeptName!", "DeptName", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                obj.DeptName = Trim(txtDeptName.Text)
+            End If
+
+            If Trim(txtPrcName.Text) = "" Then
+                MessageBox.Show("Input Process Name!", "Process Name", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                obj.PrcName = Trim(txtPrcName.Text)
+            End If
+
+            If IsDBNull(cboSubPrcName.SelectedValue) Then
+                MessageBox.Show("Input Sub Process Name!", "Sub Process Name", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            ElseIf String.IsNullOrEmpty(cboSubPrcName.SelectedValue) Then
+                MessageBox.Show("Input Sub Process Name!", "Sub Process Name", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                obj.SubPrcName_K = Trim(cboSubPrcName.SelectedValue)
+            End If
+
+            If Trim(txtECode.Text) = "" Then
+                MessageBox.Show("Input ECode!", "ECode", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                obj.ECode_K = Trim(txtECode.Text)
+            End If
+
+            Dim sql As String = String.Format("select UserID, FullName from {0} where UserID = '{1}'", PublicTable.Table_Main_User, txtECode.Text)
+            Dim dt As DataTable = _db.FillDataTable(sql)
+            If dt.Rows.Count <> 0 Then
+                obj.EName = Trim(dt.Rows(0).Item("FullName"))
+            End If
+
+            obj.Note = Trim(txtNote.Text)
+            obj.Old = False
+
+            If _cellClick = 1 Then
+                Dim objDept As New PCM_Dept
+                objDept.SubPrcName_K = GridView1.GetFocusedRowCellValue("SubPrcName")
+                objDept.ECode_K = GridView1.GetFocusedRowCellValue("ECode")
+
+                Dim frmMterJCode As New FrmMaterialAndSubMaterial
+                frmMterJCode.UpdateAll(objDept.ECode_K, objDept.SubPrcName_K, obj.PrcName, obj.ECode_K, obj.SubPrcName_K)
+
+                Dim frmMterTrayU00 As New FrmTrayAndU00
+                frmMterTrayU00.UpdateAll(objDept.ECode_K, objDept.SubPrcName_K, obj.PrcName, obj.ECode_K, obj.SubPrcName_K)
+
+                _db.Delete(objDept)
+
+            End If
+
+            If _db.ExistObject(obj) Then
+                obj.UpdateDate = DateTime.Now
+                obj.UpdateUser = CurrentUser.UserID
+                ' Them tam chep du lieu xong rui xoa
+                obj.Old = False
+                _db.Update(obj)
+                MsgBox("Update successfully.", MsgBoxStyle.OkOnly, "Update")
+            Else
+                obj.CreateDate = DateTime.Now
+                obj.CreateUser = CurrentUser.UserID
+                _db.Insert(obj)
+                MsgBox("Save successfully.", MsgBoxStyle.OkOnly, "Save")
+            End If
+
+            _db.Commit()
+            mnuShowAll.PerformClick()
+            mnuNew.PerformClick()
+            txtDeptCode.Focus()
+        Catch ex As Exception
+            _db.RollBack()
+            MessageBox.Show(ex.Message, "insert/update")
+        End Try
+    End Sub
+
+    Private Sub GridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub mnuExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuExport.Click
+        GridControlExportExcel(GridView1)
+    End Sub
+
+    Private Sub mnuDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuDelete.Click
+        If GridView1.RowCount = 0 Then Exit Sub
+
+        If ShowQuestionDelete() = Windows.Forms.DialogResult.Yes Then
+            Try
+
+                For Each r As Integer In GridView1.GetSelectedRows
+                    _db.BeginTransaction()
+                    Dim objDept As New PCM_Dept
+                    objDept.ECode_K = GridView1.GetRowCellValue(r, "ECode")
+                    objDept.SubPrcName_K = GridView1.GetRowCellValue(r, "SubPrcName")
+                    _db.Delete(objDept)
+                    Dim sql As String = String.Format("Delete from {0} where ECode = '{1}' and SubPrcName = '{2}' ",
+                                                      PublicTable.Table_PCM_MterNotJCode, objDept.ECode_K, objDept.SubPrcName_K)
+                    _db.ExecuteNonQuery(sql)
+                    sql = String.Format("Delete from {0} where ECode = '{1}' and SubPrcName = '{2}' ",
+                                                      PublicTable.Table_PCM_TrayU00, objDept.ECode_K, objDept.SubPrcName_K)
+                    _db.ExecuteNonQuery(sql)
+                    _db.Commit()
+                Next
+                mnuShowAll.PerformClick()
+            Catch ex As Exception
+                _db.RollBack()
+                MessageBox.Show(ex.Message, "Delete")
+            End Try
+        End If
+    End Sub
+
+    Private Sub mnuNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuNew.Click
+        _cellClick = 0
+        txtDeptCode.Text = ""
+        txtDeptName.Text = ""
+        txtPrcName.Text = ""
+        cboSubPrcName.SelectedValue = -1
+        txtECode.Text = ""
+        txtNote.Text = ""
+        txtDeptCode.Focus()
+    End Sub
+
+
+    Private Sub btnSetRight_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetRight.Click
+        Dim frmSetRight As New FrmPCMUserRight()
+        frmSetRight.Show()
+    End Sub
+
+    Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
+        If GridView1.RowCount > 0 Then
+            _cellClick = 1
+            txtDeptCode.Text = IIf(GridView1.GetFocusedRowCellValue("DeptCode") Is DBNull.Value, "", GridView1.GetFocusedRowCellValue("DeptCode"))
+            txtDeptName.Text = IIf(GridView1.GetFocusedRowCellValue("DeptName") Is DBNull.Value, "", GridView1.GetFocusedRowCellValue("DeptName"))
+            txtPrcName.Text = IIf(GridView1.GetFocusedRowCellValue("PrcName") Is DBNull.Value, "", GridView1.GetFocusedRowCellValue("PrcName"))
+            cboSubPrcName.SelectedValue = IIf(GridView1.GetFocusedRowCellValue("SubPrcName") Is DBNull.Value, -1, GridView1.GetFocusedRowCellValue("SubPrcName"))
+            txtECode.Text = IIf(GridView1.GetFocusedRowCellValue("ECode") Is DBNull.Value, "", GridView1.GetFocusedRowCellValue("ECode"))
+            txtNote.Text = IIf(GridView1.GetFocusedRowCellValue("Note") Is DBNull.Value, "", GridView1.GetFocusedRowCellValue("Note"))
+        End If
+    End Sub
+End Class

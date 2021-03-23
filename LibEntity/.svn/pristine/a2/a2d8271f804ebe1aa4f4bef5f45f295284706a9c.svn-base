@@ -1,0 +1,5 @@
+
+ Public Class HRT_LinhVuc
+     Public MaLinhVuc_K As String 
+     Public TenLinhVuc As String 
+ End  Class

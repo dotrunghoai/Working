@@ -1,0 +1,398 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmCreateForm
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCreateForm))
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.Bar1 = New DevExpress.XtraBars.Bar()
+        Me.btnShow = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnNew = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnEdit = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnDelete = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
+        Me.TreeList1 = New DevExpress.XtraTreeList.TreeList()
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
+        Me.TablePanel1 = New DevExpress.Utils.Layout.TablePanel()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtLibName = New DevExpress.XtraEditors.TextEdit()
+        Me.txtFormName = New DevExpress.XtraEditors.TextEdit()
+        Me.txtVietnamese = New DevExpress.XtraEditors.TextEdit()
+        Me.txtEnglish = New DevExpress.XtraEditors.TextEdit()
+        Me.btnSave = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtParentText = New DevExpress.XtraEditors.TextEdit()
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TreeList1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TablePanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TablePanel1.SuspendLayout()
+        CType(Me.txtLibName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtFormName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtVietnamese.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtEnglish.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtParentText.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'BarManager1
+        '
+        Me.BarManager1.AllowShowToolbarsPopup = False
+        Me.BarManager1.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.Bar1})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
+        Me.BarManager1.Form = Me
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.btnShow, Me.btnNew, Me.btnEdit, Me.btnDelete, Me.btnSave})
+        Me.BarManager1.MaxItemId = 6
+        '
+        'Bar1
+        '
+        Me.Bar1.BarName = "Tools"
+        Me.Bar1.DockCol = 0
+        Me.Bar1.DockRow = 0
+        Me.Bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Bar1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnShow), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNew), New DevExpress.XtraBars.LinkPersistInfo(Me.btnEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDelete), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSave)})
+        Me.Bar1.OptionsBar.DrawBorder = False
+        Me.Bar1.OptionsBar.DrawDragBorder = False
+        Me.Bar1.Text = "Tools"
+        '
+        'btnShow
+        '
+        Me.btnShow.Caption = "Show"
+        Me.btnShow.Id = 0
+        Me.btnShow.ImageOptions.Image = CType(resources.GetObject("btnShow.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnShow.ImageOptions.LargeImage = CType(resources.GetObject("btnShow.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnShow.Name = "btnShow"
+        Me.btnShow.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnNew
+        '
+        Me.btnNew.Caption = "New"
+        Me.btnNew.Id = 1
+        Me.btnNew.ImageOptions.Image = CType(resources.GetObject("btnNew.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnNew.ImageOptions.LargeImage = CType(resources.GetObject("btnNew.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Caption = "Edit"
+        Me.btnEdit.Id = 2
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("btnEdit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("btnEdit.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Caption = "Delete"
+        Me.btnDelete.Id = 3
+        Me.btnDelete.ImageOptions.Image = CType(resources.GetObject("btnDelete.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDelete.ImageOptions.LargeImage = CType(resources.GetObject("btnDelete.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(60, 60)
+        '
+        'barDockControlTop
+        '
+        Me.barDockControlTop.CausesValidation = False
+        Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlTop.Manager = Me.BarManager1
+        Me.barDockControlTop.Size = New System.Drawing.Size(1105, 60)
+        '
+        'barDockControlBottom
+        '
+        Me.barDockControlBottom.CausesValidation = False
+        Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 362)
+        Me.barDockControlBottom.Manager = Me.BarManager1
+        Me.barDockControlBottom.Size = New System.Drawing.Size(1105, 0)
+        '
+        'barDockControlLeft
+        '
+        Me.barDockControlLeft.CausesValidation = False
+        Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 60)
+        Me.barDockControlLeft.Manager = Me.BarManager1
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 302)
+        '
+        'barDockControlRight
+        '
+        Me.barDockControlRight.CausesValidation = False
+        Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me.barDockControlRight.Location = New System.Drawing.Point(1105, 60)
+        Me.barDockControlRight.Manager = Me.BarManager1
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 302)
+        '
+        'TreeList1
+        '
+        Me.TreeList1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TreeList1.Location = New System.Drawing.Point(0, 60)
+        Me.TreeList1.MenuManager = Me.BarManager1
+        Me.TreeList1.Name = "TreeList1"
+        Me.TreeList1.OptionsDragAndDrop.DragNodesExpandDelay = 500
+        Me.TreeList1.Size = New System.Drawing.Size(1105, 302)
+        Me.TreeList1.StateImageList = Me.ImageCollection1
+        Me.TreeList1.TabIndex = 10
+        '
+        'ImageCollection1
+        '
+        Me.ImageCollection1.ImageStream = CType(resources.GetObject("ImageCollection1.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
+        Me.ImageCollection1.Images.SetKeyName(0, "home_16x16.png")
+        Me.ImageCollection1.Images.SetKeyName(1, "open_16x16.png")
+        Me.ImageCollection1.Images.SetKeyName(2, "window_16x16.png")
+        '
+        'TablePanel1
+        '
+        Me.TablePanel1.Columns.AddRange(New DevExpress.Utils.Layout.TablePanelColumn() {New DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40.0!), New DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40.0!), New DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40.0!), New DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40.0!), New DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40.0!)})
+        Me.TablePanel1.Controls.Add(Me.txtParentText)
+        Me.TablePanel1.Controls.Add(Me.LabelControl5)
+        Me.TablePanel1.Controls.Add(Me.txtEnglish)
+        Me.TablePanel1.Controls.Add(Me.txtVietnamese)
+        Me.TablePanel1.Controls.Add(Me.txtFormName)
+        Me.TablePanel1.Controls.Add(Me.txtLibName)
+        Me.TablePanel1.Controls.Add(Me.LabelControl4)
+        Me.TablePanel1.Controls.Add(Me.LabelControl3)
+        Me.TablePanel1.Controls.Add(Me.LabelControl2)
+        Me.TablePanel1.Controls.Add(Me.LabelControl1)
+        Me.TablePanel1.Location = New System.Drawing.Point(334, 0)
+        Me.TablePanel1.Name = "TablePanel1"
+        Me.TablePanel1.Rows.AddRange(New DevExpress.Utils.Layout.TablePanelRow() {New DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26.0!), New DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26.0!)})
+        Me.TablePanel1.ShowGrid = DevExpress.Utils.DefaultBoolean.[True]
+        Me.TablePanel1.Size = New System.Drawing.Size(702, 54)
+        Me.TablePanel1.TabIndex = 15
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.BackColor = System.Drawing.Color.Teal
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl1.Appearance.Options.UseBackColor = True
+        Me.LabelControl1.Appearance.Options.UseFont = True
+        Me.LabelControl1.Appearance.Options.UseForeColor = True
+        Me.LabelControl1.Appearance.Options.UseTextOptions = True
+        Me.LabelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.TablePanel1.SetColumn(Me.LabelControl1, 1)
+        Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelControl1.Location = New System.Drawing.Point(143, 3)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.TablePanel1.SetRow(Me.LabelControl1, 0)
+        Me.LabelControl1.Size = New System.Drawing.Size(134, 20)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Lib Name"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.BackColor = System.Drawing.Color.Teal
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl2.Appearance.Options.UseBackColor = True
+        Me.LabelControl2.Appearance.Options.UseFont = True
+        Me.LabelControl2.Appearance.Options.UseForeColor = True
+        Me.LabelControl2.Appearance.Options.UseTextOptions = True
+        Me.LabelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.TablePanel1.SetColumn(Me.LabelControl2, 2)
+        Me.LabelControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelControl2.Location = New System.Drawing.Point(284, 3)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.TablePanel1.SetRow(Me.LabelControl2, 0)
+        Me.LabelControl2.Size = New System.Drawing.Size(134, 20)
+        Me.LabelControl2.TabIndex = 1
+        Me.LabelControl2.Text = "Form Name"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.BackColor = System.Drawing.Color.Teal
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl3.Appearance.Options.UseBackColor = True
+        Me.LabelControl3.Appearance.Options.UseFont = True
+        Me.LabelControl3.Appearance.Options.UseForeColor = True
+        Me.LabelControl3.Appearance.Options.UseTextOptions = True
+        Me.LabelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.TablePanel1.SetColumn(Me.LabelControl3, 3)
+        Me.LabelControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelControl3.Location = New System.Drawing.Point(424, 3)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.TablePanel1.SetRow(Me.LabelControl3, 0)
+        Me.LabelControl3.Size = New System.Drawing.Size(134, 20)
+        Me.LabelControl3.TabIndex = 2
+        Me.LabelControl3.Text = "Vietnamese"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.BackColor = System.Drawing.Color.Teal
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl4.Appearance.Options.UseBackColor = True
+        Me.LabelControl4.Appearance.Options.UseFont = True
+        Me.LabelControl4.Appearance.Options.UseForeColor = True
+        Me.LabelControl4.Appearance.Options.UseTextOptions = True
+        Me.LabelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.TablePanel1.SetColumn(Me.LabelControl4, 4)
+        Me.LabelControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelControl4.Location = New System.Drawing.Point(565, 3)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.TablePanel1.SetRow(Me.LabelControl4, 0)
+        Me.LabelControl4.Size = New System.Drawing.Size(134, 20)
+        Me.LabelControl4.TabIndex = 3
+        Me.LabelControl4.Text = "English"
+        '
+        'txtLibName
+        '
+        Me.TablePanel1.SetColumn(Me.txtLibName, 1)
+        Me.txtLibName.Location = New System.Drawing.Point(143, 30)
+        Me.txtLibName.MenuManager = Me.BarManager1
+        Me.txtLibName.Name = "txtLibName"
+        Me.TablePanel1.SetRow(Me.txtLibName, 1)
+        Me.txtLibName.Size = New System.Drawing.Size(134, 20)
+        Me.txtLibName.TabIndex = 4
+        '
+        'txtFormName
+        '
+        Me.TablePanel1.SetColumn(Me.txtFormName, 2)
+        Me.txtFormName.Location = New System.Drawing.Point(284, 30)
+        Me.txtFormName.MenuManager = Me.BarManager1
+        Me.txtFormName.Name = "txtFormName"
+        Me.TablePanel1.SetRow(Me.txtFormName, 1)
+        Me.txtFormName.Size = New System.Drawing.Size(134, 20)
+        Me.txtFormName.TabIndex = 5
+        '
+        'txtVietnamese
+        '
+        Me.TablePanel1.SetColumn(Me.txtVietnamese, 3)
+        Me.txtVietnamese.Location = New System.Drawing.Point(424, 30)
+        Me.txtVietnamese.MenuManager = Me.BarManager1
+        Me.txtVietnamese.Name = "txtVietnamese"
+        Me.TablePanel1.SetRow(Me.txtVietnamese, 1)
+        Me.txtVietnamese.Size = New System.Drawing.Size(134, 20)
+        Me.txtVietnamese.TabIndex = 6
+        '
+        'txtEnglish
+        '
+        Me.TablePanel1.SetColumn(Me.txtEnglish, 4)
+        Me.txtEnglish.Location = New System.Drawing.Point(565, 30)
+        Me.txtEnglish.MenuManager = Me.BarManager1
+        Me.txtEnglish.Name = "txtEnglish"
+        Me.TablePanel1.SetRow(Me.txtEnglish, 1)
+        Me.txtEnglish.Size = New System.Drawing.Size(134, 20)
+        Me.txtEnglish.TabIndex = 7
+        '
+        'btnSave
+        '
+        Me.btnSave.Caption = "Save"
+        Me.btnSave.Id = 5
+        Me.btnSave.ImageOptions.Image = CType(resources.GetObject("BarLargeButtonItem1.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnSave.ImageOptions.LargeImage = CType(resources.GetObject("BarLargeButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(60, 60)
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.BackColor = System.Drawing.Color.Teal
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl5.Appearance.Options.UseBackColor = True
+        Me.LabelControl5.Appearance.Options.UseFont = True
+        Me.LabelControl5.Appearance.Options.UseForeColor = True
+        Me.LabelControl5.Appearance.Options.UseTextOptions = True
+        Me.LabelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.TablePanel1.SetColumn(Me.LabelControl5, 0)
+        Me.LabelControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelControl5.Location = New System.Drawing.Point(3, 3)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.TablePanel1.SetRow(Me.LabelControl5, 0)
+        Me.LabelControl5.Size = New System.Drawing.Size(134, 20)
+        Me.LabelControl5.TabIndex = 8
+        Me.LabelControl5.Text = "Parent Form"
+        '
+        'txtParentText
+        '
+        Me.TablePanel1.SetColumn(Me.txtParentText, 0)
+        Me.txtParentText.Location = New System.Drawing.Point(3, 30)
+        Me.txtParentText.MenuManager = Me.BarManager1
+        Me.txtParentText.Name = "txtParentText"
+        Me.txtParentText.Properties.ReadOnly = True
+        Me.TablePanel1.SetRow(Me.txtParentText, 1)
+        Me.txtParentText.Size = New System.Drawing.Size(134, 20)
+        Me.txtParentText.TabIndex = 9
+        '
+        'FrmCreateForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1105, 362)
+        Me.Controls.Add(Me.TablePanel1)
+        Me.Controls.Add(Me.TreeList1)
+        Me.Controls.Add(Me.barDockControlLeft)
+        Me.Controls.Add(Me.barDockControlRight)
+        Me.Controls.Add(Me.barDockControlBottom)
+        Me.Controls.Add(Me.barDockControlTop)
+        Me.Name = "FrmCreateForm"
+        Me.Tag = "0258TL03"
+        Me.Text = "Create Form"
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TreeList1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TablePanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TablePanel1.ResumeLayout(False)
+        Me.TablePanel1.PerformLayout()
+        CType(Me.txtLibName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtFormName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtVietnamese.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtEnglish.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtParentText.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+
+    Friend WithEvents BarManager1 As DevExpress.XtraBars.BarManager
+    Friend WithEvents Bar1 As DevExpress.XtraBars.Bar
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents btnShow As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents btnNew As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents btnEdit As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents btnDelete As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents TreeList1 As DevExpress.XtraTreeList.TreeList
+    Friend WithEvents ImageCollection1 As DevExpress.Utils.ImageCollection
+    Friend WithEvents TablePanel1 As DevExpress.Utils.Layout.TablePanel
+    Friend WithEvents txtEnglish As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtVietnamese As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtFormName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtLibName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnSave As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtParentText As DevExpress.XtraEditors.TextEdit
+End Class

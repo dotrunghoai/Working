@@ -1,0 +1,15 @@
+=================================================================================================
+DateTime:26-Apr-2018 07:56:59
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmSysData
+FunctionName:Get System Data
+Error:The SqlParameterCollection only accepts non-null SqlParameter type objects.
+Parameter name: value
+=================================================================================================
+DateTime:26-Apr-2018 09:49:04
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmForecast
+FunctionName:SetFormEvents
+Error:Operator '*' is not defined for type 'Decimal' and type 'DBNull'.

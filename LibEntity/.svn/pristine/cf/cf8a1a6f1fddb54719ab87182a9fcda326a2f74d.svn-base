@@ -1,0 +1,46 @@
+
+ Public Class ASP_SupplierEdited
+     Public SupplierCode_K As String 
+     Public PUPrepared As String 
+     Public PUPreparedComment As String 
+     Public PUPreparedStatus As Boolean 
+     Public PUPreparedDate As DateTime 
+     Public PUChecked As String 
+     Public PUCheckedComment As String 
+     Public PUCheckedStatus As Boolean 
+     Public PUCheckedDate As DateTime 
+     Public PUApproved As String 
+     Public PUApprovedComment As String 
+     Public PUApprovedStatus As Boolean 
+     Public PUApprovedDate As DateTime 
+     Public SupplierName As String 
+     Public Address As String 
+     Public Telephone As String 
+     Public Fax As String 
+     Public TaxCode As String 
+     Public ContactName1 As String 
+     Public ContactName2 As String 
+     Public ContactName3 As String 
+     Public ContactName4 As String 
+     Public VendorPolicyFileName As String 
+     Public VendorPolicyFileServer As String 
+     Public RingiFileName As String 
+     Public RingiFileServer As String 
+     Public PrincipleContractFileName As String 
+     Public PrincipleContractFileServer As String 
+     Public InvestmentLicenceFileName As String 
+     Public InvestmentLicenceFileServer As String 
+     Public OtherDocument As String 
+     Public BankFileName As String 
+     Public BankFileServer As String 
+     Public PaymentDoc1 As String 
+     Public PaymentTerm1 As String 
+     Public PaymentDescription1 As String 
+     Public Purchaser As String 
+     Public Category As String 
+     Public Note As String 
+     Public Active As Boolean 
+     Public DeactivateReason As String 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+ End  Class

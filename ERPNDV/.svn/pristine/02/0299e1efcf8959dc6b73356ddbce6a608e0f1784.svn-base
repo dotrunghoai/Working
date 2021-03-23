@@ -1,0 +1,15 @@
+=================================================================================================
+DateTime:03-Apr-2019 16:14:02
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmKQCVNEW
+FunctionName:Save
+Error:Conversion from string "2" to type 'Date' is not valid.
+=================================================================================================
+DateTime:03-Apr-2019 16:14:37
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmKQCVNEW
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_KQQC_DetailNew_KQQC_KQCVNew". The conflict occurred in database "NDVERP", table "dbo.KQQC_KQCVNew", column 'ID'.
+The statement has been terminated.

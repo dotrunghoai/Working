@@ -1,0 +1,65 @@
+=================================================================================================
+DateTime:12-Oct-2017 10:51:48
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:SetFormEvents
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:12-Oct-2017 10:51:56
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:SetFormEvents
+Error:Column named XOutOrTrial cannot be found.
+Parameter name: columnName
+=================================================================================================
+DateTime:12-Oct-2017 11:08:13
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:InvalidArgument=Value of '2' is not valid for 'SelectedIndex'.
+Parameter name: SelectedIndex
+=================================================================================================
+DateTime:12-Oct-2017 11:08:51
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:Cannot access 'Booking Inquiry.xlsx'.
+=================================================================================================
+DateTime:12-Oct-2017 11:09:25
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:Cannot access 'Booking Inquiry.xlsx'.
+=================================================================================================
+DateTime:12-Oct-2017 11:09:51
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:Cannot access 'Booking Inquiry.xlsx'.
+=================================================================================================
+DateTime:12-Oct-2017 11:11:33
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:Cannot access 'Booking Inquiry.xlsx'.
+=================================================================================================
+DateTime:12-Oct-2017 11:29:52
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:Cannot access 'Booking Inquiry.xlsx'.
+=================================================================================================
+DateTime:12-Oct-2017 11:36:04
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmExBookingInquiry
+FunctionName:Create Booking
+Error:The process cannot access the file 'C:\Users\tmtam\Desktop\Booking Inquiry.xlsx' because it is being used by another process.

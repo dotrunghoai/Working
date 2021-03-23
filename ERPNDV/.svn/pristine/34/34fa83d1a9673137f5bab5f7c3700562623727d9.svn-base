@@ -1,0 +1,22 @@
+=================================================================================================
+DateTime:16-Sep-2020 10:24:49
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibUDM.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:16-Sep-2020 13:01:15
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibUDM.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:16-Sep-2020 13:10:59
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmSellingPeriod
+FunctionName:Import
+Error:Cannot open database "Acc_Prd" requested by the login. The login failed.
+Login failed for user 'sa'.

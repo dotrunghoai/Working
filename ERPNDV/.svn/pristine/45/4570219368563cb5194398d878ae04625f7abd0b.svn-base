@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:20-Dec-2019 14:12:12
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmVendorList
+FunctionName:gridSupplierList_CellDoubleClick
+Error:Unable to cast object of type 'DevExpress.XtraBars.Docking2010.Views.Tabbed.Document' to type 'LibBudgetGSR.FrmVendorDetail'.

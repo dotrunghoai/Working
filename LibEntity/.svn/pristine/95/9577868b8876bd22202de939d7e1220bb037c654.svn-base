@@ -1,0 +1,41 @@
+
+ Public Class UDM_ExDestinationAllocation
+     Public ID_K As String 
+     Public DocsNo As  Integer 
+     Public DocsName As String 
+     Public SoldTo As String 
+     Public ShipTo1 As String 
+     Public ShipTo2 As String 
+     Public SalesOrder As String 
+     Public PurchaseOrder As String 
+     Public OrderNo As  Integer 
+     Public ProductCode As String 
+     Public ProductName As String 
+     Public StandardName As String 
+     Public Unit As String 
+     Public Quantity As Decimal 
+     Public XOutOrTrial As String 
+     Public InvoiceNo As String 
+     Public PackingListNo As String 
+     Public UnofficialPlan As Boolean 
+     Public PlanSendingTime As DateTime 
+     Public IVTransferTime As DateTime 
+     Public CustomsCode As String 
+     Public ExportType As  Integer 
+     Public Destination As String 
+     Public FlightOrVessel As String 
+     Public NDVCutOff As DateTime 
+     Public AirportCutOff As DateTime 
+     Public ETD As DateTime 
+     Public ETA As DateTime 
+     Public NetWeight As Decimal 
+     Public UnitPrice As Decimal 
+     Public Amount As Decimal 
+     Public Daily As Boolean 
+     Public IsLock As Boolean 
+     Public PI As String 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+     Public UpdateDate As DateTime 
+     Public UpdateUser As String 
+ End  Class

@@ -1,0 +1,106 @@
+=================================================================================================
+DateTime:19-Apr-2018 09:07:43
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmProcessHourNew
+FunctionName:gridProcessHour_CellValueChanged
+Error:Cannot insert the value NULL into column 'RevisionCode', table 'NDVERP.dbo.PD_ProcessHourNew'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+=================================================================================================
+DateTime:19-Apr-2018 09:23:46
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPlanHourNew
+FunctionName:Add
+Error:There is no row at position 0.
+=================================================================================================
+DateTime:19-Apr-2018 09:23:49
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPlanHourNew
+FunctionName:Add
+Error:There is no row at position 0.
+=================================================================================================
+DateTime:19-Apr-2018 09:23:53
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPlanHourNew
+FunctionName:Add
+Error:There is no row at position 0.
+=================================================================================================
+DateTime:19-Apr-2018 09:24:07
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPlanHourNew
+FunctionName:Add
+Error:There is no row at position 0.
+=================================================================================================
+DateTime:19-Apr-2018 09:33:57
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 09:34:01
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 09:34:04
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 09:34:07
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 09:34:09
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 09:34:11
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 09:34:14
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:Lập tiến đồ giờ (Mới)
+FunctionName:Run
+Error:Conversion from type 'Integer' to type 'Date' is not valid.
+=================================================================================================
+DateTime:19-Apr-2018 10:46:42
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPlanHourNew
+FunctionName:Add
+Error:Input string was not in a correct format.Couldn't store <> in Remark Column.  Expected type is Int32.
+=================================================================================================
+DateTime:19-Apr-2018 10:46:51
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPlanHourNew
+FunctionName:Add
+Error:Input string was not in a correct format.Couldn't store <> in Remark Column.  Expected type is Int32.
+=================================================================================================
+DateTime:19-Apr-2018 15:22:59
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibFAAC.dll' or one of its dependencies. The system cannot find the file specified.

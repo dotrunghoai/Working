@@ -1,0 +1,42 @@
+
+ Public Class RP_RequestConfirm
+     Public ID_K As String 
+     Public Prepared As String 
+     Public PreparedDate As DateTime 
+     Public PreparedCmt As String 
+     Public Approved As String 
+     Public ApprovedDate As DateTime 
+     Public ApprovedCmt As String 
+     Public ITPIC As String 
+     Public ITPICDate As DateTime 
+     Public ITPICCmt As String 
+     Public ITMG As String 
+     Public ITMGDate As DateTime 
+     Public ITMGCmt As String 
+     Public VMM As String 
+     Public VMMDate As DateTime 
+     Public VMMCmt As String 
+     Public GD As String 
+     Public GDDate As DateTime 
+     Public GDCmt As String 
+     Public CreateDate As DateTime 
+     Public CurrentID As String 
+     Public Section As String 
+     Public Loai As String 
+     Public ProgramID As  Integer 
+     Public ProgramName As String 
+     Public NgayApDung As DateTime 
+     Public Status As String 
+     Public NoiDungYeuCau As String 
+     Public MucDichBoiCanh As String 
+     Public HieuQuaDuToan As String 
+     Public GioDuToan As  Integer 
+     Public StartDateFC As DateTime 
+     Public EndDateFC As DateTime 
+     Public GioThucTe As  Integer 
+     Public StartDateACT As DateTime 
+     Public EndDateACT As DateTime 
+     Public AttachFile As String 
+     Public AttachFileServer As String 
+     Public Note As String 
+ End  Class

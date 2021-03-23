@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:23-Aug-2017 09:27:23
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmItemCodeList
+FunctionName:Update Price
+Error:Column 'ItemCode' does not belong to table .

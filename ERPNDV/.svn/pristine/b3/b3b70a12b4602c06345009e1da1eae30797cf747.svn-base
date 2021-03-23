@@ -1,0 +1,37 @@
+=================================================================================================
+DateTime:06-Apr-2020 11:14:54
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibPurchaseRingi.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:06-Apr-2020 11:14:56
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibPurchaseRingi.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:06-Apr-2020 11:14:59
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibPurchaseRingi.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:06-Apr-2020 14:42:55
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmApprovedRingi
+FunctionName:bttSave_Click
+Error:Cannot insert the value NULL into column 'ItemCode', table 'NDVERP.dbo.ASP_RingiDetail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Apr-2020 16:03:17
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmApprovedRingi
+FunctionName:bttSave_Click
+Error:The network name cannot be found.
+

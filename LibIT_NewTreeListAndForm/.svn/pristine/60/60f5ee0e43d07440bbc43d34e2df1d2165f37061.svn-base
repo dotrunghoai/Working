@@ -1,0 +1,263 @@
+﻿Imports CommonDB
+
+Public Class FrmTreeListAuthorization
+    Dim _db As New DBSql(PublicUtility.PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Dim rowClick As Boolean = False
+    Private Sub FrmTreeListAuthorization_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnShow.PerformClick()
+        ShowTreeListAuthoriz()
+        TreeList1.Select()
+    End Sub
+    Sub ShowTreeListAuthoriz()
+        TreeList1.DataSource = _db.FillDataTable("  SELECT ID, ParentID, CAST(0 AS BIT) AS Status, TextVietNamese
+                                                    FROM Main_TestTreeList")
+        TreeList1.CollapseAll()
+        TreeList1.ExpandToLevel(0)
+        TreeList1.StateImageList = ImageCollection1
+        TreeList1.Columns("Status").Width = 20
+        TreeList1.Columns("TextVietNamese").Width = 200
+        TreeList1.Columns("Status").OptionsColumn.AllowEdit = True
+        TreeList1.Columns("TextVietNamese").OptionsColumn.AllowEdit = False
+    End Sub
+
+    Private Sub TreeList1_GetStateImage(sender As Object, e As DevExpress.XtraTreeList.GetStateImageEventArgs) Handles TreeList1.GetStateImage
+        If e.Node.ParentNode Is Nothing Then
+            e.NodeImageIndex = 0
+        ElseIf e.Node.HasChildren Then
+            e.NodeImageIndex = 1
+        Else
+            e.NodeImageIndex = 2
+        End If
+    End Sub
+
+    Private Sub TreeList1_CellValueChanged(sender As Object, e As DevExpress.XtraTreeList.CellValueChangedEventArgs) Handles TreeList1.CellValueChanging
+        If TreeList1.OptionsBehavior.Editable = False Or e.Column.ReadOnly = True Then
+            Return
+        End If
+        If Not rowClick Then
+            ShowWarning("Bạn chưa chọn User !")
+            Return
+        End If
+
+        For Each m As Integer In GridView1.GetSelectedRows
+            Dim userID = GridView1.GetRowCellValue(m, "UserID")
+            If TreeList1.FocusedNode.HasChildren Then
+                Dim dtChild = dataChild(TreeList1.FocusedNode.GetValue("ID"))
+                If e.Value = True Then
+                    'Loop1
+                    For Each r As DataRow In dtChild.Rows
+                        ThemPhanQuyen(r("ID"), userID)
+                        'Loop2
+                        Dim dtChild2 = dataChild(r("ID"))
+                        For Each r2 As DataRow In dtChild2.Rows
+                            ThemPhanQuyen(r2("ID"), userID)
+                            'Loop3
+                            Dim dtChild3 = dataChild(r2("ID"))
+                            For Each r3 As DataRow In dtChild3.Rows
+                                ThemPhanQuyen(r3("ID"), userID)
+                                'Loop4
+                                Dim dtChild4 = dataChild(r3("ID"))
+                                For Each r4 As DataRow In dtChild4.Rows
+                                    ThemPhanQuyen(r4("ID"), userID)
+                                    'Loop5
+                                    Dim dtChild5 = dataChild(r4("ID"))
+                                    For Each r5 As DataRow In dtChild5.Rows
+                                        ThemPhanQuyen(r5("ID"), userID)
+                                        'Loop6
+                                        '..............
+                                    Next
+                                Next
+                            Next
+                        Next
+                    Next
+                Else
+                    'Loop1
+                    For Each r As DataRow In dtChild.Rows
+                        XoaPhanQuyen(r("ID"), userID)
+                        'Loop2
+                        Dim dtChild2 = dataChild(r("ID"))
+                        For Each r2 As DataRow In dtChild2.Rows
+                            XoaPhanQuyen(r2("ID"), userID)
+                            'Loop3
+                            Dim dtChild3 = dataChild(r2("ID"))
+                            For Each r3 As DataRow In dtChild3.Rows
+                                XoaPhanQuyen(r3("ID"), userID)
+                                'Loop4
+                                Dim dtChild4 = dataChild(r3("ID"))
+                                For Each r4 As DataRow In dtChild4.Rows
+                                    XoaPhanQuyen(r4("ID"), userID)
+                                    'Loop5
+                                    Dim dtChild5 = dataChild(r4("ID"))
+                                    For Each r5 As DataRow In dtChild5.Rows
+                                        XoaPhanQuyen(r5("ID"), userID)
+                                        'Loop6
+                                        '..............
+                                    Next
+                                Next
+                            Next
+                        Next
+                    Next
+                End If
+            End If
+
+            If TreeList1.FocusedNode.ParentNode IsNot Nothing Then
+                If e.Value = True Then
+                    'Loop1
+                    Dim id1 = ThemQuyenParent(TreeList1.FocusedNode.GetValue("ID"), userID)
+                    If TreeList1.FindNodeByKeyID(id1).ParentNode IsNot Nothing Then
+                        'Loop2
+                        Dim id2 = ThemQuyenParent(id1, userID)
+                        If TreeList1.FindNodeByKeyID(id2).ParentNode IsNot Nothing Then
+                            'Loop3
+                            Dim id3 = ThemQuyenParent(id2, userID)
+                            If TreeList1.FindNodeByKeyID(id3).ParentNode IsNot Nothing Then
+                                'Loop4
+                                Dim id4 = ThemQuyenParent(id3, userID)
+                                If TreeList1.FindNodeByKeyID(id4).ParentNode IsNot Nothing Then
+                                    'Loop5
+                                    Dim id5 = ThemQuyenParent(id4, userID)
+                                    If TreeList1.FindNodeByKeyID(id5).ParentNode IsNot Nothing Then
+                                        'Loop6
+                                        '...............
+                                    End If
+                                End If
+                            End If
+                        End If
+                    End If
+                Else
+                    'Loop1
+                    Dim id1 = XoaQuyenParent(TreeList1.FocusedNode.GetValue("ID"), 1, userID)
+                    If TreeList1.FindNodeByKeyID(id1).ParentNode IsNot Nothing Then
+                        'Loop2
+                        Dim id2 = XoaQuyenParent(id1, 2, userID)
+                        If TreeList1.FindNodeByKeyID(id2).ParentNode IsNot Nothing Then
+                            'Loop3
+                            Dim id3 = XoaQuyenParent(id2, 3, userID)
+                            If TreeList1.FindNodeByKeyID(id3).ParentNode IsNot Nothing Then
+                                'Loop4
+                                Dim id4 = XoaQuyenParent(id3, 4, userID)
+                                If TreeList1.FindNodeByKeyID(id4).ParentNode IsNot Nothing Then
+                                    'Loop5
+                                    Dim id5 = XoaQuyenParent(id4, 5, userID)
+                                    If TreeList1.FindNodeByKeyID(id5).ParentNode IsNot Nothing Then
+                                        'Loop6
+                                        '...............
+                                    End If
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+
+            Dim obj As New Main_TestTreeList_Employee
+            obj.EmpID_K = GridView1.GetRowCellValue(m, "UserID")
+            obj.FormID_K = TreeList1.FocusedNode.GetValue("ID")
+            If e.Value = True Then
+                If Not _db.ExistObject(obj) Then
+                    _db.Insert(obj)
+                End If
+            Else
+                If _db.ExistObject(obj) Then
+                    _db.Delete(obj)
+                End If
+            End If
+        Next
+        TreeList1.SetFocusedRowCellValue("Status", e.Value)
+    End Sub
+    Function dataChild(parentID) As DataTable
+        Return _db.FillDataTable(String.Format("SELECT ID
+                                                FROM Main_TestTreeList
+                                                WHERE ParentID = '{0}'", parentID))
+    End Function
+    Sub ThemPhanQuyen(id, userID)
+        Dim obj As New Main_TestTreeList_Employee
+        obj.EmpID_K = userID
+        obj.FormID_K = id
+        If Not _db.ExistObject(obj) Then
+            _db.Insert(obj)
+        End If
+        TreeList1.SetRowCellValue(TreeList1.FindNodeByKeyID(id), TreeList1.Columns("Status"), True)
+    End Sub
+    Sub XoaPhanQuyen(id, userID)
+        Dim obj As New Main_TestTreeList_Employee
+        obj.EmpID_K = userID
+        obj.FormID_K = id
+        If _db.ExistObject(obj) Then
+            _db.Delete(obj)
+        End If
+        TreeList1.SetRowCellValue(TreeList1.FindNodeByKeyID(id), TreeList1.Columns("Status"), False)
+    End Sub
+    Function parentVal(id) As Object
+        Return _db.ExecuteScalar(String.Format("SELECT ParentID 
+                                                FROM Main_TestTreeList
+                                                WHERE ID = '{0}'",
+                                                id))
+    End Function
+    Function ThemQuyenParent(id, userID)
+        Dim obj As New Main_TestTreeList_Employee
+        obj.EmpID_K = userID
+        obj.FormID_K = parentVal(id)
+        If Not _db.ExistObject(obj) Then
+            _db.Insert(obj)
+        End If
+        TreeList1.SetRowCellValue(TreeList1.FindNodeByKeyID(obj.FormID_K), TreeList1.Columns("Status"), True)
+        Return obj.FormID_K
+    End Function
+    Function XoaQuyenParent(childID, level, userID)
+        If CheckNonOtherChild(childID, userID, level) Then
+            Dim obj As New Main_TestTreeList_Employee
+            obj.EmpID_K = userID
+            obj.FormID_K = parentVal(childID)
+            _db.Delete(obj)
+        End If
+        Return parentVal(childID)
+    End Function
+    Function CheckNonOtherChild(childID, userID, level) As Boolean
+        Dim para(0) As SqlClient.SqlParameter
+        If level > 1 Then
+            para(0) = New SqlClient.SqlParameter("@ID", DBNull.Value)
+        Else
+            para(0) = New SqlClient.SqlParameter("@ID", childID)
+        End If
+        Dim dtChild = _db.FillDataTable(String.Format("SELECT ID
+                                                        FROM Main_TestTreeList
+                                                        WHERE ParentID = '{0}'
+                                                        AND (@ID IS NULL OR ID <> @ID)",
+                                                        parentVal(childID)),
+                                                        para)
+        For Each r As DataRow In dtChild.Rows
+            Dim obj As New Main_TestTreeList_Employee
+            obj.EmpID_K = userID
+            obj.FormID_K = r("ID")
+            If _db.ExistObject(obj) Then
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        GridControl1.DataSource = _db.FillDataTable("SELECT UserID, FullName
+                                                    FROM Main_User")
+        GridControlSetFormat(GridView1)
+        GridView1.Columns("FullName").Width = 200
+    End Sub
+
+    Private Sub GridView1_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView1.RowClick
+        rowClick = True
+        Dim dtAuth = _db.FillDataTable(String.Format("SELECT h.ID, 
+                                                        IIF(d.FormID IS NULL, CAST(0 AS BIT), CAST(1 AS BIT)) AS Status
+                                                    FROM Main_TestTreeList AS h
+                                                    LEFT JOIN (
+	                                                    SELECT FormID
+	                                                    FROM Main_TestTreeList_Employee
+	                                                    WHERE EmpID = '{0}'
+                                                    ) AS d
+                                                    ON h.ID = d.FormID",
+                                                    GridView1.GetFocusedRowCellValue("UserID")))
+        For Each r As DataRow In dtAuth.Rows
+            TreeList1.SetRowCellValue(TreeList1.FindNodeByKeyID(r("ID")), TreeList1.Columns("Status"), r("Status"))
+        Next
+    End Sub
+End Class

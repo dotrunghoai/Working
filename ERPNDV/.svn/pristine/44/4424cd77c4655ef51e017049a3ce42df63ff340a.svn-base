@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <connectionStrings>
+        <add name="Ringi" connectionString="XpoProvider=InMemoryDataStore;data source=D:\NDVERP\ERPNDV\bin\Debug\Ringi.xsd;read only=True" />
+    </connectionStrings>
+</configuration>

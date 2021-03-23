@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{D96E7253-54F5-4E56-A70F-273C12AA6BA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LibEMM</RootNamespace>
+    <AssemblyName>LibEMM</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibEMM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LibEMM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibEMM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>LibEMM.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter">
+      <HintPath>..\DLL\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity_EMM\EMM_B00Detail.vb" />
+    <Compile Include="Entity_EMM\EMM_BPCore_DanhGia.vb" />
+    <Compile Include="Entity_EMM\EMM_BPCore_Supplier.vb" />
+    <Compile Include="Entity_EMM\EMM_CartonDetail.vb" />
+    <Compile Include="Entity_EMM\EMM_ChemicalDetail.vb" />
+    <Compile Include="Entity_EMM\EMM_DLVRList.vb" />
+    <Compile Include="Entity_EMM\EMM_K5K2NA590.vb" />
+    <Compile Include="Entity_EMM\EMM_MasterAQL.vb" />
+    <Compile Include="Entity_EMM\EMM_MasterCaIQC.vb" />
+    <Compile Include="Entity_EMM\EMM_MasterJCode.vb" />
+    <Compile Include="Entity_EMM\EMM_MasterNangLucIQC.vb" />
+    <Compile Include="Entity_EMM\EMM_MasterSoLotU00.vb" />
+    <Compile Include="Entity_EMM\EMM_NangLucIQC.vb" />
+    <Compile Include="Entity_EMM\EMM_NylonDetail.vb" />
+    <Compile Include="Entity_EMM\EMM_ProductU00.vb" />
+    <Compile Include="Entity_EMM\EMM_ThoiGianIQC.vb" />
+    <Compile Include="Entity_EMM\EMM_TongSoLot.vb" />
+    <Compile Include="Entity_EMM\EMM_U00Detail.vb" />
+    <Compile Include="Entity_EMM\EMM_UnitAS.vb" />
+    <Compile Include="Entity_EMM\EMM_ViewStock.vb" />
+    <Compile Include="Entity_EMM\EMM_WhitePet.vb" />
+    <Compile Include="FrmB00Detail.Designer.vb">
+      <DependentUpon>FrmB00Detail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmB00Detail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clsApplication.vb" />
+    <Compile Include="FrmBaoCao.Designer.vb">
+      <DependentUpon>FrmBaoCao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBPCoreItem.Designer.vb">
+      <DependentUpon>FrmBPCoreItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBPCoreItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBPCoreMaster.Designer.vb">
+      <DependentUpon>FrmBPCoreMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBPCoreMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBPCoreSupplier.Designer.vb">
+      <DependentUpon>FrmBPCoreSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBPCoreSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckQty.Designer.vb">
+      <DependentUpon>FrmCheckQty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckQty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChemicalDetail.Designer.vb">
+      <DependentUpon>FrmChemicalDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChemicalDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDLVRList.Designer.vb">
+      <DependentUpon>FrmDLVRList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDLVRList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Report\RpB00Detail.Designer.vb">
+      <DependentUpon>RpB00Detail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form Report\RpB00Detail.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmMasterNangLucIQC.Designer.vb">
+      <DependentUpon>FrmMasterNangLucIQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMasterNangLucIQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMasterSoLoU00.Designer.vb">
+      <DependentUpon>FrmMasterSoLoU00.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMasterSoLoU00.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMasterThoiGianIQC.Designer.vb">
+      <DependentUpon>FrmMasterThoiGianIQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMasterThoiGianIQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMsJCode.Designer.vb">
+      <DependentUpon>FrmMsJCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMsJCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNangLucIQC.Designer.vb">
+      <DependentUpon>FrmNangLucIQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNangLucIQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductMaterialU00.Designer.vb">
+      <DependentUpon>FrmProductMaterialU00.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductMaterialU00.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReport.Designer.vb">
+      <DependentUpon>FrmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportNet.Designer.vb">
+      <DependentUpon>FrmReportNet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportNet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSetJCode.Designer.vb">
+      <DependentUpon>FrmSetJCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetJCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoLotU00MoiNgay.Designer.vb">
+      <DependentUpon>FrmSoLotU00MoiNgay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoLotU00MoiNgay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThoiGianIQC.Designer.vb">
+      <DependentUpon>FrmThoiGianIQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThoiGianIQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmU00Detail.Designer.vb">
+      <DependentUpon>FrmU00Detail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmU00Detail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Table_EMM\PublicSP.vb" />
+    <Compile Include="Table_EMM\PublicTable.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmB00Detail.resx">
+      <DependentUpon>FrmB00Detail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCao.resx">
+      <DependentUpon>FrmBaoCao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBPCoreItem.resx">
+      <DependentUpon>FrmBPCoreItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBPCoreMaster.resx">
+      <DependentUpon>FrmBPCoreMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBPCoreSupplier.resx">
+      <DependentUpon>FrmBPCoreSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckQty.resx">
+      <DependentUpon>FrmCheckQty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChemicalDetail.resx">
+      <DependentUpon>FrmChemicalDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDLVRList.resx">
+      <DependentUpon>FrmDLVRList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Report\RpB00Detail.resx">
+      <DependentUpon>RpB00Detail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMasterNangLucIQC.resx">
+      <DependentUpon>FrmMasterNangLucIQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMasterSoLoU00.resx">
+      <DependentUpon>FrmMasterSoLoU00.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMasterThoiGianIQC.resx">
+      <DependentUpon>FrmMasterThoiGianIQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMsJCode.resx">
+      <DependentUpon>FrmMsJCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNangLucIQC.resx">
+      <DependentUpon>FrmNangLucIQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductMaterialU00.resx">
+      <DependentUpon>FrmProductMaterialU00.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReport.resx">
+      <DependentUpon>FrmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportNet.resx">
+      <DependentUpon>FrmReportNet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSetJCode.resx">
+      <DependentUpon>FrmSetJCode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoLotU00MoiNgay.resx">
+      <DependentUpon>FrmSoLotU00MoiNgay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThoiGianIQC.resx">
+      <DependentUpon>FrmThoiGianIQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmU00Detail.resx">
+      <DependentUpon>FrmU00Detail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonDB.vbproj">
+      <Project>{db7e75fd-887e-4c54-a3c4-a42cfaeac6f7}</Project>
+      <Name>CommonDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibEntity\LibEntity.vbproj">
+      <Project>{C8D9B253-BB8A-4180-B3E6-CA2254AA764F}</Project>
+      <Name>LibEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicUtility\PublicUtility.vbproj">
+      <Project>{E0CD795E-43BF-4FF5-9605-563EB53E9BBF}</Project>
+      <Name>PublicUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityControl\UtilityControl.vbproj">
+      <Project>{71BF981E-C557-4A74-8450-390C431F0223}</Project>
+      <Name>UtilityControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="WD" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="WD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ngay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="LotNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Appearance" type="xs:string" minOccurs="0" />
+              <xs:element name="Thickness" type="xs:string" minOccurs="0" />
+              <xs:element name="Reflow" type="xs:string" minOccurs="0" />
+              <xs:element name="Dimension" type="xs:string" minOccurs="0" />
+              <xs:element name="PeelPI" type="xs:string" minOccurs="0" />
+              <xs:element name="PeelAL" type="xs:string" minOccurs="0" />
+              <xs:element name="Brom" type="xs:string" minOccurs="0" />
+              <xs:element name="Ni" type="xs:string" minOccurs="0" />
+              <xs:element name="Au" type="xs:string" minOccurs="0" />
+              <xs:element name="OSP" type="xs:string" minOccurs="0" />
+              <xs:element name="NiHard" type="xs:string" minOccurs="0" />
+              <xs:element name="PadHight" type="xs:string" minOccurs="0" />
+              <xs:element name="PadSurface" type="xs:string" minOccurs="0" />
+              <xs:element name="Bonding" type="xs:string" minOccurs="0" />
+              <xs:element name="Overall" type="xs:string" minOccurs="0" />
+              <xs:element name="MSNV" type="xs:string" minOccurs="0" />
+              <xs:element name="Confirm" type="xs:string" minOccurs="0" />
+              <xs:element name="DDTComment" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

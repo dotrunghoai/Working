@@ -1,0 +1,112 @@
+=================================================================================================
+DateTime:29-Aug-2017 08:50:12
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmDelivery
+FunctionName:FrmDelivery_Shown
+Error:Ambiguous column name 'Note'.
+=================================================================================================
+DateTime:29-Aug-2017 08:50:38
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmDelivery
+FunctionName:FrmDelivery_Shown
+Error:Ambiguous column name 'Note'.
+=================================================================================================
+DateTime:29-Aug-2017 10:23:30
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD2
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:16:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:17:18
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:Delete Row
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:39:18
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:39:30
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:39:34
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:42:14
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:42:22
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:43:55
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:44:53
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Conversion from string "tam.truongminh@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 11:52:55
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD4
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 14:16:30
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD5
+FunctionName:Delete Row
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 14:16:35
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD5
+FunctionName:Delete Row
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:29-Aug-2017 14:17:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD5
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.

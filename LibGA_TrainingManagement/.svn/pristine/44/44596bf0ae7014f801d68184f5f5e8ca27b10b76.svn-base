@@ -1,0 +1,773 @@
+﻿Imports System.Drawing
+Imports CommonDB
+Imports DevExpress.XtraEditors
+Imports DevExpress.XtraGrid.Columns
+Imports PublicUtility
+Public Class FrmRegisterPlanned
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Public _id As String = ""
+    Public Enum Confirm
+        Pre
+        Check
+        Approve
+        PreKQ
+        CheckKQ
+        ApproveKQ
+    End Enum
+    Private Sub FrmRegisterPlanned_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If _id = "" Then
+            _id = Me.AccessibleName
+        End If
+        dteDate.EditValue = Date.Now
+        txtSection.Text = CurrentUser.Section
+        LoadMail()
+        LoadHead()
+    End Sub
+    Sub LoadMail()
+        txtMailPre.Text = CurrentUser.Mail
+        Dim dt = _db.FillDataTable("SELECT h.EmpID, d.SectionSort, d.Observation, h.Mail
+                                    FROM OT_Mail AS h
+                                    LEFT JOIN OT_Employee AS d
+                                    ON h.EmpID = d.EmpID
+                                    ORDER BY h.Mail")
+        cbbMailCheck.Properties.DataSource = dt
+        cbbMailCheck.Properties.DisplayMember = "Mail"
+        cbbMailCheck.Properties.ValueMember = "Mail"
+        cbbMailCheck.Properties.NullText = Nothing
+        cbbMailCheck.Properties.PopulateViewColumns()
+        cbbMailCheck.Properties.View.Columns("Mail").Width = 200
+
+        cbbMailApprove.Properties.DataSource = dt
+        cbbMailApprove.Properties.DisplayMember = "Mail"
+        cbbMailApprove.Properties.ValueMember = "Mail"
+        cbbMailApprove.Properties.NullText = Nothing
+        cbbMailApprove.Properties.PopulateViewColumns()
+        cbbMailApprove.Properties.View.Columns("Mail").Width = 200
+
+        cbbMailCheck.Text = CurrentUser.Mail
+        cbbMailApprove.Text = CurrentUser.Mail
+        txtMailPreKQ.Text = CurrentUser.Mail
+        txtMailCheckKQ.Text = CurrentUser.Mail
+        txtMailApproveKQ.Text = CurrentUser.Mail
+    End Sub
+    Sub UnEnableControl()
+        cbbMailCheck.ReadOnly = True
+        cbbMailApprove.ReadOnly = True
+        btnSave.Visible = False
+        btnSubmit.Visible = False
+        lblDatePre.Visible = False
+        mmeCmtPre.ReadOnly = True
+
+        btnCheck.Visible = False
+        btnRejectCheck.Visible = False
+        lblDateCheck.Visible = False
+        mmeCmtCheck.ReadOnly = True
+
+        btnApprove.Visible = False
+        btnRejectApprove.Visible = False
+        lblDateApprove.Visible = False
+        mmeCmtApprove.ReadOnly = True
+
+        btnSaveKQ.Visible = False
+        btnSubmitKQ.Visible = False
+        lblDatePreKQ.Visible = False
+        mmeCmtPreKQ.ReadOnly = True
+
+        btnCheckKQ.Visible = False
+        btnRejectCheckKQ.Visible = False
+        lblDateCheckKQ.Visible = False
+        mmeCmtCheckKQ.ReadOnly = True
+
+        btnApproveKQ.Visible = False
+        btnRejectApproveKQ.Visible = False
+        lblDateApproveKQ.Visible = False
+        mmeCmtApproveKQ.ReadOnly = True
+
+        btnDelete.Visible = False
+    End Sub
+    Sub LoadHead()
+        UnEnableControl()
+        If _id = "" Then
+            cbbMailCheck.ReadOnly = False
+            cbbMailApprove.ReadOnly = False
+            btnSave.Visible = True
+            mmeCmtPre.ReadOnly = False
+        Else
+            txtID.Text = _id
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            txtMailPre.Text = obj.MailPre
+            cbbMailCheck.Text = obj.MailCheck
+            cbbMailApprove.Text = obj.MailApprove
+            txtMailPreKQ.Text = obj.MailPreKQ
+            txtMailCheckKQ.Text = obj.MailCheckKQ
+            txtMailApproveKQ.Text = obj.MailApproveKQ
+            mmeCmtPre.Text = obj.CommentPre
+            mmeCmtCheck.Text = obj.CommentCheck
+            mmeCmtApprove.Text = obj.CommentApprove
+            mmeCmtPreKQ.Text = obj.CommentPreKQ
+            mmeCmtCheckKQ.Text = obj.CommentCheckKQ
+            mmeCmtApproveKQ.Text = obj.CommentApproveKQ
+            txtSection.Text = obj.Section
+            dteDate.EditValue = obj.DateSave
+
+            LoadDetail()
+
+            If obj.DatePre > DateTime.MinValue Then
+                lblDatePre.Text = obj.DatePre.ToString("dd-MMM-yyyy HH:mm")
+                lblDatePre.Visible = True
+            Else
+                If obj.CurrentMail = CurrentUser.Mail And obj.CurrentMail = obj.MailPre Then
+                    EnablePre()
+                    EnableGridView()
+                    Return
+                End If
+            End If
+
+            If obj.DateCheck > DateTime.MinValue Then
+                lblDateCheck.Text = obj.DateCheck.ToString("dd-MMM-yyyy HH:mm")
+                lblDateCheck.Visible = True
+            Else
+                If obj.CurrentMail = CurrentUser.Mail And obj.CurrentMail = obj.MailCheck Then
+                    btnCheck.Visible = True
+                    btnRejectCheck.Visible = True
+                    mmeCmtCheck.ReadOnly = False
+                    btnDelete.Visible = True
+                    cbbMailApprove.ReadOnly = False
+                    EnableGridView()
+                    Return
+                End If
+            End If
+
+            If obj.DateApprove > DateTime.MinValue Then
+                lblDateApprove.Text = obj.DateApprove.ToString("dd-MMM-yyyy HH:mm")
+                lblDateApprove.Visible = True
+            Else
+                If obj.CurrentMail = CurrentUser.Mail And obj.CurrentMail = obj.MailApprove Then
+                    btnApprove.Visible = True
+                    btnRejectApprove.Visible = True
+                    mmeCmtApprove.ReadOnly = False
+                    Return
+                End If
+            End If
+
+            If obj.DatePreKQ > DateTime.MinValue Then
+                lblDatePreKQ.Text = obj.DatePreKQ.ToString("dd-MMM-yyyy HH:mm")
+                lblDatePreKQ.Visible = True
+            Else
+                If obj.CurrentMail = CurrentUser.Mail And obj.CurrentMail = obj.MailPreKQ Then
+                    btnSaveKQ.Visible = True
+                    btnSubmitKQ.Visible = True
+                    mmeCmtPreKQ.ReadOnly = False
+                    EnableGridView()
+                    Return
+                End If
+            End If
+
+            If obj.DateCheckKQ > DateTime.MinValue Then
+                lblDateCheckKQ.Text = obj.DateCheckKQ.ToString("dd-MMM-yyyy HH:mm")
+                lblDateCheckKQ.Visible = True
+            Else
+                If obj.CurrentMail = CurrentUser.Mail And obj.CurrentMail = obj.MailCheckKQ Then
+                    btnCheckKQ.Visible = True
+                    btnRejectCheckKQ.Visible = True
+                    mmeCmtCheckKQ.ReadOnly = False
+                    EnableGridView()
+                    Return
+                End If
+            End If
+
+            If obj.DateApproveKQ > DateTime.MinValue Then
+                lblDateApproveKQ.Text = obj.DateApproveKQ.ToString("dd-MMM-yyyy HH:mm")
+                lblDateApproveKQ.Visible = True
+            Else
+                If obj.CurrentMail = CurrentUser.Mail And obj.CurrentMail = obj.MailApproveKQ Then
+                    btnApproveKQ.Visible = True
+                    btnRejectApproveKQ.Visible = True
+                    mmeCmtApproveKQ.ReadOnly = False
+                    Return
+                End If
+            End If
+        End If
+    End Sub
+    Sub LoadDetail()
+        GridControl1.DataSource = _db.FillDataTable(String.Format("SELECT IDTrainingCode, TrainingField, TrainingProgram,
+                                                                            TrainingMethod, Trainer, Trainee
+                                                                    FROM GA_TRM_RegisterPlanned_Detail
+                                                                    WHERE ID = '{0}'", _id))
+        GridControlSetFormat(GridView1, 0)
+        GridView1.Columns("TrainingField").Width = 100
+        GridView1.Columns("TrainingProgram").Width = 200
+        GridView1.Columns("Trainer").Width = 60
+
+        slueProgram.DataSource = LoadProgram()
+        slueProgram.DisplayMember = "TrainingCode"
+        slueProgram.ValueMember = "TrainingCode"
+        slueProgram.NullText = Nothing
+        slueProgram.PopulateViewColumns()
+        'GridControlSetFormat(slueProgram.View)
+        slueProgram.View.Columns("TrainingCode").Width = 60
+        slueProgram.View.Columns("TrainingField").Width = 110
+        slueProgram.View.Columns("TrainingProgram").Width = 330
+        slueProgram.View.Columns("TrainingContent").Width = 280
+        slueProgram.View.Columns("TrainingMethod").Width = 120
+        slueProgram.View.Columns("Trainee").Width = 150
+        GridView1.Columns("IDTrainingCode").ColumnEdit = slueProgram
+
+        LoadSelectTime()
+    End Sub
+    Function LoadProgram() As DataTable
+        Dim dtProg As DataTable = _db.FillDataTable("SELECT TrainingCode, TrainingField, TrainingProgram, 
+                                                            TrainingContent, TrainingMethod, Trainer, Trainee
+                                                     FROM GA_TRM_ProgramMaster")
+        Return dtProg
+    End Function
+    Sub EnablePre()
+        cbbMailCheck.ReadOnly = False
+        cbbMailApprove.ReadOnly = False
+        btnSave.Visible = True
+        btnSubmit.Visible = True
+        mmeCmtPre.ReadOnly = False
+        btnDelete.Visible = True
+    End Sub
+    Sub EnableGridView()
+        GridControlReadOnly(GridView1, True)
+        GridView1.Columns("IDTrainingCode").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(GridView1)
+        GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+
+        GridControlReadOnly(GridView2, False)
+        GridView2.Columns("IDTrainingCode").OptionsColumn.ReadOnly = True
+        GridView2.Columns("Status").OptionsColumn.ReadOnly = True
+        GridControlSetColorEdit(GridView2)
+    End Sub
+    Function CreateNewID() As String
+        Dim valMax = _db.ExecuteScalar(String.Format("SELECT ISNULL(RIGHT(MAX(ID), 2), 0)
+                                                      FROM GA_TRM_RegisterPlanned
+                                                      WHERE ID LIKE '%{0}%'",
+                                                      Date.Now.ToString("yyMM")))
+        valMax = (Integer.Parse(valMax) + 1).ToString.PadLeft(2, "0")
+        Return "TRM_" + Date.Now.ToString("yyMM") + "_" + valMax
+    End Function
+    Function CheckField(checkGrid As Boolean) As Boolean
+        If txtMailPre.Text = "" Or cbbMailCheck.Text = "" Or cbbMailApprove.Text = "" Or
+            txtMailPreKQ.Text = "" Or txtMailCheckKQ.Text = "" Or txtMailApproveKQ.Text = "" Then
+            ShowWarning("Địa chỉ mail không được để trống !")
+            cbbMailCheck.Select()
+            Return False
+        End If
+        If checkGrid Then
+            Dim valDetail As Object = _db.ExecuteScalar(String.Format("SELECT TOP 1 ID
+                                                                     FROM GA_TRM_RegisterPlanned_Detail
+                                                                     WHERE ID = '{0}'", _id))
+            If valDetail Is Nothing Then
+                ShowWarning("Bạn chưa nhập các hạng mục đào tạo !")
+                GridControl1.Select()
+                Return False
+            End If
+
+            Dim valTime As Object = _db.ExecuteScalar(String.Format("SELECT TOP 1 ID
+                                                                    FROM GA_TRM_RegisterPlanned_Detail_Time
+                                                                    WHERE ID = '{0}'", _id))
+            If valTime Is Nothing Then
+                ShowWarning("Bạn chưa nhập thời gian dự kiến của một số hạng mục đào tạo !")
+                GridControl2.Select()
+                Return False
+            End If
+        End If
+        Return True
+    End Function
+    Sub SaveData()
+        Dim obj As New GA_TRM_RegisterPlanned
+        If _id = "" Then
+            _id = CreateNewID()
+            obj.ID_K = _id
+            txtID.Text = _id
+            obj.CurrentMail = CurrentUser.Mail
+        Else
+            obj.ID_K = _id
+            _db.GetObject(obj)
+        End If
+
+        obj.DateSave = dteDate.DateTime.Date
+        obj.Section = txtSection.Text
+        obj.MailPre = txtMailPre.Text
+        obj.MailCheck = cbbMailCheck.Text
+        obj.MailApprove = cbbMailApprove.Text
+        obj.MailPreKQ = txtMailPreKQ.Text
+        obj.MailCheckKQ = txtMailCheckKQ.Text
+        obj.MailApproveKQ = txtMailApproveKQ.Text
+        obj.CommentPre = mmeCmtPre.Text
+        obj.CommentCheck = mmeCmtCheck.Text
+        obj.CommentApprove = mmeCmtApprove.Text
+        obj.CommentPreKQ = mmeCmtPreKQ.Text
+        obj.CommentCheckKQ = mmeCmtCheckKQ.Text
+        obj.CommentApproveKQ = mmeCmtApproveKQ.Text
+
+        If _db.ExistObject(obj) Then
+            _db.Update(obj)
+        Else
+            obj.CreateUser = CurrentUser.UserID
+            obj.CreateDate = DateTime.Now
+            _db.Insert(obj)
+        End If
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If CheckField(False) Then
+            SaveData()
+            LoadHead()
+            ShowSuccess()
+        End If
+    End Sub
+
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        If CheckField(True) Then
+            SaveData()
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.DatePre = DateTime.Now
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.Pre, obj.CommentPre, obj)
+        End If
+    End Sub
+    Sub ConfirmUpdateOutlook(submit As Submit, confirm As Confirm, comment As String, obj As GA_TRM_RegisterPlanned)
+        Try
+            _db.BeginTransaction()
+            Dim listTo As New List(Of String)
+            Dim listCC As New List(Of String)
+            Dim listBCC As New List(Of String)
+            Dim arrCC() As String = Nothing
+            Dim titleMail As String = ""
+
+            If submit = Submit.Reject Then
+                titleMail = "Reject - Register Training Management - " + obj.Section + " - " + obj.DateSave.ToString("dd-MMM-yyyy")
+                If obj.DatePreKQ = Nothing Then
+                    obj.DatePre = Nothing
+                    obj.DateCheck = Nothing
+                    obj.DateApprove = Nothing
+                    obj.CurrentMail = obj.MailPre
+                    listTo.Add(obj.MailPre)
+                Else
+                    obj.DatePreKQ = Nothing
+                    obj.DateCheckKQ = Nothing
+                    obj.DateApproveKQ = Nothing
+                    obj.CurrentMail = obj.MailPreKQ
+                    listTo.Add(obj.MailPreKQ)
+                End If
+                SendMailOutlook(titleMail, Nothing, Submit.Reject, listTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+            Else
+                titleMail = "Register Training Management - " + obj.Section + " - " + obj.DateSave.ToString("dd-MMM-yyyy")
+                Select Case confirm
+                    Case Confirm.Pre
+                        If obj.MailCheck <> "" Then
+                            listTo.Add(obj.MailCheck)
+                            SendMailOutlook(titleMail, Nothing, Submit.Confirm, listTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.MailCheck
+                            GoTo EndConfirm
+                        End If
+                        GoTo Check
+                    Case Confirm.Check
+Check:
+                        If obj.MailApprove <> "" Then
+                            listTo.Add(obj.MailApprove)
+                            SendMailOutlook(titleMail, Nothing, Submit.Confirm, listTo, Nothing, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.MailApprove
+                            GoTo EndConfirm
+                        End If
+                        GoTo Approve
+                    Case Confirm.Approve
+Approve:
+                        If obj.MailPreKQ <> "" Then
+                            listTo.Add(obj.MailPreKQ)
+                            SendMailOutlook(titleMail, Nothing, Submit.Confirm, listTo, listCC, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.MailPreKQ
+                            GoTo EndConfirm
+                        End If
+                        GoTo PreKQ
+                    Case Confirm.PreKQ
+PreKQ:
+                        If obj.MailCheckKQ <> "" Then
+                            listTo.Add(obj.MailCheckKQ)
+                            SendMailOutlook(titleMail, Nothing, Submit.Confirm, listTo, listCC, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.MailCheckKQ
+                            GoTo EndConfirm
+                        End If
+                        GoTo CheckKQ
+                    Case Confirm.CheckKQ
+CheckKQ:
+                        If obj.MailApproveKQ <> "" Then
+                            listTo.Add(obj.MailApproveKQ)
+                            SendMailOutlook(titleMail, Nothing, Submit.Confirm, listTo, listCC, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = obj.MailApproveKQ
+                            GoTo EndConfirm
+                        End If
+                        GoTo ApproveKQ
+                    Case Confirm.ApproveKQ
+ApproveKQ:
+                        If obj.MailPre <> "" Then
+                            listTo.Add("hoai.dotrung@nitto.com") 'thao.vothanh
+                            listCC.Add(obj.MailPre)
+                            SendMailOutlook(titleMail, Nothing, Submit.Info, listTo, listCC, Nothing, Nothing, Tag, obj.ID_K)
+                            obj.CurrentMail = ""
+                            GoTo EndConfirm
+                        End If
+                End Select
+            End If
+EndConfirm:
+            _db.Update(obj)
+            _db.Commit()
+            NextRequest()
+        Catch ex As Exception
+            _db.RollBack()
+            ShowWarning(ex.Message)
+        End Try
+    End Sub
+    Sub NextRequest()
+        Dim idNext As Object = _db.ExecuteScalar(String.Format("SELECT ID
+                                                                FROM GA_TRM_RegisterPlanned
+                                                                WHERE CurrentMail = '{0}'
+                                                                ORDER BY ID",
+                                                                CurrentUser.Mail))
+        If idNext IsNot Nothing Then
+            _id = idNext
+        End If
+        LoadHead()
+    End Sub
+
+    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+        If CheckField(True) Then
+            SaveData()
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.DateCheck = DateTime.Now
+            obj.CurrentMail = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.Check, obj.CommentCheck, obj)
+        End If
+    End Sub
+
+    Private Sub btnRejectCheck_Click(sender As Object, e As EventArgs) Handles btnRejectCheck.Click
+        If mmeCmtCheck.Text.Trim <> "" Then
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.CommentCheck = String.Format("({0}) {1}", DateTime.Now.ToString("dd-MMM-yyyy"), mmeCmtCheck.Text)
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Reject, Confirm.Check, obj.CommentCheck, obj)
+        Else
+            ShowWarning("Bạn phải nhập lý do từ chối yêu cầu !" + vbCrLf + "Please comment detail.")
+            mmeCmtCheck.Select()
+        End If
+    End Sub
+
+    Private Sub btnApprove_Click(sender As Object, e As EventArgs) Handles btnApprove.Click
+        If CheckField(True) Then
+            SaveData()
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.DateApprove = DateTime.Now
+            obj.CurrentMail = ""
+
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.Approve, obj.CommentApprove, obj)
+        End If
+    End Sub
+
+    Private Sub btnRejectApprove_Click(sender As Object, e As EventArgs) Handles btnRejectApprove.Click
+        If mmeCmtApprove.Text.Trim <> "" Then
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.CommentApprove = String.Format("({0}) {1}", DateTime.Now.ToString("dd-MMM-yyyy"), mmeCmtApprove.Text)
+            obj.CurrentMail = ""
+
+            ConfirmUpdateOutlook(Submit.Reject, Confirm.Approve, obj.CommentApprove, obj)
+        Else
+            ShowWarning("Bạn phải nhập lý do từ chối yêu cầu !" + vbCrLf + "Please comment detail.")
+            mmeCmtApprove.Select()
+        End If
+    End Sub
+
+    Private Sub btnSaveKQ_Click(sender As Object, e As EventArgs) Handles btnSaveKQ.Click
+        If CheckField(False) Then
+            SaveData()
+            LoadHead()
+            ShowSuccess()
+        End If
+    End Sub
+
+    Private Sub btnSubmitKQ_Click(sender As Object, e As EventArgs) Handles btnSubmitKQ.Click
+        If CheckField(True) Then
+            SaveData()
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.DatePreKQ = DateTime.Now
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.PreKQ, obj.CommentPreKQ, obj)
+        End If
+    End Sub
+
+    Private Sub btnCheckKQ_Click(sender As Object, e As EventArgs) Handles btnCheckKQ.Click
+        If CheckField(True) Then
+            SaveData()
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.DateCheckKQ = DateTime.Now
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Confirm, Confirm.CheckKQ, obj.CommentCheckKQ, obj)
+        End If
+    End Sub
+
+    Private Sub btnRejectCheckKQ_Click(sender As Object, e As EventArgs) Handles btnRejectCheckKQ.Click
+        If mmeCmtCheckKQ.Text.Trim <> "" Then
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.CommentCheckKQ = String.Format("({0}) {1}", DateTime.Now.ToString("dd-MMM-yyyy"), mmeCmtCheckKQ.Text)
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Reject, Confirm.CheckKQ, obj.CommentCheckKQ, obj)
+        Else
+            ShowWarning("Bạn phải nhập lý do từ chối yêu cầu !" + vbCrLf + "Please comment detail.")
+            mmeCmtCheckKQ.Select()
+        End If
+    End Sub
+
+    Private Sub btnApproveKQ_Click(sender As Object, e As EventArgs) Handles btnApproveKQ.Click
+        If CheckField(True) Then
+            SaveData()
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.DateApproveKQ = DateTime.Now
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Info, Confirm.ApproveKQ, obj.CommentApproveKQ, obj)
+        End If
+    End Sub
+
+    Private Sub btnRejectApproveKQ_Click(sender As Object, e As EventArgs) Handles btnRejectApproveKQ.Click
+        If mmeCmtApproveKQ.Text.Trim <> "" Then
+            Dim obj As New GA_TRM_RegisterPlanned
+            obj.ID_K = _id
+            _db.GetObject(obj)
+            obj.CommentApproveKQ = String.Format("({0}) {1}", DateTime.Now.ToString("dd-MMM-yyyy"), mmeCmtApproveKQ.Text)
+            obj.CurrentMail = ""
+            ConfirmUpdateOutlook(Submit.Reject, Confirm.ApproveKQ, obj.CommentApproveKQ, obj)
+        Else
+            ShowWarning("Bạn phải nhập lý do từ chối yêu cầu !" + vbCrLf + "Please comment detail.")
+            mmeCmtApproveKQ.Select()
+        End If
+    End Sub
+    Private Sub slueProgram_EditValueChanged(sender As Object, e As EventArgs) Handles slueProgram.EditValueChanged
+        Dim lc As SearchLookUpEdit = CType(sender, SearchLookUpEdit)
+        Dim obj As New GA_TRM_RegisterPlanned_Detail
+        obj.ID_K = _id
+        obj.IDTrainingCode_K = lc.Properties.View.GetFocusedRowCellValue("TrainingCode")
+        If _db.ExistObject(obj) Then
+            Dim valOld As Object = GridView1.ActiveEditor.OldEditValue
+            GridView1.Columns("IDTrainingCode").OptionsColumn.ReadOnly = True
+            GridView1.SetFocusedRowCellValue("IDTrainingCode", valOld)
+            GridView1.Columns("IDTrainingCode").OptionsColumn.ReadOnly = False
+            ShowWarning("Hạng mục đào tạo này đã được chọn trước đó !")
+        Else
+            GridView1.SetFocusedRowCellValue("TrainingField", lc.Properties.View.GetFocusedRowCellValue("TrainingField"))
+            GridView1.SetFocusedRowCellValue("TrainingProgram", lc.Properties.View.GetFocusedRowCellValue("TrainingProgram"))
+            GridView1.SetFocusedRowCellValue("TrainingMethod", lc.Properties.View.GetFocusedRowCellValue("TrainingMethod"))
+            GridView1.SetFocusedRowCellValue("Trainer", lc.Properties.View.GetFocusedRowCellValue("Trainer"))
+            GridView1.SetFocusedRowCellValue("Trainee", lc.Properties.View.GetFocusedRowCellValue("Trainee"))
+        End If
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If GridView1.Editable And e.Column.ReadOnly = False Then
+            Dim obj As New GA_TRM_RegisterPlanned_Detail
+            obj.ID_K = _id
+            obj.IDTrainingCode_K = GridView1.GetFocusedRowCellValue("IDTrainingCode")
+            If e.RowHandle < 0 Then
+                If GridView1.ActiveEditor.OldEditValue Is Nothing Then
+                    obj.TrainingField = GridView1.GetFocusedRowCellValue("TrainingField")
+                    obj.TrainingProgram = GridView1.GetFocusedRowCellValue("TrainingProgram")
+                    obj.TrainingMethod = GridView1.GetFocusedRowCellValue("TrainingMethod")
+                    obj.Trainer = GridView1.GetFocusedRowCellValue("Trainer")
+                    obj.Trainee = GridView1.GetFocusedRowCellValue("Trainee")
+                    obj.CreateUser = CurrentUser.UserID
+                    obj.CreateDate = DateTime.Now
+                    _db.Insert(obj)
+                    CreateSeleteTime(obj.IDTrainingCode_K)
+                Else
+                    GoTo Update
+                End If
+            Else
+Update:
+                _db.ExecuteNonQuery(String.Format("UPDATE GA_TRM_RegisterPlanned_Detail
+                                                   SET IDTrainingCode = '{0}',
+                                                   TrainingField = N'{1}',
+                                                   TrainingProgram = N'{2}',
+                                                   TrainingMethod = N'{3}',
+                                                   Trainer = '{4}',
+                                                   Trainee = N'{5}'
+                                                   WHERE ID = '{6}'
+                                                   AND IDTrainingCode = '{7}'",
+                                                   GridView1.GetFocusedRowCellValue("IDTrainingCode"),
+                                                   GridView1.GetFocusedRowCellValue("TrainingField"),
+                                                   GridView1.GetFocusedRowCellValue("TrainingProgram"),
+                                                   GridView1.GetFocusedRowCellValue("TrainingMethod"),
+                                                   GridView1.GetFocusedRowCellValue("Trainer"),
+                                                   GridView1.GetFocusedRowCellValue("Trainee"),
+                                                   _id,
+                                                   GridView1.ActiveEditor.OldEditValue))
+            End If
+            LoadSelectTime()
+            EnableGridView()
+        End If
+    End Sub
+    Sub CreateSeleteTime(idCode)
+        Dim obj As New GA_TRM_RegisterPlanned_Detail_Content
+        obj.ID_K = _id
+        obj.IDTrainingCode_K = idCode
+        obj.Status_K = "Plan"
+        If Not _db.ExistObject(obj) Then
+            _db.Insert(obj)
+        End If
+        obj.Status_K = "Actual"
+        If Not _db.ExistObject(obj) Then
+            _db.Insert(obj)
+        End If
+    End Sub
+    Sub LoadSelectTime()
+        Dim startD As Date = GetStartDayOfYear(Date.Now)
+        Dim endD As Date = GetEndDayOfYear(Date.Now)
+        Dim col As String = ""
+        While startD <= endD
+            col += startD.ToString("[MMM-yyyy]") + ","
+            startD = startD.AddMonths(1)
+        End While
+        col = col.Substring(0, col.Length - 1)
+        Dim para(1) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@id", _id)
+        para(1) = New SqlClient.SqlParameter("@col", col)
+        GridControl2.DataSource = _db.ExecuteStoreProcedureTB("sp_GA_TRM_RegisterPlanned", para)
+        GridControlSetFormat(GridView2, 1)
+        For Each c As GridColumn In GridView2.Columns
+            If IsDate(c.FieldName) Then
+                GridView2.Columns(c.FieldName).ColumnEdit = cbbSeleteState
+            End If
+        Next
+    End Sub
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If ShowQuestionDelete() = Windows.Forms.DialogResult.Yes Then
+            Dim obj As New GA_TRM_RegisterPlanned_Detail
+            obj.ID_K = _id
+            obj.IDTrainingCode_K = GridView1.GetFocusedRowCellValue("IDTrainingCode")
+            _db.Delete(obj)
+            GridView1.DeleteSelectedRows()
+            LoadDetail()
+            EnableGridView()
+        End If
+    End Sub
+
+    Private Sub GridView2_RowCellStyle(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs) Handles GridView2.RowCellStyle
+        If Not IsDBNull(e.CellValue) And IsDate(e.Column.FieldName) Then
+            If e.CellValue = "Plan" Then
+                e.Appearance.BackColor = Color.Yellow
+            ElseIf e.CellValue = "Delayed" Then
+                e.Appearance.BackColor = Color.Green
+            ElseIf e.CellValue = "Completed" Then
+                e.Appearance.BackColor = Color.Blue
+                e.Appearance.ForeColor = Color.White
+            ElseIf e.CellValue = "Cancelled" Then
+                e.Appearance.BackColor = Color.Red
+            ElseIf e.CellValue = "Not Completed" Then
+                e.Appearance.BackColor = Color.Orange
+            ElseIf e.CellValue = "New Plan" Then
+                e.Appearance.BackColor = Color.Purple
+            End If
+        End If
+    End Sub
+
+    Private Sub GridView2_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView2.CellValueChanged
+        If GridView2.Editable And e.Column.ReadOnly = False Then
+            If IsDate(e.Column.FieldName) Then
+                Dim obj As New GA_TRM_RegisterPlanned_Detail_Time
+                obj.ID_K = _id
+                obj.IDTrainingCode_K = GridView2.GetFocusedRowCellValue("IDTrainingCode")
+                obj.Status_K = GridView2.GetFocusedRowCellValue("Status")
+                obj.Month_K = Date.Parse(e.Column.FieldName)
+                If e.Value = "X" And GridView2.ActiveEditor.OldEditValue IsNot DBNull.Value Then
+                    obj.State = GridView2.ActiveEditor.OldEditValue
+                    _db.Delete(obj)
+                ElseIf e.Value <> "X" Then
+                    obj.State = e.Value
+                    If _db.ExistObject(obj) Then
+                        _db.Update(obj)
+                    Else
+                        _db.Insert(obj)
+                    End If
+                End If
+            Else
+                Dim para(0) As SqlClient.SqlParameter
+                para(0) = New SqlClient.SqlParameter("@Value", e.Value)
+                _db.ExecuteNonQuery(String.Format("UPDATE GA_TRM_RegisterPlanned_Detail_Content
+                                                   SET {0} = @Value
+                                                   WHERE ID = '{1}'
+                                                   AND IDTrainingCode = '{2}'
+                                                   AND Status = '{3}'",
+                                                   e.Column.FieldName,
+                                                   _id,
+                                                   GridView2.GetFocusedRowCellValue("IDTrainingCode"),
+                                                   GridView2.GetFocusedRowCellValue("Status")), para)
+            End If
+        End If
+    End Sub
+
+    Private Sub txtMailPre_EditValueChanged(sender As Object, e As EventArgs) Handles txtMailPre.EditValueChanged
+        txtMailPreKQ.Text = txtMailPre.Text
+    End Sub
+
+    Private Sub cbbMailCheck_EditValueChanged(sender As Object, e As EventArgs) Handles cbbMailCheck.EditValueChanged
+        txtMailCheckKQ.Text = cbbMailCheck.Text
+    End Sub
+
+    Private Sub cbbMailApprove_EditValueChanged(sender As Object, e As EventArgs) Handles cbbMailApprove.EditValueChanged
+        txtMailApproveKQ.Text = cbbMailApprove.Text
+    End Sub
+
+    Private Sub GridView1_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView1.RowClick
+        tabEmployee.Show()
+        GridControl3.DataSource = _db.FillDataTable(String.Format("SELECT h.IDTrainingCode, h.EmpID, d.EName
+                                                        FROM GA_TRM_RegisterPlanned_Detail_Employee AS h
+                                                        LEFT JOIN HRM_Emloyee AS d
+                                                        ON h.EmpID = d.ECode
+                                                        WHERE ID = '{0}'
+                                                        AND IDTrainingCode = '{1}'",
+                                                        _id,
+                                                        GridView1.GetFocusedRowCellValue("IDTrainingCode")))
+        GridControlSetFormat(GridView3)
+        GridView3.Columns("IDTrainingCode").Width = 100
+        GridView3.Columns("EName").Width = 200
+        EnableGridEmployee()
+
+        slueEmployee.DataSource = _db.FillDataTable("SELECT ECode, EName, Section, Observation
+                                                     FROM HRM_Emloyee
+                                                     WHERE ResignedDate IS NULL")
+        slueEmployee.DisplayMember = "ECode"
+        slueEmployee.ValueMember = "ECode"
+        slueEmployee.NullText = Nothing
+        GridView3.Columns("EmpID").ColumnEdit = slueEmployee
+    End Sub
+    Sub EnableGridEmployee()
+        GridControlReadOnly(GridView3, True)
+        GridView3.Columns("EmpID").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(GridView3)
+        GridView3.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+    End Sub
+
+    Private Sub GridView3_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView3.CellValueChanged
+
+    End Sub
+End Class

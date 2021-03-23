@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:03-Aug-2018 16:00:54
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmWIPAmount
+FunctionName:LoadAll
+Error:Index was outside the bounds of the array.
+=================================================================================================
+DateTime:03-Aug-2018 16:30:31
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmItemLossDaily
+FunctionName:gridItemLossDaily_CellValueChanged
+Error:Invalid object name 'm_Product'.
+=================================================================================================
+DateTime:03-Aug-2018 16:30:33
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmItemLossDaily
+FunctionName:gridItemLossDaily_CellValueChanged
+Error:Invalid object name 'm_Product'.

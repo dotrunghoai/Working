@@ -1,0 +1,40 @@
+
+ Public Class QI_ClaimIssueHead
+     Public ClaimIssueID_K As String 
+     Public KindOfDocument As String 
+     Public EndUser As String 
+     Public DocNo As String 
+     Public Factory As String 
+     Public LotStatus As String 
+     Public IssueStatus As String 
+     Public IssueTo As String 
+     Public ReceivedDate As DateTime 
+     Public OccurredDate As DateTime 
+     Public IssuedDate As DateTime 
+     Public OccurredProcess As String 
+     Public IQA As Boolean 
+     Public CompensationCost As Decimal 
+     Public Line As Boolean 
+     Public RescreeningCost As Decimal 
+     Public ClaimLevel As String 
+     Public ReScreeningWIP As Boolean 
+     Public ReScreeningFG As Boolean 
+     Public RTV As Boolean 
+     Public ReScreenCustomer As Boolean 
+     Public RescreeningPlace As String 
+     Public InforReport As Boolean 
+     Public Report8D As Boolean 
+     Public ImprovementReport As Boolean 
+     Public ReportNote As String 
+     Public FirstReportDueDate As DateTime 
+     Public FinalReportDueDate As DateTime 
+     Public OtherRequirements As Boolean 
+     Public OtherRequirementsContent As String 
+     Public StatusD As String 
+     Public FileNameAtt As String 
+     Public FileNameServer As String 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+     Public UpdateDate As DateTime 
+     Public UpdateUser As String 
+ End  Class

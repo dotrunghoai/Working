@@ -1,0 +1,28 @@
+=================================================================================================
+DateTime:28-Jun-2019 14:02:22
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibWarehouseAriba' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:28-Jun-2019 14:03:42
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibWarehouseAriba.FrmStockControl' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:28-Jun-2019 14:03:45
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibWarehouseAriba.FrmInventory' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:28-Jun-2019 14:03:48
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibWarehouseAriba.FrmDailyStock' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

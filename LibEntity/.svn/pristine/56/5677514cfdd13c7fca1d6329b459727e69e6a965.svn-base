@@ -1,0 +1,13 @@
+
+ Public Class HRT_KhoaHoc
+     Public MaLinhVuc As String 
+     Public MaKhoa_K As String 
+     Public TenKhoa As String 
+     Public MucDich As String 
+     Public DoiTuongDaoTao As String 
+     Public NguonDaoTao As String 
+     Public NguoiPhuTrach As String 
+     Public ThoiGianDaoTao As String 
+     Public DiemChuan As  Integer 
+     Public ThucThiDaoTao As Boolean 
+ End  Class

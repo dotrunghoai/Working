@@ -1,0 +1,50 @@
+=================================================================================================
+DateTime:22-Dec-2018 11:09:49
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+Incorrect syntax near 'child'.
+=================================================================================================
+DateTime:22-Dec-2018 11:11:14
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:Incorrect syntax near 'where'.
+=================================================================================================
+DateTime:22-Dec-2018 11:13:01
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:Incorrect syntax near 'where'.
+=================================================================================================
+DateTime:22-Dec-2018 11:15:06
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:Incorrect syntax near 'where'.
+=================================================================================================
+DateTime:22-Dec-2018 11:16:00
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:There is already an open DataReader associated with this Command which must be closed first.
+=================================================================================================
+DateTime:22-Dec-2018 11:21:27
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:There is already an open DataReader associated with this Command which must be closed first.
+=================================================================================================
+DateTime:22-Dec-2018 11:21:29
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmFCStandardUnit
+FunctionName:UpdateStandardUnit_DVC
+Error:There is already an open DataReader associated with this Command which must be closed first.

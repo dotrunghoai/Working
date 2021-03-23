@@ -1,0 +1,61 @@
+=================================================================================================
+DateTime:18-May-2019 13:57:34
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmOutMaterialAndSubMaterial
+FunctionName:CellValueChanged
+Error:Conversion from type 'DBNull' to type 'Decimal' is not valid.
+=================================================================================================
+DateTime:18-May-2019 13:57:41
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmOutMaterialAndSubMaterial
+FunctionName:CellValueChanged
+Error:Conversion from type 'DBNull' to type 'Decimal' is not valid.
+=================================================================================================
+DateTime:18-May-2019 14:01:37
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmOutMaterialAndSubMaterial
+FunctionName:CellValueChanged
+Error:Conversion from type 'DBNull' to type 'Decimal' is not valid.
+=================================================================================================
+DateTime:18-May-2019 15:28:07
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type
+=================================================================================================
+DateTime:18-May-2019 15:29:21
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type
+=================================================================================================
+DateTime:18-May-2019 15:29:25
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type
+=================================================================================================
+DateTime:18-May-2019 15:31:14
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type
+=================================================================================================
+DateTime:18-May-2019 15:31:30
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type

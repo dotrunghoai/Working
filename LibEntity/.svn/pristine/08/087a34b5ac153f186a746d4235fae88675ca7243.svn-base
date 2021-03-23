@@ -1,0 +1,23 @@
+
+ Public Class ID_ThongTinSuCoPR
+     Public ID_K As String 
+     Public Ngay As DateTime 
+     Public Gio As DateTime 
+     Public ThietBi As String 
+     Public ViTri As String 
+     Public NoiDung As String 
+     Public AnhHuong As String 
+     Public NguoiXacNhan As String 
+     Public TGBatDau As DateTime 
+     Public NguyeNhan As String 
+     Public BienPhapXuLy As String 
+     Public DanhGia As String 
+     Public VeSinh As String 
+     Public TGKetThuc As DateTime 
+     Public NguoiXuLy As String 
+     Public KiemTra As String 
+     Public XacNhanHead As String 
+     Public XacNhanLine As String 
+     Public CreatedDate As DateTime 
+     Public CreatedUser As String 
+ End  Class

@@ -1,0 +1,136 @@
+﻿Imports PublicUtility
+Imports CommonDB
+Imports System.IO
+
+Public Class FrmMasterStandardKQCV
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Private Sub FrmMasterStandardKQCV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnShow.PerformClick()
+    End Sub
+    Function CreateID() As String
+        Dim val As Object = _db.ExecuteScalar("SELECT Right(MAX(ID), 2)
+                                               FROM PP_StandardKQCV_Master")
+        If Not IsDBNull(val) Then
+            val = (Integer.Parse(val) + 1).ToString.PadLeft(2, "0")
+            Return "CD" + "-" + val
+        Else
+            Return "CD" + "-01"
+        End If
+    End Function
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        GridControl1.DataSource = _db.FillDataTable("SELECT * FROM PP_StandardKQCV_Master ORDER BY TenCongDoan")
+        GridControlSetFormat(GridView1)
+        GridView1.Columns("TenCongDoan").Width = 100
+        GridView1.Columns("MailTo").Width = 150
+        GridView1.Columns("AttachFileNameNewest").Width = 225
+        GridView1.Columns("ContentReportNewest").Width = 250
+        GridView1.Columns("CreateDateNewest").Width = 125
+        GridView1.Columns("AttachFileServerNewest").Visible = False
+        GridView1.Columns("AttachFileNameNewest").ColumnEdit = GridControlLinkEdit()
+
+        Dim dt As DataTable = _db.FillDataTable("SELECT h.EmpID, d.SectionSort, d.Observation, Mail
+                                                 FROM OT_Mail AS h
+                                                 LEFT JOIN OT_Employee AS d
+                                                 ON h.EmpID = d.EmpID
+                                                 ORDER BY Mail ")
+        sluePicMail.DataSource = dt
+        sluePicMail.DisplayMember = "Mail"
+        sluePicMail.ValueMember = "Mail"
+        sluePicMail.NullText = Nothing
+        GridView1.Columns("PICUser").ColumnEdit = sluePicMail
+    End Sub
+
+    Private Sub btnNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnNew.ItemClick
+        GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top
+        GridControlReadOnly(GridView1, True)
+        GridView1.Columns("TenCongDoan").OptionsColumn.ReadOnly = False
+        GridView1.Columns("PICUser").OptionsColumn.ReadOnly = False
+        GridView1.Columns("MailTo").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(GridView1)
+    End Sub
+
+    Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None
+        GridControlReadOnly(GridView1, True)
+        GridView1.Columns("TenCongDoan").OptionsColumn.ReadOnly = False
+        GridView1.Columns("PICUser").OptionsColumn.ReadOnly = False
+        GridView1.Columns("MailTo").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(GridView1)
+    End Sub
+
+    Private Sub btnDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDelete.ItemClick
+        'Dim dt = ImportEXCEL(True)
+        'For Each r As DataRow In dt.Rows
+        '    If IsDBNull(r("Tên công đoạn")) Then Continue For
+        '    Dim obj As New PP_StandardKQCV_Master
+        '    obj.ID_K = CreateID()
+        '    obj.TenCongDoan = r("Tên công đoạn")
+        '    _db.Insert(obj)
+        'Next
+
+        If ShowQuestionDelete() = Windows.Forms.DialogResult.Yes Then
+            Dim obj As New PP_StandardKQCV_Master
+            obj.ID_K = GridView1.GetFocusedRowCellValue("ID")
+            _db.Delete(obj)
+            GridView1.DeleteSelectedRows()
+        End If
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If GridView1.Editable And e.Column.ReadOnly = False Then
+            If e.RowHandle < 0 Then
+                If IsDBNull(GridView1.GetFocusedRowCellValue("ID")) Then
+                    Dim obj As New PP_StandardKQCV_Master
+                    obj.ID_K = CreateID()
+                    _db.Insert(obj)
+                    GridView1.SetFocusedRowCellValue("ID", obj.ID_K)
+                End If
+            End If
+            _db.ExecuteNonQuery(String.Format("UPDATE PP_StandardKQCV_Master
+                                               SET {0} = N'{1}'
+                                               WHERE ID = '{2}'",
+                                               e.Column.FieldName,
+                                               e.Value,
+                                               GridView1.GetFocusedRowCellValue("ID")))
+        End If
+    End Sub
+
+    Private Sub GridView1_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView1.RowClick
+        If GridView1.FocusedColumn.FieldName = "AttachFileNameNewest" Then
+            If Not IsDBNull(GridView1.GetFocusedRowCellValue("AttachFileServerNewest")) Then
+                If File.Exists(GridView1.GetFocusedRowCellValue("AttachFileServerNewest")) Then
+                    Process.Start(OpenfileTemp(GridView1.GetFocusedRowCellValue("AttachFileServerNewest")))
+                End If
+            End If
+        Else
+            GridControl2.DataSource = _db.FillDataTable(String.Format(" SELECT d.ID, AttachFileNameOld, AttachFileServerOld, ContentReportOld, CreateDate
+                                                                        FROM PP_StandardKQCV_Master_Detail AS d
+                                                                        LEFT JOIN PP_StandardKQCV_Master AS h
+                                                                        ON d.ID = h.ID
+                                                                        AND d.CreateDate = h.CreateDateNewest
+                                                                        WHERE d.ID = '{0}'
+                                                                        AND CreateDateNewest IS NULL
+                                                                        ORDER BY CreateDate DESC",
+                                                                        GridView1.GetFocusedRowCellValue("ID")))
+            GridControlSetFormat(GridView2)
+            GridView2.Columns("AttachFileNameOld").Width = 225
+            GridView2.Columns("ContentReportOld").Width = 200
+            GridView2.Columns("CreateDate").Width = 125
+            GridView2.Columns("ID").Visible = False
+            GridView2.Columns("AttachFileServerOld").Visible = False
+            GridView2.Columns("AttachFileNameOld").ColumnEdit = GridControlLinkEdit()
+        End If
+    End Sub
+
+    Private Sub GridView2_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView2.RowClick
+        If GridView2.FocusedColumn.FieldName = "AttachFileNameOld" Then
+            If File.Exists(GridView2.GetFocusedRowCellValue("AttachFileServerOld")) Then
+                Process.Start(OpenfileTemp(GridView2.GetFocusedRowCellValue("AttachFileServerOld")))
+            End If
+        End If
+    End Sub
+
+    Private Sub btnExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExport.ItemClick
+        GridControlExportExcel(GridView1)
+    End Sub
+End Class

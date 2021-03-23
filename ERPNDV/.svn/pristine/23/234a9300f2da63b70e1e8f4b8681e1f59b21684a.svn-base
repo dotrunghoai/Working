@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:15-May-2018 16:23:53
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmItemLossDaily
+FunctionName:SetFormEvents
+Error:Column 'DateFilter' does not belong to underlying table ''.

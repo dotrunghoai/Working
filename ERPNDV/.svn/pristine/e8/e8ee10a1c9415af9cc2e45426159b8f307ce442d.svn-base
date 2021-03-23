@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:07-Aug-2018 07:50:14
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmItemLossDaily
+FunctionName:Import
+Error:Conversion from type 'DBNull' to type 'Date' is not valid.

@@ -1,0 +1,20 @@
+
+ Public Class PS_Productivity
+     Public Ngay_K As DateTime 
+     Public PR As Decimal 
+     Public P As Decimal 
+     Public Pr1 As Decimal 
+     Public Pr2 As Decimal 
+     Public Pr3 As Decimal 
+     Public Pr1P As Decimal 
+     Public Pr2P As Decimal 
+     Public Pr3P As Decimal 
+     Public WT As Decimal 
+     Public Area As Decimal 
+     Public Pcs As  Integer 
+     Public LuyTien As Decimal 
+     Public AreaR As Decimal 
+     Public PcsR As  Integer 
+     Public LuyTienR As Decimal 
+     Public LuyTienRP As Decimal 
+ End  Class

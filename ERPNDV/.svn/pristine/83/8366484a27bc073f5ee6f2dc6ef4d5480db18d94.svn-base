@@ -1,0 +1,8 @@
+=================================================================================================
+DateTime:06-Sep-2018 10:27:36
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Cannot access a disposed object.
+Object name: 'ProgressBar'.

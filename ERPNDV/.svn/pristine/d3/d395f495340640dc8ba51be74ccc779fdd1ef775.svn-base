@@ -1,0 +1,16 @@
+=================================================================================================
+DateTime:26-Jul-2018 14:11:29
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:'dataType' argument cannot be null.
+Parameter name: dataType
+=================================================================================================
+DateTime:26-Jul-2018 14:12:45
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:'dataType' argument cannot be null.
+Parameter name: dataType

@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:18-Jun-2018 09:07:08
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmExDestinationAllocation
+FunctionName:FPC
+Error:Unable to cast object of type 'System.Int32' to type 'System.String'.
+=================================================================================================
+DateTime:18-Jun-2018 10:24:40
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Exception of type 'System.OutOfMemoryException' was thrown.

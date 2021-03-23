@@ -1,0 +1,404 @@
+﻿Imports PublicUtility
+Imports CommonDB
+Imports System.Windows.Forms
+Imports DevExpress.XtraGrid.Columns
+Imports System.Drawing
+
+Public Class FrmLaserPlasmaBH
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Dim _idLocal As String = ""
+
+    Function CreateID() As String
+        Dim val As Object = _db.ExecuteScalar(String.Format("SELECT Right(MAX(ID), 4)
+                                                             FROM KQQC_LaserPlasmaBH
+                                                             WHERE ID LIKE '{0}%'",
+                                                             Date.Now.ToString("yyMMdd")))
+        If Not IsDBNull(val) Then
+            val = (Integer.Parse(val) + 1).ToString.PadLeft(4, "0")
+            Return Date.Now.ToString("yyMMdd") + val
+        Else
+            Return Date.Now.ToString("yyMMdd") + "0001"
+        End If
+    End Function
+
+    Private Sub FrmLaserPlasmaBH_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        blbiNew.PerformClick()
+        dteNgay.DateTime = DateTime.Now
+    End Sub
+
+    Private Sub FrmLaserPlasmaBH_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control And e.KeyCode = Keys.N Then
+            blbiNew.PerformClick()
+        ElseIf e.Control And e.KeyCode = Keys.S Then
+            blbiSave.PerformClick()
+        ElseIf e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Right Then
+            SendKeys.Send("{Tab}")
+        ElseIf e.KeyCode = Keys.Left Then
+            SendKeys.Send("+{Tab}")
+        ElseIf e.KeyCode = Keys.F5 Then
+            blbiShow.PerformClick()
+        End If
+    End Sub
+    Private Sub teMSSP_Leave(sender As Object, e As EventArgs) Handles teMSSP.Leave
+        teMSSP.Text = teMSSP.Text.PadLeft(5, "0")
+    End Sub
+    Function CheckSoLuong() As Boolean
+        If IsNumeric(teSoLuongKiem.Text) And IsNumeric(txtSoTam.Text) Then
+            If Integer.TryParse((teSoLuongKiem.Text / txtSoTam.Text), True) And txtSoTam.Text <= 3 And
+                teSoLuongKiem.Text > 0 And teSoLuongKiem.Text / txtSoTam.Text <= 50 Then
+                Return True
+            End If
+        End If
+        ShowWarning("Không xác định được Số lượng kiểm trên mỗi tấm !")
+        Return False
+    End Function
+    Private Sub meGhiChu_Leave(sender As Object, e As EventArgs) Handles meGhiChu.Leave
+        GridView1.Columns.Clear()
+        If CheckSoLuong() Then
+            GridControl1.DataSource = CreateTableCav(teSoLuongKiem.Text, txtSoTam.Text)
+            GridControlSetFormat(GridView1, 0)
+            GridControlReadOnly(GridView1, False)
+            GridView1.Columns("Số tấm").OptionsColumn.ReadOnly = True
+            GridControlSetColorEdit(GridView1)
+            GridControlSetWidth(GridView1, 50)
+            blbiSave.PerformClick()
+        End If
+    End Sub
+    Function CreateTableCav(soLuongKiem As Integer, soTam As Integer) As DataTable
+        Dim soLuongKiemTren1Tam As Integer = soLuongKiem / soTam
+        Dim dtSoLuongKiem As New DataTable
+        dtSoLuongKiem.Columns.Add("Số tấm")
+        For i = 1 To soLuongKiemTren1Tam
+            dtSoLuongKiem.Columns.Add("Cav" + CStr(i))
+        Next
+
+        For r = 0 To soTam - 1
+            dtSoLuongKiem.Rows.Add()
+            dtSoLuongKiem.Rows(r)(0) = "Tấm " + CStr(r + 1)
+        Next
+
+        For r = 0 To dtSoLuongKiem.Rows.Count - 1
+            For c = 1 To dtSoLuongKiem.Columns.Count - 1
+                dtSoLuongKiem.Rows(r)(c) = "OK"
+            Next
+        Next
+
+        dtSoLuongKiem.Rows.Add("Y", "OK")
+        dtSoLuongKiem.Rows.Add("Z", "OK")
+
+        Return dtSoLuongKiem
+    End Function
+
+    Private Sub blbiShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiShow.ItemClick
+        Dim para(1) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@StartDate", GetStartDate(dteNgay.DateTime))
+        para(1) = New SqlClient.SqlParameter("@EndDate", GetEndDate(dteNgay.DateTime))
+        GridControl2.DataSource = _db.FillDataTable("SELECT * FROM 
+                                                     KQQC_LaserPlasmaBH 
+                                                     WHERE Ngay BETWEEN @StartDate AND @EndDate 
+                                                     ORDER BY ID DESC", para)
+        GridControlSetFormat(GridView2)
+    End Sub
+
+    Private Sub blbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiSave.ItemClick
+        If CheckSoLuong() Then
+            Dim obj As New KQQC_LaserPlasmaBH
+            If _idLocal = "" Then
+                _idLocal = CreateID()
+                obj.ID_K = _idLocal
+                teID.Text = obj.ID_K
+            Else
+                obj.ID_K = _idLocal
+                _db.GetObject(obj)
+            End If
+
+            obj.Ngay = dteNgay.DateTime
+            obj.SoTo = txtSoTo.Text
+            obj.MSSP = teMSSP.Text
+
+            Dim objProd As New WT_Product
+            objProd.ProductCode_K = teMSSP.Text
+            If _db.ExistObject(objProd) Then
+                _db.GetObject(objProd)
+                obj.KhachHang = objProd.CustomerName
+                obj.Method = objProd.Method
+            End If
+
+            obj.Lot = teLot.Text
+            obj.SoLanTest = txtSoLanTest.Text
+            obj.CongDoan = cbbCongDoan.EditValue
+            obj.TanSo = cbbTanSo.EditValue
+            obj.SoMayGC = cbbSoMayGC.EditValue
+            obj.SoLuongKiem = teSoLuongKiem.Text
+            obj.SoTam = txtSoTam.Text
+            obj.ThoiGianKiem = teThoiGianKiem.Text
+            obj.NhanVienKiem = teNhanVienKiem.Text
+            obj.GhiChu = meGhiChu.Text
+            obj.CreateUser = CurrentUser.UserID
+            obj.CreateDate = DateTime.Now
+
+            If _db.ExistObject(obj) Then
+                _db.Update(obj)
+            Else
+                _db.Insert(obj)
+            End If
+
+            InsertCav()
+            DanhGia()
+        End If
+    End Sub
+
+    Private Sub blbiDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiDelete.ItemClick
+        If ShowQuestionDelete() = DialogResult.Yes Then
+            Dim obj As New KQQC_LaserPlasmaBH
+            obj.ID_K = GridView2.GetFocusedRowCellValue("ID")
+            _db.Delete(obj)
+            GridView2.DeleteSelectedRows()
+            GridView1.Columns.Clear()
+            GridView1.SelectAll()
+            GridView1.DeleteSelectedRows()
+            _idLocal = ""
+            teID.Text = ""
+        End If
+    End Sub
+
+    Private Sub blbiNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiNew.ItemClick
+        _idLocal = ""
+        teID.Text = ""
+        txtSoTo.Text = ""
+        teMSSP.Text = ""
+        teLot.Text = ""
+        txtSoLanTest.Text = 0
+        teSoLuongKiem.Text = 0
+        txtSoTam.Text = 0
+        teThoiGianKiem.Text = 0
+        teNhanVienKiem.Text = ""
+        meGhiChu.Text = ""
+        GridView1.Columns.Clear()
+        dteNgay.Select()
+    End Sub
+
+    Private Function ResultCav() As DataTable
+        Dim dt As New DataTable()
+        For Each column As GridColumn In GridView1.VisibleColumns
+            dt.Columns.Add(column.FieldName, column.ColumnType)
+        Next column
+        For i As Integer = 0 To GridView1.DataRowCount - 1
+            Dim row As DataRow = dt.NewRow()
+            For Each column As GridColumn In GridView1.VisibleColumns
+                row(column.FieldName) = GridView1.GetRowCellValue(i, column)
+            Next column
+            dt.Rows.Add(row)
+        Next i
+        Return dt
+    End Function
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If GridView1.Editable And e.Column.ReadOnly = False Then
+            If e.Column.FieldName >= "Cav2" And
+                (GridView1.GetFocusedRowCellValue("Số tấm") = "Y" Or GridView1.GetFocusedRowCellValue("Số tấm") = "Z") Then
+                ShowWarning("Cột không hợp lệ !")
+            Else
+                Dim val = e.Value.ToString.ToUpper
+                If GridView1.GetFocusedRowCellValue("Số tấm").ToString.Contains("T") Then
+                    Dim colGrid = GridView1.GetFocusedRowCellValue("Số tấm").ToString
+                    Dim col = "T" + colGrid.Substring(colGrid.Length - 1, 1) + e.Column.FieldName
+                    _db.ExecuteNonQuery(String.Format("UPDATE KQQC_LaserPlasmaBH
+                                                       SET {0} = '{1}'
+                                                       WHERE ID = '{2}'",
+                                                       col, val, _idLocal))
+                Else
+                    _db.ExecuteNonQuery(String.Format("UPDATE KQQC_LaserPlasmaBH
+                                                       SET {0} = '{1}'
+                                                       WHERE ID = '{2}'",
+                                                       GridView1.GetFocusedRowCellValue("Số tấm"),
+                                                       val, _idLocal))
+                End If
+                DanhGia()
+            End If
+        End If
+    End Sub
+
+    Private Sub GridView2_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView2.RowClick
+        GridView1.Columns.Clear()
+        Dim obj As New KQQC_LaserPlasmaBH
+        obj.ID_K = GridView2.GetFocusedRowCellValue("ID")
+        _idLocal = obj.ID_K
+        _db.GetObject(obj)
+        teID.Text = obj.ID_K
+        dteNgay.DateTime = obj.Ngay
+        txtSoTo.Text = obj.SoTo
+        teMSSP.Text = obj.MSSP
+        teLot.Text = obj.Lot
+        txtSoLanTest.Text = obj.SoLanTest
+        cbbCongDoan.EditValue = obj.CongDoan
+        cbbTanSo.EditValue = obj.TanSo
+        cbbSoMayGC.EditValue = obj.SoMayGC
+        teSoLuongKiem.Text = obj.SoLuongKiem
+        txtSoTam.Text = obj.SoTam
+        teThoiGianKiem.Text = obj.ThoiGianKiem
+        teNhanVienKiem.Text = obj.NhanVienKiem
+        meGhiChu.Text = obj.GhiChu
+
+        If obj.DanhGiaSauCung = "OK" Then
+            lcDanhGia.BackColor = System.Drawing.Color.LawnGreen
+            lcDanhGia.Text = "OK"
+        Else
+            lcDanhGia.BackColor = System.Drawing.Color.Red
+            lcDanhGia.Text = "NG"
+        End If
+
+        Dim dt As DataTable = CreateTableCavNull(obj.SoLuongKiem, obj.SoTam)
+        For r = 0 To dt.Rows.Count - 3
+            For c = 1 To dt.Columns.Count - 1
+                dt.Rows(r)(c) = GridView2.GetFocusedRowCellValue("T" + CStr(r + 1) + "Cav" + CStr(c))
+            Next
+        Next
+        dt.Rows(dt.Rows.Count - 2)(1) = GridView2.GetFocusedRowCellValue("Y")
+        dt.Rows(dt.Rows.Count - 1)(1) = GridView2.GetFocusedRowCellValue("Z")
+
+        GridControl1.DataSource = dt
+        GridControlSetFormat(GridView1, 0)
+        GridControlReadOnly(GridView1, False)
+        GridView1.Columns("Số tấm").OptionsColumn.ReadOnly = True
+        GridControlSetColorEdit(GridView1)
+        GridControlSetWidth(GridView1, 50)
+        'DanhGia()
+    End Sub
+    Sub InsertCav()
+        Dim dtCav As DataTable = ResultCav()
+        For r = 0 To dtCav.Rows.Count - 3
+            For c = 1 To dtCav.Columns.Count - 1
+                Dim col As String = "T" + CStr(r + 1) + "Cav" + CStr(c)
+                _db.ExecuteNonQuery(String.Format("UPDATE KQQC_LaserPlasmaBH 
+                                                   SET {0} = 'OK' 
+                                                   WHERE ID = '{1}'",
+                                                   col,
+                                                   _idLocal))
+            Next
+        Next
+        Dim obj As New KQQC_LaserPlasmaBH
+        obj.ID_K = _idLocal
+        _db.GetObject(obj)
+        obj.Y = "OK"
+        obj.Z = "OK"
+        _db.Update(obj)
+    End Sub
+    'Private Sub UpdateCav()
+    '    Dim dtCav As DataTable = ResultCav()
+    '    For r = 0 To dtCav.Rows.Count - 3
+    '        For c = 1 To dtCav.Columns.Count - 1
+    '            Dim col As String = "T" + CStr(r + 1) + "Cav" + CStr(c)
+    '            If dtCav.Rows(r)(c).ToString.ToUpper = "OK" Then
+    '                _db.ExecuteNonQuery(String.Format("UPDATE KQQC_LaserPlasmaBH 
+    '                                                   SET {0} = 'OK' 
+    '                                                   WHERE ID = '{1}'",
+    '                                                   col,
+    '                                                   _idLocal))
+    '            Else
+    '                _db.ExecuteNonQuery(String.Format("UPDATE KQQC_LaserPlasmaBH 
+    '                                                   SET {0} = 'NG' 
+    '                                                   WHERE ID = '{1}'",
+    '                                                   col,
+    '                                                   _idLocal))
+    '            End If
+    '        Next
+    '    Next
+
+    '    If dtCav.Rows(dtCav.Rows.Count - 2)(1).ToString.ToUpper = "OK" Then
+    '        _db.ExecuteNonQuery(String.Format("UPDATE KQQC_LaserPlasmaBH 
+    '                                           SET Y = 'OK' 
+    '                                           WHERE ID = '{0}'",
+    '                                           teID.Text))
+    '    Else
+    '        _db.ExecuteNonQuery(String.Format("update KQQC_LaserPlasmaBH set Y = '{0}' where ID = '{1}'", "NG", teID.Text))
+    '    End If
+
+    '    If dtCav.Rows(dtCav.Rows.Count - 1)(1).ToString.ToUpper = "OK" Then
+    '        _db.ExecuteNonQuery(String.Format("update KQQC_LaserPlasmaBH set Z = '{0}' where ID = '{1}'", "OK", teID.Text))
+    '    Else
+    '        _db.ExecuteNonQuery(String.Format("update KQQC_LaserPlasmaBH set Z = '{0}' where ID = '{1}'", "NG", teID.Text))
+    '    End If
+    '    blbiShow.PerformClick()
+    'End Sub
+
+    Public Sub DanhGia()
+        Dim dtCav As DataTable = ResultCav()
+        Dim DemNG As Integer = 0
+
+        For r = 0 To dtCav.Rows.Count - 3
+            For c = 1 To dtCav.Columns.Count - 1
+                If dtCav.Rows(r)(c).ToString.ToUpper <> "OK" Then
+                    DemNG += 1
+                    GoTo Result
+                End If
+            Next
+        Next
+        If dtCav.Rows(dtCav.Rows.Count - 2)(1).ToString.ToUpper <> "OK" Then
+            DemNG += 1
+            GoTo Result
+        End If
+        If dtCav.Rows(dtCav.Rows.Count - 1)(1).ToString.ToUpper <> "OK" Then
+            DemNG += 1
+        End If
+Result:
+        If DemNG = 0 Then
+            lcDanhGia.BackColor = System.Drawing.Color.LawnGreen
+            lcDanhGia.Text = "OK"
+        Else
+            lcDanhGia.BackColor = System.Drawing.Color.Red
+            lcDanhGia.Text = "NG"
+        End If
+
+        Dim obj As New KQQC_LaserPlasmaBH
+        obj.ID_K = _idLocal
+        _db.GetObject(obj)
+        obj.DanhGiaSauCung = lcDanhGia.Text
+        _db.Update(obj)
+    End Sub
+
+    Private Sub blbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles blbiExport.ItemClick
+        GridControlExportExcel(GridView2)
+    End Sub
+
+    Public Sub ViewAccess()
+        blbiNew.Enabled = False
+        blbiSave.Enabled = False
+        blbiDelete.Enabled = False
+    End Sub
+
+    Private Sub FrmLaserPlasmaBH_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Dim obj As New Main_UserRight
+        obj.FormID_K = Tag
+        obj.UserID_K = CurrentUser.UserID
+        _db.GetObject(obj)
+        If obj.IsEdit = False Then
+            ViewAccess()
+        End If
+    End Sub
+    Function CreateTableCavNull(soLuongKiem As Integer, soTam As Integer) As DataTable
+        Dim soLuongKiemTren1Tam As Integer = soLuongKiem / soTam
+        Dim dt As New DataTable
+        dt.Columns.Add("Số tấm")
+        For i = 1 To soLuongKiemTren1Tam
+            'dt.Columns.Add(("Cav" + CStr(i)), GetType(String))
+            dt.Columns.Add("Cav" + CStr(i))
+        Next
+        For r = 0 To soTam - 1
+            dt.Rows.Add()
+            dt.Rows(r)(0) = "Tấm " + CStr(r + 1)
+        Next
+        dt.Rows.Add("Y")
+        dt.Rows.Add("Z")
+        Return dt
+    End Function
+
+    Private Sub GridView2_RowStyle(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs) Handles GridView2.RowStyle
+        If Not IsDBNull(GridView2.GetRowCellValue(e.RowHandle, "DanhGiaSauCung")) Then
+            If GridView2.GetRowCellValue(e.RowHandle, "DanhGiaSauCung") = "NG" Then
+                e.Appearance.BackColor = Color.Red
+                e.Appearance.ForeColor = Color.White
+            End If
+        End If
+    End Sub
+End Class

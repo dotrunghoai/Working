@@ -1,0 +1,177 @@
+=================================================================================================
+DateTime:20-Jan-2018 14:40:53
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:Import
+Error:String was not recognized as a valid DateTime.
+=================================================================================================
+DateTime:20-Jan-2018 14:46:34
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:A column named 'Customer' already belongs to this DataTable.
+=================================================================================================
+DateTime:20-Jan-2018 14:46:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Invalid object name 'WT_Product'.
+=================================================================================================
+DateTime:20-Jan-2018 14:47:35
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Invalid object name 'WT_Product'.
+=================================================================================================
+DateTime:20-Jan-2018 15:25:39
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:32:51
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:33:35
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:35:03
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:37:30
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:37:38
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:39:57
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:40:17
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:40:43
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+=================================================================================================
+DateTime:20-Jan-2018 15:41:01
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+=================================================================================================
+DateTime:20-Jan-2018 15:42:06
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+=================================================================================================
+DateTime:20-Jan-2018 15:42:30
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+=================================================================================================
+DateTime:20-Jan-2018 15:42:42
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 15:43:59
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Overload resolution failed because no Public 'Ceiling' can be called with these arguments:
+    'Public Shared Function Ceiling(a As Double) As Double':
+        Argument matching parameter 'a' cannot convert from 'DBNull' to 'Double'.
+    'Public Shared Function Ceiling(d As Decimal) As Decimal':
+        Argument matching parameter 'd' cannot convert from 'DBNull' to 'Decimal'.
+=================================================================================================
+DateTime:20-Jan-2018 16:02:28
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:Export
+Error:Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))

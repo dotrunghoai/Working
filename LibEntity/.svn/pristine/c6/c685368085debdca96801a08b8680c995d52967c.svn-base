@@ -1,0 +1,47 @@
+
+ Public Class HRM_Emloyee
+     Public ECode_K As String 
+     Public EName As String 
+     Public Dept As String 
+     Public Section As String 
+     Public GroupA As String 
+     Public Shift As String 
+     Public Observation As String 
+     Public DateOfBirth As DateTime 
+     Public PlaceOfBirth As String 
+     Public OriginalCountry As String 
+     Public Sex As String 
+     Public MaritalStatus As String 
+     Public Ethnic As String 
+     Public Religion As String 
+     Public IDNumber As String 
+     Public IDIssuedDate As DateTime 
+     Public IDIssuedPlace As String 
+     Public LevelA As String 
+     Public Profession As String 
+     Public School As String 
+     Public English As String 
+     Public Computer As String 
+     Public Japanese As String 
+     Public UnionA As String 
+     Public Experience As String 
+     Public PermanentAddress As String 
+     Public TemporaryAddress As String 
+     Public Telephone As String 
+     Public StartingDate As DateTime 
+     Public FromDate As String 
+     Public ToDate As String 
+     Public Renew As String 
+     Public EmployeeStatus As String 
+     Public INS As String 
+     Public OthersRemark As String 
+     Public NoOfOB As String 
+     Public TestPosition As String 
+     Public YearPosition As String 
+     Public ResignedDate As DateTime 
+     Public KindOfResigned As String 
+     Public ReasonOfResigned As String 
+     Public HinhAnh As String 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

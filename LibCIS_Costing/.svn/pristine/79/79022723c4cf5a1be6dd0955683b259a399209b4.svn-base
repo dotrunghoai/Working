@@ -1,0 +1,18 @@
+﻿Imports CommonDB
+Imports PublicUtility
+Public Class FrmSummary
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Private Sub FrmSummary_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dteMonth.EditValue = Date.Now
+        btnShow.PerformClick()
+    End Sub
+
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        'GridControl1.DataSource = _db.ExecuteStoreProcedureTB("")
+        'GridControlSetFormat(GridView1, 2)
+    End Sub
+
+    Private Sub btnExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExport.ItemClick
+        GridControlExportExcel(GridView1)
+    End Sub
+End Class

@@ -1,0 +1,40 @@
+
+ Public Class ASP_BGAnnualHead
+     Public YYYY_K As String 
+     Public RequestSection_K As String 
+     Public Period_K As String 
+     Public Prepared As String 
+     Public PreparedComment As String 
+     Public PreparedStatus As Boolean 
+     Public PreparedDate As DateTime 
+     Public Approved As String 
+     Public ApprovedComment As String 
+     Public ApprovedStatus As Boolean 
+     Public ApprovedDate As DateTime 
+     Public ApprovedVDept As String 
+     Public ApprovedVDeptComment As String 
+     Public ApprovedVDeptStatus As Boolean 
+     Public ApprovedVDeptDate As DateTime 
+     Public ApprovedDept As String 
+     Public ApprovedDeptComment As String 
+     Public ApprovedDeptStatus As Boolean 
+     Public ApprovedDeptDate As DateTime 
+     Public ACChecked As String 
+     Public ACCheckedComment As String 
+     Public ACCheckedStatus As Boolean 
+     Public ACCheckedDate As DateTime 
+     Public ACCheckedLL As String 
+     Public ACCheckedLLComment As String 
+     Public ACCheckedLLStatus As Boolean 
+     Public ACCheckedLLDate As DateTime 
+     Public ACApproved As String 
+     Public ACApprovedComment As String 
+     Public ACApprovedStatus As Boolean 
+     Public ACApprovedDate As DateTime 
+     Public ACApprovedDept As String 
+     Public ACApprovedDeptComment As String 
+     Public ACApprovedDeptStatus As Boolean 
+     Public ACApprovedDeptDate As DateTime 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="InventoryA" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InventoryA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YYMM" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitP" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitE" type="xs:string" minOccurs="0" />
+              <xs:element name="StartStockB" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StartStockA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INQtyB" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INQtyA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutQtyB" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutQtyA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndStockB" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndStockA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DamagedQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HoldQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

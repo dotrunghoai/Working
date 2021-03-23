@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC98D1AE-9F83-4CB9-B3CC-5D6A088EFF60}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ERPNDV.My.MyApplication</StartupObject>
+    <RootNamespace>ERPNDV</RootNamespace>
+    <AssemblyName>ERPNDV</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\tmtam\Desktop\ERP\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <UpdateUrl>\\10.153.1.1\common\IT\Programs\Programs_NDV\ERPNDV\</UpdateUrl>
+    <TargetCulture>vi-VN</TargetCulture>
+    <ProductName>ERPNDV</ProductName>
+    <PublisherName>ERPNDV</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>2.1.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoNew48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>933BD14A87D2A7B3C4E4FD545FDD10685C3AA0EE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ERPNDV_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ERPNDV.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ERPNDV.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ERPNDV.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ERPNDV.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Itanium'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Debug\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ERPNDV.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Itanium'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DocumentationFile>ERPNDV.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ERPNDV.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\DLL\CrystalDecisions.Enterprise.Viewing.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\DLL\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="AxWMPLib" />
+    <Import Include="CommonDB" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="WMPLib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="bin\Debug\Reports\LO\rptCustoms.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\LO\RptExport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\LO\RptImport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\LO\RptNormal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\LO\rptSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsMain.vb" />
+    <Compile Include="ConfigUpdate.vb" />
+    <Compile Include="FrmTotalConnections.Designer.vb">
+      <DependentUpon>FrmTotalConnections.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTotalConnections.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmForm.Designer.vb">
+      <DependentUpon>FrmForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInputPass.Designer.vb">
+      <DependentUpon>FrmInputPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInputPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuleConnected.Designer.vb">
+      <DependentUpon>FrmModuleConnected.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuleConnected.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroupOfUserSPC.Designer.vb">
+      <DependentUpon>FrmGroupOfUserSPC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGroupOfUserSPC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroupOfUserTrain.Designer.vb">
+      <DependentUpon>FrmGroupOfUserTrain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGroupOfUserTrain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroupOfUserSiteStock.Designer.vb">
+      <DependentUpon>FrmGroupOfUserSiteStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGroupOfUserSiteStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.Designer.vb">
+      <DependentUpon>FrmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroupOfUser.Designer.vb">
+      <DependentUpon>FrmGroupOfUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGroupOfUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLanguage.Designer.vb">
+      <DependentUpon>FrmLanguage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLanguage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModule.Designer.vb">
+      <DependentUpon>FrmModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuleDocument.Designer.vb">
+      <DependentUpon>FrmModuleDocument.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuleDocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuleGroup.Designer.vb">
+      <DependentUpon>FrmModuleGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuleGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotifyAlarm.Designer.vb">
+      <DependentUpon>FrmNotifyAlarm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNotifyAlarm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotifySetTime.Designer.vb">
+      <DependentUpon>FrmNotifySetTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNotifySetTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermissionControl.Designer.vb">
+      <DependentUpon>FrmPermissionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermissionControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSolution.Designer.vb">
+      <DependentUpon>FrmSolution.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSolution.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBlank.Designer.vb">
+      <DependentUpon>FrmBlank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBlank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserInfo.Designer.vb">
+      <DependentUpon>FrmUserInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStartup.Designer.vb">
+      <DependentUpon>FrmStartup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStartup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfig.Designer.vb">
+      <DependentUpon>FrmConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLock.Designer.vb">
+      <DependentUpon>FrmLock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.vb">
+      <DependentUpon>FrmUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUtilityTool.Designer.vb">
+      <DependentUpon>FrmUtilityTool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUtilityTool.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Skin\LookAndFeelSettings.vb" />
+    <Compile Include="Skin\LookAndFeelSettingsHelper.vb" />
+    <Compile Include="WaitForm1.Designer.vb">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="bin\Debug\Reports\CT\rptWipAmount.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\DOC\rptDocRelate.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\DOC\rptListReviewMonth.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\DOC\rptListReviewYear.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\ES\rptExportSpecial.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptBBDiDoi.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptBBKiemKe.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptBBThanhLy.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptFixedKiemKe.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptLabel.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptQDThanhLy.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptTheTSCDNew.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\FIX\rptTheTSCDOld.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptOrangeCard.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptRedCard.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptCapPhatNew.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptMealMonth.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptMealToday.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptPhatDongPhuc.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptYellowCard.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\GA\rptSTRequest.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\GSR\rptBWH.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GSR\rptBWHOld.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GSR\rptDlvr.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\GSR\rptDlvrOld.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\HR\rptBaoCaoOTThang.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\HR\rptBaoCaoOTThangD.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\HR\rptHRAKetQuaDanhGia.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\HR\rptKQDanhGia.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\HR\rptOverOT.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\Inventory\rptProgress.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\ITForm\rptITFORM01.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\ITForm\rptITFORM04.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\ITForm\rptITFORM10.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\ITForm\rptITFORM14.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\ITForm\rptITFORM07.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\Copy of rptWHPhieu.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACCustomsReport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACInPhuLucNhap_LO.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACInTraKho.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACInPhuLucXuat_LO.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACReport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptCostReport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptFGoodReport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptInDS.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACInPhuLucNhap.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptACInPhuLucXuat.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptListNhap.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptListXuat.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptMaterialReport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptNormal.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptStockAllConsumable.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptTotalReport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHDataSheet.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHInventoryKK.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHPhieu.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHInventoryA.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHStockDailyA.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHStockInA.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHStockIn.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHStockOutA.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptWHStockOut.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\LO\rptXuatNhapTon.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\OT\OTWeekly.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PDI\rptProcessAll.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PDI\rptProcessDetail.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PDI\rptProcessInstruction.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PDI\rptRequiredMaterial.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PDI\rptRequiredOperation.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanDH.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanPreset.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanS00.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanKTPL.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanVIA.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanSUS.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanTM.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanPTH.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanLASER.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanHAET.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanDLDV.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanDOT.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanMaVang.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanPublic.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanTF.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PP\rptPlanRS.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PS\rptPrintACPlan.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PS\rptPrintAC.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\PU\rptGSR.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\QA\ShippingResult.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\QA\ShippingResultWD.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\QC\rptChemicalDetail.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\QC\rptTroCap.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\QC\rptU00Detail.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\RM\rptRequestMaterial.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SCQT\rptInSCQT.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptAS400Stock.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptAS400User.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptInqueryAS400.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptInquerySiteStock.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptMaterialConsumption.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptMonthlySale.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\SiteStock\rptSiteStock.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\UDM\rptCongVan.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\UDM\rptINVPL.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\UDM\rptUDMExport.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Reports\UDM\rptUDMImport.rdlc" />
+    <EmbeddedResource Include="FrmTotalConnections.resx">
+      <DependentUpon>FrmTotalConnections.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmForm.resx">
+      <DependentUpon>FrmForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInputPass.resx">
+      <DependentUpon>FrmInputPass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuleConnected.resx">
+      <DependentUpon>FrmModuleConnected.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGroupOfUserSPC.resx">
+      <DependentUpon>FrmGroupOfUserSPC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGroupOfUserTrain.resx">
+      <DependentUpon>FrmGroupOfUserTrain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGroupOfUserSiteStock.resx">
+      <DependentUpon>FrmGroupOfUserSiteStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGroupOfUser.resx">
+      <DependentUpon>FrmGroupOfUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLanguage.resx">
+      <DependentUpon>FrmLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModule.resx">
+      <DependentUpon>FrmModule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuleDocument.resx">
+      <DependentUpon>FrmModuleDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuleGroup.resx">
+      <DependentUpon>FrmModuleGroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotifyAlarm.resx">
+      <DependentUpon>FrmNotifyAlarm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotifySetTime.resx">
+      <DependentUpon>FrmNotifySetTime.vb</DependentUpon>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermissionControl.resx">
+      <DependentUpon>FrmPermissionControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSolution.resx">
+      <DependentUpon>FrmSolution.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBlank.resx">
+      <DependentUpon>FrmBlank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserInfo.resx">
+      <DependentUpon>FrmUserInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfig.resx">
+      <DependentUpon>FrmConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStartup.resx">
+      <DependentUpon>FrmStartup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLock.resx">
+      <DependentUpon>FrmLock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUtilityTool.resx">
+      <DependentUpon>FrmUtilityTool.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="bin\Debug\Reports\Inventory\rptAgingMonth.rpt" />
+    <None Include="bin\Debug\Reports\Inventory\rptDummy.rpt" />
+    <None Include="bin\Debug\Reports\Inventory\rptProgress.rpt" />
+    <None Include="bin\Debug\Reports\Inventory\rptProgressBlank.rpt" />
+    <None Include="bin\Debug\Reports\Inventory\rptVarianceByGroup.rpt" />
+    <None Include="bin\Debug\Reports\Inventory\rptVarianceSummary.rpt" />
+    <None Include="bin\Debug\Reports\Inventory\rptWIPAmout.rpt" />
+    <None Include="bin\Debug\Reports\LO\rptCustoms.rpt" />
+    <None Include="bin\Debug\Reports\LO\RptExport.rpt" />
+    <None Include="bin\Debug\Reports\LO\RptImport.rpt" />
+    <None Include="bin\Debug\Reports\LO\RptNormal.rpt" />
+    <None Include="bin\Debug\Reports\LO\rptSummary.rpt" />
+    <None Include="bin\Debug\Reports\UDM\rptCustomsDeclaration.rpt" />
+    <None Include="bin\Debug\Reports\UDM\rptCustomsDeclarationSub.rpt" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonDB.vbproj">
+      <Project>{DB7E75FD-887E-4C54-A3C4-A42CFAEAC6F7}</Project>
+      <Name>CommonDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibEntity\LibEntity.vbproj">
+      <Project>{C8D9B253-BB8A-4180-B3E6-CA2254AA764F}</Project>
+      <Name>LibEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicUtility\PublicUtility.vbproj">
+      <Project>{E0CD795E-43BF-4FF5-9605-563EB53E9BBF}</Project>
+      <Name>PublicUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityControl\UtilityControl.vbproj">
+      <Project>{71BF981E-C557-4A74-8450-390C431F0223}</Project>
+      <Name>UtilityControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Report Viewer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo-nitto-2020.ico" />
+    <Content Include="LogoNew48.ico" />
+    <Content Include="Nitto.ico" />
+    <None Include="Resources\loadfrom_16x16.png" />
+    <None Include="Resources\opendoc_16x16.png" />
+    <None Include="Resources\open_16x16.png" />
+    <None Include="Resources\home_16x16.png" />
+    <None Include="Resources\home_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\ReportXML\LO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+=================================================================================================
+DateTime:02-Aug-2017 14:25:09
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibMeasuareCharacteristics.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:02-Aug-2017 14:26:28
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibMeasuareCharacteristics.FrmMaster' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:02-Aug-2017 14:26:31
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibMeasuareCharacteristics.FrmRequest' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:02-Aug-2017 14:26:32
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibMeasuareCharacteristics.FrmListRequest' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:02-Aug-2017 14:26:38
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibMeasuareCharacteristics.FrmListNormal' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:02-Aug-2017 14:32:29
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibMeasuareCharacteristics.FrmRequest' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:02-Aug-2017 14:32:35
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibMeasuareCharacteristics.FrmRequest' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

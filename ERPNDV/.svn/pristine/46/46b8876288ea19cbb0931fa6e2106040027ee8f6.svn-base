@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="dtRMaterial" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtRMaterial">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PrcName" type="xs:string" minOccurs="0" />
+              <xs:element name="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Requester" type="xs:string" minOccurs="0" />
+              <xs:element name="RequestDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="LL" type="xs:string" minOccurs="0" />
+              <xs:element name="LLDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LLCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="GL" type="xs:string" minOccurs="0" />
+              <xs:element name="GLDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GLCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="MG" type="xs:string" minOccurs="0" />
+              <xs:element name="MGDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MGCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="PPStaff" type="xs:string" minOccurs="0" />
+              <xs:element name="PPStaffDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PPStaffCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="PPMG" type="xs:string" minOccurs="0" />
+              <xs:element name="PPMGDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PPMGCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="PPDM" type="xs:string" minOccurs="0" />
+              <xs:element name="PPDMDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PPDMCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="PRStaff" type="xs:string" minOccurs="0" />
+              <xs:element name="PRStaffDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PRStaffCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="PR" type="xs:string" minOccurs="0" />
+              <xs:element name="PRDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PRCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="Thamkien" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentID" type="xs:string" minOccurs="0" />
+              <xs:element name="Section" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Loai" type="xs:string" minOccurs="0" />
+              <xs:element name="FileName" type="xs:string" minOccurs="0" />
+              <xs:element name="FileNameServer" type="xs:string" minOccurs="0" />
+              <xs:element name="ID1" type="xs:string" minOccurs="0" />
+              <xs:element name="Idx" type="xs:int" minOccurs="0" />
+              <xs:element name="JCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Jname" type="xs:string" minOccurs="0" />
+              <xs:element name="ActWidth" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActUnit" type="xs:string" minOccurs="0" />
+              <xs:element name="MucDich" type="xs:string" minOccurs="0" />
+              <xs:element name="Remark" type="xs:string" minOccurs="0" />
+              <xs:element name="PurQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PurUnit" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

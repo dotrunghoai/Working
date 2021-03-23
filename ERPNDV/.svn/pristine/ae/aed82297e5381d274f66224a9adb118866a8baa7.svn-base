@@ -1,0 +1,8 @@
+=================================================================================================
+DateTime:08-Mar-2019 07:55:07
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmApproved
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ES_AttachFile_ES_Data". The conflict occurred in database "NDVERP", table "dbo.ES_Data", column 'ID'.
+The statement has been terminated.

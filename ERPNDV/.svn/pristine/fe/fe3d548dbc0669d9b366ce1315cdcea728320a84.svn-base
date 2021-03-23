@@ -1,0 +1,30 @@
+=================================================================================================
+DateTime:06-Oct-2017 09:45:04
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmYCMuonMau
+FunctionName:Confirm
+Error:Conversion from string "" to type 'Date' is not valid.
+=================================================================================================
+DateTime:06-Oct-2017 10:13:06
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmYCMuonMau
+FunctionName:Confirm
+Error:Conversion from string "hieu.dangquang@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:06-Oct-2017 14:35:43
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type
+=================================================================================================
+DateTime:06-Oct-2017 14:35:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type

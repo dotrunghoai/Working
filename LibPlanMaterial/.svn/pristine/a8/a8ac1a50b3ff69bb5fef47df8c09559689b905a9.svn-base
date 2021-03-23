@@ -1,0 +1,52 @@
+﻿Imports CommonDB
+Imports PublicUtility
+Public Class FrmShowTLCP
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+    Private Sub FrmShowTLCP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dteDate.EditValue = Date.Now
+        btnShow.PerformClick()
+    End Sub
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        GridControl1.DataSource = _db.FillDataTable("SELECT TuanImport, ProductCode, Yield
+                                                     FROM PLM_TLCP 
+                                                     ORDER BY TuanImport DESC, ProductCode")
+        GridControlSetFormat(GridView1)
+    End Sub
+
+    Private Sub btnImport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnImport.ItemClick
+        Dim dt As DataTable = ImportEXCEL(True)
+        If dt.Rows.Count > 0 Then
+            Dim succ = 0
+            Try
+                _db.BeginTransaction()
+                Dim tuanIp As String = "W" + GetFirstDayOfWeek(dteDate.EditValue).ToString("yyyyMMdd")
+                Dim obj As New PLM_TLCP
+                obj.TuanImport_K = tuanIp
+                For Each r As DataRow In dt.Rows
+                    obj.ProductCode_K = r("Product Code")
+                    obj.Yield = r("Yield")
+                    obj.CreateUser = CurrentUser.UserID
+                    obj.CreateDate = DateTime.Now
+                    If _db.ExistObject(obj) Then
+                        _db.Update(obj)
+                    Else
+                        _db.Insert(obj)
+                        succ += 1
+                    End If
+                Next
+                _db.Commit()
+                ShowSuccess(succ)
+            Catch ex As Exception
+                _db.RollBack()
+                ShowWarning(ex.Message)
+            End Try
+        Else
+            ShowWarning("Không có dữ liệu import !")
+        End If
+    End Sub
+
+    Private Sub btnExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExport.ItemClick
+        GridControlExportExcel(GridView1)
+    End Sub
+End Class

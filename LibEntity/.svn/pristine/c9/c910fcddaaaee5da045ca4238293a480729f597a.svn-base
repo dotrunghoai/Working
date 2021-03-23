@@ -1,0 +1,46 @@
+
+ Public Class QCS_DataDetail
+     Public ProductCode_K As String 
+     Public Process_K As String 
+     Public LotNo_K As String 
+     Public Lan_K As  Integer 
+     Public Item_K As String 
+     Public D1 As Decimal 
+     Public D2 As Decimal 
+     Public D3 As Decimal 
+     Public D4 As Decimal 
+     Public D5 As Decimal 
+     Public D6 As Decimal 
+     Public D7 As Decimal 
+     Public D8 As Decimal 
+     Public D9 As Decimal 
+     Public D10 As Decimal 
+     Public D11 As Decimal 
+     Public D12 As Decimal 
+     Public D13 As Decimal 
+     Public D14 As Decimal 
+     Public D15 As Decimal 
+     Public D16 As Decimal 
+     Public D17 As Decimal 
+     Public D18 As Decimal 
+     Public D19 As Decimal 
+     Public D20 As Decimal 
+     Public D21 As Decimal 
+     Public D22 As Decimal 
+     Public D23 As Decimal 
+     Public D24 As Decimal 
+     Public D25 As Decimal 
+     Public D26 As Decimal 
+     Public D27 As Decimal 
+     Public D28 As Decimal 
+     Public D29 As Decimal 
+     Public D30 As Decimal 
+     Public D31 As Decimal 
+     Public D32 As Decimal 
+     Public AVG As Decimal 
+     Public Max As Decimal 
+     Public MIn As Decimal 
+     Public DanhGiaMC As String 
+     Public CPK As Decimal 
+     Public CPM As Decimal 
+ End  Class

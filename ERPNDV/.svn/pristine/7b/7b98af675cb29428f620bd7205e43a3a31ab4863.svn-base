@@ -1,0 +1,35 @@
+=================================================================================================
+DateTime:01-Mar-2018 09:14:10
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:Save
+Error:Conversion from type 'DBNull' to type 'String' is not valid.
+=================================================================================================
+DateTime:01-Mar-2018 09:14:15
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:Save
+Error:Conversion from type 'DBNull' to type 'String' is not valid.
+=================================================================================================
+DateTime:01-Mar-2018 13:53:25
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibCapcityProcess.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:01-Mar-2018 13:53:28
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibCapcityProcess.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:01-Mar-2018 13:54:17
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibCapcityProcess.dll' or one of its dependencies. The system cannot find the file specified.

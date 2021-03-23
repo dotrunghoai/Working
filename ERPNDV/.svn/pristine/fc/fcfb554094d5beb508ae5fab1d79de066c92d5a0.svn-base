@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:25-Jun-2018 13:43:22
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmLogisticsExportAir
+FunctionName:
+Error:Column 'HAWB' does not belong to table 'AE-T6-2'.
+=================================================================================================
+DateTime:25-Jun-2018 13:47:23
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:Column 'HAWB' does not belong to table 'AE-T6-2'.

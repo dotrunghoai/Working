@@ -1,0 +1,45 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PublicUtility
+</name>
+</assembly>
+<members>
+<member name="P:PublicUtility.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:PublicUtility.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:PublicUtility.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:PublicUtility.Session">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ Stored information of server, host
+ </summary>
+	<remarks></remarks>
+</member><member name="T:PublicUtility.PublicConst">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ Stored constants, variable, string
+ </summary>
+	<remarks></remarks>
+</member><member name="T:PublicUtility.CurrentUser">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ Stored information of user login system
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

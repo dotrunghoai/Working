@@ -1,0 +1,106 @@
+﻿Imports CommonDB
+Imports LibEntity
+Imports PublicUtility
+
+Public Class FrmItemMaster
+    Dim _db As New DBSql(PublicUtility.PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+    Private Sub mnuShowAll_Click(sender As Object, e As EventArgs) Handles mnuShowAll.Click
+        Dim sql As String = "sp_PLM_LoadItemMaster"
+        GridControl1.DataSource = _db.ExecuteStoreProcedureTB(sql)
+        GridControlSetFormat(GridView1, 3)
+        GridControlSetColorReadonly(GridView1)
+    End Sub
+
+    Private Sub mnuExport_Click(sender As Object, e As EventArgs) Handles mnuExport.Click
+        GridControlExportExcel(GridView1)
+    End Sub
+
+    Private Sub FrmItemMaster_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        mnuShowAll.PerformClick()
+    End Sub
+
+    Private Sub mnuEdit_Click(sender As Object, e As EventArgs) Handles mnuEdit.Click
+        GridControlReadOnly(GridView1, True)
+        GridView1.Columns("TonAnToan_BWH").OptionsColumn.ReadOnly = False
+        GridView1.Columns("LTMuaHang_BWH").OptionsColumn.ReadOnly = False
+        GridView1.Columns("QtyDat_BWH").OptionsColumn.ReadOnly = False
+        GridView1.Columns("TonAnToan_NDV").OptionsColumn.ReadOnly = False
+        GridView1.Columns("LTMuaHang_NDV").OptionsColumn.ReadOnly = False
+        GridView1.Columns("QtyDat_NDV").OptionsColumn.ReadOnly = False
+        GridView1.Columns("LTSX").OptionsColumn.ReadOnly = False
+        GridView1.Columns("MOQ").OptionsColumn.ReadOnly = False
+        GridView1.Columns("Package").OptionsColumn.ReadOnly = False
+        GridView1.Columns("HangSuDung").OptionsColumn.ReadOnly = False
+        GridView1.Columns("Person").OptionsColumn.ReadOnly = False
+        GridView1.Columns("Note").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(GridView1)
+    End Sub
+
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If GridView1.Editable And e.Column.ReadOnly = False Then
+
+            _db.ExecuteNonQuery(String.Format(" update PLM_ItemMaster " +
+                                              " set {0}=@Value " +
+                                              " where ItemCode='{1}'",
+                                              e.Column.FieldName,
+                                              GridView1.GetFocusedRowCellValue("ItemCode")), GetParameter(e.Value))
+
+        End If
+    End Sub
+
+    Private Sub mnuImport_Click(sender As Object, e As EventArgs) Handles mnuImport.Click
+        Dim dtImport As DataTable = ImportEXCEL(True)
+        If dtImport.Rows.Count = 0 Then
+            ShowWarning("Không có dữ liệu import !")
+            Return
+        End If
+        For Each r As DataRow In dtImport.Rows
+            Dim obj As New PLM_ItemMaster
+            obj.ItemCode_K = r("Item Code")
+            _db.GetObject(obj)
+            If IsNumeric(r("Ton An Toan_BWH")) Then
+                obj.TonAnToan_BWH = r("Ton An Toan_BWH")
+            End If
+            If IsNumeric(r("LT Mua Hang_BWH")) Then
+                obj.LTMuaHang_BWH = r("LT Mua Hang_BWH")
+            End If
+            If IsNumeric(r("Qty Dat_BWH")) Then
+                obj.QtyDat_BWH = r("Qty Dat_BWH")
+            End If
+            If IsNumeric(r("Ton An Toan_NDV")) Then
+                obj.TonAnToan_NDV = r("Ton An Toan_NDV")
+            End If
+            If IsNumeric(r("LT Mua Hang_NDV")) Then
+                obj.LTMuaHang_NDV = r("LT Mua Hang_NDV")
+            End If
+            If IsNumeric(r("LTSX")) Then
+                obj.LTSX = r("LTSX")
+            End If
+
+            If IsNumeric(r("MOQ")) Then
+                obj.MOQ = r("MOQ")
+            End If
+            If IsNumeric(r("Package")) Then
+                obj.Package = r("Package")
+            End If
+            If IsNumeric(r("Hang Su Dung")) Then
+                obj.HangSuDung = r("Hang Su Dung")
+            End If
+            If IsNumeric(r("Person")) Then
+                obj.Person = r("Person")
+            End If
+            If Not IsDBNull(r("Note")) Then
+                obj.Note = r("Note")
+            Else
+                obj.Note = ""
+            End If
+            obj.CreateDate = Date.Now
+            obj.CreateUser = CurrentUser.UserID
+            _db.Update(obj)
+        Next
+        ShowSuccess()
+        mnuShowAll.PerformClick()
+    End Sub
+End Class

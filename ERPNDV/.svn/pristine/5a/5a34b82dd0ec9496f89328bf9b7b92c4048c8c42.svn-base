@@ -1,0 +1,82 @@
+=================================================================================================
+DateTime:26-Aug-2017 09:29:29
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Delete Row
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:26-Aug-2017 09:31:37
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Incorrect syntax near the keyword 'order'.
+=================================================================================================
+DateTime:26-Aug-2017 13:22:01
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Conversion from string "hai.hoangthuong@nitto.com" to type 'Date' is not valid.
+=================================================================================================
+DateTime:26-Aug-2017 13:35:54
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:26-Aug-2017 13:36:06
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:26-Aug-2017 13:36:32
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:26-Aug-2017 13:37:01
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:26-Aug-2017 13:37:48
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Value of '01/01/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value
+=================================================================================================
+DateTime:26-Aug-2017 14:05:07
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:26-Aug-2017 14:05:13
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:26-Aug-2017 14:05:27
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Delete Row
+Error:Conversion from string "" to type 'Integer' is not valid.

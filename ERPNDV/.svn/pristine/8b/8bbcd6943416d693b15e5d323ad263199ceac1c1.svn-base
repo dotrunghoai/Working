@@ -1,0 +1,28 @@
+=================================================================================================
+DateTime:24-Aug-2017 08:50:07
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:gridClaimIssueDetail_CellValueChanged
+Error:The source contains no DataRows.
+=================================================================================================
+DateTime:24-Aug-2017 09:13:39
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Incorrect syntax near the keyword 'order'.
+=================================================================================================
+DateTime:24-Aug-2017 09:13:43
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD3
+FunctionName:SetFormEvents
+Error:Incorrect syntax near the keyword 'order'.
+=================================================================================================
+DateTime:24-Aug-2017 09:15:49
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:Delete Row
+Error:Conversion from string "" to type 'Integer' is not valid.

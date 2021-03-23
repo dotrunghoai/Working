@@ -1,0 +1,39 @@
+
+ Public Class syspublications
+     Public description As String 
+     Public name As String 
+     Public pubid As  Integer 
+     Public repl_freq As  Integer 
+     Public status As  Integer 
+     Public sync_method As  Integer 
+     Public snapshot_jobid As byte()
+     Public independent_agent As Boolean 
+     Public immediate_sync As Boolean 
+     Public enabled_for_internet As Boolean 
+     Public allow_push As Boolean 
+     Public allow_pull As Boolean 
+     Public allow_anonymous As Boolean 
+     Public immediate_sync_ready As Boolean 
+     Public allow_sync_tran As Boolean 
+     Public autogen_sync_procs As Boolean 
+     Public retention As  Integer 
+     Public allow_queued_tran As Boolean 
+     Public snapshot_in_defaultfolder As Boolean 
+     Public alt_snapshot_folder As String 
+     Public pre_snapshot_script As String 
+     Public post_snapshot_script As String 
+     Public compress_snapshot As Boolean 
+     Public ftp_address As String 
+     Public ftp_port As  Integer 
+     Public ftp_subdirectory As String 
+     Public ftp_login As String 
+     Public ftp_password As String 
+     Public allow_dts As Boolean 
+     Public allow_subscription_copy As Boolean 
+     Public centralized_conflicts As Boolean 
+     Public conflict_retention As  Integer 
+     Public conflict_policy As  Integer 
+     Public queue_type As  Integer 
+     Public ad_guidname As String 
+     Public backward_comp_level As  Integer 
+ End  Class

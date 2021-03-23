@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:21-Apr-2018 08:03:08
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmItemCodeList
+FunctionName:Search
+Error:A transport-level error has occurred when sending the request to the server. (provider: TCP Provider, error: 0 - An existing connection was forcibly closed by the remote host.)
+=================================================================================================
+DateTime:21-Apr-2018 08:09:20
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmQRList
+FunctionName:gridQuotationRequest_CellValidating
+Error:Operator '<>' is not defined for string "" and type 'DBNull'.

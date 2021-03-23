@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ReportProduct" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportProduct">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="RevisionCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FactoryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerCode" type="xs:string" minOccurs="0" />
+              <xs:element name="AgencyCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProcessMethodCode" type="xs:string" minOccurs="0" />
+              <xs:element name="PurposeCode1" type="xs:string" minOccurs="0" />
+              <xs:element name="PurposeCode2" type="xs:string" minOccurs="0" />
+              <xs:element name="StandardLotSize" type="xs:int" minOccurs="0" />
+              <xs:element name="EstimatedPassRatio" type="xs:double" minOccurs="0" />
+              <xs:element name="MaterialUsefulRatio" type="xs:double" minOccurs="0" />
+              <xs:element name="StartLotNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="StatusFlag" type="xs:string" minOccurs="0" />
+              <xs:element name="PieceCount" type="xs:short" minOccurs="0" />
+              <xs:element name="SpecialNote1" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecialNote2" type="xs:string" minOccurs="0" />
+              <xs:element name="Note1" type="xs:string" minOccurs="0" />
+              <xs:element name="Note2" type="xs:string" minOccurs="0" />
+              <xs:element name="Note3" type="xs:string" minOccurs="0" />
+              <xs:element name="CompleteFlag" type="xs:string" minOccurs="0" />
+              <xs:element name="OperationTerminalCode" type="xs:string" minOccurs="0" />
+              <xs:element name="DeadFlag" type="xs:string" minOccurs="0" />
+              <xs:element name="EntryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ChangeDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FactoryName" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="AgencyName" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProcessMethodName" type="xs:string" minOccurs="0" />
+              <xs:element name="Purpose1Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Purpose2Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

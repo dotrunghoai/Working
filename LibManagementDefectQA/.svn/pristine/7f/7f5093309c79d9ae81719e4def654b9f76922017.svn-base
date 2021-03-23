@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{D062D855-5316-4EAC-A683-9751C620D2B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LibManagementDefectQA</RootNamespace>
+    <AssemblyName>LibManagementDefectQA</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibManagementDefectQA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LibManagementDefectQA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\ERPNDV\bin\Debug\</OutputPath>
+    <DocumentationFile>LibManagementDefectQA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>LibManagementDefectQA.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter">
+      <HintPath>..\DLL\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityMDQA\MDQA_Employee_PR3.vb" />
+    <Compile Include="EntityMDQA\MDQA_KT1_Detail.vb" />
+    <Compile Include="EntityMDQA\MDQA_KTPL_Detail.vb" />
+    <Compile Include="FrmBaoCaoKaifa.Designer.vb">
+      <DependentUpon>FrmBaoCaoKaifa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCaoKaifa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoSeagate.Designer.vb">
+      <DependentUpon>FrmBaoCaoSeagate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCaoSeagate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoSotLoi.Designer.vb">
+      <DependentUpon>FrmBaoCaoSotLoi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCaoSotLoi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoSSI.Designer.vb">
+      <DependentUpon>FrmBaoCaoSSI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCaoSSI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoTuan.Designer.vb">
+      <DependentUpon>FrmBaoCaoTuan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCaoTuan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDefectCode.Designer.vb">
+      <DependentUpon>FrmDefectCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDefectCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLockData.Designer.vb">
+      <DependentUpon>FrmLockData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLockData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSumDataKT1.Designer.vb">
+      <DependentUpon>FrmSumDataKT1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSumDataKT1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSumDataKTPL.Designer.vb">
+      <DependentUpon>FrmSumDataKTPL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSumDataKTPL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataKT1.Designer.vb">
+      <DependentUpon>FrmDataKT1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDataKT1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataKTPL.Designer.vb">
+      <DependentUpon>FrmDataKTPL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDataKTPL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataSSI.Designer.vb">
+      <DependentUpon>FrmDataSSI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDataSSI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmployee.Designer.vb">
+      <DependentUpon>FrmEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmBaoCaoKaifa.resx">
+      <DependentUpon>FrmBaoCaoKaifa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCaoSeagate.resx">
+      <DependentUpon>FrmBaoCaoSeagate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCaoSotLoi.resx">
+      <DependentUpon>FrmBaoCaoSotLoi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCaoSSI.resx">
+      <DependentUpon>FrmBaoCaoSSI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCaoTuan.resx">
+      <DependentUpon>FrmBaoCaoTuan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDefectCode.resx">
+      <DependentUpon>FrmDefectCode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLockData.resx">
+      <DependentUpon>FrmLockData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSumDataKT1.resx">
+      <DependentUpon>FrmSumDataKT1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSumDataKTPL.resx">
+      <DependentUpon>FrmSumDataKTPL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDataKT1.resx">
+      <DependentUpon>FrmDataKT1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDataKTPL.resx">
+      <DependentUpon>FrmDataKTPL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDataSSI.resx">
+      <DependentUpon>FrmDataSSI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmployee.resx">
+      <DependentUpon>FrmEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonDB.vbproj">
+      <Project>{DB7E75FD-887E-4C54-A3C4-A42CFAEAC6F7}</Project>
+      <Name>CommonDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibEntity\LibEntity.vbproj">
+      <Project>{C8D9B253-BB8A-4180-B3E6-CA2254AA764F}</Project>
+      <Name>LibEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicUtility\PublicUtility.vbproj">
+      <Project>{E0CD795E-43BF-4FF5-9605-563EB53E9BBF}</Project>
+      <Name>PublicUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityControl\UtilityControl.vbproj">
+      <Project>{71BF981E-C557-4A74-8450-390C431F0223}</Project>
+      <Name>UtilityControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

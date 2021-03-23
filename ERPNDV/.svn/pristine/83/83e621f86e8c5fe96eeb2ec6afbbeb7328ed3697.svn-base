@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="CapPhatDongPhuc" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CapPhatDongPhuc">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empid" type="xs:string" minOccurs="0" />
+              <xs:element name="empname" type="xs:string" minOccurs="0" />
+              <xs:element name="section" type="xs:string" minOccurs="0" />
+              <xs:element name="groupname" type="xs:string" minOccurs="0" />
+              <xs:element name="shift" type="xs:string" minOccurs="0" />
+              <xs:element name="observation" type="xs:string" minOccurs="0" />
+              <xs:element name="startdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SLAo" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeAo" type="xs:string" minOccurs="0" />
+              <xs:element name="SLQuanNu" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeQuanNu" type="xs:string" minOccurs="0" />
+              <xs:element name="SLQuanNam" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeQuanNam" type="xs:string" minOccurs="0" />
+              <xs:element name="SLDSRoi" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeDSRoi" type="xs:string" minOccurs="0" />
+              <xs:element name="SLDSLien" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeDSLien" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGiayThuong" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGiayThuong" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGiaySach" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGiaySach" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGBTDen" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGBTDen" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGBTTrang" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGBTTrang" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGBTSach" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGBTSach" type="xs:string" minOccurs="0" />
+              <xs:element name="SLNonLuoi" type="xs:int" minOccurs="0" />
+              <xs:element name="SLDPBV" type="xs:int" minOccurs="0" />
+              <xs:element name="SLGiayBV" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGiayBV" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,397 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CommonDB
+</name>
+</assembly>
+<members>
+<member name="T:CommonDB.MultiLanguage">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CommonDB.EncryptDecryptClass">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOLEDB.GetAllTableName">
+	<summary>
+ Columns in table: table_name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOLEDB.GetAllStoreProcedures">
+	<summary>
+ Only a columns ame: name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOLEDB.GetAllColumn">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOLEDB.GetAllColumn(System.String)">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<param name="tableName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CommonDB.DBOLEDB">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ </summary>
+	<remarks> Management function to query  SQL Server,...</remarks>
+</member><member name="T:CommonDB.IDBFunction">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOracle.GetAllTableName">
+	<summary>
+ Columns in table: table_name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOracle.GetAllStoreProcedures">
+	<summary>
+ Only a columns ame: name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOracle.GetAllColumn">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBOracle.GetAllColumn(System.String)">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<param name="tableName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CommonDB.PublicFunction.enumDateFormat">
+	<summary>
+ ddmmyyyy
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.UpLoadFile(System.String,System.String,System.Boolean)">
+	<summary>
+ Vo Thanh Son IT
+ Copy file from folder to folder
+ </summary>
+	<param name="SourceFileName"></param>
+	<param name="DestFileName"></param>
+	<param name="Override"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.OpenFile(System.String)">
+	<summary>
+ Son IT
+ Open any file with current program
+ </summary>
+	<param name="sFileName"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetCodeString(System.Data.DataTable)">
+	<summary>
+ Return '01,'02','03'
+ </summary>
+	<param name="table"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetCodeString(System.Collections.Generic.List{System.String})">
+	<summary>
+ Return 01,02,03
+ </summary>
+	<param name="lst"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.IncreaseIndex(System.String,System.Int32)">
+	<summary>
+ Increase index 
+ Example: 001--&gt;002
+ </summary>
+	<param name="index"></param>
+	<param name="lenght"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.ExportEXCEL(System.Windows.Forms.DataGridView,System.Boolean)">
+	<summary>
+ Vo Thanh Son IT
+ </summary>
+	<param name="grid"></param>
+	<param name="bWithoutInvisibleColumns"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.ImportEXCEL(System.String[])">
+	<summary>
+ Son IT
+ </summary>
+	<param name="arrSheetName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetStartDate(System.DateTime)">
+	<summary>
+ Return datetime with time is 0,0,0
+ </summary>
+	<param name="dateValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetStartDate(System.Windows.Forms.DateTimePicker)">
+	<summary>
+ Return datetime with time is 0,0,0
+ </summary>
+	<param name="PickerValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetEndDate(System.DateTime)">
+	<summary>
+ Return datetime with time is 23,59,59
+ </summary>
+	<param name="dateValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetEndDate(System.Windows.Forms.DateTimePicker)">
+	<summary>
+Return datetime with time is 23,59,59 
+ </summary>
+	<param name="PickerValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetDateTime(System.DateTime)">
+	<summary>
+ Return datetime with time of value
+ </summary>
+	<param name="dateValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetDateTime(System.Windows.Forms.DateTimePicker)">
+	<summary>
+ Return datetime with time of pickerdatetime
+ </summary>
+	<param name="PickerValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetDateTime(System.DateTime,System.Int32)">
+	<summary>
+ Return datetime with time of para(Hour),0,0
+ </summary>
+	<param name="dateValue"></param>
+	<param name="hour"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetDateTime(System.Windows.Forms.DateTimePicker,System.Int32)">
+	<summary>
+ Return datetime with time of para(Hour),0,0
+ </summary>
+	<param name="PickerValue"></param>
+	<param name="hour"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetNameOfMonth(System.Int32)">
+	<summary>
+ Return JAN,FER,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC
+ </summary>
+	<param name="month"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetQuater(System.DateTime)">
+	<summary>
+  Return value Q12012 
+ </summary>
+	<param name="datetime"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetQuaterByFinancial(System.DateTime)">
+	<summary>
+ Return value Q12012
+ </summary>
+	<param name="datetime"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetQuaterByFinancialBOM(System.DateTime)">
+	<summary>
+ Return 2014Q1 (month 04--&gt;09) or 2014Q3 (month 10--&gt;03)
+ </summary>
+	<param name="datetime"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetQuater2(System.DateTime)">
+	<summary>
+ Return value 2012Q3
+ </summary>
+	<param name="datetime"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.SetIndexGrid(System.Windows.Forms.DataGridView)">
+	<summary>
+ Set index first column of datagridview
+ </summary>
+	<param name="grid"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GridViewUpRow(System.Windows.Forms.DataGridView)">
+	<summary>
+ Up currentrow of datagridview
+ </summary>
+	<param name="grid"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GridViewDown(System.Windows.Forms.DataGridView)">
+	<summary>
+ Dow currentrow of datagridview
+ </summary>
+	<param name="grid"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.SetObjValue``1(``0@,System.Data.DataRow)">
+	<summary>
+ Vo Thanh Son 12-Nov-2012
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="obj"></param>
+	<param name="row"></param>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetIP">
+	<summary>
+ Get IP current of computer
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetHostName">
+	<summary>
+ Get computername of this computer
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetUserName">
+	<summary>
+ Get username current login this computer
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetSqlPara(System.DateTime,System.DateTime)">
+	<summary>
+ Return with para name @StartDate,@EndDate
+ </summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetOdbcPara(System.DateTime,System.DateTime)">
+	<summary>
+ Return with para name @StartDate,@EndDate
+ </summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetOracelPara(System.DateTime,System.DateTime)">
+	<summary>
+ Return with para name @StartDate,@EndDate
+ </summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.PublicFunction.GetOledbPara(System.DateTime,System.DateTime)">
+	<summary>
+ Return with para name @StartDate,@EndDate
+ </summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CommonDB.PublicFunction">
+	<summary>
+ Stored many common functions useful
+ Author: Truong Minh Tam
+ Date: Junly-2011
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBFunction.GetAllTableName">
+	<summary>
+ Columns in table: table_name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBFunction.GetAllStoreProcedures">
+	<summary>
+ Only a columns ame: name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBFunction.GetAllColumn">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBFunction.GetAllColumn(System.String)">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<param name="tableName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CommonDB.DBFunction">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ </summary>
+	<remarks> Management function to query SQL Server,...</remarks>
+</member><member name="M:CommonDB.DBSql.GetAllTableName">
+	<summary>
+ Columns in table: table_name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBSql.GetAllStoreProcedures">
+	<summary>
+ Only a columns ame: name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBSql.GetAllColumn">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonDB.DBSql.GetAllColumn(System.String)">
+	<summary>
+ Columns in table: table_name, column_name, datatype, length
+ </summary>
+	<param name="tableName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CommonDB.DBSql">
+	<summary>
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ </summary>
+	<remarks> Management function to query only SQL Server</remarks>
+</member><member name="T:CommonDB.ConfigNDV">
+ Author: Truong Minh Tam (IT-Nitto Denko)
+ Date: 25-Aug-2011
+ 
+
+</member><member name="P:CommonDB.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CommonDB.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CommonDB.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,35 @@
+=================================================================================================
+DateTime:25-Oct-2018 09:01:07
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:Cannot find column [ProductCode].
+=================================================================================================
+DateTime:25-Oct-2018 09:02:27
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:Conversion from string "0Test" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:25-Oct-2018 09:24:38
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:Column 'Customer' does not belong to table .
+=================================================================================================
+DateTime:25-Oct-2018 09:24:49
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:Column 'Customer' does not belong to table .
+=================================================================================================
+DateTime:25-Oct-2018 09:28:15
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmResult
+FunctionName:LoadAll
+Error:Column 'Customer' does not belong to table .

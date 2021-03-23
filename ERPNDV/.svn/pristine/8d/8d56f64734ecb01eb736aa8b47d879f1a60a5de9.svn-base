@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="StockAll" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StockAll">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Warehouse" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="StockAll" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StockQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MinStock" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MaxStock" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UnitP" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitE" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Currency" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ExchangeRate" type="xs:int" minOccurs="0" />
+              <xs:element name="AmountUSD" type="xs:double" minOccurs="0" />
+              <xs:element name="PhongBanNhap" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayMuaHang" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SoNgayLuuKho" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupCode" type="xs:string" minOccurs="0" />
+              <xs:element name="LyDo" type="xs:string" minOccurs="0" />
+              <xs:element name="HuongXuLy" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

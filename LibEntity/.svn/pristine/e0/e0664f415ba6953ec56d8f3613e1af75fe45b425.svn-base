@@ -1,0 +1,8 @@
+
+ Public Class Test
+     Public MaNV As String 
+     Public TenNV As String 
+     Public NamSinh As String 
+     Public GioiTinh As String 
+     Public DiaChi As String 
+ End  Class

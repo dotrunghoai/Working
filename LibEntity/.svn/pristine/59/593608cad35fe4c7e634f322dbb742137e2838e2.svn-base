@@ -1,0 +1,47 @@
+
+ Public Class ASP_QuotationRequestVendor
+     Public QRNo_K As String 
+     Public ID_K As  Integer 
+     Public ItemName_K As String 
+     Public Currency As String 
+     Public Quantity As Decimal 
+     Public Vendor1Name As String 
+     Public Vendor1ContactPerson As String 
+     Public Vendor1Telephone As String 
+     Public Vendor1FinalPrice As Decimal 
+     Public Vendor1QuotationDate As DateTime 
+     Public Vendor1Maker As String 
+     Public Vendor1Origin As String 
+     Public Vendor1DeliveryCons As String 
+     Public Vendor1Note As String 
+     Public Vendor2Name As String 
+     Public Vendor2ContactPerson As String 
+     Public Vendor2Telephone As String 
+     Public Vendor2FinalPrice As Decimal 
+     Public Vendor2QuotationDate As DateTime 
+     Public Vendor2Maker As String 
+     Public Vendor2Origin As String 
+     Public Vendor2DeliveryCons As String 
+     Public Vendor2Note As String 
+     Public Vendor3Name As String 
+     Public Vendor3ContactPerson As String 
+     Public Vendor3Telephone As String 
+     Public Vendor3FinalPrice As Decimal 
+     Public Vendor3QuotationDate As DateTime 
+     Public Vendor3Maker As String 
+     Public Vendor3Origin As String 
+     Public Vendor3DeliveryCons As String 
+     Public Vendor3Note As String 
+     Public Vendor4Name As String 
+     Public Vendor4ContactPerson As String 
+     Public Vendor4Telephone As String 
+     Public Vendor4FinalPrice As Decimal 
+     Public Vendor4QuotationDate As DateTime 
+     Public Vendor4Maker As String 
+     Public Vendor4Origin As String 
+     Public Vendor4DeliveryCons As String 
+     Public Vendor4Note As String 
+     Public Idx As  Integer 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

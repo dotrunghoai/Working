@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="NewDataSet" msprop:Generator_UserDSName="NewDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CapPhatDongPhuc" msprop:Generator_TableClassName="CapPhatDongPhucDataTable" msprop:Generator_TableVarName="tableCapPhatDongPhuc" msprop:Generator_TablePropName="CapPhatDongPhuc" msprop:Generator_RowDeletingName="CapPhatDongPhucRowDeleting" msprop:Generator_RowChangingName="CapPhatDongPhucRowChanging" msprop:Generator_RowEvHandlerName="CapPhatDongPhucRowChangeEventHandler" msprop:Generator_RowDeletedName="CapPhatDongPhucRowDeleted" msprop:Generator_UserTableName="CapPhatDongPhuc" msprop:Generator_RowChangedName="CapPhatDongPhucRowChanged" msprop:Generator_RowEvArgName="CapPhatDongPhucRowChangeEvent" msprop:Generator_RowClassName="CapPhatDongPhucRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empid" msprop:Generator_ColumnVarNameInTable="columnempid" msprop:Generator_ColumnPropNameInRow="empid" msprop:Generator_ColumnPropNameInTable="empidColumn" msprop:Generator_UserColumnName="empid" type="xs:string" minOccurs="0" />
+              <xs:element name="empname" msprop:Generator_ColumnVarNameInTable="columnempname" msprop:Generator_ColumnPropNameInRow="empname" msprop:Generator_ColumnPropNameInTable="empnameColumn" msprop:Generator_UserColumnName="empname" type="xs:string" minOccurs="0" />
+              <xs:element name="section" msprop:Generator_ColumnVarNameInTable="columnsection" msprop:Generator_ColumnPropNameInRow="section" msprop:Generator_ColumnPropNameInTable="sectionColumn" msprop:Generator_UserColumnName="section" type="xs:string" minOccurs="0" />
+              <xs:element name="groupname" msprop:Generator_ColumnVarNameInTable="columngroupname" msprop:Generator_ColumnPropNameInRow="groupname" msprop:Generator_ColumnPropNameInTable="groupnameColumn" msprop:Generator_UserColumnName="groupname" type="xs:string" minOccurs="0" />
+              <xs:element name="shift" msprop:Generator_ColumnVarNameInTable="columnshift" msprop:Generator_ColumnPropNameInRow="shift" msprop:Generator_ColumnPropNameInTable="shiftColumn" msprop:Generator_UserColumnName="shift" type="xs:string" minOccurs="0" />
+              <xs:element name="observation" msprop:Generator_ColumnVarNameInTable="columnobservation" msprop:Generator_ColumnPropNameInRow="observation" msprop:Generator_ColumnPropNameInTable="observationColumn" msprop:Generator_UserColumnName="observation" type="xs:string" minOccurs="0" />
+              <xs:element name="startdate" msprop:Generator_ColumnVarNameInTable="columnstartdate" msprop:Generator_ColumnPropNameInRow="startdate" msprop:Generator_ColumnPropNameInTable="startdateColumn" msprop:Generator_UserColumnName="startdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SLAo" msprop:Generator_ColumnVarNameInTable="columnSLAo" msprop:Generator_ColumnPropNameInRow="SLAo" msprop:Generator_ColumnPropNameInTable="SLAoColumn" msprop:Generator_UserColumnName="SLAo" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeAo" msprop:Generator_ColumnVarNameInTable="columnSizeAo" msprop:Generator_ColumnPropNameInRow="SizeAo" msprop:Generator_ColumnPropNameInTable="SizeAoColumn" msprop:Generator_UserColumnName="SizeAo" type="xs:string" minOccurs="0" />
+              <xs:element name="SLQuanNu" msprop:Generator_ColumnVarNameInTable="columnSLQuanNu" msprop:Generator_ColumnPropNameInRow="SLQuanNu" msprop:Generator_ColumnPropNameInTable="SLQuanNuColumn" msprop:Generator_UserColumnName="SLQuanNu" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeQuanNu" msprop:Generator_ColumnVarNameInTable="columnSizeQuanNu" msprop:Generator_ColumnPropNameInRow="SizeQuanNu" msprop:Generator_ColumnPropNameInTable="SizeQuanNuColumn" msprop:Generator_UserColumnName="SizeQuanNu" type="xs:string" minOccurs="0" />
+              <xs:element name="SLQuanNam" msprop:Generator_ColumnVarNameInTable="columnSLQuanNam" msprop:Generator_ColumnPropNameInRow="SLQuanNam" msprop:Generator_ColumnPropNameInTable="SLQuanNamColumn" msprop:Generator_UserColumnName="SLQuanNam" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeQuanNam" msprop:Generator_ColumnVarNameInTable="columnSizeQuanNam" msprop:Generator_ColumnPropNameInRow="SizeQuanNam" msprop:Generator_ColumnPropNameInTable="SizeQuanNamColumn" msprop:Generator_UserColumnName="SizeQuanNam" type="xs:string" minOccurs="0" />
+              <xs:element name="SLDSRoi" msprop:Generator_ColumnVarNameInTable="columnSLDSRoi" msprop:Generator_ColumnPropNameInRow="SLDSRoi" msprop:Generator_ColumnPropNameInTable="SLDSRoiColumn" msprop:Generator_UserColumnName="SLDSRoi" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeDSRoi" msprop:Generator_ColumnVarNameInTable="columnSizeDSRoi" msprop:Generator_ColumnPropNameInRow="SizeDSRoi" msprop:Generator_ColumnPropNameInTable="SizeDSRoiColumn" msprop:Generator_UserColumnName="SizeDSRoi" type="xs:string" minOccurs="0" />
+              <xs:element name="SLDSLien" msprop:Generator_ColumnVarNameInTable="columnSLDSLien" msprop:Generator_ColumnPropNameInRow="SLDSLien" msprop:Generator_ColumnPropNameInTable="SLDSLienColumn" msprop:Generator_UserColumnName="SLDSLien" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeDSLien" msprop:Generator_ColumnVarNameInTable="columnSizeDSLien" msprop:Generator_ColumnPropNameInRow="SizeDSLien" msprop:Generator_ColumnPropNameInTable="SizeDSLienColumn" msprop:Generator_UserColumnName="SizeDSLien" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGiayThuong" msprop:Generator_ColumnVarNameInTable="columnSLGiayThuong" msprop:Generator_ColumnPropNameInRow="SLGiayThuong" msprop:Generator_ColumnPropNameInTable="SLGiayThuongColumn" msprop:Generator_UserColumnName="SLGiayThuong" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGiayThuong" msprop:Generator_ColumnVarNameInTable="columnSizeGiayThuong" msprop:Generator_ColumnPropNameInRow="SizeGiayThuong" msprop:Generator_ColumnPropNameInTable="SizeGiayThuongColumn" msprop:Generator_UserColumnName="SizeGiayThuong" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGiaySach" msprop:Generator_ColumnVarNameInTable="columnSLGiaySach" msprop:Generator_ColumnPropNameInRow="SLGiaySach" msprop:Generator_ColumnPropNameInTable="SLGiaySachColumn" msprop:Generator_UserColumnName="SLGiaySach" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGiaySach" msprop:Generator_ColumnVarNameInTable="columnSizeGiaySach" msprop:Generator_ColumnPropNameInRow="SizeGiaySach" msprop:Generator_ColumnPropNameInTable="SizeGiaySachColumn" msprop:Generator_UserColumnName="SizeGiaySach" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGBTDen" msprop:Generator_ColumnVarNameInTable="columnSLGBTDen" msprop:Generator_ColumnPropNameInRow="SLGBTDen" msprop:Generator_ColumnPropNameInTable="SLGBTDenColumn" msprop:Generator_UserColumnName="SLGBTDen" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGBTDen" msprop:Generator_ColumnVarNameInTable="columnSizeGBTDen" msprop:Generator_ColumnPropNameInRow="SizeGBTDen" msprop:Generator_ColumnPropNameInTable="SizeGBTDenColumn" msprop:Generator_UserColumnName="SizeGBTDen" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGBTTrang" msprop:Generator_ColumnVarNameInTable="columnSLGBTTrang" msprop:Generator_ColumnPropNameInRow="SLGBTTrang" msprop:Generator_ColumnPropNameInTable="SLGBTTrangColumn" msprop:Generator_UserColumnName="SLGBTTrang" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGBTTrang" msprop:Generator_ColumnVarNameInTable="columnSizeGBTTrang" msprop:Generator_ColumnPropNameInRow="SizeGBTTrang" msprop:Generator_ColumnPropNameInTable="SizeGBTTrangColumn" msprop:Generator_UserColumnName="SizeGBTTrang" type="xs:string" minOccurs="0" />
+              <xs:element name="SLGBTSach" msprop:Generator_ColumnVarNameInTable="columnSLGBTSach" msprop:Generator_ColumnPropNameInRow="SLGBTSach" msprop:Generator_ColumnPropNameInTable="SLGBTSachColumn" msprop:Generator_UserColumnName="SLGBTSach" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGBTSach" msprop:Generator_ColumnVarNameInTable="columnSizeGBTSach" msprop:Generator_ColumnPropNameInRow="SizeGBTSach" msprop:Generator_ColumnPropNameInTable="SizeGBTSachColumn" msprop:Generator_UserColumnName="SizeGBTSach" type="xs:string" minOccurs="0" />
+              <xs:element name="SLDPBV" msprop:Generator_ColumnVarNameInTable="columnSLDPBV" msprop:Generator_ColumnPropNameInRow="SLDPBV" msprop:Generator_ColumnPropNameInTable="SLDPBVColumn" msprop:Generator_UserColumnName="SLDPBV" type="xs:int" minOccurs="0" />
+              <xs:element name="SLGiayBV" msprop:Generator_ColumnVarNameInTable="columnSLGiayBV" msprop:Generator_ColumnPropNameInRow="SLGiayBV" msprop:Generator_ColumnPropNameInTable="SLGiayBVColumn" msprop:Generator_UserColumnName="SLGiayBV" type="xs:int" minOccurs="0" />
+              <xs:element name="SizeGiayBV" msprop:Generator_ColumnVarNameInTable="columnSizeGiayBV" msprop:Generator_ColumnPropNameInRow="SizeGiayBV" msprop:Generator_ColumnPropNameInTable="SizeGiayBVColumn" msprop:Generator_UserColumnName="SizeGiayBV" type="xs:string" minOccurs="0" />
+              <xs:element name="SLNonLuoi" msprop:Generator_ColumnVarNameInTable="columnSLNonLuoi" msprop:Generator_ColumnPropNameInRow="SLNonLuoi" msprop:Generator_ColumnPropNameInTable="SLNonLuoiColumn" msprop:Generator_UserColumnName="SLNonLuoi" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

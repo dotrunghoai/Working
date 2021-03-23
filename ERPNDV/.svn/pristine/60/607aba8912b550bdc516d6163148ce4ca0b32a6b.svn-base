@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="DailyStockA" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DailyStockA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ngay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitPurchase" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitConvert" type="xs:string" minOccurs="0" />
+              <xs:element name="GoodQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PickedQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DamagedQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HoldQty" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:25-Oct-2017 11:56:17
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsExportAir
+FunctionName:Up. Excel
+Error:Index was outside the bounds of the array.
+=================================================================================================
+DateTime:25-Oct-2017 13:05:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsExportAir
+FunctionName:Up. Excel
+Error:Index was outside the bounds of the array.
+=================================================================================================
+DateTime:25-Oct-2017 13:16:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:Method not found: 'System.Data.DataSet CommonDB.PublicFunction.ImportDataset()'.

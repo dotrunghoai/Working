@@ -1,0 +1,26 @@
+
+ Public Class GA_CT_ReviewContract_Detail
+    Public ID_K As String
+    Public EmpID_K As String
+    Public LoaiHDCu As String
+    Public FromOld As DateTime
+    Public ToOld As DateTime
+    Public LoaiHDNew As String
+    Public FromNew As DateTime
+    Public ToNew As DateTime
+    Public SucKhoe As Integer
+    Public ViPhamNQCT As Integer
+    Public ChatLuongCV As Integer
+    Public KienThucCV As Integer
+    Public HanhKiem As Integer
+    Public QuanHeDongNghiep As Integer
+    Public SangKien As Integer
+    Public LapKeHoach As Integer
+    Public LanhDao As Integer
+    Public DiemTrungBinh As Decimal
+    Public KQDG As String
+    Public KQHTCV As String
+    Public GhiChu As String
+    Public CreateUser As String
+    Public CreateDate As DateTime
+End  Class

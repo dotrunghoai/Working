@@ -1,0 +1,4 @@
+
+ Public Class HRT_Email
+     Public Email_K As String 
+ End  Class

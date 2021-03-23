@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:17-Oct-2017 11:02:54
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmItemCodeList
+FunctionName:Update Price
+Error:Column 'DeliveryTerm' does not belong to table .

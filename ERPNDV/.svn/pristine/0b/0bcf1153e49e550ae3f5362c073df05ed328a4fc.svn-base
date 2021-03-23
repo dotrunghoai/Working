@@ -1,0 +1,63 @@
+=================================================================================================
+DateTime:17-Nov-2017 14:02:00
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsImportDomestic
+FunctionName:Up. Excel
+Error:Input string was not in a correct format.Couldn't store <-> in Domestics Column.  Expected type is Decimal.
+=================================================================================================
+DateTime:17-Nov-2017 14:04:57
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsImportDomestic
+FunctionName:Up. Excel
+Error:Input string was not in a correct format.Couldn't store <-> in Domestics Column.  Expected type is Decimal.
+=================================================================================================
+DateTime:17-Nov-2017 14:09:03
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsImportDomestic
+FunctionName:Up. Excel
+Error:Input string was not in a correct format.Couldn't store <-> in Domestics Column.  Expected type is Decimal.
+=================================================================================================
+DateTime:17-Nov-2017 14:10:20
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsImportDomestic
+FunctionName:Up. Excel
+Error:Input string was not in a correct format.Couldn't store <-> in Domestics Column.  Expected type is Decimal.
+=================================================================================================
+DateTime:17-Nov-2017 14:11:16
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:LibUDM.FrmLogisticsImportAir.mnuSave_Click(System.Object, System.EventArgs)
+=================================================================================================
+DateTime:17-Nov-2017 14:11:20
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:LibUDM.FrmLogisticsImportAir.mnuSave_Click(System.Object, System.EventArgs)
+=================================================================================================
+DateTime:17-Nov-2017 14:11:44
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:LibUDM.FrmLogisticsImportAir.mnuSave_Click(System.Object, System.EventArgs)
+=================================================================================================
+DateTime:17-Nov-2017 14:11:52
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:LibUDM.FrmLogisticsImportAir.mnuSave_Click(System.Object, System.EventArgs)
+=================================================================================================
+DateTime:17-Nov-2017 14:12:10
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsImportAir
+FunctionName:Up. Excel
+Error:Conversion from string "-" to type 'Decimal' is not valid.

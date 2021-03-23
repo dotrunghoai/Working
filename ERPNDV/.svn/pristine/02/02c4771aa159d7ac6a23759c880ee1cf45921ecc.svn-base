@@ -1,0 +1,30 @@
+=================================================================================================
+DateTime:14-Oct-2019 09:15:08
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmGSRFollowETA_LOAriba
+FunctionName:Import Ariba
+Error:Column '(PO) PO Id' does not belong to table .
+=================================================================================================
+DateTime:14-Oct-2019 09:15:27
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmGSRFollowETA_LOAriba
+FunctionName:Import Ariba
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:14-Oct-2019 09:19:35
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmGSRFollowETA_LOAriba
+FunctionName:Import Ariba
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:14-Oct-2019 14:13:12
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmGSRFollowETA_LOAriba
+FunctionName:Import Ariba
+Error:Column '[PO] PO Status' does not belong to table .

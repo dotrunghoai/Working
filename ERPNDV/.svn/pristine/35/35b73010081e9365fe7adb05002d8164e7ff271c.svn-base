@@ -1,0 +1,3 @@
+@echo off
+start C:\Programs_NDV\ERPNDV\ERPUpdate.exe 023610,cccfca24-05d1-42b3-966a-c98c30714131
+exit

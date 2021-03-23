@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="FixedKiemKe" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FixedKiemKe">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OldCode" type="xs:string" minOccurs="0" />
+              <xs:element name="NewCode" type="xs:string" minOccurs="0" />
+              <xs:element name="IFRS" type="xs:string" minOccurs="0" />
+              <xs:element name="MaViTri" type="xs:string" minOccurs="0" />
+              <xs:element name="LoaiTaiSan" type="xs:string" minOccurs="0" />
+              <xs:element name="TenTiengAnh" type="xs:string" minOccurs="0" />
+              <xs:element name="TenTiengViet" type="xs:string" minOccurs="0" />
+              <xs:element name="Hinh1" type="xs:string" minOccurs="0" />
+              <xs:element name="Hinh2" type="xs:string" minOccurs="0" />
+              <xs:element name="Hinh3" type="xs:string" minOccurs="0" />
+              <xs:element name="PhongBan" type="xs:string" minOccurs="0" />
+              <xs:element name="ViTri" type="xs:string" minOccurs="0" />
+              <xs:element name="SoInvoice" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayInvoice" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NgayMua" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="KhauHaoTu" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="KhauHaoDen" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SoNam" type="xs:int" minOccurs="0" />
+              <xs:element name="SoThang" type="xs:int" minOccurs="0" />
+              <xs:element name="NguyenGia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="KhauHao" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GiaTriConLai" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RinGi" type="xs:string" minOccurs="0" />
+              <xs:element name="SoToKhai" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayToKhai" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ChungTuKeToan" type="xs:string" minOccurs="0" />
+              <xs:element name="NhaCungCap" type="xs:string" minOccurs="0" />
+              <xs:element name="DateOfFA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TheTaiSan" type="xs:string" minOccurs="0" />
+              <xs:element name="XacNhanGA" type="xs:string" minOccurs="0" />
+              <xs:element name="XacNhanBoPhan" type="xs:string" minOccurs="0" />
+              <xs:element name="XacNhanTongKet" type="xs:string" minOccurs="0" />
+              <xs:element name="XacNhanGhiChu" type="xs:string" minOccurs="0" />
+              <xs:element name="GhiChuBoPhan" type="xs:string" minOccurs="0" />
+              <xs:element name="YYYY" type="xs:string" minOccurs="0" />
+              <xs:element name="ChiTiet" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

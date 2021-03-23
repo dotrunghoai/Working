@@ -1,0 +1,39 @@
+=================================================================================================
+DateTime:11-Jul-2019 10:56:09
+UserID:J0001-Shinogi
+PC:V00365-tmtam
+ClassOrForm:FrmF07Request
+FunctionName:Confirm
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:11-Jul-2019 15:17:02
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmStockOut
+FunctionName:XuatLan 0
+Error:Violation of PRIMARY KEY constraint 'PK_LOA_StockOut'. Cannot insert duplicate key in object 'dbo.LOA_StockOut'. The duplicate key value is (X/07/19/00001, 1).
+The statement has been terminated.
+=================================================================================================
+DateTime:11-Jul-2019 15:20:12
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmStockOut
+FunctionName:XuatLan 0
+Error:SqlConnection does not support parallel transactions.
+=================================================================================================
+DateTime:11-Jul-2019 15:22:39
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmStockOut
+FunctionName:XuatLan 0
+Error:Violation of PRIMARY KEY constraint 'PK_LOA_StockOut'. Cannot insert duplicate key in object 'dbo.LOA_StockOut'. The duplicate key value is (X/07/19/00001, 1).
+The statement has been terminated.
+=================================================================================================
+DateTime:11-Jul-2019 15:30:50
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmStockOut
+FunctionName:XuatLan 0
+Error:Violation of PRIMARY KEY constraint 'PK_LOA_StockOut'. Cannot insert duplicate key in object 'dbo.LOA_StockOut'. The duplicate key value is (X/07/19/00001, 1).
+The statement has been terminated.

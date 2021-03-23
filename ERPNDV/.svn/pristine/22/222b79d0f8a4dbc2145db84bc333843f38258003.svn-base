@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="SiteStock" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="SiteStock" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YM" type="xs:string" minOccurs="0" />
+              <xs:element name="GroupCode" type="xs:string" minOccurs="0" />
+              <xs:element name="JCode" type="xs:string" minOccurs="0" />
+              <xs:element name="JCode2" type="xs:string" minOccurs="0" />
+              <xs:element name="JName" type="xs:string" minOccurs="0" />
+              <xs:element name="Width" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Width2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Qty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Unit" type="xs:string" minOccurs="0" />
+              <xs:element name="Note" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

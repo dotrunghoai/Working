@@ -1,0 +1,249 @@
+﻿Imports CommonDB
+Imports DevExpress.Utils.Drawing
+Imports DevExpress.Utils.Layout
+Imports DevExpress.XtraEditors.Repository
+Imports DevExpress.XtraGrid.Columns
+Imports PublicUtility
+Public Class FrmPlanHourCIS
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    '--- Vẽ nét liền 2 bảng ---
+    Private Sub TablePanel1_Paint(sender As Object, e As Windows.Forms.PaintEventArgs) Handles TablePanel1.Paint
+        Dim panel As TablePanel = CType(sender, TablePanel)
+        Dim viewInfo As TablePanelObjectInfoArgs = panel.GetViewInfo()
+        Using cache As GraphicsCache = New GraphicsCache(e.Graphics)
+            Dim gridPen As Pen = cache.GetPen(Color.Gray, 1)
+            cache.DrawRectangle(gridPen, viewInfo.DisplayRect)
+            DrawHorzGridLines(cache, viewInfo.Layout.Grid, gridPen)
+            DrawVertGridLines(cache, viewInfo.Layout.Grid, gridPen)
+        End Using
+    End Sub
+    Private Sub DrawHorzGridLines(ByVal cache As GraphicsCache, ByVal grid As TablePanelGrid, ByVal gridPen As Pen)
+        Dim horzLines As TablePanelHorzGridLine() = grid.HorzLines
+        For n As Integer = 0 To horzLines.Length - 1
+            cache.DrawLine(gridPen, horzLines(n).Start, horzLines(n).[End])
+        Next
+    End Sub
+    Private Sub DrawVertGridLines(ByVal cache As GraphicsCache, ByVal grid As TablePanelGrid, ByVal gridPen As Pen)
+        Dim vertLines As TablePanelVertGridLine() = grid.VertLines
+        For n As Integer = 0 To vertLines.Length - 1
+            cache.DrawLine(gridPen, vertLines(n).Start, vertLines(n).[End])
+        Next
+    End Sub
+    '--- Kết thúc vẽ ---
+    Private Sub FrmPlanHourCIS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dteNgay.EditValue = Date.Now
+        grcProgressBar.Visible = False
+        Dim obj As New Main_UserRight
+        obj.UserID_K = CurrentUser.UserID
+        obj.FormID_K = Tag
+        _db.GetObject(obj)
+        If obj.IsEdit = False And obj.IsAdmin = False Then
+            ViewAccess()
+        End If
+    End Sub
+    Sub ViewAccess()
+        btnSavePlan.Enabled = False
+        btnImport.Enabled = False
+    End Sub
+
+    Private Sub btnAdd_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAdd.ItemClick
+        GridView1.Columns.Clear()
+        If CheckTextLot() = False Then
+            txtFromLot.Select()
+            Return
+        End If
+        Dim dtPlan = _db.FillDataTable("SELECT ProcessCode, ProcessName, Note, TGGC
+                                        FROM PD_ProcessHourCIS")
+        For r = Integer.Parse(txtFromLot.Text) To Integer.Parse(txtToLot.Text)
+            dtPlan.Columns.Add(r.ToString.PadLeft(5, "0"))
+        Next
+        GridControl1.DataSource = dtPlan
+        GridControlSetFormat(GridView1, 3)
+        For Each c As GridColumn In GridView1.Columns
+            If c.VisibleIndex > GridView1.Columns("TGGC").VisibleIndex Then
+                GridView1.Columns(c.FieldName).Width = 90
+                GridControlSetFormatDateAndTime(c.FieldName)
+
+            End If
+        Next
+        GridView1.Columns("ProcessName").Width = 200
+        GridView1.Columns("ProcessCode").Visible = False
+    End Sub
+    Public Sub GridControlSetFormatDateAndTime(StringCols As String)
+        Dim editDate As New RepositoryItemDateEdit
+        editDate.EditMask = "HH:mm dd-MMM"
+        editDate.Mask.UseMaskAsDisplayFormat = True
+        For Each c As String In StringCols.Split(",")
+            With GridView1.Columns(c)
+                .ColumnEdit = editDate
+            End With
+        Next
+    End Sub
+    Function CheckTextLot() As Boolean
+        If txtFromLot.Text = "" Or txtToLot.Text = "" Then
+            ShowWarning("From Lot or To Lot is empty !")
+            Return False
+        End If
+        If Integer.Parse(txtFromLot.Text) > Integer.Parse(txtToLot.Text) Then
+            ShowWarning("Invalid Lot !")
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        GridControlReadOnly(GridView1, True)
+        For Each c As GridColumn In GridView1.Columns
+            If c.VisibleIndex > GridView1.Columns("TGGC").VisibleIndex Then
+                GridView1.Columns(c.FieldName).OptionsColumn.ReadOnly = False
+            End If
+        Next
+        If GridView1.Columns("TGGC") IsNot Nothing Then 'Test
+            GridView1.Columns("TGGC").OptionsColumn.ReadOnly = False 'Test
+        End If 'Test
+        GridControlSetColorEdit(GridView1)
+    End Sub
+
+    Dim _isEdit As Boolean = True
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If _isEdit And GridView1.Editable And e.Column.ReadOnly = False And e.Column.FieldName <> "TGGC" Then
+            _isEdit = False
+            Dim valNhap As DateTime = GetR(0, GridView1.GetVisibleColumn(GridView1.Columns("TGGC").VisibleIndex + 1))
+            Dim para(0) As SqlClient.SqlParameter
+            para(0) = New SqlClient.SqlParameter("@StartDate", valNhap.AddDays(-1))
+            Dim dtRestDay = _db.FillDataTable("
+                SELECT DATEADD(MINUTE, -1, StartDate) AS StartDate, DATEADD(MINUTE, -1, EndDate) AS EndDate
+                FROM FPICS_HolidayDate	
+                WHERE HolidayDate >= @StartDate
+                AND HolidayDate <= DATEADD(MONTH, 2, @StartDate)", para)
+            For Each c As GridColumn In GridView1.Columns
+                If c.VisibleIndex > GridView1.Columns(e.Column.FieldName).VisibleIndex Then
+                    Dim tggc = GridView1.GetFocusedRowCellValue("TGGC")
+                    Dim preCol = GridView1.GetVisibleColumn(c.VisibleIndex - 1)
+                    Dim preVal = GridView1.GetFocusedRowCellValue(preCol)
+                    For Each r As DataRow In dtRestDay.Rows
+                        If preVal >= r("StartDate") And preVal <= r("EndDate") Then
+                            preVal = r("EndDate")
+                        End If
+                    Next
+                    Dim val = DateTime.Parse(preVal).AddHours(tggc)
+                    Dim timeDuong = 0.0
+                    For Each r As DataRow In dtRestDay.Rows
+                        If val >= r("StartDate") And val <= r("EndDate") Then
+                            Dim addTime = tggc - (Date.Parse(r("StartDate")) - Date.Parse(preVal)).TotalHours
+                            If addTime > 0 Then
+                                timeDuong = addTime
+                            End If
+                            val = Date.Parse(r("EndDate")).AddHours(timeDuong)
+                        End If
+                    Next
+                    SetF(c, val)
+                End If
+            Next
+            _isEdit = True
+        End If
+    End Sub
+
+    Private Sub btnRun_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnRun.ItemClick
+        If GridView1.FocusedColumn.VisibleIndex <= GridView1.Columns("TGGC").VisibleIndex Or
+             IsDBNull(GetF(GridView1.FocusedColumn)) Then
+            Return
+        End If
+        _isEdit = False
+        For Each c As GridColumn In GridView1.Columns
+            If c.VisibleIndex >= GridView1.FocusedColumn.VisibleIndex Then
+                For r = GridView1.FocusedRowHandle + 1 To GridView1.RowCount - 1
+                    If r = 5 Then
+                        Dim sdf = 0
+                        Dim dtDebug = GridControl1.DataSource
+                    End If
+                    Dim upVal = GetR(r - 1, c)
+                    Dim val = DateTime.Parse(upVal).AddHours(GridView1.GetRowCellValue(r, "TGGC"))
+                    If GridView1.GetRowCellValue(r - 1, "ProcessCode") = "101" Then
+                        val = val.AddDays(2)
+                        SetR(r, c, val)
+                    ElseIf (GridView1.GetRowCellValue(r - 1, "ProcessCode") = "105" Or
+                        GridView1.GetRowCellValue(r - 1, "ProcessCode") = "405" Or
+                        GridView1.GetRowCellValue(r - 1, "ProcessCode") = "414") And
+                        (c.VisibleIndex > GridView1.FocusedColumn.VisibleIndex Or
+                            IsDate(GetR(0, GridView1.GetVisibleColumn(c.VisibleIndex - 1)))) Then
+                        If (DateTime.Parse(GetR(r - 1, c)) - DateTime.Parse(GetR(r - 1, GridView1.GetVisibleColumn(c.VisibleIndex - 1)))).TotalHours <= 6 Then
+                            If IsDate(GetR(r, GridView1.GetVisibleColumn(c.VisibleIndex - 1))) And
+                                    IsDate(GetR(r, GridView1.GetVisibleColumn(c.VisibleIndex - 2))) Then
+                                If GetR(r, GridView1.GetVisibleColumn(c.VisibleIndex - 1)) <>
+                                        GetR(r, GridView1.GetVisibleColumn(c.VisibleIndex - 2)) Then
+                                    SetR(r, c, val)
+                                    SetR(r, GridView1.GetVisibleColumn(c.VisibleIndex - 1), val)
+                                    GoTo Flag
+                                Else
+                                    SetR(r, c, val)
+                                End If
+                            Else
+                                SetR(r, c, val)
+                                SetR(r, GridView1.GetVisibleColumn(c.VisibleIndex - 1), val)
+                                GoTo Flag
+                            End If
+                            If False Then
+Flag:
+                                Dim dtDebug2 = GridControl1.DataSource
+                                For r2 = r + 1 To GridView1.RowCount - 1
+                                    Dim upVal2 = DateTime.Parse(GetR(r2 - 1, GridView1.GetVisibleColumn(c.VisibleIndex - 1)))
+                                    Dim val2 = upVal2.AddHours(GridView1.GetRowCellValue(r2, "TGGC"))
+                                    SetR(r2, GridView1.GetVisibleColumn(c.VisibleIndex - 1), val2)
+                                Next
+                                SetR(r + 1, c, val.AddHours(GridView1.GetRowCellValue(r + 1, "TGGC") * 2))
+                                r += 1
+                            End If
+                        Else
+                            SetR(r, c, val)
+                        End If
+                    Else
+                        SetR(r, c, val)
+                    End If
+                    'Dim preCol = GridView1.GetVisibleColumn(c.VisibleIndex - 1).FieldName
+                    'If c.VisibleIndex > GridView1.FocusedColumn.VisibleIndex Then
+                    '    If val < GridView1.GetRowCellValue(r, preCol) Then
+                    '        val = GridView1.GetRowCellValue(r, preCol)
+                    '    End If
+                    'End If
+                Next
+            End If
+        Next
+        _isEdit = True
+        OffDayOff_3Ca()
+    End Sub
+    Sub OffDayOff_3Ca()
+        Dim valNhap As DateTime = GetR(0, GridView1.GetVisibleColumn(GridView1.Columns("TGGC").VisibleIndex + 1))
+        Dim para(0) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@StartDate", valNhap.AddDays(-1))
+        Dim dtRestDay = _db.FillDataTable("
+            SELECT DATEADD(MINUTE, -1, StartDate) AS StartDate, DATEADD(MINUTE, -1, EndDate) AS EndDate
+            FROM FPICS_HolidayDate	
+            WHERE HolidayDate >= @StartDate
+            AND HolidayDate <= DATEADD(MONTH, 2, @StartDate)", para)
+        For Each r As DataRow In dtRestDay.Rows
+
+        Next
+    End Sub
+    Function GetR(r As Integer, c As GridColumn) As Object
+        Return GridView1.GetRowCellValue(r, c)
+    End Function
+    Function GetF(c As GridColumn) As Object
+        Return GridView1.GetFocusedRowCellValue(c)
+    End Function
+    Sub SetF(c As GridColumn, value As Object)
+        GridView1.SetFocusedRowCellValue(c, value)
+    End Sub
+    Sub SetR(r As Integer, c As GridColumn, value As Object)
+        GridView1.SetRowCellValue(r, c, value)
+    End Sub
+
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        GridControlSetFormat(GridView1, 3)
+    End Sub
+
+    Private Sub btnSavePlan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSavePlan.ItemClick
+        Dim obj As New PD_PlanHourCIS
+        obj.PlanDate_K = dteNgay.DateTime
+    End Sub
+End Class

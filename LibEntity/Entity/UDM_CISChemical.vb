@@ -1,0 +1,44 @@
+
+ Public Class UDM_CISChemical
+     Public ID_K As String 
+     Public STT As  Integer 
+     Public NDVCode As String 
+     Public TenThuongMai As String 
+     Public MaSoCAS As String 
+     Public CTHH As String 
+     Public TenUIPAC As String 
+     Public HamLuong As Decimal 
+     Public TrangThaiVatLy As String 
+     Public pH As String 
+     Public NhaCungCap As String 
+     Public DiaChi As String 
+     Public MaNuoc As String 
+     Public MST As String 
+     Public HinhThucNhap As String 
+     Public Ma As String 
+     Public Ten As String 
+     Public QuyCachDongGoi As String 
+     Public DonViTinhERP As String 
+     Public QuyDoiSangKGM As Decimal 
+     Public EcusCode As String 
+     Public TenHang As String 
+     Public DonViTinh As String 
+     Public HoaChatSXKDCoDieuKien As String 
+     Public HoaChatHanCheSXKD As String 
+     Public HoaChatCam As String 
+     Public HoaChatXayDung As String 
+     Public HoaChatPhaiKhai As String 
+     Public TienChatCongNghiep As String 
+     Public NhomTienChatCongNghiep As String 
+     Public GhiChuHQ As String 
+     Public NghiDinh382014 As String 
+     Public NghiDinh132018 As String 
+     Public BaoCaoNguyHaiVatLy As String 
+     Public VatLieuKhongTuongThich As String 
+     Public KhoLuongPhuongAn1 As String 
+     Public KhoLuongPhuongAn2 As String 
+     Public DiemDacBiet As String 
+     Public GhiChu As String 
+     Public CreatedDate As DateTime 
+     Public CreatedUser As String 
+ End  Class

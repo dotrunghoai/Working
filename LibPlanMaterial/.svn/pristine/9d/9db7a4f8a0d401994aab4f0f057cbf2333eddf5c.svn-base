@@ -1,0 +1,203 @@
+﻿Imports System.Drawing
+Imports CommonDB
+Imports DevExpress.XtraGrid.Views.BandedGrid
+Imports PublicUtility
+Public Class FrmShowHaoPhi
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+
+    Private Sub FrmShowHaoPhi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dteStartDate.EditValue = GetStartDayOfYearNormal(Date.Now)
+        dteEndDate.EditValue = GetEndDayOfYearNormal(Date.Now)
+    End Sub
+
+    Private Sub btnShow_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        BandedGridView1.Bands.Clear()
+        BandedGridView1.Columns.Clear()
+        Dim para(1) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@StartDate", dteStartDate.EditValue)
+        para(1) = New SqlClient.SqlParameter("@EndDate", dteEndDate.EditValue)
+        Dim dt = _db.ExecuteStoreProcedureTB("sp_PLM_LoadHaoPhi", para)
+        GridControl1.DataSource = dt
+
+        Dim bandTuanImport As New GridBand
+        BandedGridView1.Bands.Add(bandTuanImport)
+        bandTuanImport.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Dim colTuanImport As New BandedGridColumn
+        colTuanImport.FieldName = "TuanImport"
+        colTuanImport.Visible = True
+        BandedGridView1.Columns.Add(colTuanImport)
+        colTuanImport.OwnerBand = bandTuanImport
+
+        Dim bandJCode As New GridBand
+        BandedGridView1.Bands.Add(bandJCode)
+        bandJCode.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Dim colJCode As New BandedGridColumn
+        colJCode.FieldName = "JCode"
+        colJCode.Visible = True
+        BandedGridView1.Columns.Add(colJCode)
+        colJCode.OwnerBand = bandJCode
+
+        Dim bandHPGSR As New GridBand
+        BandedGridView1.Bands.Add(bandHPGSR)
+        Dim colHPGSR As New BandedGridColumn
+        colHPGSR.FieldName = "HaoPhiGSR"
+        colHPGSR.Visible = True
+        BandedGridView1.Columns.Add(colHPGSR)
+        colHPGSR.OwnerBand = bandHPGSR
+
+        Dim bandHPKhac As New GridBand
+        BandedGridView1.Bands.Add(bandHPKhac)
+        Dim colHPKhac As New BandedGridColumn
+        colHPKhac.FieldName = "HaoPhiKhac"
+        colHPKhac.Visible = True
+        BandedGridView1.Columns.Add(colHPKhac)
+        colHPKhac.OwnerBand = bandHPKhac
+
+        Dim bandHPU0 As New GridBand
+        BandedGridView1.Bands.Add(bandHPU0)
+        Dim colHPU0 As New BandedGridColumn
+        colHPU0.FieldName = "HaoPhiU0"
+        colHPU0.Visible = True
+        BandedGridView1.Columns.Add(colHPU0)
+        colHPU0.OwnerBand = bandHPU0
+
+        Dim bandHPPerc As New GridBand
+        bandHPPerc.Caption = "Hao phí (%)"
+        bandHPPerc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        bandHPPerc.AppearanceHeader.BackColor = Color.Red
+        bandHPPerc.AppearanceHeader.Options.UseTextOptions = True
+        BandedGridView1.Bands.Add(bandHPPerc)
+        Dim bandHPQty As New GridBand
+        bandHPQty.Caption = "Hao phí (Qty)"
+        bandHPQty.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        bandHPQty.AppearanceHeader.BackColor = Color.Blue
+        bandHPQty.AppearanceHeader.Options.UseTextOptions = True
+        BandedGridView1.Bands.Add(bandHPQty)
+        Dim bandChuan As New GridBand
+        bandChuan.Caption = "Chuẩn (Qty)"
+        bandChuan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        bandChuan.AppearanceHeader.BackColor = Color.Green
+        bandChuan.AppearanceHeader.Options.UseTextOptions = True
+        BandedGridView1.Bands.Add(bandChuan)
+        For Each c As DataColumn In dt.Columns
+            If dt.Columns.IndexOf(c.ColumnName) > dt.Columns.IndexOf("JCode") Then
+                If c.ColumnName.ToString.Contains("HPQty") Then
+                    Dim colHPQty As New BandedGridColumn
+                    colHPQty.FieldName = c.ColumnName
+                    colHPQty.Visible = True
+                    BandedGridView1.Columns.Add(colHPQty)
+                    colHPQty.OwnerBand = bandHPQty
+                ElseIf c.ColumnName.ToString.Contains("Chuan") Then
+                    Dim colChuan As New BandedGridColumn
+                    colChuan.FieldName = c.ColumnName
+                    colChuan.Visible = True
+                    BandedGridView1.Columns.Add(colChuan)
+                    colChuan.OwnerBand = bandChuan
+                ElseIf c.ColumnName.ToString.Contains("HPPerc") Then
+                    Dim colHPPerc As New BandedGridColumn
+                    colHPPerc.FieldName = c.ColumnName
+                    colHPPerc.Visible = True
+                    BandedGridView1.Columns.Add(colHPPerc)
+                    colHPPerc.OwnerBand = bandHPPerc
+                End If
+            End If
+        Next
+
+        GridControlSetFormat(BandedGridView1)
+        GridControlSetWidth(BandedGridView1, 75)
+    End Sub
+
+    Private Sub btnImport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnImport.ItemClick
+        Dim dt As DataTable = ImportEXCEL(True)
+        If dt.Rows.Count > 0 Then
+            Dim succ = 0
+            Try
+                _db.BeginTransaction()
+                For Each r As DataRow In dt.Rows
+                    If IsDBNull(r("JCode")) Then Continue For
+                    'INSERT PLM_HaoPhiData
+                    Dim obj As New PLM_HaoPhiData
+                    obj.TuanImport_K = "W" + GetFirstDayOfWeek(dteStartDate.EditValue).ToString("yyyyMMdd")
+                    obj.JCode_K = r("JCode")
+                    obj.LoaiHaoPhi_K = r("LoaiHaoPhi")
+                    For Each c As DataColumn In dt.Columns
+                        If IsDBNull(r(c)) Then Continue For
+                        If dt.Columns.IndexOf(c.ColumnName) > dt.Columns.IndexOf("LoaiHaoPhi") Then
+                            obj.ThangHaoPhi_K = Date.Parse(c.ColumnName)
+                            obj.Qty = r(c)
+                            obj.CreateUser = CurrentUser.UserID
+                            obj.CreateDate = DateTime.Now
+                            If _db.ExistObject(obj) Then
+                                _db.Update(obj)
+                            Else
+                                _db.Insert(obj)
+                                succ += 1
+                            End If
+                        End If
+                    Next
+
+                    'INSERT PLM_HaoPhiQuantity
+                    Dim objQ As New PLM_HaoPhiQuantity
+                    objQ.TuanImport_K = "W" + GetFirstDayOfWeek(dteStartDate.EditValue).ToString("yyyyMMdd")
+                    objQ.JCode_K = r("JCode")
+                    If IsNumeric(r("Hao Phi U0")) Then
+                        objQ.HaoPhiU0 = r("Hao Phi U0")
+                    End If
+                    If IsNumeric(r("Hao Phi Khac")) Then
+                        objQ.HaoPhiKhac = r("Hao Phi Khac")
+                    End If
+                    If _db.ExistObject(objQ) Then
+                        _db.Update(objQ)
+                    Else
+                        _db.Insert(objQ)
+                    End If
+                Next
+                _db.Commit()
+                ShowSuccess(succ)
+            Catch ex As Exception
+                _db.RollBack()
+                ShowWarning(ex.Message)
+            End Try
+        Else
+            ShowWarning("Không có dữ liệu !")
+        End If
+    End Sub
+
+    Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        GridControlReadOnly(BandedGridView1, True)
+        BandedGridView1.Columns("HaoPhiKhac").OptionsColumn.ReadOnly = False
+        BandedGridView1.Columns("HaoPhiU0").OptionsColumn.ReadOnly = False
+        GridControlSetColorEdit(BandedGridView1)
+    End Sub
+
+    Private Sub BandedGridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles BandedGridView1.CellValueChanged
+        If BandedGridView1.Editable And e.Column.ReadOnly = False Then
+            Dim para(0) As SqlClient.SqlParameter
+            para(0) = New SqlClient.SqlParameter("@Value", e.Value)
+            _db.ExecuteNonQuery(String.Format("UPDATE PLM_HaoPhiQuantity
+                                               SET {0} = @Value
+                                               WHERE TuanImport = '{1}'
+                                               AND JCode = '{2}'",
+                                               e.Column.FieldName,
+                                               BandedGridView1.GetFocusedRowCellValue("TuanImport"),
+                                               BandedGridView1.GetFocusedRowCellValue("JCode")), para)
+            Dim hpU0 As Object = BandedGridView1.GetFocusedRowCellValue("HaoPhiU0")
+            Dim hpKhac As Object = BandedGridView1.GetFocusedRowCellValue("HaoPhiKhac")
+            If IsNumeric(hpU0) Then
+                If hpU0 > 0 Then
+                    BandedGridView1.SetFocusedRowCellValue("HaoPhiGSR", hpU0)
+                End If
+            ElseIf IsNumeric(hpKhac) Then
+                If hpKhac > 0 Then
+                    BandedGridView1.SetFocusedRowCellValue("HaoPhiGSR", hpKhac)
+                End If
+            Else
+                BandedGridView1.SetFocusedRowCellValue("HaoPhiGSR", Nothing)
+            End If
+        End If
+    End Sub
+
+    Private Sub btnExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExport.ItemClick
+        GridControlExportExcel(BandedGridView1)
+    End Sub
+End Class

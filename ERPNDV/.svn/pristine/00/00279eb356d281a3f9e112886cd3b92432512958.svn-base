@@ -1,0 +1,28 @@
+=================================================================================================
+DateTime:18-Nov-2019 09:00:03
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibCosting.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:18-Nov-2019 15:35:32
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:PrintLabel SI600
+FunctionName:Print
+Error:Object variable or With block variable not set.
+=================================================================================================
+DateTime:18-Nov-2019 15:37:44
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:PrintLabel SI600
+FunctionName:Print
+Error:Object variable or With block variable not set.
+=================================================================================================
+DateTime:18-Nov-2019 15:46:10
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:PrintLabel SI600
+FunctionName:Print
+Error:Object variable or With block variable not set.

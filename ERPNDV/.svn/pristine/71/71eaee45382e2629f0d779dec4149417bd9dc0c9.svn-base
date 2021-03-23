@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:22-Apr-2020 09:51:51
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmImportCreate
+FunctionName:SetFormEvents
+Error:The connection has been disabled.
+=================================================================================================
+DateTime:22-Apr-2020 09:52:28
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmImportCreate
+FunctionName:SetFormEvents
+Error:ERROR [HYT00] [IBM][System i Access ODBC Driver]Connection login timed out.

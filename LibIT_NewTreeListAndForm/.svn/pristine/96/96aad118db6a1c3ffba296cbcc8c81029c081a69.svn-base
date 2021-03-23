@@ -1,0 +1,4 @@
+﻿Public Class Main_TestTreeList_Employee
+    Public EmpID_K As String
+    Public FormID_K As String
+End Class

@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:07-Sep-2018 14:40:16
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibPEMachine.FrmApproved' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

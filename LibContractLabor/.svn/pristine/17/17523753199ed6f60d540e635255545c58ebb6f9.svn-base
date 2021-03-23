@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="DefaultToolTipController1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblHuongDan.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        pgAAAKYB3X3/OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFgSURBVEhLpdUv
+        SwRRFAXwuysWxaJVxPXvB9hqEotR8SsIFj/AFkGTRcFgMRkELVbBahLMYrYKBk0GYTx3fc89Z/fN+GZ3
+        4Ad77rx7b5mdsaIo/uCag32ujUqD2Tz4j0Ouj0JDb4E7hybfH4YGs1YYHt3AOJ+pS8PgAncPk3yuDg3p
+        Be4RpvlsLg1mC2FgyjPM8vkcGqoXuFdY5Z7/aDBbDIOqvEGb+6poyFvgPmGde8toyF/gvmCb+1M0mC2F
+        5lzfsMsz+mmovyDq8BymYfgF7gQaPK87U4LZcjg8rEsYk5kS8hdcww5sQBv84ZgBGd6dKSF/wRP3VdFg
+        tkJDortEza1xbxkNgwsuoAn+RuW6u+XeMhrwnqEBZ9B9KnBthhrz/0CL+1M09BYc99Ub8BLusVM+l6Lh
+        d8EB1+jeHsTB0QdMpc5HGiq+wbgm4B3i8AfYgsrvdrJYBtcRXEHm67qwH80jnM4JmQ6aAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="ToolTipItem1.Text" xml:space="preserve">
+    <value>1. Mục (1A): Sức khỏe: (GA) ghi nhận số ngày nghỉ ốm trong thời gian thử việc hoặc trong năm gần nhất.　
+項目（１A）「健康」：（GA）は試用期間中あるいは直年の病気休暇の日数を記載する。
+
+2. Mục (2A): Vi phạm Nội quy công ty: (GA) ghi nhận số lần vi phạm kỷ luật trong thời gian thử việc hoặc trong năm gần nhất
+項目（２A）「就業規則違反」：（GA）は試用期間中あるいは直年の規律違反回数を記載する。
+
+3. Mục (3A): Đánh giá kết quả hoàn thành công việc: Bộ phận liên quan đánh giá thành tích công việc trong thời gian thử việc hoặc trong năm gần nhất. Đánh giá (A, B, C, D, E) theo Form GA-F-127b đính kèm          
+項目（３A）「業務完了結果評定」：関連部署は試用期間あるいは直年の業務完了を評定する。
+添付GA-F-127b 様式により評定を行う（A,B,C,D,E）
+
+4. Mục (4A): Đánh giá ký hợp đồng lao động: Dựa trên kết quả mục (1A) (2A) (3A) bộ phận liên quan đánh giá kết quả cuối cùng để ký hợp đồng lao động
+                   X: Không đáp ứng yêu cầu công việc;           O: Đáp ứng yêu cầu công việc
+項目（４A）「雇用契約締結の評定」：関連部署は項目（１A）（２A）（３A）を基づいて最後結果を評定して、雇用契約締結を実行する。
+　　　　   X:業務要求満たさない　　　                   O:業務要求満たす
+
+ 5. Kết quả đánh giá nhân viên mới để ký hợp đồng lao động có thời hạn 1 năm phải gởi về phòng Nhân sự trước 7 ngày trước khi hợp đồng học nghề/ thử việc hết hiệu lực.
+1年間労働契約書を締結するように、新社員の考課は試用期間が完了する前に7日間以内人事課に送らなければなりません。
+
+6. Kết quả đánh giá nhân viên để tái ký hợp đồng lao động  phải gởi về phòng Nhân sự trước 30 ngày trước khi hợp đồng lao động hết hiệu lực.
+労働契約書を継続するように、従業員の考課は本契約書が完了する前に30日間以内人事課に送らなければなりません。</value>
+  </data>
+  <data name="ToolTipItem2.Text" xml:space="preserve">
+    <value>1. Nhân viên Operator: đánh giá từ mục (1) → (4); nhân viên Staff và cấp quản lý từ Head operator trở lên: đánh giá từ mục (1) → (7)
+オペレーターの場合：項目（１）～（４）まで評定；スタッフ及びヘッドオペレーター以上の管理者の場合：項目（１）～（７）まで評定
+
+2. Đánh giá theo thang điểm từ 1 đến 10. Điểm trung bình sẽ được đánh giá xếp loại (A, B, C, D, E) như sau:
+10点満点（1～10点）で評定を行う。平均点は次のランキング（A,B,C,D,E)の通りだ。
+
+Điểm trung bình     Kết quả xếp loại
+   9 ≤ x &lt; 10      :               A
+   8 ≤ x &lt; 9        :               B
+   7 ≤ x &lt; 8        :               C
+   5 ≤ x &lt; 7        :               D
+          x &lt; 5        :               E
+
+3. Kết quả đánh giá của nhân viên (A, B, C, D, E) sẽ được cập nhật vào mục (3A): Kết quả hoàn thành công việc trong biểu mẫu GA-F-127 a
+従業員評定結果（A,B,C,D,E)はGA-F-127 a様式の項目（３A）「業務完了結果評定」に更新される。</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>76</value>
+  </metadata>
+</root>

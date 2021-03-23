@@ -1,0 +1,35 @@
+=================================================================================================
+DateTime:03-Nov-2017 15:14:45
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRectifyProductionProcessing
+FunctionName:CreateCLExposure
+Error:The connection was not closed. The connection's current state is connecting.
+=================================================================================================
+DateTime:03-Nov-2017 15:14:52
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRectifyProductionProcessing
+FunctionName:CreateCLExposure
+Error:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+=================================================================================================
+DateTime:03-Nov-2017 15:14:55
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRectifyProductionProcessing
+FunctionName:SetFormEvents
+Error:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+=================================================================================================
+DateTime:03-Nov-2017 15:14:58
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRectifyProductionProcessing
+FunctionName:SetFormEvents
+Error:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+=================================================================================================
+DateTime:03-Nov-2017 15:15:00
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmRectifyProductionProcessing
+FunctionName:SetFormEvents
+Error:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)

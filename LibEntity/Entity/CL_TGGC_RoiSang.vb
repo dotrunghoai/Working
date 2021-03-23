@@ -1,0 +1,44 @@
+
+ Public Class CL_TGGC_RoiSang
+     Public ID_K As String 
+     Public ProductCode_K As String 
+     Public MayRS As String 
+     Public BeRong As String 
+     Public A1 As Decimal 
+     Public A2 As Decimal 
+     Public B1 As Decimal 
+     Public B2 As Decimal 
+     Public S As Decimal 
+     Public D1 As Decimal 
+     Public D2 As Decimal 
+     Public DAAuto As Decimal 
+     Public DBHand As Decimal 
+     Public DHand As Decimal 
+     Public C00 As Decimal 
+     Public C05 As Decimal 
+     Public S00 As Decimal 
+     Public S01 As Decimal 
+     Public T00 As Decimal 
+     Public T01 As Decimal 
+     Public LAN1 As Decimal 
+     Public LAN2 As Decimal 
+     Public NEWLASER As Decimal 
+     Public INS1 As Decimal 
+     Public INS2 As Decimal 
+     Public INS3 As Decimal 
+     Public OUTGOING As Decimal 
+     Public INS1_Leadtime As Decimal 
+     Public INS2_Leadtime As Decimal 
+     Public INS3_Leadtime As Decimal 
+     Public OUTGOING_Leadtime As Decimal 
+     Public S_TGGC As Decimal 
+     Public S00_TGGC As Decimal 
+     Public S01_TGGC As Decimal 
+     Public T01_TGGC As Decimal 
+     Public PR As Decimal 
+     Public NI As Decimal 
+     Public BH As Decimal 
+     Public RS As Decimal 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

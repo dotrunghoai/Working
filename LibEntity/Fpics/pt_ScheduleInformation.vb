@@ -1,0 +1,46 @@
+
+ Public Class pt_ScheduleInformation
+     Public ProductCode_K As String 
+     Public RevisionCode_K As String 
+     Public ComponentCode_K As String 
+     Public LotNumber_K As String 
+     Public ProcessNumber As String 
+     Public ProcessCode As String 
+     Public StatusFlag As String 
+     Public FactoryCode As String 
+     Public DestinationFactoryCode As String 
+     Public Status As String 
+     Public StartQuantity As  Integer 
+     Public StartSheet As  Integer 
+     Public ProgressQuantity As  Integer 
+     Public EstimatedQuantity As  Integer 
+     Public StockQuantity As  Integer 
+     Public CompleteQuantity As  Integer 
+     Public DeleteCauseCode As String 
+     Public RecentPassRatio As double
+     Public EstimatedPassRatio As double
+     Public SOType As String 
+     Public SOCount As  Integer 
+     Public MainSONumber As String 
+     Public MainCustomerPONumber As String 
+     Public MainNJBillToPONumber As String 
+     Public MainNJBillToCSPONumber As String 
+     Public ShipTo As String 
+     Public ItemCode As String 
+     Public ItemType As String 
+     Public Remarks As String 
+     Public ReceivedDate As DateTime 
+     Public ETAreq As DateTime 
+     Public ETCans As DateTime 
+     Public SOBalanceQuantitySum As  Integer 
+     Public SOAdjustQuantitySum As  Integer 
+     Public ModifiedQuantity As  Integer 
+     Public ExpireDate As DateTime 
+     Public ShipLimitDate As DateTime 
+     Public Note As String 
+     Public POCount As  Integer 
+     Public MainPONumber As String 
+     Public POBalanceQuantitySum As  Integer 
+     Public EntryDate As DateTime 
+     Public ChangeDate As DateTime 
+ End  Class

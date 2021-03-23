@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:30-May-2017 10:25:06
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:Save
+Error:Object of type 'System.Int64' cannot be converted to type 'System.Int32'.
+=================================================================================================
+DateTime:30-May-2017 10:36:57
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:Save
+Error:Object of type 'System.Int64' cannot be converted to type 'System.Int32'.
+=================================================================================================
+DateTime:30-May-2017 14:34:42
+UserID:15180-Trương Minh Tâm 
+PC:V00619-tmtam
+ClassOrForm:FrmApprover
+FunctionName:SetFormEvents
+Error:Column '[GACID]' does not belong to table .

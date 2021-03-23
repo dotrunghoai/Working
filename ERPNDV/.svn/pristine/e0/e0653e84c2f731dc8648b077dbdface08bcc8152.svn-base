@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<configuration> 
+      <connectionStrings>
+        <add connectionString="" name="FPICS"/>
+        <add connectionString="" name="NDV-ERP"/>
+        <add connectionString="" name="NDV-Old"/>
+        <add connectionString="" name="AS400"/>
+        <add connectionString="\\10.153.1.1\common\IT\Programs\Programs_NDV\ERPNDV" name="ERPUpdate"/>
+      </connectionStrings>
+  <startup>
+    
+  <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6"/></startup>
+
+</configuration>

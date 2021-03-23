@@ -1,0 +1,70 @@
+=================================================================================================
+DateTime:17-Jan-2019 11:47:56
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLToshibaS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:48:28
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLSeagateS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:49:18
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLSeagateS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:50:07
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLSeagateS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:50:33
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLSeagateS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:50:58
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLSeagateS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:52:03
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLSeagateS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 11:59:37
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLToshibaS00
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:17-Jan-2019 13:15:17
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLToshibaS00
+Error:Conversion from type 'DBNull' to type 'Date' is not valid.
+=================================================================================================
+DateTime:17-Jan-2019 13:30:12
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmStartup
+FunctionName:ApproveList
+Error:Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=2854; handshake=64; 

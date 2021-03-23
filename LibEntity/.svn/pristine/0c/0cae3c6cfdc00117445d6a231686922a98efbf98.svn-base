@@ -1,0 +1,23 @@
+
+ Public Class STM_StockIn
+     Public ID_K As String 
+     Public JCODE_K As String 
+     Public JNAME As String 
+     Public WHCODE As String 
+     Public WHNAME As String 
+     Public WHTYPE As String 
+     Public PURCHASEDATE_K As DateTime 
+     Public TRANSDATE As DateTime 
+     Public PURCHASE As String 
+     Public PO_K As String 
+     Public INVOICE_K As String 
+     Public UNITCOST As Decimal 
+     Public ACTUALQTY As  Integer 
+     Public CARTONQTY As  Integer 
+     Public TOTALCOST As Decimal 
+     Public CURRENCY As String 
+     Public UNITCODE As String 
+     Public VENDORCODE As String 
+     Public VENDORNAME As String 
+     Public UpdateDate As DateTime 
+ End  Class

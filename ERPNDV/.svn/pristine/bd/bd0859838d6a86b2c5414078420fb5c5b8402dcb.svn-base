@@ -1,0 +1,42 @@
+=================================================================================================
+DateTime:15-Jan-2018 11:46:26
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmProductLeadTime
+FunctionName:Import
+Error:Public member 'Value' on type 'Double' not found.
+=================================================================================================
+DateTime:15-Jan-2018 11:46:50
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmProductLeadTime
+FunctionName:Import
+Error:Public member 'Value' on type 'Double' not found.
+=================================================================================================
+DateTime:15-Jan-2018 11:50:51
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLExposure
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:15-Jan-2018 13:19:34
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLExposure
+Error:The process cannot access the file 'D:\ERPNDV\ERPNDV\bin\Debug\Template Excel\Template PP\Export\HP_SS_Exposure.xlsx' because it is being used by another process.
+=================================================================================================
+DateTime:15-Jan-2018 13:21:01
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLExposure
+Error:Exception from HRESULT: 0x800A01A8
+=================================================================================================
+DateTime:15-Jan-2018 13:46:25
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmVeChinhLuuCD
+FunctionName:CreateCLExposure
+Error:Object reference not set to an instance of an object.

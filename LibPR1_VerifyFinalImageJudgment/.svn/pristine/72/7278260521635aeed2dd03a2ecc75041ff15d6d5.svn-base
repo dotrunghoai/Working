@@ -1,0 +1,41 @@
+
+ Public Class PR1_VFIJ_VerifyFinalImageJudgment
+    Public ProductCode_K As String
+    Public LotNumber_K As String
+    Public ChangeDate As DateTime
+    Public CoAOIHayKhong As String
+    Public TotalBarcodeKiemThucTe As Integer
+    Public TongKetLoiDenBarcode As Integer
+    Public Err001_Ship As Integer
+    Public Err002_Ship As Integer
+    Public Err003_Ship As Integer
+    Public Err004_Ship As Integer
+    Public Err005_Ship As Integer
+    Public Err006_Ship As Integer
+    Public Err007_Ship As Integer
+    Public Err009_Ship As Integer
+    Public Err627_Ship As Integer
+    Public Err639_Ship As Integer
+    Public Other_Ship As Integer
+    Public Err005_Image As Integer
+    Public Err001_Image As Integer
+    Public Err002_004_009_Image As Integer
+    Public Err007_Image As Integer
+    Public Err003_Image As Integer
+    Public Err006_Image As Integer
+    Public Err639_Image As Integer
+    Public Err627_Image As Integer
+    Public Err001_Actual As Integer
+    Public Err002_Actual As Integer
+    Public Err003_Actual As Integer
+    Public Err004_Actual As Integer
+    Public Err005_Actual As Integer
+    Public Err006_Actual As Integer
+    Public Err007_Actual As Integer
+    Public Err009_Actual As Integer
+    Public Err627_Actual As Integer
+    Public Err639_Actual As Integer
+    Public Other_Actual As Integer
+    Public MSNVTongKet As String
+    Public GhiChu As String
+End  Class

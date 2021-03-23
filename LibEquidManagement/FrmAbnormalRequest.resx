@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="XtraTabPage1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKDSURBVEhLtZTf
+        S1NhGMdHEIVX1V39FUI3dtNNVGSUV5lFhiAOKcTsIqGUsBuNVEbNWakZGVZYmkzdsjVxuHLt2DaPGtvO
+        j+nmlo2KpZ5zNh3fjkePNrbmjtoDn6vznOfzvu/35VXJhTPqLJy+yCOvEK5b2rFLegFbhFQT2L02dqNw
+        rigbJ/OB/GI4qprthWJzlSWO2yOZU25aWpUYFw+ujd2ocK3ucKygdJG/UhkYbe6zXDcJxFa5O4JDa2M3
+        ysoiu9e7jFH/EthwbFv4wkjeQToBNRdD8QCPnE4OZSYBL8komO+JPX+jWHDkBYcDukVo+2k0GGakc9bY
+        okl9MooEryej2KVZQNkbP6DvQPyLGRWGiCQh/ImDZRQJbg4LkqCk+wfi/c8RsZlR2j8vCfrciYNlFAna
+        HFHsawiDz1dDuFYF/kYN5u48QFHvAkZ8iYNlFGdQ3kgAuQVASfk67cZAUp+MYoF3OgKu+h6i1bUSvzr7
+        wIS4pD4ZxQKlbCrQeKzoYJwYmKElJuZ+gxXvPUnPg6RSMyF+y0jQzYSgGlQjx1aHU8R9nCA0aPJ+hCfA
+        obuH+ic9b2nQ34TNBV1MQBK00Ha887M472iBlrKCEndgZpfxwZeaIREmkx3IgjxCh8uupzhmb5QEK08D
+        GUxDKJaZwDotINfehMpJPeo9wxKW2SBoUTA2u5QW+X3aNOSVpu2QVvDeF8F+cwWOf9agwNEq0eWbgtvP
+        4cmjcbQ+dKWk/TGpLOTS8Veoc5txwdm2noFTPAZnMDUuEUUh13wdhI76tB7yjmVgYH9ir+kqjtrqcXZM
+        J/GMde7cNf1vIeuDyDLScX5IXCWd4icFTHm92LM6VaX6A+pbU36QCVVMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="LabelControl30.Text" xml:space="preserve">
+    <value>Thiết bị đo lường mà có mã tài sản cố định sẽ được hủy bỏ sau khi được xác nhận bằng báo cáo hủy bỏ đặc biệt. (Measurement equipment which have fixed assets no. shall be abolished after approved with special abolishment notification)</value>
+  </data>
+  <data name="MemoEdit15.EditValue" xml:space="preserve">
+    <value>Có khả năng sản phẩm không phù hợp đã xuất hàng? Nếu có, thì trưởng bộ phận bảo đảm chất lượng có thông tin cho khách hàng về vấn đề này.
+Is there possibility that nonconformation product had been shipped? If yes, quality assurance dept. Manager shall inform the customer about the matter.</value>
+  </data>
+  <data name="LabelControl12.Text" xml:space="preserve">
+    <value>Nếu xác nhận có ảnh hưởng. Thực hiện Kiểm tra và điền thông tin sản phẩm không phù hợp vào yêu cầu bên dưới/ 
+If Select "influence on product quality" , check and fill the information of nonconfirming product into below.</value>
+  </data>
+  <data name="XtraTabPage2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFmSURBVEhLYwCB
+        51//ez77/P8/MTjx4I9rYE2kAFIs0Fj983/43u8noFqJA8gWnLz6/v/2g09R8PXH31EsAFuy7/txqHbC
+        ANmC2taj/y3t5qPgdTsfYFgAwsmHv36ddfPlBWx48d133lDjUS248fT7//O3P6Hg+69/Y7UAhJMOff7f
+        c+UpBl5463Ut1HjS44AYS3Ba0Dvt3P/gyLUoePuhp3ALbDb9wIprz3whzoLV2+7/b+07iYKPX34Ht2D3
+        k09Y8X6gJFEWEMLYDAdhoi3Ydez5/7nLr+PEyYmLUfDKU49Is6Cu7eh/a4cFOLEJbxoKnrT8HGkWEMLI
+        wYKMB48FNA8imkcyIYwcLMiYaAuwZTRk7O/Uj4IXH7hLmgXYigpkbC5RgIKnrb9MmgWEMHKwIOOBteDp
+        p//qz7/874DhK29/vbv05ud/bHgPUDE2vOPJR9wWoAOgi26juxCGkQ3Bh4eLBQwMAMmrR0oRcgykAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+</root>

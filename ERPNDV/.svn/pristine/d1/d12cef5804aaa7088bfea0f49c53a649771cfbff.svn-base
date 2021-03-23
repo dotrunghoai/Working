@@ -1,0 +1,16 @@
+=================================================================================================
+DateTime:20-Mar-2019 15:33:41
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmKQCVNEW
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_KQQC_DetailNew_KQQC_KQCVNew". The conflict occurred in database "NDVERP", table "dbo.KQQC_KQCVNew", column 'ID'.
+The statement has been terminated.
+=================================================================================================
+DateTime:20-Mar-2019 15:33:47
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmKQCVNEW
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_KQQC_DetailNew_KQQC_KQCVNew". The conflict occurred in database "NDVERP", table "dbo.KQQC_KQCVNew", column 'ID'.
+The statement has been terminated.

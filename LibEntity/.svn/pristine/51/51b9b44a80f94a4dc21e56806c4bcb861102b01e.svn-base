@@ -1,0 +1,20 @@
+
+ Public Class UDM_MsJCode
+     Public IdxGroup As  Integer 
+     Public Idx As  Integer 
+     Public JCode_K As String 
+     Public CustomsCode As String 
+     Public JVName As String 
+     Public JEName As String 
+     Public Specification As String 
+     Public Unit As String 
+     Public CustomsUnit As String 
+     Public Rate As Decimal 
+     Public HSCode As String 
+     Public InvNo As String 
+     Public InvoiceDate As DateTime 
+     Public RegDate As DateTime 
+     Public RegNumber As String 
+     Public Kind As  Integer 
+     Public Note As String 
+ End  Class

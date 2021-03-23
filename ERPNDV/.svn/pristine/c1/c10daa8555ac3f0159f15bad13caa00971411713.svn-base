@@ -1,0 +1,8 @@
+=================================================================================================
+DateTime:05-Mar-2018 09:52:17
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:SetFormEvents
+Error:Invalid column name 'AttchFile'.
+Invalid column name 'DeleteFile'.

@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:30-Jan-2018 09:18:31
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\MNV.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:30-Jan-2018 09:18:43
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\MNV.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:30-Jan-2018 09:20:35
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'MVN.FrmMain' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

@@ -1,0 +1,487 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmCreateDepartment
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCreateDepartment))
+        Me.grpInput = New System.Windows.Forms.GroupBox()
+        Me.lblNote = New System.Windows.Forms.Label()
+        Me.txtNote = New System.Windows.Forms.TextBox()
+        Me.cboSubPrcName = New System.Windows.Forms.ComboBox()
+        Me.lblECode = New System.Windows.Forms.Label()
+        Me.txtECode = New System.Windows.Forms.TextBox()
+        Me.lblSubPrcName = New System.Windows.Forms.Label()
+        Me.lblPrcName = New System.Windows.Forms.Label()
+        Me.txtPrcName = New System.Windows.Forms.TextBox()
+        Me.lblDeptName = New System.Windows.Forms.Label()
+        Me.txtDeptName = New System.Windows.Forms.TextBox()
+        Me.lblDeptCode = New System.Windows.Forms.Label()
+        Me.txtDeptCode = New System.Windows.Forms.TextBox()
+        Me.mnuDelete = New System.Windows.Forms.ToolStripButton()
+        Me.mnuExport = New System.Windows.Forms.ToolStripButton()
+        Me.tlsMenu = New System.Windows.Forms.ToolStrip()
+        Me.mnuNew = New System.Windows.Forms.ToolStripButton()
+        Me.mnuShowAll = New System.Windows.Forms.ToolStripButton()
+        Me.mnuSave = New System.Windows.Forms.ToolStripButton()
+        Me.btnSetRight = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.grpGrid = New System.Windows.Forms.GroupBox()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn8 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn5 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn7 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn4 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn3 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn2 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn6 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn1 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn9 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.CalendarColumn1 = New UtilityControl.CalendarColumn()
+        Me.grpInput.SuspendLayout()
+        Me.tlsMenu.SuspendLayout()
+        Me.grpGrid.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'grpInput
+        '
+        Me.grpInput.Controls.Add(Me.lblNote)
+        Me.grpInput.Controls.Add(Me.txtNote)
+        Me.grpInput.Controls.Add(Me.cboSubPrcName)
+        Me.grpInput.Controls.Add(Me.lblECode)
+        Me.grpInput.Controls.Add(Me.txtECode)
+        Me.grpInput.Controls.Add(Me.lblSubPrcName)
+        Me.grpInput.Controls.Add(Me.lblPrcName)
+        Me.grpInput.Controls.Add(Me.txtPrcName)
+        Me.grpInput.Controls.Add(Me.lblDeptName)
+        Me.grpInput.Controls.Add(Me.txtDeptName)
+        Me.grpInput.Controls.Add(Me.lblDeptCode)
+        Me.grpInput.Controls.Add(Me.txtDeptCode)
+        Me.grpInput.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpInput.Location = New System.Drawing.Point(0, 55)
+        Me.grpInput.Name = "grpInput"
+        Me.grpInput.Size = New System.Drawing.Size(875, 62)
+        Me.grpInput.TabIndex = 1
+        Me.grpInput.TabStop = False
+        '
+        'lblNote
+        '
+        Me.lblNote.AutoSize = True
+        Me.lblNote.Location = New System.Drawing.Point(540, 17)
+        Me.lblNote.Name = "lblNote"
+        Me.lblNote.Size = New System.Drawing.Size(29, 14)
+        Me.lblNote.TabIndex = 5
+        Me.lblNote.Text = "Note"
+        '
+        'txtNote
+        '
+        Me.txtNote.Location = New System.Drawing.Point(540, 31)
+        Me.txtNote.MaxLength = 0
+        Me.txtNote.Name = "txtNote"
+        Me.txtNote.Size = New System.Drawing.Size(166, 20)
+        Me.txtNote.TabIndex = 5
+        '
+        'cboSubPrcName
+        '
+        Me.cboSubPrcName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboSubPrcName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboSubPrcName.DropDownWidth = 200
+        Me.cboSubPrcName.FormattingEnabled = True
+        Me.cboSubPrcName.Location = New System.Drawing.Point(274, 30)
+        Me.cboSubPrcName.Name = "cboSubPrcName"
+        Me.cboSubPrcName.Size = New System.Drawing.Size(185, 22)
+        Me.cboSubPrcName.TabIndex = 3
+        '
+        'lblECode
+        '
+        Me.lblECode.AutoSize = True
+        Me.lblECode.Location = New System.Drawing.Point(459, 17)
+        Me.lblECode.Name = "lblECode"
+        Me.lblECode.Size = New System.Drawing.Size(81, 14)
+        Me.lblECode.TabIndex = 4
+        Me.lblECode.Text = "Employee Code"
+        '
+        'txtECode
+        '
+        Me.txtECode.Location = New System.Drawing.Point(459, 31)
+        Me.txtECode.MaxLength = 5
+        Me.txtECode.Name = "txtECode"
+        Me.txtECode.Size = New System.Drawing.Size(81, 20)
+        Me.txtECode.TabIndex = 4
+        '
+        'lblSubPrcName
+        '
+        Me.lblSubPrcName.AutoSize = True
+        Me.lblSubPrcName.Location = New System.Drawing.Point(274, 16)
+        Me.lblSubPrcName.Name = "lblSubPrcName"
+        Me.lblSubPrcName.Size = New System.Drawing.Size(99, 14)
+        Me.lblSubPrcName.TabIndex = 3
+        Me.lblSubPrcName.Text = "Sub Process Name"
+        '
+        'lblPrcName
+        '
+        Me.lblPrcName.AutoSize = True
+        Me.lblPrcName.Location = New System.Drawing.Point(171, 17)
+        Me.lblPrcName.Name = "lblPrcName"
+        Me.lblPrcName.Size = New System.Drawing.Size(77, 14)
+        Me.lblPrcName.TabIndex = 2
+        Me.lblPrcName.Text = "Process Name"
+        '
+        'txtPrcName
+        '
+        Me.txtPrcName.Location = New System.Drawing.Point(171, 31)
+        Me.txtPrcName.Name = "txtPrcName"
+        Me.txtPrcName.Size = New System.Drawing.Size(103, 20)
+        Me.txtPrcName.TabIndex = 2
+        '
+        'lblDeptName
+        '
+        Me.lblDeptName.AutoSize = True
+        Me.lblDeptName.Location = New System.Drawing.Point(87, 17)
+        Me.lblDeptName.Name = "lblDeptName"
+        Me.lblDeptName.Size = New System.Drawing.Size(59, 14)
+        Me.lblDeptName.TabIndex = 1
+        Me.lblDeptName.Text = "Dept Name"
+        '
+        'txtDeptName
+        '
+        Me.txtDeptName.Location = New System.Drawing.Point(87, 31)
+        Me.txtDeptName.Name = "txtDeptName"
+        Me.txtDeptName.Size = New System.Drawing.Size(84, 20)
+        Me.txtDeptName.TabIndex = 1
+        '
+        'lblDeptCode
+        '
+        Me.lblDeptCode.AutoSize = True
+        Me.lblDeptCode.Location = New System.Drawing.Point(13, 17)
+        Me.lblDeptCode.Name = "lblDeptCode"
+        Me.lblDeptCode.Size = New System.Drawing.Size(57, 14)
+        Me.lblDeptCode.TabIndex = 0
+        Me.lblDeptCode.Text = "Dept Code"
+        '
+        'txtDeptCode
+        '
+        Me.txtDeptCode.Location = New System.Drawing.Point(13, 31)
+        Me.txtDeptCode.MaxLength = 3
+        Me.txtDeptCode.Name = "txtDeptCode"
+        Me.txtDeptCode.Size = New System.Drawing.Size(74, 20)
+        Me.txtDeptCode.TabIndex = 0
+        '
+        'mnuDelete
+        '
+        Me.mnuDelete.AutoSize = False
+        Me.mnuDelete.Image = CType(resources.GetObject("mnuDelete.Image"), System.Drawing.Image)
+        Me.mnuDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuDelete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuDelete.Name = "mnuDelete"
+        Me.mnuDelete.Size = New System.Drawing.Size(60, 50)
+        Me.mnuDelete.Text = "Delete"
+        Me.mnuDelete.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'mnuExport
+        '
+        Me.mnuExport.AutoSize = False
+        Me.mnuExport.Image = CType(resources.GetObject("mnuExport.Image"), System.Drawing.Image)
+        Me.mnuExport.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuExport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuExport.Name = "mnuExport"
+        Me.mnuExport.Size = New System.Drawing.Size(60, 50)
+        Me.mnuExport.Text = "Export"
+        Me.mnuExport.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tlsMenu
+        '
+        Me.tlsMenu.AutoSize = False
+        Me.tlsMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.tlsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.mnuShowAll, Me.mnuSave, Me.mnuDelete, Me.mnuExport, Me.btnSetRight, Me.ToolStripSeparator1})
+        Me.tlsMenu.Location = New System.Drawing.Point(0, 0)
+        Me.tlsMenu.Name = "tlsMenu"
+        Me.tlsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.tlsMenu.Size = New System.Drawing.Size(875, 55)
+        Me.tlsMenu.TabIndex = 0
+        Me.tlsMenu.Text = "ToolStrip1"
+        '
+        'mnuNew
+        '
+        Me.mnuNew.AutoSize = False
+        Me.mnuNew.Image = CType(resources.GetObject("mnuNew.Image"), System.Drawing.Image)
+        Me.mnuNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuNew.Name = "mnuNew"
+        Me.mnuNew.Size = New System.Drawing.Size(60, 50)
+        Me.mnuNew.Text = "New"
+        Me.mnuNew.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'mnuShowAll
+        '
+        Me.mnuShowAll.AutoSize = False
+        Me.mnuShowAll.Image = CType(resources.GetObject("mnuShowAll.Image"), System.Drawing.Image)
+        Me.mnuShowAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuShowAll.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuShowAll.Name = "mnuShowAll"
+        Me.mnuShowAll.Size = New System.Drawing.Size(60, 50)
+        Me.mnuShowAll.Text = "Show all"
+        Me.mnuShowAll.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuShowAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'mnuSave
+        '
+        Me.mnuSave.AutoSize = False
+        Me.mnuSave.Image = CType(resources.GetObject("mnuSave.Image"), System.Drawing.Image)
+        Me.mnuSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuSave.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuSave.Name = "mnuSave"
+        Me.mnuSave.Size = New System.Drawing.Size(60, 50)
+        Me.mnuSave.Text = "Save"
+        Me.mnuSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btnSetRight
+        '
+        Me.btnSetRight.AutoSize = False
+        Me.btnSetRight.Image = CType(resources.GetObject("btnSetRight.Image"), System.Drawing.Image)
+        Me.btnSetRight.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.btnSetRight.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSetRight.Name = "btnSetRight"
+        Me.btnSetRight.Size = New System.Drawing.Size(60, 50)
+        Me.btnSetRight.Text = "Set Right"
+        Me.btnSetRight.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.btnSetRight.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 55)
+        '
+        'grpGrid
+        '
+        Me.grpGrid.Controls.Add(Me.GridControl1)
+        Me.grpGrid.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grpGrid.Location = New System.Drawing.Point(0, 117)
+        Me.grpGrid.Name = "grpGrid"
+        Me.grpGrid.Size = New System.Drawing.Size(875, 324)
+        Me.grpGrid.TabIndex = 2
+        Me.grpGrid.TabStop = False
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(3, 16)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(869, 305)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsSelection.MultiSelect = True
+        Me.GridView1.OptionsView.ColumnAutoWidth = False
+        Me.GridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView1.OptionsView.ShowFooter = True
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "VenderName"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Vender Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
+        'DataGridViewAutoFilterTextBoxColumn8
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn8.DataPropertyName = "Reason"
+        Me.DataGridViewAutoFilterTextBoxColumn8.HeaderText = "Reason"
+        Me.DataGridViewAutoFilterTextBoxColumn8.Name = "DataGridViewAutoFilterTextBoxColumn8"
+        Me.DataGridViewAutoFilterTextBoxColumn8.ReadOnly = True
+        '
+        'DataGridViewAutoFilterTextBoxColumn5
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn5.DataPropertyName = "Unit"
+        Me.DataGridViewAutoFilterTextBoxColumn5.HeaderText = "Unit"
+        Me.DataGridViewAutoFilterTextBoxColumn5.Name = "DataGridViewAutoFilterTextBoxColumn5"
+        Me.DataGridViewAutoFilterTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewAutoFilterTextBoxColumn5.Visible = False
+        '
+        'DataGridViewAutoFilterTextBoxColumn7
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn7.DataPropertyName = "OrderDate"
+        Me.DataGridViewAutoFilterTextBoxColumn7.HeaderText = "Order Date"
+        Me.DataGridViewAutoFilterTextBoxColumn7.Name = "DataGridViewAutoFilterTextBoxColumn7"
+        Me.DataGridViewAutoFilterTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewAutoFilterTextBoxColumn4
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn4.DataPropertyName = "Quantity"
+        Me.DataGridViewAutoFilterTextBoxColumn4.HeaderText = "Quantity"
+        Me.DataGridViewAutoFilterTextBoxColumn4.Name = "DataGridViewAutoFilterTextBoxColumn4"
+        Me.DataGridViewAutoFilterTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewAutoFilterTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'DataGridViewAutoFilterTextBoxColumn3
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn3.DataPropertyName = "Air"
+        Me.DataGridViewAutoFilterTextBoxColumn3.HeaderText = "Air"
+        Me.DataGridViewAutoFilterTextBoxColumn3.Name = "DataGridViewAutoFilterTextBoxColumn3"
+        Me.DataGridViewAutoFilterTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewAutoFilterTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "DeliveryDate"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Delivery Date"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
+        'DataGridViewAutoFilterTextBoxColumn2
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn2.DataPropertyName = "PackingUnit"
+        Me.DataGridViewAutoFilterTextBoxColumn2.HeaderText = "Packing Unit"
+        Me.DataGridViewAutoFilterTextBoxColumn2.Name = "DataGridViewAutoFilterTextBoxColumn2"
+        Me.DataGridViewAutoFilterTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewAutoFilterTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewAutoFilterTextBoxColumn2.Visible = False
+        '
+        'DataGridViewAutoFilterTextBoxColumn6
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn6.DataPropertyName = "FullName"
+        Me.DataGridViewAutoFilterTextBoxColumn6.HeaderText = "Employee"
+        Me.DataGridViewAutoFilterTextBoxColumn6.Name = "DataGridViewAutoFilterTextBoxColumn6"
+        Me.DataGridViewAutoFilterTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewAutoFilterTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'DataGridViewAutoFilterTextBoxColumn1
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn1.DataPropertyName = "JName"
+        Me.DataGridViewAutoFilterTextBoxColumn1.HeaderText = "JName"
+        Me.DataGridViewAutoFilterTextBoxColumn1.Name = "DataGridViewAutoFilterTextBoxColumn1"
+        Me.DataGridViewAutoFilterTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewAutoFilterTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "GSR ID"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "JCode"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "JCode"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
+        'DataGridViewAutoFilterTextBoxColumn9
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn9.DataPropertyName = "IsLock"
+        Me.DataGridViewAutoFilterTextBoxColumn9.HeaderText = "IsLock"
+        Me.DataGridViewAutoFilterTextBoxColumn9.Name = "DataGridViewAutoFilterTextBoxColumn9"
+        Me.DataGridViewAutoFilterTextBoxColumn9.ReadOnly = True
+        '
+        'CalendarColumn1
+        '
+        Me.CalendarColumn1.HeaderText = "Delivery Date"
+        Me.CalendarColumn1.Name = "CalendarColumn1"
+        Me.CalendarColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CalendarColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
+        'FrmCreateDepartment
+        '
+        Me.Appearance.Options.UseFont = True
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(875, 441)
+        Me.Controls.Add(Me.grpGrid)
+        Me.Controls.Add(Me.grpInput)
+        Me.Controls.Add(Me.tlsMenu)
+        Me.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KeyPreview = True
+        Me.Name = "FrmCreateDepartment"
+        Me.Tag = "021202"
+        Me.Text = "Create Department"
+        Me.grpInput.ResumeLayout(False)
+        Me.grpInput.PerformLayout()
+        Me.tlsMenu.ResumeLayout(False)
+        Me.tlsMenu.PerformLayout()
+        Me.grpGrid.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents grpInput As System.Windows.Forms.GroupBox
+    Friend WithEvents txtDeptCode As System.Windows.Forms.TextBox
+    Friend WithEvents mnuDelete As System.Windows.Forms.ToolStripButton
+    Friend WithEvents mnuExport As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tlsMenu As System.Windows.Forms.ToolStrip
+    Friend WithEvents mnuShowAll As System.Windows.Forms.ToolStripButton
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn8 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn5 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn7 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn4 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn3 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn2 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn6 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn1 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn9 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents grpGrid As System.Windows.Forms.GroupBox
+    Friend WithEvents CalendarColumn1 As UtilityControl.CalendarColumn
+    Friend WithEvents lblDeptCode As System.Windows.Forms.Label
+    Friend WithEvents lblECode As System.Windows.Forms.Label
+    Friend WithEvents txtECode As System.Windows.Forms.TextBox
+    Friend WithEvents lblSubPrcName As System.Windows.Forms.Label
+    Friend WithEvents lblPrcName As System.Windows.Forms.Label
+    Friend WithEvents txtPrcName As System.Windows.Forms.TextBox
+    Friend WithEvents lblDeptName As System.Windows.Forms.Label
+    Friend WithEvents txtDeptName As System.Windows.Forms.TextBox
+    Friend WithEvents mnuSave As System.Windows.Forms.ToolStripButton
+    Friend WithEvents mnuNew As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btnSetRight As System.Windows.Forms.ToolStripButton
+    Friend WithEvents cboSubPrcName As System.Windows.Forms.ComboBox
+    Friend WithEvents lblNote As System.Windows.Forms.Label
+    Friend WithEvents txtNote As System.Windows.Forms.TextBox
+    Friend WithEvents ToolStripSeparator1 As Windows.Forms.ToolStripSeparator
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+End Class

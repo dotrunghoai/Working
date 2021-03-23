@@ -1,0 +1,6 @@
+8/13/2020 7:58:14 AM : System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Acc_Prd" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at LibLabelPrint.frmMaterialPrint.mAS400Click() in D:\NDVERP\LibLablePrint\Material\frmMaterialPrint.vb:line 815
+   at LibLabelPrint.frmMaterialPrint.btnASSearch_Click(Object sender, EventArgs e) in D:\NDVERP\LibLablePrint\Material\frmMaterialPrint.vb:line 399
+ClientConnectionId:9d2a2633-12d9-4dcf-81ef-a9e9277bdcd8
+Error Number:4060,State:1,Class:11

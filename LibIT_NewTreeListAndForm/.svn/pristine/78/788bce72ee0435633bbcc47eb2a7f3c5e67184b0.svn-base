@@ -1,0 +1,40 @@
+﻿Imports CommonDB
+
+Public Class FrmShowAuthorizedUser
+    Dim _db As New DBSql(PublicUtility.PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Private Sub FrmTreeListShow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ShowTreeList()
+    End Sub
+    Sub ShowTreeList()
+        TreeList1.DataSource = _db.FillDataTable(String.Format("SELECT h.FormID AS ID, d.ParentID, d.TextVietNamese
+                                                                FROM Main_TestTreeList_Employee AS h
+                                                                LEFT JOIN Main_TestTreeList AS d
+                                                                ON h.FormID = d.ID
+                                                                WHERE EmpID = '{0}'",
+                                                                txtUser.Text))
+        TreeList1.CollapseAll()
+        TreeList1.ExpandToLevel(0)
+        TreeList1.StateImageList = ImageCollection1
+    End Sub
+
+    Private Sub TreeList1_GetStateImage(sender As Object, e As DevExpress.XtraTreeList.GetStateImageEventArgs) Handles TreeList1.GetStateImage
+        If e.Node.ParentNode Is Nothing Then
+            e.NodeImageIndex = 0
+        ElseIf e.Node.HasChildren Then
+            e.NodeImageIndex = 1
+        Else
+            e.NodeImageIndex = 2
+        End If
+    End Sub
+
+    Private Sub TreeList1_DoubleClick(sender As Object, e As EventArgs) Handles TreeList1.DoubleClick
+        If TreeList1.FocusedNode.HasChildren = False Then
+            Dim frm As New FrmAutoConnect
+            frm.Show()
+        End If
+    End Sub
+
+    Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
+        ShowTreeList()
+    End Sub
+End Class

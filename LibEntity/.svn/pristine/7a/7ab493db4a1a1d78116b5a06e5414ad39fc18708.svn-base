@@ -1,0 +1,14 @@
+
+ Public Class CL_PlanRS_Store
+     Public ID_K As String 
+     Public Ngay_K As DateTime 
+     Public ProductCode_K As String 
+     Public Customer As String 
+     Public Method As String 
+     Public StartLot_K As  Integer 
+     Public EndLot As  Integer 
+     Public Total As  Integer 
+     Public Note As String 
+     Public HuongXuLyCapTren As String 
+     Public ImportProcess As String 
+ End  Class

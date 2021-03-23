@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:27-Feb-2018 16:14:54
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibFpicsDataView.FrmPQT' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

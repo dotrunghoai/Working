@@ -1,0 +1,56 @@
+=================================================================================================
+DateTime:06-Aug-2018 16:00:12
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jan  7 2018 12:00AM).
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Aug-2018 16:00:29
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jan  7 2018 12:00AM).
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Aug-2018 16:01:29
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jan  7 2018 12:00AM).
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Aug-2018 16:02:40
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jan  7 2018 12:00AM).
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Aug-2018 16:09:53
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jul  1 2018 12:00AM).
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Aug-2018 16:11:08
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jul  1 2018 12:00AM).
+The statement has been terminated.
+=================================================================================================
+DateTime:06-Aug-2018 16:21:35
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmCompareHR
+FunctionName:importHR
+Error:Violation of PRIMARY KEY constraint 'PK_WorkingTime_RollcallHR'. Cannot insert duplicate key in object 'dbo.WT_RollcallHR'. The duplicate key value is (00001, Jul  1 2018 12:00AM).
+The statement has been terminated.

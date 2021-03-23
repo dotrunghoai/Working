@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:11-Apr-2018 14:04:47
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibDefectRatePR2.FrmSummaryDefect' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.

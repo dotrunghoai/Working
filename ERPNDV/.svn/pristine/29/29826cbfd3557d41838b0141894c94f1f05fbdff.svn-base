@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:28-Feb-2018 16:27:43
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:Save
+Error:Conversion from string "ds" to type 'Date' is not valid.

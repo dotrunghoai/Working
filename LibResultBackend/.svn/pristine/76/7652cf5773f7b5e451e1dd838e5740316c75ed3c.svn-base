@@ -1,0 +1,45 @@
+
+ Public Class QC_KQCV_BackendResult_Detail
+    Public ID_K As String
+    Public Ngay As DateTime
+    Public CongDoan As String
+    Public ProductCode As String
+    Public LotNumber As String
+    Public SoCongDoan As String
+    Public LanKiem As String
+    Public TanSoKiemTra As String
+    Public SoMay As String
+    Public ThoiGianKiem As Integer
+    Public CaLamViec As String
+    Public SoLuongKiem As Integer
+    Public SoLuongLo As Integer
+    Public MaLoiGH As String
+    Public SoLuongLoiGH As Integer
+    Public ViTriLoiGH As String
+    Public DangLoiGH As String
+    Public MaLoiNG As String
+    Public SoLuongLoiNG As Integer
+    Public ViTriLoiNG As String
+    Public DangLoiNG As String
+    Public DanhGia As String
+    Public NhanVienKiem As String
+    Public PhuongPhapXuLy As String
+    Public XacNhanBoPhanLienQuan As String
+    Public DanhGiaSauXuLy As String
+    Public XacNhanPR As String
+    Public XacNhanTE As String
+    Public GhiChu As String
+    Public SoLoDotFD As String
+    Public DanhGiaSoLoDot As String
+    Public KQKT501 As String
+    Public KQKT505 As String
+    Public KQKT509 As String
+    Public KQKT601 As String
+    Public KQKTKhac As String
+    Public LoaiDem As String
+    Public HanSuDung As String
+    Public DoDayNguyenLieu As Decimal
+    Public DanhGiaDoDayNguyenLieu As String
+    Public CreateUser As String
+    Public CreateDate As DateTime
+End  Class

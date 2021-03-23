@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:30-Aug-2019 09:34:37
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmSysData
+FunctionName:Get System Data
+Error:The given value of type Int32 from the data source cannot be converted to type datetime of the specified target column.

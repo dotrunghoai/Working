@@ -1,0 +1,74 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="UDM" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UDM">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="CDNo" type="xs:string" minOccurs="0" />
+              <xs:element name="RegDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ComDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ImpMode" type="xs:string" minOccurs="0" />
+              <xs:element name="ExporterName" type="xs:string" minOccurs="0" />
+              <xs:element name="ExporterAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="Importer" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomsBroker" type="xs:string" minOccurs="0" />
+              <xs:element name="ImportLicence" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesContract" type="xs:string" minOccurs="0" />
+              <xs:element name="EffectiveDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ComInvoice" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TranMode" type="xs:string" minOccurs="0" />
+              <xs:element name="TranName" type="xs:string" minOccurs="0" />
+              <xs:element name="ArrivalDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BL" type="xs:string" minOccurs="0" />
+              <xs:element name="ExportingCountry" type="xs:string" minOccurs="0" />
+              <xs:element name="LoadingPort" type="xs:string" minOccurs="0" />
+              <xs:element name="UnloadingPort" type="xs:string" minOccurs="0" />
+              <xs:element name="DeliveryTerms" type="xs:string" minOccurs="0" />
+              <xs:element name="Currency" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentTerms" type="xs:string" minOccurs="0" />
+              <xs:element name="ER" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PackageNo" type="xs:int" minOccurs="0" />
+              <xs:element name="NW" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GW" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CW" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CBM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cont20" type="xs:int" minOccurs="0" />
+              <xs:element name="Cont40" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderCode" type="xs:int" minOccurs="0" />
+              <xs:element name="PurCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomsCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ComName" type="xs:string" minOccurs="0" />
+              <xs:element name="EnglishName" type="xs:string" minOccurs="0" />
+              <xs:element name="HSCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Origin" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Unit" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ImportTax" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EnvironmentalTax" type="xs:decimal" minOccurs="0" />
+              <xs:element name="WRN" type="xs:string" minOccurs="0" />
+              <xs:element name="NoDateCD" type="xs:string" minOccurs="0" />
+              <xs:element name="TranCode" type="xs:string" minOccurs="0" />
+              <xs:element name="InternalControlNo" type="xs:string" minOccurs="0" />
+              <xs:element name="AirFreightCCharge" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InssuranceCharge" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OtherCharge" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VATDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VATNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ReExportDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TariffUnit" type="xs:string" minOccurs="0" />
+              <xs:element name="TariffQuantity" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

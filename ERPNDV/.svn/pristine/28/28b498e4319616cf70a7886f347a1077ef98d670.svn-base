@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="StockOutA" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StockOutA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StockOutNo" type="xs:string" minOccurs="0" />
+              <xs:element name="STT" type="xs:int" minOccurs="0" />
+              <xs:element name="NgayXuat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VoucherNo" type="xs:string" minOccurs="0" />
+              <xs:element name="VoucherDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PurchaseOrders" type="xs:string" minOccurs="0" />
+              <xs:element name="InSection" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="Unit" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutSection" type="xs:string" minOccurs="0" />
+              <xs:element name="GroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="KhoXuat" type="xs:string" minOccurs="0" />
+              <xs:element name="LanXuat" type="xs:int" minOccurs="0" />
+              <xs:element name="TKNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TKCo" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

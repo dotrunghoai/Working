@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="QDThanhLy" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="QDThanhLy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IFRS" type="xs:string" minOccurs="0" />
+              <xs:element name="Section" type="xs:string" minOccurs="0" />
+              <xs:element name="PBCheckedID" type="xs:string" minOccurs="0" />
+              <xs:element name="PBCheckedName" type="xs:string" minOccurs="0" />
+              <xs:element name="PBCheckedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="PBCheckedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PBCheckedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="PBApprovedID" type="xs:string" minOccurs="0" />
+              <xs:element name="PBApprovedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="PBApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PBApprovedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCheckedID" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCheckedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCheckedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LOCheckedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="LOApprovedID" type="xs:string" minOccurs="0" />
+              <xs:element name="LOApprovedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="LOApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LOApprovedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCheckedID" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCheckedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCheckedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ACCheckedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="ACApprovedID" type="xs:string" minOccurs="0" />
+              <xs:element name="ACApprovedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="ACApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ACApprovedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="GAReceiveddID" type="xs:string" minOccurs="0" />
+              <xs:element name="GAReceivedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="GAReceivedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GAReceivedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="GAApprovedID" type="xs:string" minOccurs="0" />
+              <xs:element name="GAApprovedMail" type="xs:string" minOccurs="0" />
+              <xs:element name="GAApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GAApprovedComment" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentID" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TenTiengAnh" type="xs:string" minOccurs="0" />
+              <xs:element name="TenTiengViet" type="xs:string" minOccurs="0" />
+              <xs:element name="QDSo" type="xs:string" minOccurs="0" />
+              <xs:element name="LoaiTaiSan" type="xs:string" minOccurs="0" />
+              <xs:element name="Model" type="xs:string" minOccurs="0" />
+              <xs:element name="ThoiGianSuDung" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayNhap" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LyDoThanhLy" type="xs:string" minOccurs="0" />
+              <xs:element name="CoTKHaiQuan" type="xs:boolean" minOccurs="0" />
+              <xs:element name="MaToKhai" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayQDThanhLy" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PhuongPhapThanhLy" type="xs:string" minOccurs="0" />
+              <xs:element name="GiaTriThuHoi" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ChiPhiThanhLy" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NgayTienHanhTL" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NguyenGia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GiaConLai" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NgayKetThucKhauHao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NgayGhiGiamSoTSCD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Khac" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

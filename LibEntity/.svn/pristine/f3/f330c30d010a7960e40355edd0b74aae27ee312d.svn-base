@@ -1,0 +1,40 @@
+
+ Public Class PS_ControlC9785
+     Public NgayDuDinhVao As DateTime 
+     Public LotNumber_K As String 
+     Public MucTieu As Decimal 
+     Public EntryDate As DateTime 
+     Public KiemTraLoi As Decimal 
+     Public TLCPINS1 As Decimal 
+     Public TLCPHoanThanh As Decimal 
+     Public LoiNganMach681 As Decimal 
+     Public LoiDutMach680 As Decimal 
+     Public MucDichPhucHoi As Decimal 
+     Public AOI As Decimal 
+     Public KiemTraRutMau As Decimal 
+     Public GhiChepDiemThayDoiRua As String 
+     Public DRFMatA As String 
+     Public DRFMatB As String 
+     Public GhiChepDiemThayDoiResist As String 
+     Public MaskA As String 
+     Public TanSoVeSinhA As Decimal 
+     Public MaskB As String 
+     Public TanSoVeSinhB As Decimal 
+     Public LuongRoiSang As Decimal 
+     Public CachThucRoiSang As String 
+     Public GhiChepDiemThayDoiExposure As String 
+     Public DiemThayDoiDev As String 
+     Public GhiChepDiemThayDoiDev As String 
+     Public DiemThayDoiEg As String 
+     Public GhiChepDiemThayDoiEg As String 
+     Public AveQCGate As Decimal 
+     Public oQCGate As Decimal 
+     Public CPQCGate As Decimal 
+     Public CPKQCGate As Decimal 
+     Public AveOQA As Decimal 
+     Public oOQA As Decimal 
+     Public CPOQA As Decimal 
+     Public CPKOQA As Decimal 
+     Public CreatedDate As DateTime 
+     Public CreatedUser As String 
+ End  Class

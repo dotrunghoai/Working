@@ -1,0 +1,76 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="DocRelate" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DocRelate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DocNo" type="xs:string" minOccurs="0" />
+              <xs:element name="DocRev" type="xs:string" minOccurs="0" />
+              <xs:element name="DocName" type="xs:string" minOccurs="0" />
+              <xs:element name="Section" type="xs:string" minOccurs="0" />
+              <xs:element name="Customer" type="xs:string" minOccurs="0" />
+              <xs:element name="Author" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" type="xs:string" minOccurs="0" />
+              <xs:element name="Note" type="xs:string" minOccurs="0" />
+              <xs:element name="FinishedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Valid" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Invalid" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="QA" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="QC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="QC_GATE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IQC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CS" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="MT" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="AE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="OQC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PR1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EDU1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ENT" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NC1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NC2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="LAM" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CLP" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PLT" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PTH" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ETC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ANA1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ANA2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="LASER" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PHOTO1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PR2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EDU2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PUN" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CELL" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="MP" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CL1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CL3" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PR3" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EDU3" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="INS1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="INS2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PK" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PHOTO2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="TE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PP" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="LO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PU" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="HR" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="GA" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IT" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="AC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="MC" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

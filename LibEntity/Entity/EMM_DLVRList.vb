@@ -1,0 +1,47 @@
+
+ Public Class EMM_DLVRList
+     Public Code_K As String 
+     Public IncomingDate As DateTime 
+     Public InspectionDate As DateTime 
+     Public PdCode As String 
+     Public StockInNittsu As DateTime 
+     Public ProductionDate As DateTime 
+     Public INVNo As String 
+     Public PONo As String 
+     Public SoKien As String 
+     Public JCode As String 
+     Public JName As String 
+     Public JCodeGroup As String 
+     Public NDVLotNo As String 
+     Public MaterialLotNo As String 
+     Public CartonQuantity As Decimal 
+     Public QuantityOfCarton As Decimal 
+     Public UnitAS400 As String 
+     Public TotalQuantity As Decimal 
+     Public ActualCartonQuantity As Decimal 
+     Public ActualQuantityOfCarton As Decimal 
+     Public Unit As String 
+     Public ActualTotalQuantity As Decimal 
+     Public ExpiryDate As DateTime 
+     Public ExpiryEvaluation As String 
+     Public AcceptanceQualityLimits As  Integer 
+     Public Maker As String 
+     Public SupplierCode As String 
+     Public Supplier As String 
+     Public Customer As String 
+     Public Treatment As String 
+     Public Start As DateTime 
+     Public Finish As DateTime 
+     Public Inspector As String 
+     Public Remark As String 
+     Public CNDBDate As DateTime 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+     Public UpdateUser As String 
+     Public UpdateDate As DateTime 
+     Public ExpiryProduction As Decimal 
+     Public ExpiryDelivery As Decimal 
+     Public WinThinProduction As Decimal 
+     Public RestoreQuantity As Decimal 
+     Public HaveStock As String 
+ End  Class

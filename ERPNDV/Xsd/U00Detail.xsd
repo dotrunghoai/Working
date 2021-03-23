@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="U00Detail" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="U00Detail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="IncomingDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InspectionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="JCode" type="xs:string" minOccurs="0" />
+              <xs:element name="JName" type="xs:string" minOccurs="0" />
+              <xs:element name="NDVLotNo" type="xs:string" minOccurs="0" />
+              <xs:element name="MaterialLotNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AcceptanceQualityLimits" type="xs:int" minOccurs="0" />
+              <xs:element name="TestReport" type="xs:string" minOccurs="0" />
+              <xs:element name="Design" type="xs:string" minOccurs="0" />
+              <xs:element name="Surface" type="xs:string" minOccurs="0" />
+              <xs:element name="Chamfer" type="xs:string" minOccurs="0" />
+              <xs:element name="F03" type="xs:string" minOccurs="0" />
+              <xs:element name="F04" type="xs:string" minOccurs="0" />
+              <xs:element name="FEvaluation" type="xs:string" minOccurs="0" />
+              <xs:element name="AdhesiveStrength" type="xs:string" minOccurs="0" />
+              <xs:element name="ThicknessResult" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ThicknessEvaluation" type="xs:string" minOccurs="0" />
+              <xs:element name="Deform" type="xs:int" minOccurs="0" />
+              <xs:element name="Obstruct" type="xs:int" minOccurs="0" />
+              <xs:element name="Scratch" type="xs:int" minOccurs="0" />
+              <xs:element name="Dirty" type="xs:int" minOccurs="0" />
+              <xs:element name="BaVo" type="xs:int" minOccurs="0" />
+              <xs:element name="CrackedAl" type="xs:int" minOccurs="0" />
+              <xs:element name="ConcreteSurface" type="xs:int" minOccurs="0" />
+              <xs:element name="Orther" type="xs:int" minOccurs="0" />
+              <xs:element name="DeformPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ObstructPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ScratchPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DirtyPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BaVoPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CrackedAlPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ConcreteSurfacePercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OrtherPercent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GeneralEvaluation" type="xs:string" minOccurs="0" />
+              <xs:element name="Maker" type="xs:string" minOccurs="0" />
+              <xs:element name="Supplier" type="xs:string" minOccurs="0" />
+              <xs:element name="Customer" type="xs:string" minOccurs="0" />
+              <xs:element name="Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Finish" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Inspector" type="xs:string" minOccurs="0" />
+              <xs:element name="Remark" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

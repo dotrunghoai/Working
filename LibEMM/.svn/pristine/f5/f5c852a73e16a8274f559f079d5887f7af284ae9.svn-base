@@ -1,0 +1,441 @@
+﻿Imports System.Windows.Forms
+Imports CommonDB
+Imports PublicUtility
+Imports System.IO
+Imports Microsoft.Office.Interop
+Imports Microsoft.Reporting.WinForms
+
+Public Class FrmU00Detail
+    Dim _db As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    Dim FileTmp As String = Application.StartupPath + "\Template Excel\Template EMM\"
+    Dim FileExp As String = Application.StartupPath + "\Template Excel\Template EMM\Export EMM\"
+
+    Private Sub FrmU00Detail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        deStartDate.DateTime = DateTime.Now
+        deEndDate.DateTime = DateTime.Now
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If GridView1.Editable And e.Column.ReadOnly = False Then
+            Dim para(0) As SqlClient.SqlParameter
+            para(0) = New SqlClient.SqlParameter("@Value", e.Value)
+
+            '---------
+            If GridView1.FocusedColumn.FieldName = "IncomingDate" Or
+                GridView1.FocusedColumn.FieldName = "InspectionDate" Or
+                GridView1.FocusedColumn.FieldName = "JCode" Or
+                GridView1.FocusedColumn.FieldName = "JName" Or
+                GridView1.FocusedColumn.FieldName = "NDVLotNo" Or
+                GridView1.FocusedColumn.FieldName = "MaterialLotNo" Or
+                GridView1.FocusedColumn.FieldName = "TotalQuantity" Or
+                GridView1.FocusedColumn.FieldName = "AcceptanceQualityLimits" Or
+                GridView1.FocusedColumn.FieldName = "Maker" Or
+                GridView1.FocusedColumn.FieldName = "Supplier" Or
+                GridView1.FocusedColumn.FieldName = "Customer" Or
+                GridView1.FocusedColumn.FieldName = "Start" Or
+                GridView1.FocusedColumn.FieldName = "Finish" Or
+                GridView1.FocusedColumn.FieldName = "Inspector" Then
+                Dim objEditU00 As String = String.Format("Update EMM_DLVRList set {0} = @Value where Code = '{1}'", e.Column.FieldName,
+                                                                                GridView1.GetFocusedRowCellValue("Code"))
+                _db.ExecuteNonQuery(objEditU00, para)
+            Else
+                Dim objEditDLVR As String = String.Format("Update EMM_U00Detail set {0} = @Value where Code = '{1}'", e.Column.FieldName,
+                                                                                GridView1.GetFocusedRowCellValue("Code"))
+                _db.ExecuteNonQuery(objEditDLVR, para)
+            End If
+        End If
+    End Sub
+
+    Sub ExportU00()
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+        'Copy template
+        UpLoadFile(FileTmp + "U00.xlsx", FileExp + "U00.xlsx", True)
+        'Variance
+        Dim app As New Excel.Application
+        Dim workBook As Excel.Workbook
+        Dim workSheet As Excel.Worksheet
+        Dim workRange As Excel.Range
+
+        'Open file
+        If (File.Exists(FileExp + "U00.xlsx")) Then
+            workBook = app.Workbooks.Open(FileExp + "U00.xlsx", Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing)
+        Else
+            workBook = app.Workbooks.Add(Type.Missing)
+        End If
+        workSheet = CType(workBook.Sheets(1), Excel.Worksheet)
+        workSheet.Name = "U00"
+        app.Visible = False
+
+        Dim myrow As Integer = 0
+        Dim No As Integer = 1
+        Dim iRow As Integer = 8
+        For i As Integer = myrow To GridView1.RowCount - 1
+            If No > 30 Then
+                workRange = workSheet.Range(workSheet.Cells(iRow, 1), workSheet.Cells(iRow, 41))
+                workRange.Rows.RowHeight = 24.75
+                workRange.Insert(Excel.XlInsertShiftDirection.xlShiftDown)
+
+            End If
+
+            workSheet.Cells(iRow, 1) = No
+            workSheet.Cells(iRow, 2) = GridView1.GetRowCellValue(i, "IncomingDate")
+            workSheet.Cells(iRow, 3) = GridView1.GetRowCellValue(i, "InspectionDate")
+            workSheet.Cells(iRow, 4) = GridView1.GetRowCellValue(i, "NDVLotNo")
+            workSheet.Cells(iRow, 5) = GridView1.GetRowCellValue(i, "MaterialLotNo")
+            workSheet.Cells(iRow, 6) = GridView1.GetRowCellValue(i, "TotalQuantity")
+            workSheet.Cells(iRow, 7) = GridView1.GetRowCellValue(i, "AcceptanceQualityLimits")
+            'KQCV
+            workSheet.Cells(iRow, 11) = GridView1.GetRowCellValue(i, "Chamfer")
+            workSheet.Cells(iRow, 12) = GridView1.GetRowCellValue(i, "F03")
+            workSheet.Cells(iRow, 13) = GridView1.GetRowCellValue(i, "F04")
+            workSheet.Cells(iRow, 14) = GridView1.GetRowCellValue(i, "FEvaluation")
+            workSheet.Cells(iRow, 37) = ":"
+            workSheet.Cells(iRow, 38) = ":"
+            No += 1
+            iRow += 1
+        Next
+
+        If No > 30 Then
+            workRange = workSheet.Range(workSheet.Cells(8, 1), workSheet.Cells(iRow - 1, 41))
+            workRange.Borders.LineStyle = 1
+        End If
+
+        app.Visible = True
+        System.Threading.Thread.CurrentThread.CurrentCulture = oldCI
+    End Sub
+
+    Sub ExportU00_New()
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+        Cursor = Cursors.AppStarting
+        'Copy template
+        UpLoadFile(FileTmp + "U00-New.xlsx", FileExp + "U00-New.xlsx", True)
+        'Variance
+        Dim app As New Excel.Application
+        Dim workBook As Excel.Workbook
+        Dim workSheet As Excel.Worksheet
+        Dim workRange As Excel.Range
+
+        'Open file
+        If (File.Exists(FileExp + "U00-New.xlsx")) Then
+            workBook = app.Workbooks.Open(FileExp + "U00-New.xlsx", Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing)
+        Else
+            workBook = app.Workbooks.Add(Type.Missing)
+        End If
+        workSheet = CType(workBook.Sheets(1), Excel.Worksheet)
+        workSheet.Name = "QC-F-011 (3)"
+        app.Visible = False
+        app.DisplayAlerts = False
+
+        '----------------------
+        Dim StartDate As DateTime
+        Dim EndDate As DateTime
+        Dim ActionDate As String
+
+        StartDate = GetStartDate(deStartDate.DateTime)
+        EndDate = GetEndDate(deEndDate.DateTime)
+
+        If rbInspectionDate.Checked Then
+            ActionDate = "InspectionDate"
+        Else
+            ActionDate = "IncomingDate"
+        End If
+
+        Dim para(3) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@Action", "U00")
+        para(1) = New SqlClient.SqlParameter("@StartDate", StartDate)
+        para(2) = New SqlClient.SqlParameter("@EndDate", EndDate)
+        para(3) = New SqlClient.SqlParameter("@ActionDate", ActionDate)
+
+        Dim dtU00 As DataTable = _db.ExecuteStoreProcedureTB("sp_EMM_ShowAll", para)
+        '----------------------
+
+        Dim myrow As Integer = 0
+        Dim iRow As Integer = 9
+        Dim No As Integer = 1
+
+        For i As Integer = myrow To GridView1.RowCount - 1
+            'If workSheet.Name <> GridView1.GetRowCellValue(i, "Customer") And
+            '    GridView1.GetRowCellValue(i, "Customer") <> "" Then
+            '    myrow = i
+            '    Exit For
+            'End If
+
+            If iRow > 28 Then
+                workRange = workSheet.Range(workSheet.Cells(iRow, 1), workSheet.Cells(iRow, 25))
+                workRange.Rows.RowHeight = 24.75
+                workRange.Insert(Excel.XlInsertShiftDirection.xlShiftDown)
+            End If
+
+            workSheet.Cells(3, 18) = GridView1.GetRowCellValue(i, "Customer")
+            workSheet.Cells(3, 24) = GridView1.GetRowCellValue(i, "IncomingDate")
+
+            If i > 0 Then
+                'Mergcell
+                If GridView1.GetRowCellValue(i, "NDVLotNo") = GridView1.GetRowCellValue((i - 1), "NDVLotNo") Then
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 1), workSheet.Cells(iRow - 1, 1))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 2), workSheet.Cells(iRow - 1, 2))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 3), workSheet.Cells(iRow - 1, 3))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 4), workSheet.Cells(iRow - 1, 4))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 5), workSheet.Cells(iRow - 1, 5))
+                    workRange.Merge(Type.Missing)
+                    workSheet.Cells(iRow, 6) = GridView1.GetRowCellValue(i, "MaterialLotNo")
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 7), workSheet.Cells(iRow - 1, 7))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 8), workSheet.Cells(iRow - 1, 8))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 9), workSheet.Cells(iRow - 1, 9))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 10), workSheet.Cells(iRow - 1, 10))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 11), workSheet.Cells(iRow - 1, 11))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 12), workSheet.Cells(iRow - 1, 12))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 13), workSheet.Cells(iRow - 1, 13))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 14), workSheet.Cells(iRow - 1, 14))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 15), workSheet.Cells(iRow - 1, 15))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 16), workSheet.Cells(iRow - 1, 16))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 17), workSheet.Cells(iRow - 1, 17))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 18), workSheet.Cells(iRow - 1, 18))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 19), workSheet.Cells(iRow - 1, 19))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 20), workSheet.Cells(iRow - 1, 20))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 21), workSheet.Cells(iRow - 1, 21))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 22), workSheet.Cells(iRow - 1, 22))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 23), workSheet.Cells(iRow - 1, 23))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 24), workSheet.Cells(iRow - 1, 24))
+                    workRange.Merge(Type.Missing)
+                    workRange = workSheet.Range(workSheet.Cells(iRow, 25), workSheet.Cells(iRow - 1, 25))
+                    workRange.Merge(Type.Missing)
+
+                Else
+
+                    workSheet.Cells(iRow, 1) = No
+                    workSheet.Cells(iRow, 2) = GridView1.GetRowCellValue(i, "InspectionDate")
+
+                    workSheet.Cells(iRow, 3) = GridView1.GetRowCellValue(i, "JCode")
+                    workSheet.Cells(iRow, 4) = GridView1.GetRowCellValue(i, "JName")
+
+                    workSheet.Cells(iRow, 5) = GridView1.GetRowCellValue(i, "NDVLotNo")
+                    workSheet.Cells(iRow, 6) = GridView1.GetRowCellValue(i, "MaterialLotNo")
+                    Dim sl As Integer = dtU00.Compute("sum(TotalQuantity)",
+                                                                 String.Format("NDVLotNo='{0}' and JCode='{1}' ",
+                                                                 GridView1.GetRowCellValue(i, "NDVLotNo"),
+                                                                 GridView1.GetRowCellValue(i, "JCode")))
+
+                    workSheet.Cells(iRow, 7) = sl
+                    workSheet.Cells(iRow, 8) = AQL("A", sl)
+
+                    No += 1
+                End If
+            Else
+                workSheet.Cells(iRow, 1) = No
+                workSheet.Cells(iRow, 2) = GridView1.GetRowCellValue(i, "InspectionDate")
+
+                workSheet.Cells(iRow, 3) = GridView1.GetRowCellValue(i, "JCode")
+                workSheet.Cells(iRow, 4) = GridView1.GetRowCellValue(i, "JName")
+
+                workSheet.Cells(iRow, 5) = GridView1.GetRowCellValue(i, "NDVLotNo")
+                workSheet.Cells(iRow, 6) = GridView1.GetRowCellValue(i, "MaterialLotNo")
+                Dim sl As Integer = dtU00.Compute("sum(TotalQuantity)",
+                                                             String.Format("NDVLotNo='{0}' and JCode='{1}' ",
+                                                             GridView1.GetRowCellValue(i, "NDVLotNo"),
+                                                             GridView1.GetRowCellValue(i, "JCode")))
+
+                workSheet.Cells(iRow, 7) = sl
+                workSheet.Cells(iRow, 8) = AQL("A", sl)
+
+                No += 1
+            End If
+
+            iRow += 1
+        Next
+
+        If iRow > 28 Then
+            workRange = workSheet.Range(workSheet.Cells(9, 1), workSheet.Cells(iRow - 1, 25))
+            workRange.Borders.LineStyle = 1
+        End If
+
+        app.Visible = True
+
+        System.Threading.Thread.CurrentThread.CurrentCulture = oldCI
+        Cursor = Cursors.Default
+
+    End Sub
+
+    Function AQL(ByVal JCodeGroup As String, ByVal Quantity As Decimal) As Integer
+        Dim sqlAQL As String = String.Format("Select FromQuantity, ToQuantity, AcceptanceQualityLimits from {0} where JCodeGroup = '{1}'",
+                                                         PublicTable.Table_EMM_MasterAQL, JCodeGroup)
+        Dim dtAQL As DataTable = _db.FillDataTable(sqlAQL)
+        If dtAQL.Rows.Count <> 0 Then
+            For i As Integer = 0 To dtAQL.Rows.Count - 1
+                If Quantity >= dtAQL.Rows(i)("FromQuantity") And Quantity <= dtAQL.Rows(i)("ToQuantity") Then
+                    Return dtAQL.Rows(i)("AcceptanceQualityLimits")
+                End If
+            Next
+        End If
+
+        Return Quantity
+    End Function
+
+    Private Sub btnShow_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnShow.ItemClick
+        Dim StartDate As DateTime
+        Dim EndDate As DateTime
+        Dim ActionDate As String
+
+        StartDate = GetStartDate(deStartDate.DateTime)
+        EndDate = GetEndDate(deEndDate.DateTime)
+
+        If rbInspectionDate.Checked Then
+            ActionDate = "InspectionDate"
+        Else
+            ActionDate = "IncomingDate"
+        End If
+
+        Dim para(3) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@Action", "U00")
+        para(1) = New SqlClient.SqlParameter("@StartDate", StartDate)
+        para(2) = New SqlClient.SqlParameter("@EndDate", EndDate)
+        para(3) = New SqlClient.SqlParameter("@ActionDate", ActionDate)
+
+        Dim dtU00 As DataTable = _db.ExecuteStoreProcedureTB("sp_EMM_ShowAll", para)
+        GridControl1.DataSource = dtU00
+        GridControlSetFormat(GridView1, 6, "Start""Finish")
+        GridControlSetColorReadonly(GridView1)
+        GridView1.Columns("Start").ColumnEdit = GridControlTimeEdit()
+        GridView1.Columns("Finish").ColumnEdit = GridControlTimeEdit()
+    End Sub
+
+    Private Sub btnEdit_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        GridControlReadOnly(GridView1, False)
+        GridView1.Columns("Code").OptionsColumn.ReadOnly = True
+        GridControlSetColorEdit(GridView1)
+    End Sub
+
+    Private Sub btnDelete_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDelete.ItemClick
+        Dim result As DialogResult = MessageBox.Show("Bạn có muốn xóa Code: " + GridView1.GetFocusedRowCellValue("Code") + " không ?", "Cảnh báo", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            MessageBox.Show("Dữ liệu chưa được xóa", "Thông báo")
+        ElseIf result = DialogResult.Yes Then
+            Try
+                Dim objDelete As String = String.Format("Delete from {0} where Code = '{1}'",
+                                                              PublicTable.Table_EMM_U00Detail,
+                                                              GridView1.GetFocusedRowCellValue("Code"))
+                _db.ExecuteNonQuery(objDelete)
+                GridView1.DeleteSelectedRows()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, PublicConst.Message_Caption_Error)
+            End Try
+            MessageBox.Show("Bạn đã xóa thành công", "Thông báo")
+        End If
+    End Sub
+
+    Private Sub btnExportGrid2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExportGrid2.ItemClick
+        GridControlExportExcel(GridView1)
+    End Sub
+
+    Private Sub btnExportExcel2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExportExcel2.ItemClick
+        Dim StartDate As DateTime
+        Dim EndDate As DateTime
+        Dim ActionDate As String
+
+        StartDate = GetStartDate(deStartDate.DateTime)
+        EndDate = GetEndDate(deEndDate.DateTime)
+
+        If rbInspectionDate.Checked Then
+            ActionDate = "InspectionDate"
+        Else
+            ActionDate = "IncomingDate"
+        End If
+
+        Dim para(3) As SqlClient.SqlParameter
+        para(0) = New SqlClient.SqlParameter("@Action", "U00")
+        para(1) = New SqlClient.SqlParameter("@StartDate", StartDate)
+        para(2) = New SqlClient.SqlParameter("@EndDate", EndDate)
+        para(3) = New SqlClient.SqlParameter("@ActionDate", ActionDate)
+
+        Dim dt As DataTable = _db.ExecuteStoreProcedureTB("sp_EMM_ShowAll", para)
+        ExportEXCEL(dt)
+    End Sub
+
+    Private Sub btnExportTemp_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExportTemp.ItemClick
+        If ceU00.Checked Then
+            ExportU00()
+        Else
+            ExportU00_New()
+        End If
+    End Sub
+
+    Private Sub btnPrintU002_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPrintU002.ItemClick
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
+        Dim frm = New FrmReportNet()
+        frm.rptViewer.LocalReport.DataSources.Clear()
+        frm.rptViewer.LocalReport.ReportPath = Application.StartupPath + "\Reports\QC\rptU00Detail.rdlc"
+        frm.rptViewer.LocalReport.DataSources.Add(New ReportDataSource("U00Detail", GridControl1.DataSource))
+        frm.rptViewer.SetDisplayMode(DisplayMode.PrintLayout)
+        frm.rptViewer.ZoomMode = ZoomMode.PageWidth
+        frm.rptViewer.RefreshReport()
+        frm.Show()
+    End Sub
+
+    Private Sub ceU00_CheckedChanged(sender As Object, e As EventArgs) Handles ceU00.CheckedChanged
+        If ceU00.Checked Then
+            GridView1.Columns("Chamfer").Visible = True
+            GridView1.Columns("F03").Visible = True
+            GridView1.Columns("F04").Visible = True
+            GridView1.Columns("FEvaluation").Visible = True
+            GridView1.Columns("AdhesiveStrength").Visible = True
+            GridView1.Columns("ThicknessResult").Visible = True
+            GridView1.Columns("ThicknessEvaluation").Visible = True
+            GridView1.Columns("Start").Visible = True
+            GridView1.Columns("Finish").Visible = True
+        Else
+            GridView1.Columns("Chamfer").Visible = False
+            GridView1.Columns("F03").Visible = False
+            GridView1.Columns("F04").Visible = False
+            GridView1.Columns("FEvaluation").Visible = False
+            GridView1.Columns("AdhesiveStrength").Visible = False
+            GridView1.Columns("ThicknessResult").Visible = False
+            GridView1.Columns("ThicknessEvaluation").Visible = False
+            GridView1.Columns("Start").Visible = False
+            GridView1.Columns("Finish").Visible = False
+        End If
+    End Sub
+
+    Private Sub deStartDate_EditValueChanged(sender As Object, e As EventArgs) Handles deStartDate.EditValueChanged
+        If deStartDate.DateTime > deEndDate.DateTime Then
+            deEndDate.DateTime = deStartDate.DateTime
+        End If
+    End Sub
+
+    Private Sub deEndDate_EditValueChanged(sender As Object, e As EventArgs) Handles deEndDate.EditValueChanged
+        If deEndDate.DateTime < deStartDate.DateTime Then
+            deStartDate.DateTime = deEndDate.DateTime
+        End If
+    End Sub
+End Class

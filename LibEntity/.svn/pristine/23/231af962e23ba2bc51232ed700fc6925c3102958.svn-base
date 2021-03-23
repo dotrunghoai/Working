@@ -1,0 +1,7 @@
+
+ Public Class FPICS_ProccessOrder
+     Public ProcessCode_K As String 
+     Public ProcessNameE As String 
+     Public PR As String 
+     Public Idx As  Integer 
+ End  Class

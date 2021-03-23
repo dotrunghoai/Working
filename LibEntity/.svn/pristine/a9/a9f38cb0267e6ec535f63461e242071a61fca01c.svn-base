@@ -1,0 +1,41 @@
+
+ Public Class KCB_PDT
+     Public MaPhieu_K As String 
+     Public NgayKham As DateTime 
+     Public GioKham As DateTime 
+     Public MaBS As String 
+     Public TenBS As String 
+     Public MaBN As String 
+     Public TenBN As String 
+     Public TangCa As Boolean 
+     Public SoGioTC As Decimal 
+     Public PhongBan As String 
+     Public ToNhom As String 
+     Public Ca As String 
+     Public ChucVu As String 
+     Public GioiTinh As String 
+     Public HuyetAp As String 
+     Public NhietDo As Decimal 
+     Public Mach As  Integer 
+     Public Tho As  Integer 
+     Public ThaiSan As Boolean 
+     Public ChuanDoan As String 
+     Public LoaiBenh As String 
+     Public TenLoaiBenh As String 
+     Public NhomBenh As String 
+     Public TenNhomBenh As String 
+     Public BatDau As DateTime 
+     Public KetThuc As DateTime 
+     Public TongTG As  Integer 
+     Public VeNha As Boolean 
+     Public TGVeNha As DateTime 
+     Public ChuyenVien As Boolean 
+     Public TGChuyenVien As DateTime 
+     Public ChiPhiChuyenVien As Decimal 
+     Public GhiChuNghi As String 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+     Public UpdateUser As String 
+     Public UpdateDate As DateTime 
+     Public SoLieu As  Integer 
+ End  Class

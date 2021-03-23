@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="BaoCaoOTThang" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BaoCaoOTThang">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" type="xs:string" minOccurs="0" />
+              <xs:element name="EmpName" type="xs:string" minOccurs="0" />
+              <xs:element name="Observation" type="xs:string" minOccurs="0" />
+              <xs:element name="Section" type="xs:string" minOccurs="0" />
+              <xs:element name="GroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="Shift" type="xs:string" minOccurs="0" />
+              <xs:element name="D21" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D22" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D23" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D24" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D25" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D26" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D27" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D28" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D29" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D30" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D31" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D11" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D12" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D13" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D14" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D15" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D16" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D17" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D18" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D19" type="xs:decimal" minOccurs="0" />
+              <xs:element name="D20" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NormalDay" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CompanyDay" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HolidayLess" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HolidayGreater" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

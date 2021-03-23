@@ -1,0 +1,169 @@
+﻿Imports CommonDB
+Imports PublicUtility
+Imports LibEntity
+Imports System.Windows.Forms
+
+Public Class FrmBWHSearch : Inherits DevExpress.XtraEditors.XtraForm
+    'Dim db As New DBSql(PublicConst.EnumServers.NDV_SQL_Fpics)
+    Dim nvd As New DBSql(PublicConst.EnumServers.NDV_SQL_ERP_NDV)
+    'Dim dbAS As New DBFunction(PublicConst.EnumServers.NDV_DB2_AS400)
+    Dim gridValueChange As Boolean = False
+
+
+    Private Sub mnuSearch_Click(sender As System.Object, e As System.EventArgs) Handles mnuSearch.Click
+        Dim startDate
+        If Trim(txtStartDate.Text).Length = 10 Then
+            startDate = dtpOrderDate.Value.ToString("yyyy-MM-dd")
+        Else
+            startDate = "2001-01-01"
+        End If
+
+        Dim endDate
+
+        If Trim(txtEndDate.Text).Length = 10 Then
+            endDate = dtpOrderDateEnd.Value.ToString("yyyy-MM-dd")
+        Else
+            endDate = DateTime.Now.ToString("yyyy-MM-dd")
+        End If
+
+        Dim bdShowAll As New BindingSource()
+
+        Dim SearchJCode As String
+        If Trim(txtJCode.Text) = "" Then
+            SearchJCode = ""
+        Else
+            SearchJCode = String.Format(" and d.JCode like '%{0}%' ", Trim(txtJCode.Text))
+        End If
+
+        Dim sql As String = String.Format("SELECT  h.ID , " +
+        "d.OrderID, " +
+        "h.EmployeeID, " +
+        "h.Department, " +
+        "d.JCode, " +
+        "d.JName, " +
+        "d.LeadTime, " +
+        "d.MinQty, " +
+        "d.Unit, " +
+        "d.Air, " +
+        "d.Quantity, " +
+        "d.DeliveryDate, " +
+        "d.ReceivedQty, " +
+        "d.ReceivedDate, " +
+        "d.RemainQty, " +
+        "d.RemainDate, " +
+        "d.Note " +
+        "FROM    {0} h " +
+        "INNER JOIN {1} d ON h.ID = d.ID " +
+        "WHERE   h.OrderDate BETWEEN '{2}' AND '{3}'" + SearchJCode, _
+        PublicTable.Table_GSR_BWH, PublicTable.Table_GSR_BWHDetail, startDate, endDate)
+
+        bdShowAll.DataSource = nvd.FillDataTable(sql)
+        gridD.DataSource = bdShowAll
+        bnGrid.BindingSource = bdShowAll
+        gridValueChange = True
+    End Sub
+
+    Private Sub mnuExport_Click(sender As System.Object, e As System.EventArgs) Handles mnuExport.Click
+        ExportEXCEL(gridD)
+    End Sub
+
+    Private Sub dtpOrderDate_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpOrderDate.ValueChanged
+        If dtpOrderDateEnd.Value < dtpOrderDate.Value Then
+            dtpOrderDateEnd.Value = dtpOrderDate.Value
+        End If
+        txtStartDate.Text = dtpOrderDate.Value.ToString("ddMMyyyy")
+    End Sub
+
+    Private Sub dtpOrderDateEnd_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpOrderDateEnd.ValueChanged
+        If dtpOrderDateEnd.Value < dtpOrderDate.Value Then
+            dtpOrderDate.Value = dtpOrderDateEnd.Value
+        End If
+        txtEndDate.Text = dtpOrderDateEnd.Value.ToString("ddMMyyyy")
+    End Sub
+
+    Private Sub gridD_CellValueChanged(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles gridD.CellValueChanged
+        If gridValueChange = False Then Exit Sub
+
+        If e.ColumnIndex = gridD.Columns("ReceivedQty").Index Then
+            If gridD.CurrentRow.Cells("JCode").Value Is DBNull.Value Or gridD.CurrentRow.Cells("OrderID").Value Is DBNull.Value Then
+                MessageBox.Show("Please input JCode!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                Dim objD As New GSR_BWHDetail
+                objD.ID_K = gridD.CurrentRow.Cells("ID").Value
+                objD.OrderID_K = gridD.CurrentRow.Cells("OrderID").Value
+
+                nvd.GetObject(objD)
+                objD.ReceivedQty = IIf(gridD.CurrentRow.Cells("ReceivedQty").Value Is DBNull.Value, 0, gridD.CurrentRow.Cells("ReceivedQty").Value)
+                objD.RemainQty = gridD.CurrentRow.Cells("Quantity").Value - objD.ReceivedQty
+                nvd.Update(objD)
+                gridD.CurrentRow.Cells("RemainQty").Value = objD.RemainQty
+            End If
+        End If
+
+        If e.ColumnIndex = gridD.Columns("ReceivedDate").Index Then
+            If gridD.CurrentRow.Cells("JCode").Value Is DBNull.Value Then
+                MessageBox.Show("Please input JCode!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                Dim objD As New GSR_BWHDetail
+                objD.ID_K = gridD.CurrentRow.Cells("ID").Value
+                objD.OrderID_K = gridD.CurrentRow.Cells("OrderID").Value
+
+                nvd.GetObject(objD)
+                objD.ReceivedDate = IIf(gridD.CurrentRow.Cells("ReceivedDate").Value Is DBNull.Value, DateTime.Now, gridD.CurrentRow.Cells("ReceivedDate").Value)
+                nvd.Update(objD)
+            End If
+        End If
+
+        If e.ColumnIndex = gridD.Columns("RemainQty").Index Then
+
+            If gridD.CurrentRow.Cells("JCode").Value Is DBNull.Value Or gridD.CurrentRow.Cells("OrderID").Value Is DBNull.Value Then
+                MessageBox.Show("Please input JCode!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                Dim objD As New GSR_BWHDetail
+                objD.ID_K = gridD.CurrentRow.Cells("ID").Value
+                objD.OrderID_K = gridD.CurrentRow.Cells("OrderID").Value
+
+                nvd.GetObject(objD)
+                objD.RemainQty = IIf(gridD.CurrentRow.Cells("RemainQty").Value Is DBNull.Value, 0, gridD.CurrentRow.Cells("RemainQty").Value)
+                nvd.Update(objD)
+            End If
+        End If
+
+        If e.ColumnIndex = gridD.Columns("RemainDate").Index Then
+            If gridD.CurrentRow.Cells("JCode").Value Is DBNull.Value Then
+                MessageBox.Show("Please input JCode!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                Dim objD As New GSR_BWHDetail
+                objD.ID_K = gridD.CurrentRow.Cells("ID").Value
+                objD.OrderID_K = gridD.CurrentRow.Cells("OrderID").Value
+
+                nvd.GetObject(objD)
+                objD.RemainDate = IIf(gridD.CurrentRow.Cells("RemainDate").Value Is DBNull.Value, DateTime.Now, gridD.CurrentRow.Cells("RemainDate").Value)
+                nvd.Update(objD)
+            End If
+        End If
+
+        If e.ColumnIndex = gridD.Columns("Note").Index Then
+            If gridD.CurrentRow.Cells("JCode").Value Is DBNull.Value Then
+                MessageBox.Show("Please input JCode!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            Else
+                Dim objD As New GSR_BWHDetail
+                objD.ID_K = gridD.CurrentRow.Cells("ID").Value
+                objD.OrderID_K = gridD.CurrentRow.Cells("OrderID").Value
+
+                nvd.GetObject(objD)
+                objD.Note = IIf(gridD.CurrentRow.Cells("Note").Value Is DBNull.Value, "", gridD.CurrentRow.Cells("Note").Value)
+                nvd.Update(objD)
+            End If
+        End If
+    End Sub
+
+    Private Sub gridD_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles gridD.CellContentClick
+        gridD.CommitEdit(DataGridViewDataErrorContexts.Commit)
+    End Sub
+End Class

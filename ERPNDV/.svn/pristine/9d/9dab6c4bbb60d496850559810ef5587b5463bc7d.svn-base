@@ -1,0 +1,28 @@
+=================================================================================================
+DateTime:26-Feb-2020 07:38:48
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:PrintLabel SI600
+FunctionName:Print
+Error:Object variable or With block variable not set.
+=================================================================================================
+DateTime:26-Feb-2020 13:03:17
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmSysData
+FunctionName:Get System Data
+Error:Invalid object name 'm_Product'.
+=================================================================================================
+DateTime:26-Feb-2020 13:04:24
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmSysData
+FunctionName:Get System Data
+Error:Cannot resolve the collation conflict between "Latin1_General_CI_AI" and "SQL_Latin1_General_CP1_CI_AS" in the equal to operation.
+=================================================================================================
+DateTime:26-Feb-2020 13:06:52
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmSysData
+FunctionName:Get System Data
+Error:Invalid column name 'ProcessNumbe'.

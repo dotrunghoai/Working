@@ -1,0 +1,19 @@
+
+ Public Class QA_MauDoDacTinh
+     Public NgayLuu As DateTime 
+     Public CustomerName As String 
+     Public ProductCode_K As String 
+     Public LotNo_K As String 
+     Public ProductName As String 
+     Public Program As String 
+     Public DonVi As String 
+     Public SLCDDan As  Integer 
+     Public UserCDDan As String 
+     Public SLCDGiaAp As  Integer 
+     Public UserCDGiaAp As String 
+     Public UserOQA As String 
+     Public SLPR3 As  Integer 
+     Public UserPR3 As String 
+     Public UserOQANhanPR3 As String 
+     Public GhiChu As String 
+ End  Class

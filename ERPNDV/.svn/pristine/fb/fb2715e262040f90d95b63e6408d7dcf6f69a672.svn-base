@@ -1,0 +1,14 @@
+=================================================================================================
+DateTime:28-Feb-2019 09:17:41
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmApproved
+FunctionName:Save
+Error:Conversion from string "15180" to type 'Date' is not valid.
+=================================================================================================
+DateTime:28-Feb-2019 09:20:00
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmApproved
+FunctionName:Save
+Error:Incorrect syntax near 'STT'.

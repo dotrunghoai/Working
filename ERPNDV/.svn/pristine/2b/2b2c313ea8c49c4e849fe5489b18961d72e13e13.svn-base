@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:05-Dec-2017 08:46:50
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Export BILL
+Error:Conversion from type 'DBNull' to type 'String' is not valid.

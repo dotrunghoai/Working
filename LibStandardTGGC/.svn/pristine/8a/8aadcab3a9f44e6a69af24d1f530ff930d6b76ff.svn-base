@@ -1,0 +1,7 @@
+﻿Public Class PP_StandardKQCV_Master_Detail
+    Public ID_K As String
+    Public AttachFileNameOld_K As String
+    Public AttachFileServerOld As String
+    Public ContentReportOld As String
+    Public CreateDate_K As DateTime
+End Class

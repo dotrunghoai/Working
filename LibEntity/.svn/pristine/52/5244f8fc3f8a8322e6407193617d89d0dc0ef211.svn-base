@@ -1,0 +1,5 @@
+
+ Public Class A_TempJCode
+     Public JCode_K As String 
+     Public KhoLuu As String 
+ End  Class

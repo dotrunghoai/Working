@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="PlanRS" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PlanRS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="STT" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonPerLine" type="xs:decimal" minOccurs="0" />
+              <xs:element name="May" type="xs:string" minOccurs="0" />
+              <xs:element name="ProcessName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="StartLot" type="xs:string" minOccurs="0" />
+              <xs:element name="EndLot" type="xs:string" minOccurs="0" />
+              <xs:element name="TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoaiKiem" type="xs:string" minOccurs="0" />
+              <xs:element name="CheckStart" type="xs:string" minOccurs="0" />
+              <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="StartTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndTimePR3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Lotsize" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Customer" type="xs:string" minOccurs="0" />
+              <xs:element name="Method" type="xs:string" minOccurs="0" />
+              <xs:element name="EndLotPO" type="xs:int" minOccurs="0" />
+              <xs:element name="SLConLai" type="xs:int" minOccurs="0" />
+              <xs:element name="TGGC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TBG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SLThietBi" type="xs:int" minOccurs="0" />
+              <xs:element name="Leadtime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TenNguyenLieu" type="xs:string" minOccurs="0" />
+              <xs:element name="SoM2Dong" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndLotNVL" type="xs:int" minOccurs="0" />
+              <xs:element name="CheckNL" type="xs:string" minOccurs="0" />
+              <xs:element name="NhietDo" type="xs:int" minOccurs="0" />
+              <xs:element name="BeRong" type="xs:string" minOccurs="0" />
+              <xs:element name="TongGioCan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TongOutputPcs" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TongOutputCM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TongOutputM2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hole" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProcessCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProcessNameKH" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentProcess" type="xs:string" minOccurs="0" />
+              <xs:element name="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CheckHour1" type="xs:string" minOccurs="0" />
+              <xs:element name="CheckHour" type="xs:string" minOccurs="0" />
+              <xs:element name="CheckDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="Note" type="xs:string" minOccurs="0" />
+              <xs:element name="SapMayRoiSang" type="xs:string" minOccurs="0" />
+              <xs:element name="LyDo" type="xs:string" minOccurs="0" />
+              <xs:element name="LyDoTong" type="xs:string" minOccurs="0" />
+              <xs:element name="DoiUngPP" type="xs:string" minOccurs="0" />
+              <xs:element name="DoiUngPR" type="xs:string" minOccurs="0" />
+              <xs:element name="PlanCD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExportDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TocDo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ApLuc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

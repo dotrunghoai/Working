@@ -1,0 +1,8 @@
+=================================================================================================
+DateTime:26-Apr-2019 15:16:59
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmSysData
+FunctionName:Get System Data
+Error:Cannot insert the value NULL into column 'GroupCode', table 'NDVERP.dbo.INV_Progress'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <connectionStrings>
+        <add name="Report_Chemical_Licence" connectionString="XpoProvider=InMemoryDataStore;data source=E:\Working\ERPNDV\bin\Debug\Report_Chemical_Licence.xsd;read only=True" />
+        <add name="Report_Chemical_Licence 1" connectionString="XpoProvider=InMemoryDataStore;data source=E:\Working\ERPNDV\bin\Debug\Report_Chemical_Licence.xsd;read only=True" />
+        <add name="Report_Chemical_Licence 2" connectionString="XpoProvider=InMemoryDataStore;data source=E:\Working\ERPNDV\bin\Debug\Report_Chemical_Licence.xsd;read only=True" />
+    </connectionStrings>
+</configuration>

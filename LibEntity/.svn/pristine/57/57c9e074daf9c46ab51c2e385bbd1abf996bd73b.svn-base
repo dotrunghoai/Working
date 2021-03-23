@@ -1,0 +1,40 @@
+
+ Public Class ASP_GSRHead
+     Public GSRNo_K As String 
+     Public RequestSection As String 
+     Public RequestDate As DateTime 
+     Public Prepared As String 
+     Public PreparedComment As String 
+     Public PreparedStatus As Boolean 
+     Public PreparedDate As DateTime 
+     Public Checked As String 
+     Public CheckedComment As String 
+     Public CheckedStatus As Boolean 
+     Public CheckedDate As DateTime 
+     Public Approved As String 
+     Public ApprovedComment As String 
+     Public ApprovedStatus As Boolean 
+     Public ApprovedDate As DateTime 
+     Public PUChecked As String 
+     Public PUCheckedComment As String 
+     Public PUCheckedStatus As Boolean 
+     Public PUCheckedDate As DateTime 
+     Public PUApproved As String 
+     Public PUApprovedComment As String 
+     Public PUApprovedStatus As Boolean 
+     Public PUApprovedDate As DateTime 
+     Public EditApproved As String 
+     Public EditApprovedComment As String 
+     Public EditApprovedStatus As Boolean 
+     Public EditApprovedDate As DateTime 
+     Public PUEditApproved As String 
+     Public PUEditApprovedComment As String 
+     Public PUEditApprovedStatus As Boolean 
+     Public PUEditApprovedDate As DateTime 
+     Public Finished As Boolean 
+     Public Locked As Boolean 
+     Public LockedUser As String 
+     Public LockedDate As DateTime 
+     Public CreateUser As String 
+     Public CreateDate As DateTime 
+ End  Class

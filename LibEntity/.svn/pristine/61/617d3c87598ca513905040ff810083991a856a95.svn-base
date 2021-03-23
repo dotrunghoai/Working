@@ -1,0 +1,19 @@
+
+ Public Class HRT_KhoaHocNhanVien
+     Public EmpID_K As String 
+     Public MaKhoa_K As String 
+     Public TrainDate_K As DateTime 
+     Public JoinDate As DateTime 
+     Public StartTime As String 
+     Public EndTime As String 
+     Public Point As  Integer 
+     Public Signature As  Integer 
+     Public Level1OK As  Integer 
+     Public Level1NG As  Integer 
+     Public Level2OK As  Integer 
+     Public Level2NG As  Integer 
+     Public Level3OK As  Integer 
+     Public Level3NG As  Integer 
+     Public CreateDate As DateTime 
+     Public CreateUser As String 
+ End  Class

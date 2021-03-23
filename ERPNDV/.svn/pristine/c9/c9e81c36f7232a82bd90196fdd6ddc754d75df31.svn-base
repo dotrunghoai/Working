@@ -1,0 +1,42 @@
+=================================================================================================
+DateTime:16-Jan-2019 09:02:19
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibNDVWarehouseMaterial.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:16-Jan-2019 09:02:23
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibNDVWarehouseMaterial.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:16-Jan-2019 09:04:32
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPhieuXuat
+FunctionName:XuatLan1
+Error:Object of type 'System.Decimal' cannot be converted to type 'System.Int32'.
+=================================================================================================
+DateTime:16-Jan-2019 09:40:37
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmGSRFollowETA
+FunctionName:gridETA_CellValueChanged
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:16-Jan-2019 09:41:47
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmGSRFollowETA
+FunctionName:gridETA_CellValidating
+Error:Conversion from string "20/12/2018" to type 'Date' is not valid.
+=================================================================================================
+DateTime:16-Jan-2019 11:46:43
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmStartup
+FunctionName:ApproveList
+Error:Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.

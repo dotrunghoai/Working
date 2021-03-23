@@ -1,0 +1,21 @@
+=================================================================================================
+DateTime:11-Nov-2017 11:31:07
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsImportOcean
+FunctionName:Up. Excel
+Error:Column 'BL' does not belong to table 'OI-T11-1'.
+=================================================================================================
+DateTime:11-Nov-2017 13:28:19
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:This SqlTransaction has completed; it is no longer usable.
+=================================================================================================
+DateTime:11-Nov-2017 13:28:54
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmLogisticsReport
+FunctionName:Go Edit
+Error:This SqlTransaction has completed; it is no longer usable.

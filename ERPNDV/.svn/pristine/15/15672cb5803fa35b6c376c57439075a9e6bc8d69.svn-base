@@ -1,0 +1,15 @@
+=================================================================================================
+DateTime:27-Oct-2017 08:22:38
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Unable to cast object of type 'LibNDVWarehouseConsumable.FrmItemCode' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+=================================================================================================
+DateTime:27-Oct-2017 08:22:44
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type

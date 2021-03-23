@@ -1,0 +1,50 @@
+=================================================================================================
+DateTime:22-Jan-2018 11:31:26
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:SetFormEvents
+Error:Object reference not set to an instance of an object.
+=================================================================================================
+DateTime:22-Jan-2018 11:43:00
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:gridOutputPlan_DataBindingComplete
+Error:Column named C_19-Feb-18 cannot be found.
+Parameter name: columnName
+=================================================================================================
+DateTime:22-Jan-2018 11:47:38
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:Export
+Error:Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+=================================================================================================
+DateTime:22-Jan-2018 13:28:43
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecast
+FunctionName:Export
+Error:Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+=================================================================================================
+DateTime:22-Jan-2018 13:31:54
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecast
+FunctionName:Export
+Error:The process cannot access the file 'D:\ERPNDV\ERPNDV\bin\Debug\Template Excel\Template PP\Export\InputLotWorkshop\Ex.InputLotWorkshop.xls' because it is being used by another process.
+=================================================================================================
+DateTime:22-Jan-2018 13:32:11
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecast
+FunctionName:Export
+Error:The process cannot access the file 'D:\ERPNDV\ERPNDV\bin\Debug\Template Excel\Template PP\Export\InputLotWorkshop\Ex.InputLotWorkshop.xls' because it is being used by another process.
+=================================================================================================
+DateTime:22-Jan-2018 13:34:51
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmForecast
+FunctionName:Export
+Error:Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))

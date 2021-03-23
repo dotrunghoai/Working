@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ITForm04" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ITForm04">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Section" type="xs:string" minOccurs="0" />
+              <xs:element name="EmpID" type="xs:string" minOccurs="0" />
+              <xs:element name="EmpName" type="xs:string" minOccurs="0" />
+              <xs:element name="Requester" type="xs:string" minOccurs="0" />
+              <xs:element name="RequesterDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequesterCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="MG" type="xs:string" minOccurs="0" />
+              <xs:element name="MGDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MGCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="ITGL" type="xs:string" minOccurs="0" />
+              <xs:element name="ITGLDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ITGLCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="ITMG" type="xs:string" minOccurs="0" />
+              <xs:element name="ITMGDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ITMGCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="GD" type="xs:string" minOccurs="0" />
+              <xs:element name="GDDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GDCmt" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentID" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreateUser" type="xs:string" minOccurs="0" />
+              <xs:element name="ID1" type="xs:string" minOccurs="0" />
+              <xs:element name="STT" type="xs:int" minOccurs="0" />
+              <xs:element name="URL" type="xs:string" minOccurs="0" />
+              <xs:element name="LyDo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

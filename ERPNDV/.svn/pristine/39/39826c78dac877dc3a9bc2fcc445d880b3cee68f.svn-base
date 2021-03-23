@@ -1,0 +1,38 @@
+=================================================================================================
+DateTime:05-Mar-2019 10:48:37
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibUDM.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:05-Mar-2019 10:48:43
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\ERPNDV\ERPNDV\bin\Debug\LibUDM.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:05-Mar-2019 12:00:32
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmApproved
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ES_AttachFile_ES_Data". The conflict occurred in database "NDVERP", table "dbo.ES_Data", column 'ID'.
+The statement has been terminated.
+=================================================================================================
+DateTime:05-Mar-2019 12:00:56
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmApproved
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ES_AttachFile_ES_Data". The conflict occurred in database "NDVERP", table "dbo.ES_Data", column 'ID'.
+The statement has been terminated.
+=================================================================================================
+DateTime:05-Mar-2019 12:00:59
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmApproved
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ES_AttachFile_ES_Data". The conflict occurred in database "NDVERP", table "dbo.ES_Data", column 'ID'.
+The statement has been terminated.

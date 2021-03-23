@@ -1,0 +1,7 @@
+
+ Public Class HRT_KeHoachDaoTao
+     Public EmpID_K As String 
+     Public MaKhoa_K As String 
+     Public YYMM_K As String 
+     Public YYYY As  Integer 
+ End  Class

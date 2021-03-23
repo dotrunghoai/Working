@@ -1,0 +1,37 @@
+=================================================================================================
+DateTime:29-Jul-2019 09:17:50
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibQCEvaluate.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:29-Jul-2019 09:17:51
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibQCEvaluate.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:29-Jul-2019 09:17:52
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Could not load file or assembly 'file:///D:\NDVERP\ERPNDV\bin\Debug\LibQCEvaluate.dll' or one of its dependencies. The system cannot find the file specified.
+=================================================================================================
+DateTime:29-Jul-2019 13:23:21
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmRequestDetail
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.
+=================================================================================================
+DateTime:29-Jul-2019 13:23:28
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmRequestDetail
+FunctionName:Save
+Error:String or binary data would be truncated.
+The statement has been terminated.

@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ChemicalDetail" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ChemicalDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="IncomingDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InspectionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PONo" type="xs:string" minOccurs="0" />
+              <xs:element name="JCode" type="xs:string" minOccurs="0" />
+              <xs:element name="JName" type="xs:string" minOccurs="0" />
+              <xs:element name="MaterialLotNo" type="xs:string" minOccurs="0" />
+              <xs:element name="CartonQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Unit" type="xs:string" minOccurs="0" />
+              <xs:element name="QuantityOfCarton" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActualCartonQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActualQuantityOfCarton" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActualTotalQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DifferenceQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AcceptanceQualityLimits" type="xs:int" minOccurs="0" />
+              <xs:element name="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpiryEvaluation" type="xs:string" minOccurs="0" />
+              <xs:element name="LimitDate" type="xs:int" minOccurs="0" />
+              <xs:element name="StockInNittsu" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeliveryTime" type="xs:string" minOccurs="0" />
+              <xs:element name="Packing" type="xs:string" minOccurs="0" />
+              <xs:element name="TestReport" type="xs:string" minOccurs="0" />
+              <xs:element name="GeneralEvaluation" type="xs:string" minOccurs="0" />
+              <xs:element name="Maker" type="xs:string" minOccurs="0" />
+              <xs:element name="Supplier" type="xs:string" minOccurs="0" />
+              <xs:element name="Treatment" type="xs:string" minOccurs="0" />
+              <xs:element name="Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Finish" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Inspector" type="xs:string" minOccurs="0" />
+              <xs:element name="Remark" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

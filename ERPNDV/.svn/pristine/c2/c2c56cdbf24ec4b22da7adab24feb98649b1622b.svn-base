@@ -1,0 +1,87 @@
+=================================================================================================
+DateTime:02-Jul-2020 10:30:28
+UserID:16720-Nguyễn Thị Ngọc Nữ
+PC:V00365-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:gridExCustomsDeclarationDetail_CellValueChanged
+Error:ExecuteReader: CommandText property has not been initialized
+=================================================================================================
+DateTime:02-Jul-2020 10:30:42
+UserID:16720-Nguyễn Thị Ngọc Nữ
+PC:V00365-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:gridExCustomsDeclarationDetail_CellValueChanged
+Error:ExecuteReader: CommandText property has not been initialized
+=================================================================================================
+DateTime:02-Jul-2020 10:30:49
+UserID:16720-Nguyễn Thị Ngọc Nữ
+PC:V00365-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:gridExCustomsDeclarationDetail_CellValueChanged
+Error:ExecuteReader: CommandText property has not been initialized
+=================================================================================================
+DateTime:02-Jul-2020 10:31:32
+UserID:16720-Nguyễn Thị Ngọc Nữ
+PC:V00365-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:gridExCustomsDeclarationDetail_CellValueChanged
+Error:ExecuteReader: CommandText property has not been initialized
+=================================================================================================
+DateTime:02-Jul-2020 10:31:42
+UserID:16720-Nguyễn Thị Ngọc Nữ
+PC:V00365-tmtam
+ClassOrForm:FrmExCustomsDeclarationCreate
+FunctionName:gridExCustomsDeclarationDetail_CellValueChanged
+Error:ExecuteReader: CommandText property has not been initialized
+=================================================================================================
+DateTime:02-Jul-2020 11:43:00
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF16Request
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ITF_TransferPC_Detail_ITF_TransferPC". The conflict occurred in database "NDVERP", table "dbo.ITF_TransferPC", column 'ID'.
+The statement has been terminated.
+=================================================================================================
+DateTime:02-Jul-2020 11:43:03
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF16Request
+FunctionName:Save
+Error:The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ITF_TransferPC_Detail_ITF_TransferPC". The conflict occurred in database "NDVERP", table "dbo.ITF_TransferPC", column 'ID'.
+The statement has been terminated.
+=================================================================================================
+DateTime:02-Jul-2020 11:49:53
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF16Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:02-Jul-2020 11:50:00
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF16Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:02-Jul-2020 11:53:04
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF16Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:02-Jul-2020 11:55:58
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF16Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:02-Jul-2020 12:57:44
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmF21Request
+FunctionName:Save
+Error:Value of '1/1/0001 12:00:00 AM' is not valid for 'Value'. 'Value' should be between 'MinDate' and 'MaxDate'.
+Parameter name: Value

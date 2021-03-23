@@ -1,0 +1,57 @@
+=================================================================================================
+DateTime:28-Aug-2017 15:59:22
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueCreate
+FunctionName:Save
+Error:Cannot insert the value NULL into column 'ClaimIssueID', table 'NDVERP.dbo.QI_ClaimIssueD2'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+=================================================================================================
+DateTime:28-Aug-2017 16:04:39
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD2
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:28-Aug-2017 16:04:47
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD2
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:28-Aug-2017 16:04:50
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD2
+FunctionName:Save
+Error:Conversion from string "" to type 'Integer' is not valid.
+=================================================================================================
+DateTime:28-Aug-2017 16:17:07
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Delete Row
+Error:Uncommitted new row cannot be deleted.
+=================================================================================================
+DateTime:28-Aug-2017 16:17:10
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Delete Row
+Error:Uncommitted new row cannot be deleted.
+=================================================================================================
+DateTime:28-Aug-2017 16:17:16
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Delete Row
+Error:Uncommitted new row cannot be deleted.
+=================================================================================================
+DateTime:28-Aug-2017 16:18:40
+UserID:15180-Trương Minh Tâm
+PC:V00619-tmtam
+ClassOrForm:FrmClaimIssueD1
+FunctionName:Delete Row
+Error:Uncommitted new row cannot be deleted.

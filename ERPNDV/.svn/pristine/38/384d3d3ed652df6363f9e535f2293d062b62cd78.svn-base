@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:31-Jul-2018 10:08:44
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmForecastTSB
+FunctionName:Import
+Error:Operator '+' is not defined for type 'DBNull' and type 'Decimal'.

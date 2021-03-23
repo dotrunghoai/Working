@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:26-Mar-2019 10:39:10
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPhieuXuat
+FunctionName:Xuất Kho
+Error:SqlConnection does not support parallel transactions.

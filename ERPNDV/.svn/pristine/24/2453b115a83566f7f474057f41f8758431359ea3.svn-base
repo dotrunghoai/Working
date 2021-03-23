@@ -1,0 +1,22 @@
+=================================================================================================
+DateTime:06-Sep-2019 11:28:24
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmMain
+FunctionName:Open Form
+Error:Value cannot be null.
+Parameter name: type
+=================================================================================================
+DateTime:06-Sep-2019 11:29:31
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmGSRFollowETA_LOAriba
+FunctionName:Import Ariba
+Error:Column 'Yêu cầu mua hàng' does not belong to table .
+=================================================================================================
+DateTime:06-Sep-2019 11:30:36
+UserID:15180-Trương Minh Tâm
+PC:V00365-tmtam
+ClassOrForm:FrmGSRFollowETA_LOAriba
+FunctionName:Import Ariba
+Error:Column '[PO] PO Id' does not belong to table .

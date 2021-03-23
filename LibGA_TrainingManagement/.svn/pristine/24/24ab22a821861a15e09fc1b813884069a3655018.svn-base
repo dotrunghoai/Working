@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <connectionStrings>
+        <add name="Report_Training_HR-F-028" connectionString="XpoProvider=InMemoryDataStore;data source=C:\Working\ERPNDV\bin\Debug\Report_Training_HR-F-028.xsd;read only=True" />
+        <add name="Report_Training_HR-F-028 1" connectionString="XpoProvider=InMemoryDataStore;data source=C:\Working\ERPNDV\bin\Debug\Report_Training_HR-F-028.xsd;read only=True" />
+        <add name="Report_Training_HR-F-030" connectionString="XpoProvider=InMemoryDataStore;data source=C:\Working\ERPNDV\bin\Debug\Report_Training_HR-F-030.xsd;read only=True" />
+    </connectionStrings>
+</configuration>

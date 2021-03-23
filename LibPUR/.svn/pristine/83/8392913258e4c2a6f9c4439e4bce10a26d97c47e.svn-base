@@ -1,0 +1,510 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmBWHSearch
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBWHSearch))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.tlsMenu = New System.Windows.Forms.ToolStrip()
+        Me.mnuSearch = New System.Windows.Forms.ToolStripButton()
+        Me.mnuExport = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.txtEndDate = New System.Windows.Forms.MaskedTextBox()
+        Me.txtStartDate = New System.Windows.Forms.MaskedTextBox()
+        Me.radOrderDate = New System.Windows.Forms.RadioButton()
+        Me.lblFromTo = New System.Windows.Forms.Label()
+        Me.dtpOrderDateEnd = New System.Windows.Forms.DateTimePicker()
+        Me.dtpOrderDate = New System.Windows.Forms.DateTimePicker()
+        Me.bnGrid = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.lblFilterJCode = New System.Windows.Forms.Label()
+        Me.txtJCode = New System.Windows.Forms.TextBox()
+        Me.gridD = New UtilityControl.CustomDataGridView()
+        Me.ID = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.OrderID = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.EmployeeID = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.Sec = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.JCode = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.JName = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.LeadTime = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.MinQty = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.Unit = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.Air = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.Quantity = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DeliveryDate = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.ReceivedQty = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.ReceivedDate = New UtilityControl.CalendarColumn()
+        Me.RemainQty = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.RemainDate = New UtilityControl.CalendarColumn()
+        Me.tlsMenu.SuspendLayout()
+        CType(Me.bnGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.bnGrid.SuspendLayout()
+        CType(Me.gridD, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'tlsMenu
+        '
+        Me.tlsMenu.AutoSize = False
+        Me.tlsMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.tlsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSearch, Me.mnuExport, Me.ToolStripSeparator1})
+        Me.tlsMenu.Location = New System.Drawing.Point(0, 0)
+        Me.tlsMenu.Name = "tlsMenu"
+        Me.tlsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.tlsMenu.Size = New System.Drawing.Size(984, 55)
+        Me.tlsMenu.TabIndex = 1
+        Me.tlsMenu.Text = "ToolStrip1"
+        '
+        'mnuSearch
+        '
+        Me.mnuSearch.AutoSize = False
+        Me.mnuSearch.Image = CType(resources.GetObject("mnuSearch.Image"), System.Drawing.Image)
+        Me.mnuSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuSearch.Name = "mnuSearch"
+        Me.mnuSearch.Size = New System.Drawing.Size(60, 50)
+        Me.mnuSearch.Text = "Search"
+        Me.mnuSearch.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'mnuExport
+        '
+        Me.mnuExport.AutoSize = False
+        Me.mnuExport.Image = CType(resources.GetObject("mnuExport.Image"), System.Drawing.Image)
+        Me.mnuExport.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mnuExport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mnuExport.Name = "mnuExport"
+        Me.mnuExport.Size = New System.Drawing.Size(60, 50)
+        Me.mnuExport.Text = "Export"
+        Me.mnuExport.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
+        Me.mnuExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 55)
+        '
+        'txtEndDate
+        '
+        Me.txtEndDate.Location = New System.Drawing.Point(257, 28)
+        Me.txtEndDate.Mask = "00/00/0000"
+        Me.txtEndDate.Name = "txtEndDate"
+        Me.txtEndDate.Size = New System.Drawing.Size(64, 20)
+        Me.txtEndDate.TabIndex = 2
+        Me.txtEndDate.ValidatingType = GetType(Date)
+        '
+        'txtStartDate
+        '
+        Me.txtStartDate.Location = New System.Drawing.Point(134, 28)
+        Me.txtStartDate.Mask = "00/00/0000"
+        Me.txtStartDate.Name = "txtStartDate"
+        Me.txtStartDate.Size = New System.Drawing.Size(64, 20)
+        Me.txtStartDate.TabIndex = 0
+        Me.txtStartDate.ValidatingType = GetType(Date)
+        '
+        'radOrderDate
+        '
+        Me.radOrderDate.AutoSize = True
+        Me.radOrderDate.Checked = True
+        Me.radOrderDate.Location = New System.Drawing.Point(134, 7)
+        Me.radOrderDate.Name = "radOrderDate"
+        Me.radOrderDate.Size = New System.Drawing.Size(78, 18)
+        Me.radOrderDate.TabIndex = 6
+        Me.radOrderDate.TabStop = True
+        Me.radOrderDate.Text = "Order Date"
+        Me.radOrderDate.UseVisualStyleBackColor = True
+        '
+        'lblFromTo
+        '
+        Me.lblFromTo.AutoSize = True
+        Me.lblFromTo.Location = New System.Drawing.Point(223, 31)
+        Me.lblFromTo.Name = "lblFromTo"
+        Me.lblFromTo.Size = New System.Drawing.Size(25, 14)
+        Me.lblFromTo.TabIndex = 5
+        Me.lblFromTo.Text = "==>"
+        '
+        'dtpOrderDateEnd
+        '
+        Me.dtpOrderDateEnd.CustomFormat = "dd/MM/yyyy"
+        Me.dtpOrderDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpOrderDateEnd.Location = New System.Drawing.Point(320, 28)
+        Me.dtpOrderDateEnd.Name = "dtpOrderDateEnd"
+        Me.dtpOrderDateEnd.Size = New System.Drawing.Size(17, 20)
+        Me.dtpOrderDateEnd.TabIndex = 3
+        '
+        'dtpOrderDate
+        '
+        Me.dtpOrderDate.CustomFormat = "dd/MM/yyyy"
+        Me.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpOrderDate.Location = New System.Drawing.Point(197, 28)
+        Me.dtpOrderDate.Name = "dtpOrderDate"
+        Me.dtpOrderDate.Size = New System.Drawing.Size(17, 20)
+        Me.dtpOrderDate.TabIndex = 1
+        '
+        'bnGrid
+        '
+        Me.bnGrid.AddNewItem = Nothing
+        Me.bnGrid.CountItem = Me.BindingNavigatorCountItem
+        Me.bnGrid.DeleteItem = Nothing
+        Me.bnGrid.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.bnGrid.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
+        Me.bnGrid.Location = New System.Drawing.Point(0, 667)
+        Me.bnGrid.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.bnGrid.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.bnGrid.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.bnGrid.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.bnGrid.Name = "bnGrid"
+        Me.bnGrid.PositionItem = Me.BindingNavigatorPositionItem
+        Me.bnGrid.Size = New System.Drawing.Size(984, 25)
+        Me.bnGrid.TabIndex = 35
+        Me.bnGrid.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        '
+        'BindingNavigatorSeparator
+        '
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
+        '
+        'BindingNavigatorSeparator1
+        '
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        '
+        'BindingNavigatorSeparator2
+        '
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'lblFilterJCode
+        '
+        Me.lblFilterJCode.AutoSize = True
+        Me.lblFilterJCode.Location = New System.Drawing.Point(349, 11)
+        Me.lblFilterJCode.Name = "lblFilterJCode"
+        Me.lblFilterJCode.Size = New System.Drawing.Size(72, 14)
+        Me.lblFilterJCode.TabIndex = 7
+        Me.lblFilterJCode.Text = "SearchJCode"
+        '
+        'txtJCode
+        '
+        Me.txtJCode.Location = New System.Drawing.Point(349, 28)
+        Me.txtJCode.Name = "txtJCode"
+        Me.txtJCode.Size = New System.Drawing.Size(85, 20)
+        Me.txtJCode.TabIndex = 4
+        '
+        'gridD
+        '
+        Me.gridD.AllowUserToAddRows = False
+        Me.gridD.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LemonChiffon
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue
+        Me.gridD.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.gridD.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.gridD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.OrderID, Me.EmployeeID, Me.Sec, Me.JCode, Me.JName, Me.LeadTime, Me.MinQty, Me.Unit, Me.Air, Me.Quantity, Me.DeliveryDate, Me.ReceivedQty, Me.ReceivedDate, Me.RemainQty, Me.RemainDate})
+        Me.gridD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridD.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.gridD.EnableHeadersVisualStyles = False
+        Me.gridD.Location = New System.Drawing.Point(0, 55)
+        Me.gridD.Name = "gridD"
+        Me.gridD.RowHeadersWidth = 20
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Blue
+        Me.gridD.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.gridD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridD.Size = New System.Drawing.Size(984, 612)
+        Me.gridD.TabIndex = 8
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "GSR No"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'OrderID
+        '
+        Me.OrderID.DataPropertyName = "OrderID"
+        Me.OrderID.Frozen = True
+        Me.OrderID.HeaderText = "Order ID"
+        Me.OrderID.Name = "OrderID"
+        Me.OrderID.ReadOnly = True
+        Me.OrderID.Width = 50
+        '
+        'EmployeeID
+        '
+        Me.EmployeeID.DataPropertyName = "EmployeeID"
+        Me.EmployeeID.Frozen = True
+        Me.EmployeeID.HeaderText = "ECode"
+        Me.EmployeeID.Name = "EmployeeID"
+        Me.EmployeeID.ReadOnly = True
+        Me.EmployeeID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.EmployeeID.Width = 65
+        '
+        'Sec
+        '
+        Me.Sec.DataPropertyName = "Department"
+        Me.Sec.Frozen = True
+        Me.Sec.HeaderText = "Sec"
+        Me.Sec.Name = "Sec"
+        Me.Sec.ReadOnly = True
+        Me.Sec.Width = 60
+        '
+        'JCode
+        '
+        Me.JCode.DataPropertyName = "JCode"
+        Me.JCode.HeaderText = "JCode"
+        Me.JCode.Name = "JCode"
+        Me.JCode.ReadOnly = True
+        Me.JCode.Width = 60
+        '
+        'JName
+        '
+        Me.JName.DataPropertyName = "JName"
+        Me.JName.HeaderText = "JName"
+        Me.JName.Name = "JName"
+        Me.JName.ReadOnly = True
+        Me.JName.Width = 120
+        '
+        'LeadTime
+        '
+        Me.LeadTime.DataPropertyName = "LeadTime"
+        Me.LeadTime.HeaderText = "Lead Time"
+        Me.LeadTime.Name = "LeadTime"
+        Me.LeadTime.ReadOnly = True
+        Me.LeadTime.Width = 60
+        '
+        'MinQty
+        '
+        Me.MinQty.DataPropertyName = "MinQty"
+        Me.MinQty.HeaderText = "MOQ"
+        Me.MinQty.Name = "MinQty"
+        Me.MinQty.ReadOnly = True
+        Me.MinQty.Width = 60
+        '
+        'Unit
+        '
+        Me.Unit.DataPropertyName = "Unit"
+        Me.Unit.HeaderText = "Unit"
+        Me.Unit.Name = "Unit"
+        Me.Unit.ReadOnly = True
+        Me.Unit.Width = 50
+        '
+        'Air
+        '
+        Me.Air.DataPropertyName = "Air"
+        Me.Air.HeaderText = "Means of Transport"
+        Me.Air.Name = "Air"
+        Me.Air.ReadOnly = True
+        Me.Air.Width = 80
+        '
+        'Quantity
+        '
+        Me.Quantity.DataPropertyName = "Quantity"
+        Me.Quantity.HeaderText = "Quantity Ordered"
+        Me.Quantity.Name = "Quantity"
+        Me.Quantity.ReadOnly = True
+        Me.Quantity.Width = 80
+        '
+        'DeliveryDate
+        '
+        Me.DeliveryDate.DataPropertyName = "DeliveryDate"
+        DataGridViewCellStyle2.Format = "dd-MM-yyyy"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.DeliveryDate.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DeliveryDate.HeaderText = "Date of MGR"
+        Me.DeliveryDate.Name = "DeliveryDate"
+        Me.DeliveryDate.ReadOnly = True
+        Me.DeliveryDate.Width = 80
+        '
+        'ReceivedQty
+        '
+        Me.ReceivedQty.DataPropertyName = "ReceivedQty"
+        Me.ReceivedQty.HeaderText = "Received Qty"
+        Me.ReceivedQty.Name = "ReceivedQty"
+        Me.ReceivedQty.Width = 80
+        '
+        'ReceivedDate
+        '
+        Me.ReceivedDate.DataPropertyName = "ReceivedDate"
+        DataGridViewCellStyle3.Format = "dd-MM-yyyy"
+        Me.ReceivedDate.DefaultCellStyle = DataGridViewCellStyle3
+        Me.ReceivedDate.HeaderText = "Received Date"
+        Me.ReceivedDate.Name = "ReceivedDate"
+        Me.ReceivedDate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ReceivedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        Me.ReceivedDate.Width = 80
+        '
+        'RemainQty
+        '
+        Me.RemainQty.DataPropertyName = "RemainQty"
+        Me.RemainQty.HeaderText = "Remain Qty"
+        Me.RemainQty.Name = "RemainQty"
+        Me.RemainQty.Width = 80
+        '
+        'RemainDate
+        '
+        Me.RemainDate.DataPropertyName = "RemainDate"
+        DataGridViewCellStyle4.Format = "dd-MM-yyyy"
+        Me.RemainDate.DefaultCellStyle = DataGridViewCellStyle4
+        Me.RemainDate.HeaderText = "Remain Date"
+        Me.RemainDate.Name = "RemainDate"
+        Me.RemainDate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.RemainDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        Me.RemainDate.Width = 80
+        '
+        'FrmBWHSearch
+        '
+        Me.Appearance.Options.UseFont = True
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(984, 692)
+        Me.Controls.Add(Me.lblFilterJCode)
+        Me.Controls.Add(Me.txtJCode)
+        Me.Controls.Add(Me.gridD)
+        Me.Controls.Add(Me.bnGrid)
+        Me.Controls.Add(Me.txtEndDate)
+        Me.Controls.Add(Me.txtStartDate)
+        Me.Controls.Add(Me.radOrderDate)
+        Me.Controls.Add(Me.lblFromTo)
+        Me.Controls.Add(Me.dtpOrderDateEnd)
+        Me.Controls.Add(Me.dtpOrderDate)
+        Me.Controls.Add(Me.tlsMenu)
+        Me.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Name = "FrmBWHSearch"
+        Me.Tag = "020805"
+        Me.Text = "BWH Search"
+        Me.tlsMenu.ResumeLayout(False)
+        Me.tlsMenu.PerformLayout()
+        CType(Me.bnGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.bnGrid.ResumeLayout(False)
+        Me.bnGrid.PerformLayout()
+        CType(Me.gridD, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents tlsMenu As System.Windows.Forms.ToolStrip
+    Friend WithEvents mnuSearch As System.Windows.Forms.ToolStripButton
+    Friend WithEvents mnuExport As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents txtEndDate As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txtStartDate As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents radOrderDate As System.Windows.Forms.RadioButton
+    Friend WithEvents lblFromTo As System.Windows.Forms.Label
+    Friend WithEvents dtpOrderDateEnd As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpOrderDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents gridD As UtilityControl.CustomDataGridView
+    Friend WithEvents bnGrid As System.Windows.Forms.BindingNavigator
+    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents lblFilterJCode As System.Windows.Forms.Label
+    Friend WithEvents txtJCode As System.Windows.Forms.TextBox
+    Friend WithEvents ID As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents OrderID As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents EmployeeID As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents Sec As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents JCode As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents JName As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents LeadTime As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents MinQty As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents Unit As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents Air As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents Quantity As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DeliveryDate As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents ReceivedQty As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents ReceivedDate As UtilityControl.CalendarColumn
+    Friend WithEvents RemainQty As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents RemainDate As UtilityControl.CalendarColumn
+End Class

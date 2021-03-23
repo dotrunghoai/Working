@@ -1,0 +1,36 @@
+=================================================================================================
+DateTime:10-Apr-2019 15:40:37
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmF01Request
+FunctionName:Save
+Error:Cannot insert the value NULL into column 'EmpID', table 'NDVERP.dbo.ITF_Form001_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+=================================================================================================
+DateTime:10-Apr-2019 16:11:59
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmF01Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:10-Apr-2019 16:14:05
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmF01Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:10-Apr-2019 16:32:15
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmF04Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.
+=================================================================================================
+DateTime:10-Apr-2019 16:32:21
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmF04Request
+FunctionName:Confirm
+Error:We need to know who to send this to. Make sure you enter at least one name.

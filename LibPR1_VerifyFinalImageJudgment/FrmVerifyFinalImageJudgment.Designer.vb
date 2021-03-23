@@ -1,0 +1,759 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmVerifyFinalImageJudgment
+    Inherits DevExpress.XtraEditors.XtraForm
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVerifyFinalImageJudgment))
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.Bar2 = New DevExpress.XtraBars.Bar()
+        Me.btnShow = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnEdit = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnGetData = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnExport = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.btnImport = New DevExpress.XtraBars.BarLargeButtonItem()
+        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
+        Me.Bar1 = New DevExpress.XtraBars.Bar()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.BandedGridView1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridView()
+        Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.ProductCode = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.LotNumber = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.ChangeDate = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand6 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.Method = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.CustomerName = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.ProductName = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.ProcessNameE = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.CoAOIHayKhong = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.TotalBarcodeKiemThucTe = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.TongKetLoiDenBarcode = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand2 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.Err001_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err002_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err003_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err004_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err005_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err006_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err007_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err009_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err627_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err639_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Other_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Total_Ship = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.Err005_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err001_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err002_004_009_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err007_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err003_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err006_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err639_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err627_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.TongHinhAnhLoiMayAOIBat_Image = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.Err001_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err002_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err003_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err004_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err005_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err006_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err007_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err009_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err627_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Err639_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Other_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.Total_Actual = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand5 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.MSNVTongKet = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.GhiChu = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.cbbOX = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
+        Me.chbLock = New DevExpress.XtraEditors.CheckEdit()
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BandedGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbbOX, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chbLock.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'BarManager1
+        '
+        Me.BarManager1.AllowCustomization = False
+        Me.BarManager1.AllowShowToolbarsPopup = False
+        Me.BarManager1.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.Bar2})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
+        Me.BarManager1.Form = Me
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.btnShow, Me.btnEdit, Me.btnGetData, Me.btnExport, Me.btnImport})
+        Me.BarManager1.MaxItemId = 5
+        '
+        'Bar2
+        '
+        Me.Bar2.BarName = "Custom 2"
+        Me.Bar2.DockCol = 0
+        Me.Bar2.DockRow = 0
+        Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnShow), New DevExpress.XtraBars.LinkPersistInfo(Me.btnEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.btnGetData), New DevExpress.XtraBars.LinkPersistInfo(Me.btnExport), New DevExpress.XtraBars.LinkPersistInfo(Me.btnImport)})
+        Me.Bar2.OptionsBar.DrawBorder = False
+        Me.Bar2.OptionsBar.DrawDragBorder = False
+        Me.Bar2.Text = "Custom 2"
+        '
+        'btnShow
+        '
+        Me.btnShow.Caption = "Show"
+        Me.btnShow.Id = 0
+        Me.btnShow.ImageOptions.Image = CType(resources.GetObject("btnShow.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnShow.ImageOptions.LargeImage = CType(resources.GetObject("btnShow.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnShow.Name = "btnShow"
+        Me.btnShow.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Caption = "Edit"
+        Me.btnEdit.Id = 1
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("btnEdit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("btnEdit.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnGetData
+        '
+        Me.btnGetData.Caption = "Get Data"
+        Me.btnGetData.Id = 2
+        Me.btnGetData.ImageOptions.Image = CType(resources.GetObject("btnGetData.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnGetData.ImageOptions.LargeImage = CType(resources.GetObject("btnGetData.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnGetData.Name = "btnGetData"
+        Me.btnGetData.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnExport
+        '
+        Me.btnExport.Caption = "Export"
+        Me.btnExport.Id = 3
+        Me.btnExport.ImageOptions.Image = CType(resources.GetObject("btnExport.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnExport.ImageOptions.LargeImage = CType(resources.GetObject("btnExport.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(60, 60)
+        '
+        'btnImport
+        '
+        Me.btnImport.Caption = "Import"
+        Me.btnImport.Id = 4
+        Me.btnImport.ImageOptions.Image = CType(resources.GetObject("btnImport.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnImport.ImageOptions.LargeImage = CType(resources.GetObject("btnImport.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnImport.Name = "btnImport"
+        Me.btnImport.Size = New System.Drawing.Size(60, 60)
+        '
+        'barDockControlTop
+        '
+        Me.barDockControlTop.CausesValidation = False
+        Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlTop.Manager = Me.BarManager1
+        Me.barDockControlTop.Size = New System.Drawing.Size(684, 60)
+        '
+        'barDockControlBottom
+        '
+        Me.barDockControlBottom.CausesValidation = False
+        Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 430)
+        Me.barDockControlBottom.Manager = Me.BarManager1
+        Me.barDockControlBottom.Size = New System.Drawing.Size(684, 0)
+        '
+        'barDockControlLeft
+        '
+        Me.barDockControlLeft.CausesValidation = False
+        Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 60)
+        Me.barDockControlLeft.Manager = Me.BarManager1
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 370)
+        '
+        'barDockControlRight
+        '
+        Me.barDockControlRight.CausesValidation = False
+        Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me.barDockControlRight.Location = New System.Drawing.Point(684, 60)
+        Me.barDockControlRight.Manager = Me.BarManager1
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 370)
+        '
+        'Bar1
+        '
+        Me.Bar1.BarName = "Tools"
+        Me.Bar1.DockCol = 0
+        Me.Bar1.DockRow = 0
+        Me.Bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Bar1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnShow), New DevExpress.XtraBars.LinkPersistInfo(Me.btnEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.btnGetData), New DevExpress.XtraBars.LinkPersistInfo(Me.btnExport), New DevExpress.XtraBars.LinkPersistInfo(Me.btnImport)})
+        Me.Bar1.OptionsBar.DrawBorder = False
+        Me.Bar1.OptionsBar.DrawDragBorder = False
+        Me.Bar1.Text = "Tools"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(0, 60)
+        Me.GridControl1.MainView = Me.BandedGridView1
+        Me.GridControl1.MenuManager = Me.BarManager1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cbbOX})
+        Me.GridControl1.Size = New System.Drawing.Size(684, 370)
+        Me.GridControl1.TabIndex = 4
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.BandedGridView1})
+        '
+        'BandedGridView1
+        '
+        Me.BandedGridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.gridBand6, Me.gridBand2, Me.gridBand3, Me.gridBand4, Me.gridBand5})
+        Me.BandedGridView1.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.ProductCode, Me.LotNumber, Me.ChangeDate, Me.Method, Me.CustomerName, Me.ProductName, Me.ProcessNameE, Me.CoAOIHayKhong, Me.TotalBarcodeKiemThucTe, Me.TongKetLoiDenBarcode, Me.Err001_Ship, Me.Err002_Ship, Me.Err003_Ship, Me.Err004_Ship, Me.Err005_Ship, Me.Err006_Ship, Me.Err007_Ship, Me.Err009_Ship, Me.Err627_Ship, Me.Err639_Ship, Me.Other_Ship, Me.Total_Ship, Me.Err005_Image, Me.Err001_Image, Me.Err002_004_009_Image, Me.Err007_Image, Me.Err003_Image, Me.Err006_Image, Me.Err639_Image, Me.Err627_Image, Me.TongHinhAnhLoiMayAOIBat_Image, Me.Err001_Actual, Me.Err002_Actual, Me.Err003_Actual, Me.Err004_Actual, Me.Err005_Actual, Me.Err006_Actual, Me.Err007_Actual, Me.Err009_Actual, Me.Err627_Actual, Me.Err639_Actual, Me.Other_Actual, Me.Total_Actual, Me.MSNVTongKet, Me.GhiChu})
+        Me.BandedGridView1.GridControl = Me.GridControl1
+        Me.BandedGridView1.Name = "BandedGridView1"
+        Me.BandedGridView1.OptionsFind.AlwaysVisible = True
+        Me.BandedGridView1.OptionsView.ShowGroupPanel = False
+        '
+        'GridBand1
+        '
+        Me.GridBand1.Columns.Add(Me.ProductCode)
+        Me.GridBand1.Columns.Add(Me.LotNumber)
+        Me.GridBand1.Columns.Add(Me.ChangeDate)
+        Me.GridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Me.GridBand1.Name = "GridBand1"
+        Me.GridBand1.VisibleIndex = 0
+        Me.GridBand1.Width = 225
+        '
+        'ProductCode
+        '
+        Me.ProductCode.Caption = "Product Code"
+        Me.ProductCode.FieldName = "ProductCode"
+        Me.ProductCode.Name = "ProductCode"
+        Me.ProductCode.Visible = True
+        '
+        'LotNumber
+        '
+        Me.LotNumber.Caption = "Lot Number"
+        Me.LotNumber.FieldName = "LotNumber"
+        Me.LotNumber.Name = "LotNumber"
+        Me.LotNumber.Visible = True
+        '
+        'ChangeDate
+        '
+        Me.ChangeDate.Caption = "Change Date"
+        Me.ChangeDate.FieldName = "ChangeDate"
+        Me.ChangeDate.Name = "ChangeDate"
+        Me.ChangeDate.Visible = True
+        '
+        'gridBand6
+        '
+        Me.gridBand6.Columns.Add(Me.Method)
+        Me.gridBand6.Columns.Add(Me.CustomerName)
+        Me.gridBand6.Columns.Add(Me.ProductName)
+        Me.gridBand6.Columns.Add(Me.ProcessNameE)
+        Me.gridBand6.Columns.Add(Me.CoAOIHayKhong)
+        Me.gridBand6.Columns.Add(Me.TotalBarcodeKiemThucTe)
+        Me.gridBand6.Columns.Add(Me.TongKetLoiDenBarcode)
+        Me.gridBand6.Name = "gridBand6"
+        Me.gridBand6.VisibleIndex = 1
+        Me.gridBand6.Width = 707
+        '
+        'Method
+        '
+        Me.Method.Caption = "Method"
+        Me.Method.FieldName = "Method"
+        Me.Method.Name = "Method"
+        Me.Method.Visible = True
+        Me.Method.Width = 84
+        '
+        'CustomerName
+        '
+        Me.CustomerName.Caption = "Customer Name"
+        Me.CustomerName.FieldName = "CustomerName"
+        Me.CustomerName.Name = "CustomerName"
+        Me.CustomerName.Visible = True
+        Me.CustomerName.Width = 72
+        '
+        'ProductName
+        '
+        Me.ProductName.Caption = "Product Name"
+        Me.ProductName.FieldName = "ProductName"
+        Me.ProductName.Name = "ProductName"
+        Me.ProductName.Visible = True
+        Me.ProductName.Width = 112
+        '
+        'ProcessNameE
+        '
+        Me.ProcessNameE.Caption = "Process Name E"
+        Me.ProcessNameE.FieldName = "ProcessNameE"
+        Me.ProcessNameE.Name = "ProcessNameE"
+        Me.ProcessNameE.Visible = True
+        Me.ProcessNameE.Width = 119
+        '
+        'CoAOIHayKhong
+        '
+        Me.CoAOIHayKhong.Caption = "Có AOI hay không (O: có, X: không)"
+        Me.CoAOIHayKhong.FieldName = "CoAOIHayKhong"
+        Me.CoAOIHayKhong.Name = "CoAOIHayKhong"
+        Me.CoAOIHayKhong.Visible = True
+        '
+        'TotalBarcodeKiemThucTe
+        '
+        Me.TotalBarcodeKiemThucTe.Caption = "Total Barcode kiểm thực tế"
+        Me.TotalBarcodeKiemThucTe.FieldName = "TotalBarcodeKiemThucTe"
+        Me.TotalBarcodeKiemThucTe.Name = "TotalBarcodeKiemThucTe"
+        Me.TotalBarcodeKiemThucTe.Visible = True
+        Me.TotalBarcodeKiemThucTe.Width = 125
+        '
+        'TongKetLoiDenBarcode
+        '
+        Me.TongKetLoiDenBarcode.Caption = "Tổng kết lỗi đến Barcode"
+        Me.TongKetLoiDenBarcode.FieldName = "TongKetLoiDenBarcode"
+        Me.TongKetLoiDenBarcode.Name = "TongKetLoiDenBarcode"
+        Me.TongKetLoiDenBarcode.Visible = True
+        Me.TongKetLoiDenBarcode.Width = 120
+        '
+        'gridBand2
+        '
+        Me.gridBand2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridBand2.AppearanceHeader.Options.UseBackColor = True
+        Me.gridBand2.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand2.Caption = "Tổng kết mode lỗi cho hàng đi/lot (pcs)"
+        Me.gridBand2.Columns.Add(Me.Err001_Ship)
+        Me.gridBand2.Columns.Add(Me.Err002_Ship)
+        Me.gridBand2.Columns.Add(Me.Err003_Ship)
+        Me.gridBand2.Columns.Add(Me.Err004_Ship)
+        Me.gridBand2.Columns.Add(Me.Err005_Ship)
+        Me.gridBand2.Columns.Add(Me.Err006_Ship)
+        Me.gridBand2.Columns.Add(Me.Err007_Ship)
+        Me.gridBand2.Columns.Add(Me.Err009_Ship)
+        Me.gridBand2.Columns.Add(Me.Err627_Ship)
+        Me.gridBand2.Columns.Add(Me.Err639_Ship)
+        Me.gridBand2.Columns.Add(Me.Other_Ship)
+        Me.gridBand2.Columns.Add(Me.Total_Ship)
+        Me.gridBand2.Name = "gridBand2"
+        Me.gridBand2.VisibleIndex = 2
+        Me.gridBand2.Width = 900
+        '
+        'Err001_Ship
+        '
+        Me.Err001_Ship.Caption = "Err001_Ship"
+        Me.Err001_Ship.FieldName = "Err001_Ship"
+        Me.Err001_Ship.Name = "Err001_Ship"
+        Me.Err001_Ship.Visible = True
+        '
+        'Err002_Ship
+        '
+        Me.Err002_Ship.Caption = "Err002_Ship"
+        Me.Err002_Ship.FieldName = "Err002_Ship"
+        Me.Err002_Ship.Name = "Err002_Ship"
+        Me.Err002_Ship.Visible = True
+        '
+        'Err003_Ship
+        '
+        Me.Err003_Ship.Caption = "Err003_Ship"
+        Me.Err003_Ship.FieldName = "Err003_Ship"
+        Me.Err003_Ship.Name = "Err003_Ship"
+        Me.Err003_Ship.Visible = True
+        '
+        'Err004_Ship
+        '
+        Me.Err004_Ship.Caption = "Err004_Ship"
+        Me.Err004_Ship.FieldName = "Err004_Ship"
+        Me.Err004_Ship.Name = "Err004_Ship"
+        Me.Err004_Ship.Visible = True
+        '
+        'Err005_Ship
+        '
+        Me.Err005_Ship.Caption = "Err005_Ship"
+        Me.Err005_Ship.FieldName = "Err005_Ship"
+        Me.Err005_Ship.Name = "Err005_Ship"
+        Me.Err005_Ship.Visible = True
+        '
+        'Err006_Ship
+        '
+        Me.Err006_Ship.Caption = "Err006_Ship"
+        Me.Err006_Ship.FieldName = "Err006_Ship"
+        Me.Err006_Ship.Name = "Err006_Ship"
+        Me.Err006_Ship.Visible = True
+        '
+        'Err007_Ship
+        '
+        Me.Err007_Ship.Caption = "Err007_Ship"
+        Me.Err007_Ship.FieldName = "Err007_Ship"
+        Me.Err007_Ship.Name = "Err007_Ship"
+        Me.Err007_Ship.Visible = True
+        '
+        'Err009_Ship
+        '
+        Me.Err009_Ship.Caption = "Err009_Ship"
+        Me.Err009_Ship.FieldName = "Err009_Ship"
+        Me.Err009_Ship.Name = "Err009_Ship"
+        Me.Err009_Ship.Visible = True
+        '
+        'Err627_Ship
+        '
+        Me.Err627_Ship.Caption = "Err627_Ship"
+        Me.Err627_Ship.FieldName = "Err627_Ship"
+        Me.Err627_Ship.Name = "Err627_Ship"
+        Me.Err627_Ship.Visible = True
+        '
+        'Err639_Ship
+        '
+        Me.Err639_Ship.Caption = "Err639_Ship"
+        Me.Err639_Ship.FieldName = "Err639_Ship"
+        Me.Err639_Ship.Name = "Err639_Ship"
+        Me.Err639_Ship.Visible = True
+        '
+        'Other_Ship
+        '
+        Me.Other_Ship.Caption = "Other_Ship"
+        Me.Other_Ship.FieldName = "Other_Ship"
+        Me.Other_Ship.Name = "Other_Ship"
+        Me.Other_Ship.Visible = True
+        '
+        'Total_Ship
+        '
+        Me.Total_Ship.Caption = "Total_Ship"
+        Me.Total_Ship.FieldName = "Total_Ship"
+        Me.Total_Ship.Name = "Total_Ship"
+        Me.Total_Ship.Visible = True
+        '
+        'gridBand3
+        '
+        Me.gridBand3.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridBand3.AppearanceHeader.Options.UseBackColor = True
+        Me.gridBand3.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand3.Caption = "Hình ảnh lỗi Máy AOI bắt "
+        Me.gridBand3.Columns.Add(Me.Err005_Image)
+        Me.gridBand3.Columns.Add(Me.Err001_Image)
+        Me.gridBand3.Columns.Add(Me.Err002_004_009_Image)
+        Me.gridBand3.Columns.Add(Me.Err007_Image)
+        Me.gridBand3.Columns.Add(Me.Err003_Image)
+        Me.gridBand3.Columns.Add(Me.Err006_Image)
+        Me.gridBand3.Columns.Add(Me.Err639_Image)
+        Me.gridBand3.Columns.Add(Me.Err627_Image)
+        Me.gridBand3.Columns.Add(Me.TongHinhAnhLoiMayAOIBat_Image)
+        Me.gridBand3.Name = "gridBand3"
+        Me.gridBand3.VisibleIndex = 3
+        Me.gridBand3.Width = 761
+        '
+        'Err005_Image
+        '
+        Me.Err005_Image.Caption = "Err005_Image"
+        Me.Err005_Image.FieldName = "Err005_Image"
+        Me.Err005_Image.Name = "Err005_Image"
+        Me.Err005_Image.Visible = True
+        '
+        'Err001_Image
+        '
+        Me.Err001_Image.Caption = "Err001_Image"
+        Me.Err001_Image.FieldName = "Err001_Image"
+        Me.Err001_Image.Name = "Err001_Image"
+        Me.Err001_Image.Visible = True
+        '
+        'Err002_004_009_Image
+        '
+        Me.Err002_004_009_Image.Caption = "Err002_004_009_Image"
+        Me.Err002_004_009_Image.FieldName = "Err002_004_009_Image"
+        Me.Err002_004_009_Image.Name = "Err002_004_009_Image"
+        Me.Err002_004_009_Image.Visible = True
+        Me.Err002_004_009_Image.Width = 111
+        '
+        'Err007_Image
+        '
+        Me.Err007_Image.Caption = "Err007_Image"
+        Me.Err007_Image.FieldName = "Err007_Image"
+        Me.Err007_Image.Name = "Err007_Image"
+        Me.Err007_Image.Visible = True
+        '
+        'Err003_Image
+        '
+        Me.Err003_Image.Caption = "Err003_Image"
+        Me.Err003_Image.FieldName = "Err003_Image"
+        Me.Err003_Image.Name = "Err003_Image"
+        Me.Err003_Image.Visible = True
+        '
+        'Err006_Image
+        '
+        Me.Err006_Image.Caption = "Err006_Image"
+        Me.Err006_Image.FieldName = "Err006_Image"
+        Me.Err006_Image.Name = "Err006_Image"
+        Me.Err006_Image.Visible = True
+        '
+        'Err639_Image
+        '
+        Me.Err639_Image.Caption = "Err639_Image"
+        Me.Err639_Image.FieldName = "Err639_Image"
+        Me.Err639_Image.Name = "Err639_Image"
+        Me.Err639_Image.Visible = True
+        '
+        'Err627_Image
+        '
+        Me.Err627_Image.Caption = "Err627_Image"
+        Me.Err627_Image.FieldName = "Err627_Image"
+        Me.Err627_Image.Name = "Err627_Image"
+        Me.Err627_Image.Visible = True
+        '
+        'TongHinhAnhLoiMayAOIBat_Image
+        '
+        Me.TongHinhAnhLoiMayAOIBat_Image.Caption = "Tổng hình ảnh lỗi máy AOI bắt"
+        Me.TongHinhAnhLoiMayAOIBat_Image.FieldName = "TongHinhAnhLoiMayAOIBat_Image"
+        Me.TongHinhAnhLoiMayAOIBat_Image.Name = "TongHinhAnhLoiMayAOIBat_Image"
+        Me.TongHinhAnhLoiMayAOIBat_Image.Visible = True
+        Me.TongHinhAnhLoiMayAOIBat_Image.Width = 125
+        '
+        'gridBand4
+        '
+        Me.gridBand4.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.gridBand4.AppearanceHeader.Options.UseBackColor = True
+        Me.gridBand4.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand4.Caption = "Tổng mode lỗi thực tế lot hàng/cuộn (pcs)"
+        Me.gridBand4.Columns.Add(Me.Err001_Actual)
+        Me.gridBand4.Columns.Add(Me.Err002_Actual)
+        Me.gridBand4.Columns.Add(Me.Err003_Actual)
+        Me.gridBand4.Columns.Add(Me.Err004_Actual)
+        Me.gridBand4.Columns.Add(Me.Err005_Actual)
+        Me.gridBand4.Columns.Add(Me.Err006_Actual)
+        Me.gridBand4.Columns.Add(Me.Err007_Actual)
+        Me.gridBand4.Columns.Add(Me.Err009_Actual)
+        Me.gridBand4.Columns.Add(Me.Err627_Actual)
+        Me.gridBand4.Columns.Add(Me.Err639_Actual)
+        Me.gridBand4.Columns.Add(Me.Other_Actual)
+        Me.gridBand4.Columns.Add(Me.Total_Actual)
+        Me.gridBand4.Name = "gridBand4"
+        Me.gridBand4.VisibleIndex = 4
+        Me.gridBand4.Width = 900
+        '
+        'Err001_Actual
+        '
+        Me.Err001_Actual.Caption = "Err001_Actual"
+        Me.Err001_Actual.FieldName = "Err001_Actual"
+        Me.Err001_Actual.Name = "Err001_Actual"
+        Me.Err001_Actual.Visible = True
+        '
+        'Err002_Actual
+        '
+        Me.Err002_Actual.Caption = "Err002_Actual"
+        Me.Err002_Actual.FieldName = "Err002_Actual"
+        Me.Err002_Actual.Name = "Err002_Actual"
+        Me.Err002_Actual.Visible = True
+        '
+        'Err003_Actual
+        '
+        Me.Err003_Actual.Caption = "Err003_Actual"
+        Me.Err003_Actual.FieldName = "Err003_Actual"
+        Me.Err003_Actual.Name = "Err003_Actual"
+        Me.Err003_Actual.Visible = True
+        '
+        'Err004_Actual
+        '
+        Me.Err004_Actual.Caption = "Err004_Actual"
+        Me.Err004_Actual.FieldName = "Err004_Actual"
+        Me.Err004_Actual.Name = "Err004_Actual"
+        Me.Err004_Actual.Visible = True
+        '
+        'Err005_Actual
+        '
+        Me.Err005_Actual.Caption = "Err005_Actual"
+        Me.Err005_Actual.FieldName = "Err005_Actual"
+        Me.Err005_Actual.Name = "Err005_Actual"
+        Me.Err005_Actual.Visible = True
+        '
+        'Err006_Actual
+        '
+        Me.Err006_Actual.Caption = "Err006_Actual"
+        Me.Err006_Actual.FieldName = "Err006_Actual"
+        Me.Err006_Actual.Name = "Err006_Actual"
+        Me.Err006_Actual.Visible = True
+        '
+        'Err007_Actual
+        '
+        Me.Err007_Actual.Caption = "Err007_Actual"
+        Me.Err007_Actual.FieldName = "Err007_Actual"
+        Me.Err007_Actual.Name = "Err007_Actual"
+        Me.Err007_Actual.Visible = True
+        '
+        'Err009_Actual
+        '
+        Me.Err009_Actual.Caption = "Err009_Actual"
+        Me.Err009_Actual.FieldName = "Err009_Actual"
+        Me.Err009_Actual.Name = "Err009_Actual"
+        Me.Err009_Actual.Visible = True
+        '
+        'Err627_Actual
+        '
+        Me.Err627_Actual.Caption = "Err627_Actual"
+        Me.Err627_Actual.FieldName = "Err627_Actual"
+        Me.Err627_Actual.Name = "Err627_Actual"
+        Me.Err627_Actual.Visible = True
+        '
+        'Err639_Actual
+        '
+        Me.Err639_Actual.Caption = "Err639_Actual"
+        Me.Err639_Actual.FieldName = "Err639_Actual"
+        Me.Err639_Actual.Name = "Err639_Actual"
+        Me.Err639_Actual.Visible = True
+        '
+        'Other_Actual
+        '
+        Me.Other_Actual.Caption = "Other_Actual"
+        Me.Other_Actual.FieldName = "Other_Actual"
+        Me.Other_Actual.Name = "Other_Actual"
+        Me.Other_Actual.Visible = True
+        '
+        'Total_Actual
+        '
+        Me.Total_Actual.Caption = "Total_Actual"
+        Me.Total_Actual.FieldName = "Total_Actual"
+        Me.Total_Actual.Name = "Total_Actual"
+        Me.Total_Actual.Visible = True
+        '
+        'gridBand5
+        '
+        Me.gridBand5.Columns.Add(Me.MSNVTongKet)
+        Me.gridBand5.Columns.Add(Me.GhiChu)
+        Me.gridBand5.Name = "gridBand5"
+        Me.gridBand5.VisibleIndex = 5
+        Me.gridBand5.Width = 276
+        '
+        'MSNVTongKet
+        '
+        Me.MSNVTongKet.Caption = "MSNV Tổng Kết"
+        Me.MSNVTongKet.FieldName = "MSNVTongKet"
+        Me.MSNVTongKet.Name = "MSNVTongKet"
+        Me.MSNVTongKet.Visible = True
+        '
+        'GhiChu
+        '
+        Me.GhiChu.Caption = "Ghi Chú"
+        Me.GhiChu.FieldName = "GhiChu"
+        Me.GhiChu.Name = "GhiChu"
+        Me.GhiChu.Visible = True
+        Me.GhiChu.Width = 201
+        '
+        'cbbOX
+        '
+        Me.cbbOX.AutoHeight = False
+        Me.cbbOX.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbbOX.Items.AddRange(New Object() {"O", "X"})
+        Me.cbbOX.Name = "cbbOX"
+        '
+        'chbLock
+        '
+        Me.chbLock.Location = New System.Drawing.Point(329, 21)
+        Me.chbLock.MenuManager = Me.BarManager1
+        Me.chbLock.Name = "chbLock"
+        Me.chbLock.Properties.Caption = "Lock"
+        Me.chbLock.Size = New System.Drawing.Size(55, 20)
+        Me.chbLock.TabIndex = 9
+        '
+        'FrmVerifyFinalImageJudgment
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(684, 430)
+        Me.Controls.Add(Me.chbLock)
+        Me.Controls.Add(Me.GridControl1)
+        Me.Controls.Add(Me.barDockControlLeft)
+        Me.Controls.Add(Me.barDockControlRight)
+        Me.Controls.Add(Me.barDockControlBottom)
+        Me.Controls.Add(Me.barDockControlTop)
+        Me.Name = "FrmVerifyFinalImageJudgment"
+        Me.Tag = "0267VFIJ01"
+        Me.Text = "Verify Final Image Judgment"
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BandedGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbbOX, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chbLock.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+
+    Friend WithEvents BarManager1 As DevExpress.XtraBars.BarManager
+    Friend WithEvents Bar1 As DevExpress.XtraBars.Bar
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents btnShow As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents btnEdit As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents BandedGridView1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
+    Friend WithEvents ProductCode As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents LotNumber As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents ChangeDate As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TotalBarcodeKiemThucTe As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TongKetLoiDenBarcode As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err001_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err002_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err003_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err004_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err005_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err006_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err007_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err009_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err627_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err639_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Other_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Total_Ship As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err005_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err001_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err002_004_009_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err007_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err003_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err006_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err639_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err627_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TongHinhAnhLoiMayAOIBat_Image As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err001_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err002_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err003_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err004_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err005_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err006_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err007_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err009_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err627_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Err639_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Other_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Total_Actual As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents MSNVTongKet As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents GhiChu As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents Method As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents CustomerName As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents ProductName As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents btnGetData As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents btnExport As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents btnImport As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents Bar2 As DevExpress.XtraBars.Bar
+    Friend WithEvents CoAOIHayKhong As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents cbbOX As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
+    Friend WithEvents GridBand1 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand6 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents ProcessNameE As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents gridBand2 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand3 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand5 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents chbLock As DevExpress.XtraEditors.CheckEdit
+End Class

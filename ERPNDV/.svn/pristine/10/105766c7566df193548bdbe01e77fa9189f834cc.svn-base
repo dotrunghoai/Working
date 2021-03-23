@@ -1,0 +1,22 @@
+=================================================================================================
+DateTime:20-Apr-2018 16:09:32
+UserID:17946-Mai Thu Trúc
+PC:V00335-tmtam
+ClassOrForm:FrmGSRApproval
+FunctionName:SetFormEvents
+Error:The SqlParameterCollection only accepts non-null SqlParameter type objects.
+Parameter name: value
+=================================================================================================
+DateTime:20-Apr-2018 16:09:56
+UserID:17946-Mai Thu Trúc
+PC:V00335-tmtam
+ClassOrForm:FrmGSRApproval
+FunctionName:SetFormEvents
+Error:@EndĐate is not a parameter for procedure sp_ASP_GSRHead.
+=================================================================================================
+DateTime:20-Apr-2018 16:10:02
+UserID:17946-Mai Thu Trúc
+PC:V00335-tmtam
+ClassOrForm:FrmGSRApproval
+FunctionName:SetFormEvents
+Error:@EndĐate is not a parameter for procedure sp_ASP_GSRHead.

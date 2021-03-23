@@ -1,0 +1,7 @@
+=================================================================================================
+DateTime:03-May-2019 14:00:53
+UserID:15180-Trương Minh Tâm
+PC:V00335-tmtam
+ClassOrForm:FrmPhieuXuat
+FunctionName:Import
+Error:Conversion from type 'DBNull' to type 'Integer' is not valid.
